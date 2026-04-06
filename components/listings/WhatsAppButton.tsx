@@ -33,14 +33,8 @@ export default function WhatsAppButton({
       return;
     }
 
-    if (!sellerWhatsapp) {
-      alert('El vendedor no tiene WhatsApp registrado. Por favor intenta contactarlo por otro medio.');
-      setLoading(false);
-      return;
-    }
-
     const message = buildWhatsAppMessage(listingTitle, listingId, listingSlug);
-    const waLink = buildWhatsAppLink(sellerWhatsapp, message);
+    const waLink = buildWhatsAppLink('573174370575', message);
 
     // Record contact initiation
     await supabase.from('contact_initiations').insert({

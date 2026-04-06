@@ -5,7 +5,12 @@ import { Listing } from '@/types';
 import { formatCOP, timeAgo, CONDITION_LABELS, PRICE_TYPE_LABELS } from '@/lib/utils';
 import WhatsAppButton from '@/components/listings/WhatsAppButton';
 import StarRating from '@/components/ui/StarRating';
+import AdBanner from '@/components/ads/AdBanner';
 import Link from 'next/link';
+
+// Replace with your real AdSense slot IDs from adsense.google.com → Ads → By ad unit
+const AD_SLOT_LISTING_CONTENT = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_CONTENT ?? '';
+const AD_SLOT_LISTING_SIDEBAR = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_SIDEBAR ?? '';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -155,6 +160,9 @@ export default async function ListingPage({ params }: Props) {
               </div>
             )}
           </div>
+
+          {/* Ad banner below listing details */}
+          <AdBanner slot={AD_SLOT_LISTING_CONTENT} format="auto" />
         </div>
 
         {/* Right: Price + Contact */}
@@ -235,6 +243,9 @@ export default async function ListingPage({ params }: Props) {
               <li>• No hagas transferencias antes de ver el producto</li>
             </ul>
           </div>
+
+          {/* Ad banner in sidebar */}
+          <AdBanner slot={AD_SLOT_LISTING_SIDEBAR} format="rectangle" />
         </div>
       </div>
     </div>

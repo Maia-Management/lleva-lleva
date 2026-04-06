@@ -3,7 +3,11 @@ import { Metadata } from 'next';
 import { createClient } from '@/lib/supabase/server';
 import { Listing, Category } from '@/types';
 import ListingGrid from '@/components/listings/ListingGrid';
+import AdBanner from '@/components/ads/AdBanner';
 import Link from 'next/link';
+
+// Replace with your real AdSense slot ID from adsense.google.com → Ads → By ad unit
+const AD_SLOT_CATEGORY = process.env.NEXT_PUBLIC_ADSENSE_SLOT_CATEGORY ?? '';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -177,6 +181,11 @@ export default async function CategoryPage({ params, searchParams }: Props) {
             listings={(listings as Listing[]) ?? []}
             emptyMessage={`No hay anuncios en ${category.name_es} por el momento. ¡Sé el primero en publicar!`}
           />
+
+          {/* Ad banner between listings and pagination */}
+          <div className="mt-6">
+            <AdBanner slot={AD_SLOT_CATEGORY} format="auto" />
+          </div>
 
           {/* Pagination */}
           {(listings?.length ?? 0) === perPage && (

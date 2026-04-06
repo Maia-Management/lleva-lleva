@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
+import AdBanner from "@/components/ads/AdBanner";
 import { Listing } from "@/types";
+
+// Replace these with your real AdSense slot IDs from adsense.google.com → Ads → By ad unit
+const AD_SLOT_HOMEPAGE_BANNER = process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOMEPAGE_BANNER ?? '';
+const AD_SLOT_HOMEPAGE_FEED = process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOMEPAGE_FEED ?? '';
 
 const TOP_CATEGORIES = [
   { slug: "vehiculos", name: "Vehículos", icon: "🚗" },
@@ -127,6 +132,11 @@ export default async function HomePage() {
         </section>
       )}
 
+      {/* Ad banner between featured and recent listings */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+        <AdBanner slot={AD_SLOT_HOMEPAGE_BANNER} format="horizontal" />
+      </div>
+
       {/* Recent listings */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between mb-4">
@@ -136,6 +146,10 @@ export default async function HomePage() {
           listings={(recentListings as Listing[]) ?? []}
           emptyMessage="Sé el primero en publicar un anuncio en LlevaLleva."
         />
+        {/* Ad banner below recent listings */}
+        <div className="mt-6">
+          <AdBanner slot={AD_SLOT_HOMEPAGE_FEED} format="auto" />
+        </div>
       </section>
 
       {/* Public Info Section */}

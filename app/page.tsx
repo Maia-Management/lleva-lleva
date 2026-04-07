@@ -4,10 +4,6 @@ import ListingGrid from "@/components/listings/ListingGrid";
 import AdBanner from "@/components/ads/AdBanner";
 import { Listing } from "@/types";
 
-// Replace these with your real AdSense slot IDs from adsense.google.com → Ads → By ad unit
-const AD_SLOT_HOMEPAGE_BANNER = process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOMEPAGE_BANNER ?? '';
-const AD_SLOT_HOMEPAGE_FEED = process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOMEPAGE_FEED ?? '';
-
 const TOP_CATEGORIES = [
   { slug: "vehiculos", name: "Vehículos", icon: "🚗" },
   { slug: "inmuebles", name: "Inmuebles", icon: "🏠" },
@@ -122,19 +118,24 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Ad between category grid and featured listings */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+        <AdBanner slot="" format="horizontal" />
+      </div>
+
       {/* Featured listings */}
       {featuredListings && featuredListings.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-gray-800">⭐ Anuncios destacados</h2>
           </div>
-          <ListingGrid listings={featuredListings as Listing[]} />
+          <ListingGrid listings={featuredListings as Listing[]} showAds />
         </section>
       )}
 
       {/* Ad banner between featured and recent listings */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
-        <AdBanner slot={AD_SLOT_HOMEPAGE_BANNER} format="horizontal" />
+        <AdBanner slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOMEPAGE_BANNER ?? ''} format="horizontal" />
       </div>
 
       {/* Recent listings */}
@@ -145,10 +146,11 @@ export default async function HomePage() {
         <ListingGrid
           listings={(recentListings as Listing[]) ?? []}
           emptyMessage="Sé el primero en publicar un anuncio en LlevaLleva."
+          showAds
         />
         {/* Ad banner below recent listings */}
         <div className="mt-6">
-          <AdBanner slot={AD_SLOT_HOMEPAGE_FEED} format="auto" />
+          <AdBanner slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOMEPAGE_FEED ?? ''} format="auto" />
         </div>
       </section>
 
@@ -176,6 +178,11 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Ad below public info section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+        <AdBanner slot="" format="auto" />
+      </div>
 
       {/* Trust section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">

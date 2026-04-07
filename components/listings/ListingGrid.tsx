@@ -1,12 +1,16 @@
 import { Listing } from '@/types';
 import ListingCard from './ListingCard';
+import AdBanner from '@/components/ads/AdBanner';
 
 interface Props {
   listings: Listing[];
   emptyMessage?: string;
+  showAds?: boolean;
 }
 
-export default function ListingGrid({ listings, emptyMessage = 'No hay anuncios disponibles.' }: Props) {
+const AD_EVERY = 5;
+
+export default function ListingGrid({ listings, emptyMessage = 'No hay anuncios disponibles.', showAds = false }: Props) {
   if (listings.length === 0) {
     return (
       <div className="text-center py-16 text-gray-400">
@@ -19,11 +23,21 @@ export default function ListingGrid({ listings, emptyMessage = 'No hay anuncios 
     );
   }
 
+  const items: React.ReactNode[] = [];
+  listings.forEach((listing, i) => {
+    items.push(<ListingCard key={listing.id} listing={listing} />);
+    if (showAds && (i + 1) % AD_EVERY === 0 && i < listings.length - 1) {
+      items.push(
+        <div key={`ad-${i}`} className="col-span-2 sm:col-span-3 lg:col-span-4">
+          <AdBanner slot="" format="auto" />
+        </div>
+      );
+    }
+  });
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-      {listings.map((listing) => (
-        <ListingCard key={listing.id} listing={listing} />
-      ))}
+      {items}
     </div>
   );
 }

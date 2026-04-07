@@ -6,9 +6,6 @@ import ListingGrid from '@/components/listings/ListingGrid';
 import AdBanner from '@/components/ads/AdBanner';
 import Link from 'next/link';
 
-// Replace with your real AdSense slot ID from adsense.google.com → Ads → By ad unit
-const AD_SLOT_CATEGORY = process.env.NEXT_PUBLIC_ADSENSE_SLOT_CATEGORY ?? '';
-
 interface Props {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ ciudad?: string; orden?: string; precio_min?: string; precio_max?: string; page?: string }>;
@@ -163,6 +160,11 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                 </button>
               </form>
             </div>
+
+            {/* Sidebar ad */}
+            <div className="border-t border-gray-100 pt-4">
+              <AdBanner slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CATEGORY ?? ''} format="rectangle" />
+            </div>
           </div>
         </aside>
 
@@ -180,11 +182,12 @@ export default async function CategoryPage({ params, searchParams }: Props) {
           <ListingGrid
             listings={(listings as Listing[]) ?? []}
             emptyMessage={`No hay anuncios en ${category.name_es} por el momento. ¡Sé el primero en publicar!`}
+            showAds
           />
 
-          {/* Ad banner between listings and pagination */}
+          {/* Ad banner below listings */}
           <div className="mt-6">
-            <AdBanner slot={AD_SLOT_CATEGORY} format="auto" />
+            <AdBanner slot="" format="auto" />
           </div>
 
           {/* Pagination */}

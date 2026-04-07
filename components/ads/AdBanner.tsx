@@ -24,6 +24,8 @@ export default function AdBanner({
   className = '',
   fullWidthResponsive = true,
 }: AdBannerProps) {
+  // Use 'auto' as fallback so auto-ads fills the slot when no specific unit ID is set
+  const adSlot = slot || 'auto';
   const pushed = useRef(false);
 
   useEffect(() => {
@@ -36,16 +38,13 @@ export default function AdBanner({
     }
   }, []);
 
-  // Don't render if no slot provided
-  if (!slot) return null;
-
   return (
     <div className={`overflow-hidden text-center ${className}`}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client={PUB_ID}
-        data-ad-slot={slot}
+        data-ad-slot={adSlot}
         data-ad-format={format}
         data-full-width-responsive={fullWidthResponsive ? 'true' : 'false'}
       />

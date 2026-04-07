@@ -112,7 +112,7 @@ export default async function InfoPage({ params }: Props) {
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5 flex-wrap">
         <Link href="/" className="hover:text-emerald-600">Inicio</Link>
         <span>›</span>
-        <Link href="/categorias/info-publica" className="hover:text-emerald-600">Información Pública</Link>
+        <Link href="/categorias/informacion-publica" className="hover:text-emerald-600">Información Pública</Link>
         <span>›</span>
         <span className="text-gray-700">{content?.title ?? location}</span>
       </nav>

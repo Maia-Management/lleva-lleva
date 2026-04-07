@@ -21,7 +21,7 @@ export default function Footer() {
               <li><Link href="/categorias/vehiculos" className="hover:text-white transition-colors">Vehículos</Link></li>
               <li><Link href="/categorias/inmuebles" className="hover:text-white transition-colors">Inmuebles</Link></li>
               <li><Link href="/categorias/tecnologia" className="hover:text-white transition-colors">Tecnología</Link></li>
-              <li><Link href="/categorias/nautico" className="hover:text-white transition-colors">Náutico y Pesca</Link></li>
+              <li><Link href="/categorias/nautico-y-pesca" className="hover:text-white transition-colors">Náutico y Pesca</Link></li>
               <li><Link href="/categorias/servicios" className="hover:text-white transition-colors">Servicios</Link></li>
             </ul>
           </div>

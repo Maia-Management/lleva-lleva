@@ -23,7 +23,7 @@ export function generateListingSlug(title: string, id: string): string {
   return `${slugify(title)}-${id.slice(0, 8)}`;
 }
 
-export const WHATSAPP_BOT_NUMBER = '573174370575';
+export const WHATSAPP_BOT_NUMBER = '19034598763';
 
 export function buildWhatsAppLink(phone: string, message: string): string {
   // Always route to the ecosystem AI bot number

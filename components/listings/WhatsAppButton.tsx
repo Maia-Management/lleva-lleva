@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { buildWhatsAppLink, buildWhatsAppMessage } from '@/lib/utils';
+import { buildWhatsAppLink, buildWhatsAppMessage, WHATSAPP_BOT_NUMBER } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 
 interface Props {
@@ -34,7 +34,7 @@ export default function WhatsAppButton({
     }
 
     const message = buildWhatsAppMessage(listingTitle, listingId, listingSlug);
-    const waLink = buildWhatsAppLink('573174370575', message);
+    const waLink = buildWhatsAppLink(WHATSAPP_BOT_NUMBER, message);
 
     // Record contact initiation
     await supabase.from('contact_initiations').insert({

@@ -33,4 +33,18 @@ export default function ListingGrid({ listings, emptyMessage = 'No hay anuncios 
   const items: React.ReactNode[] = [];
   listings.forEach((listing, i) => {
     items.push(<ListingCard key={listing.id} listing={listing} />);
-    if (showAds && (i + 1) % AD_EV
+    if (showAds && (i + 1) % AD_EVERY === 0 && i < listings.length - 1) {
+      items.push(
+        <div key={`ad-${i}`} className="col-span-2 sm:col-span-3 lg:col-span-4">
+          <AdBanner slot="" format="auto" />
+        </div>
+      );
+    }
+  });
+
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      {items}
+    </div>
+  );
+}

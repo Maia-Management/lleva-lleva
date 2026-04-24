@@ -6,9 +6,10 @@ import { formatCOP, timeAgo, CONDITION_LABELS, PRICE_TYPE_LABELS } from '@/lib/u
 import WhatsAppButton from '@/components/listings/WhatsAppButton';
 import StarRating from '@/components/ui/StarRating';
 import AdBanner from '@/components/ads/AdBanner';
+import ListingGallery from '@/components/listings/ListingGallery';
+import EditDeleteButtons from './EditDeleteButtons';
 import Link from 'next/link';
 
-// Replace with your real AdSense slot IDs from adsense.google.com → Ads → By ad unit
 const AD_SLOT_LISTING_CONTENT = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_CONTENT ?? '';
 const AD_SLOT_LISTING_SIDEBAR = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_SIDEBAR ?? '';
 
@@ -49,6 +50,10 @@ export default async function ListingPage({ params }: Props) {
   const listing = data as Listing;
   const seller = listing.seller;
 
+  // Get current user to check ownership
+  const { data: { user } } = await supabase.auth.getUser();
+  const isOwner = user?.id === listing.seller_id;
+
   // Increment view count (fire and forget)
   supabase.rpc('fn_increment_view_count', { listing_id: listing.id });
 
@@ -69,28 +74,17 @@ export default async function ListingPage({ params }: Props) {
         <span className="text-gray-700 line-clamp-1">{listing.title}</span>
       </nav>
 
+      {/* Owner actions */}
+      {isOwner && (
+        <EditDeleteButtons listingId={listing.id} listingSlug={listing.slug} />
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: Images + Details */}
         <div className="lg:col-span-2 space-y-4">
           {/* Image gallery */}
-          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
-            {listing.images && listing.images.length > 0 ? (
-              <div className="aspect-[4/3] relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={listing.images[0].url}
-                  alt={listing.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ) : (
-              <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center text-gray-300">
-                <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-            )}
+          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden p-3">
+            <ListingGallery images={listing.images ?? []} title={listing.title} />
           </div>
 
           {/* Listing details */}
@@ -107,6 +101,9 @@ export default async function ListingPage({ params }: Props) {
               <div className="flex flex-wrap items-center gap-3 mt-2 text-sm text-gray-500">
                 {listing.location && (
                   <span>📍 {listing.location.city}, {listing.location.department}</span>
+                )}
+                {listing.is_nationwide && !listing.location && (
+                  <span>🇨🇴 Todo Colombia</span>
                 )}
                 {listing.published_at && (
                   <span>🕐 {timeAgo(listing.published_at)}</span>
@@ -188,7 +185,6 @@ export default async function ListingPage({ params }: Props) {
               )}
             </div>
 
-            {/* WhatsApp CTA */}
             <WhatsAppButton
               listingId={listing.id}
               listingSlug={listing.slug}
@@ -244,7 +240,6 @@ export default async function ListingPage({ params }: Props) {
             </ul>
           </div>
 
-          {/* Ad banner in sidebar */}
           <AdBanner slot={AD_SLOT_LISTING_SIDEBAR} format="rectangle" />
         </div>
       </div>

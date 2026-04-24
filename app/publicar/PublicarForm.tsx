@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { generateListingSlug } from '@/lib/utils';
+import ImageUploader, { UploadedImage } from '@/components/listings/ImageUploader';
 
 interface Category { id: string; name_es: string; slug: string; parent_id: string | null; sort_order: number; }
 interface Location { id: string; department: string; city: string; slug: string; }
@@ -28,13 +29,12 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
     whatsapp: '',
     is_nationwide: false,
   });
+  const [images, setImages] = useState<UploadedImage[]>([]);
   const [loading, setLoading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState('');
   const [error, setError] = useState('');
 
   const parentCats = categories.filter((c) => !c.parent_id);
-  const selectedParent = form.category_id
-    ? categories.find((c) => c.id === form.category_id)?.parent_id ?? null
-    : null;
 
   const childCats = (parentId: string) =>
     categories.filter((c) => c.parent_id === parentId);
@@ -50,18 +50,65 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
     setForm((f) => ({ ...f, [name]: type === 'checkbox' ? checked : value }));
   }
 
+  async function uploadImages(listingId: string): Promise<Array<{ url: string; alt?: string; order: number }>> {
+    const { createClient } = await import('@/lib/supabase/client');
+    const supabase = createClient();
+    const uploaded: Array<{ url: string; alt?: string; order: number }> = [];
+
+    for (let i = 0; i < images.length; i++) {
+      const img = images[i];
+      setUploadProgress(`Subiendo imagen ${i + 1} de ${images.length}...`);
+
+      const ext = img.file.name.split('.').pop()?.toLowerCase() ?? 'jpg';
+      const path = `${userId}/${listingId}/${i + 1}.${ext}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from('listing-images')
+        .upload(path, img.file, {
+          contentType: img.file.type,
+          upsert: true,
+        });
+
+      if (uploadError) {
+        console.error('Upload error:', uploadError);
+        continue;
+      }
+
+      const { data: urlData } = supabase.storage
+        .from('listing-images')
+        .getPublicUrl(path);
+
+      if (urlData?.publicUrl) {
+        uploaded.push({ url: urlData.publicUrl, order: i });
+      }
+    }
+
+    return uploaded;
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (blocked) return;
     setLoading(true);
     setError('');
+    setUploadProgress('');
 
     try {
       const { createClient } = await import('@/lib/supabase/client');
       const supabase = createClient();
-      const slug = generateListingSlug(form.title, crypto.randomUUID());
+      const listingId = crypto.randomUUID();
+      const slug = generateListingSlug(form.title, listingId);
+
+      // Upload images first
+      let uploadedImages: Array<{ url: string; alt?: string; order: number }> = [];
+      if (images.length > 0) {
+        uploadedImages = await uploadImages(listingId);
+      }
+
+      setUploadProgress('Publicando anuncio...');
 
       const listingData = {
+        id: listingId,
         seller_id: userId,
         category_id: form.category_id,
         location_id: form.is_nationwide ? null : (form.location_id || null),
@@ -74,6 +121,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           : null,
         price_type: form.price_type,
         condition: form.condition || null,
+        images: uploadedImages,
         status: 'active' as const,
         published_at: new Date().toISOString(),
       };
@@ -99,6 +147,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
       setError('Error al publicar el anuncio. Intenta de nuevo.');
       console.error(err);
       setLoading(false);
+      setUploadProgress('');
     }
   }
 
@@ -121,6 +170,14 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           placeholder="Ej: Toyota Hilux 2020 – Full equipo"
           className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
         />
+      </div>
+
+      {/* Images */}
+      <div>
+        <label className="block text-sm font-semibold text-gray-700 mb-2">
+          Fotos <span className="font-normal text-gray-400">(hasta 5, recomendado)</span>
+        </label>
+        <ImageUploader images={images} onChange={setImages} />
       </div>
 
       {/* Category */}
@@ -284,12 +341,22 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
         </p>
       </div>
 
+      {uploadProgress && (
+        <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm rounded-xl px-4 py-3 flex items-center gap-2">
+          <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+          </svg>
+          {uploadProgress}
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={loading || blocked}
         className="w-full bg-emerald-600 text-white font-bold py-4 rounded-xl text-base hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {loading ? 'Publicando...' : blocked ? 'Califica primero para publicar' : 'Publicar anuncio gratis'}
+        {loading ? uploadProgress || 'Publicando...' : blocked ? 'Califica primero para publicar' : 'Publicar anuncio gratis'}
       </button>
     </form>
   );

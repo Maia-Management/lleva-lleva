@@ -1,0 +1,145 @@
+/* File: lleva-lleva/app/globals.css */
+@import "tailwindcss";
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   FIX: Added --text-muted-accessible custom property (Audit Finding #2)
+   Gray-400 (#9CA3AF) fails WCAG AA for small text on white.
+   Gray-500 (#6B7280) meets WCAG AA (4.63:1 contrast ratio).
+   Use var(--text-muted-accessible) in components instead of
+   text-gray-400 for any small or body-level muted text.
+   ============================================================ */
+:root {
+  --text-muted-accessible: #6B7280; /* gray-500 — WCAG AA compliant on white */
+  --color-accent: #10b981;          /* emerald-500 — primary brand accent */
+}
+
+/* ============================================================
+   BASE BODY STYLES
+   (Unchanged from original — preserved as-is)
+   ============================================================ */
+body {
+  @apply text-gray-900;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   FOCUS VISIBLE — KEYBOARD ACCESSIBILITY
+   FIX: Enhanced :focus-visible rule (Audit Finding #5)
+   Ensures custom resets or Tailwind's base layer do not
+   silently override visible focus indicators. Now references
+   the --color-accent variable so theming stays consistent.
+   The original values are preserved; box-shadow added as a
+   fallback layer for high-contrast / forced-colors modes.
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-accent, #10b981); /* FIX: use accent variable */
+  outline-offset: 2px;
+  border-radius: 2px;
+  /* FIX: secondary glow ring — helps visibility if outline is stripped
+     by a browser theme or forced-colors polyfill */
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* ============================================================
+   REDUCED MOTION
+   FIX: Expanded prefers-reduced-motion block (Audit Finding #1)
+   Original snippet already covered animation-duration and
+   transition-duration. Per audit guidance, scroll-behavior
+   is now also disabled, and animation-iteration-count is set
+   to 1 so infinite loops are stopped immediately rather than
+   finishing one very fast cycle.
+   ============================================================ */
+/* FIX: Added prefers-reduced-motion (scroll-behavior + animation-iteration-count) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;  /* FIX: stop infinite animations */
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;          /* FIX: disable smooth scrolling */
+  }
+}
+
+/* ============================================================
+   LINE CLAMP UTILITIES
+   (Unchanged from original — preserved as-is)
+   ============================================================ */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================================
+   PROSE CONTAINER UTILITY
+   FIX: Added .prose-container (Audit Finding #3)
+   Equivalent to Tailwind's max-w-prose (65ch).
+   Use this on article bodies, descriptions, or any long-form
+   text block to keep line lengths readable (~60-75 chars).
+   Example usage: <div class="prose-container mx-auto">…</div>
+   ============================================================ */
+/* FIX: Added max-w-prose equivalent utility class */
+.prose-container {
+  max-width: 65ch;
+}
+
+/* ============================================================
+   LEADING RELAXED BODY UTILITY
+   FIX: Added .leading-relaxed-body (Audit Finding #4)
+   line-height: 1.625 matches Tailwind's `leading-relaxed`
+   value and improves readability for multi-line body text
+   blocks (e.g., product descriptions, blog paragraphs).
+   Example usage: <p class="leading-relaxed-body">…</p>
+   ============================================================ */
+/* FIX: Added leading-relaxed-body utility for improved body text readability */
+.leading-relaxed-body {
+  line-height: 1.625;
+}
+
+/*
+  =================================================================
+  COMPONENT-LEVEL CHANGES NEEDED (cannot be done in globals.css)
+  =================================================================
+
+  1. CONTRAST FIX (Audit Finding #2 — component side):
+     Any component using `text-gray-400` for small/body muted text
+     should be updated to use `text-gray-500` (or the CSS variable):
+       className="text-gray-400"  →  className="text-gray-500"
+     Or, if using inline styles:
+       color: var(--text-muted-accessible)
+     Affected components to audit: ProductCard, HeroSubtitle,
+     FooterLinks, FormHelperText, etc.
+
+  2. PROSE CONTAINER (Audit Finding #3 — component side):
+     Wrap long-form text sections with the new utility:
+       <div className="prose-container mx-auto">…</div>
+     Suggested locations: About page body, listing description
+     panels, blog/editorial content blocks.
+
+  3. LEADING RELAXED BODY (Audit Finding #4 — component side):
+     Add `leading-relaxed-body` class to <p> tags or text
+     containers that render multi-line body copy:
+       <p className="leading-relaxed-body">…</p>
+
+  4. FOCUS VISIBLE (Audit Finding #5 — component side):
+     Ensure no component applies `outline-none` or `focus:outline-none`
+     on interactive elements (buttons, links, inputs) without a
+     custom focus replacement. Search codebase for:
+       "outline-none" / "focus:outline-none"
+     and replace with `focus:outline-none focus-visible:ring-2
+     focus-visible:ring-emerald-500` if Tailwind ring utilities are
+     preferred, OR simply remove the outline-none override to let
+     the globals.css :focus-visible rule take effect.
+
+  =================================================================
+*/

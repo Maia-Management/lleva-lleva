@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { buildWhatsAppLink, buildWhatsAppMessage, WHATSAPP_BOT_NUMBER } from '@/lib/utils';
+import { buildWhatsAppLink, buildWhatsAppMessage } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
   listingTitle: string;
   sellerId: string;
   sellerWhatsapp: string | null;
+  sellerUserType: 'regular' | 'business' | 'bot';
 }
 
 export default function WhatsAppButton({
@@ -18,6 +19,7 @@ export default function WhatsAppButton({
   listingTitle,
   sellerId,
   sellerWhatsapp,
+  sellerUserType,
 }: Props) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -33,8 +35,9 @@ export default function WhatsAppButton({
       return;
     }
 
+    const isBotSeller = sellerUserType === 'bot';
     const message = buildWhatsAppMessage(listingTitle, listingId, listingSlug);
-    const waLink = buildWhatsAppLink(WHATSAPP_BOT_NUMBER, message);
+    const waLink = buildWhatsAppLink(sellerWhatsapp, message, isBotSeller);
 
     // Record contact initiation
     await supabase.from('contact_initiations').insert({

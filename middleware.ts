@@ -3,7 +3,7 @@ import { createServerClient } from '@supabase/ssr';
 
 const protectedRoutes = ['/publicar', '/dashboard'];
 
-export async function proxy(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(

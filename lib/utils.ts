@@ -25,9 +25,18 @@ export function generateListingSlug(title: string, id: string): string {
 
 export const WHATSAPP_BOT_NUMBER = '19034598763';
 
-export function buildWhatsAppLink(phone: string, message: string): string {
-  // Always route to the ecosystem AI bot number
-  return `https://wa.me/${WHATSAPP_BOT_NUMBER}?text=${encodeURIComponent(message)}`;
+export function buildWhatsAppLink(
+  phone: string | null,
+  message: string,
+  isBotAccount: boolean = false
+): string {
+  // Bot accounts and listings with no seller phone → route to Maia ecosystem bot
+  if (isBotAccount || !phone) {
+    return `https://wa.me/${WHATSAPP_BOT_NUMBER}?text=${encodeURIComponent(message)}`;
+  }
+  // Real sellers → contact them directly on their registered WhatsApp
+  const cleanPhone = phone.replace(/\D/g, '');
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 }
 
 export function buildWhatsAppMessage(

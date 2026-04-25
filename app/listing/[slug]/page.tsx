@@ -191,6 +191,7 @@ export default async function ListingPage({ params }: Props) {
               listingTitle={listing.title}
               sellerId={listing.seller_id}
               sellerWhatsapp={seller?.whatsapp_number ?? null}
+              sellerUserType={seller?.user_type ?? 'bot'}
             />
 
             <p className="text-xs text-gray-400 text-center mt-3">

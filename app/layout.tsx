@@ -9,14 +9,14 @@ const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "LlevaLleva.co – Clasificados Colombia",
-    template: "%s | LlevaLleva.co",
+    default: "Lleva Lleva – Clasificados Colombia",
+    template: "%s | Lleva Lleva",
   },
   description:
     "El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más.",
   keywords: ["clasificados", "colombia", "comprar", "vender", "barranquilla", "bogota", "medellin"],
   openGraph: {
-    siteName: "LlevaLleva.co",
+    siteName: "Lleva Lleva",
     locale: "es_CO",
     type: "website",
   },

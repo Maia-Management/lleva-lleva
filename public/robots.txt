@@ -3,4 +3,4 @@ Allow: /
 Disallow: /dashboard/
 Disallow: /auth/
 
-Sitemap: https://llevalleva.co/sitemap.xml
+Sitemap: https://lleva-lleva.com/sitemap.xml

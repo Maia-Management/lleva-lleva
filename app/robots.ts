@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/auth/', '/dashboard/', '/publicar/'],
     },
-    sitemap: 'https://llevalleva.co/sitemap.xml',
+    sitemap: 'https://lleva-lleva.com/sitemap.xml',
   };
 }

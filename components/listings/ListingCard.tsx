@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Listing } from '@/types';
 import { formatCOP, timeAgo, CONDITION_LABELS } from '@/lib/utils';
+import FavoriteButton from './FavoriteButton';
 
 interface Props {
   listing: Listing;
@@ -40,6 +41,10 @@ export default function ListingCard({ listing }: Props) {
               {CONDITION_LABELS[listing.condition]}
             </span>
           )}
+          {/* Favorite button overlay */}
+          <div className="absolute top-2 right-2" onClick={(e) => e.preventDefault()}>
+            <FavoriteButton listingId={listing.id} size="sm" />
+          </div>
         </div>
 
         {/* Content */}

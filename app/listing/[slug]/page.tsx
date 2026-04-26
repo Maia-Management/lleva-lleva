@@ -8,6 +8,8 @@ import StarRating from '@/components/ui/StarRating';
 import AdBanner from '@/components/ads/AdBanner';
 import ListingGallery from '@/components/listings/ListingGallery';
 import EditDeleteButtons from './EditDeleteButtons';
+import TransactionButtons from './TransactionButtons';
+import FavoriteButton from '@/components/listings/FavoriteButton';
 import Link from 'next/link';
 
 const AD_SLOT_LISTING_CONTENT = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_CONTENT ?? '';
@@ -194,9 +196,29 @@ export default async function ListingPage({ params }: Props) {
               sellerUserType={seller?.user_type ?? 'bot'}
             />
 
-            <p className="text-xs text-gray-400 text-center mt-3">
+            <p className="text-xs text-gray-400 text-center mt-3 mb-3">
               Tu número NO se comparte con el vendedor
             </p>
+
+            <TransactionButtons
+              listingId={listing.id}
+              listingTitle={listing.title}
+              sellerId={listing.seller_id}
+              listingPrice={listing.price}
+              isOwner={isOwner}
+              isAuthenticated={!!user}
+              currentStatus={listing.status}
+            />
+
+            {/* Favorite button */}
+            {!isOwner && (
+              <div className="flex justify-center mt-2">
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <FavoriteButton listingId={listing.id} size="md" />
+                  <span>Guardar anuncio</span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Seller card */}

@@ -16,6 +16,7 @@ export default async function DashboardPage() {
     { data: profile },
     { data: listings },
     { data: transactions },
+    { data: favorites },
   ] = await Promise.all([
     supabase.from('profiles').select('*').eq('id', user.id).single(),
     supabase
@@ -30,6 +31,12 @@ export default async function DashboardPage() {
       .or(`buyer_id.eq.${user.id},seller_id.eq.${user.id}`)
       .order('created_at', { ascending: false })
       .limit(10),
+    supabase
+      .from('favorites')
+      .select('*, listing:listings(id, title, slug, price, price_type, images, status, location:locations(city, department))')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+      .limit(24),
   ]);
 
   const STATUS_COLORS: Record<string, string> = {
@@ -46,6 +53,10 @@ export default async function DashboardPage() {
     sold: 'Vendido', expired: 'Expirado', removed: 'Eliminado',
   };
 
+  const savedListings = (favorites ?? [])
+    .map((f) => f.listing)
+    .filter(Boolean) as (Listing & { location?: { city: string; department: string } })[];
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
       {/* Welcome */}
@@ -54,12 +65,20 @@ export default async function DashboardPage() {
           <h1 className="text-2xl font-bold text-gray-900">Mi cuenta</h1>
           <p className="text-sm text-gray-500">Bienvenido, {profile?.display_name ?? 'usuario'}</p>
         </div>
-        <Link
-          href="/publicar"
-          className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-sm font-bold px-4 py-2.5 rounded-full hover:bg-emerald-700 transition-colors"
-        >
-          + Publicar
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/perfil/editar"
+            className="inline-flex items-center gap-1.5 bg-white border border-gray-200 text-gray-600 text-sm font-semibold px-3 py-2 rounded-full hover:border-emerald-300 hover:text-emerald-700 transition-colors"
+          >
+            ✏️ Editar perfil
+          </Link>
+          <Link
+            href="/publicar"
+            className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-sm font-bold px-4 py-2.5 rounded-full hover:bg-emerald-700 transition-colors"
+          >
+            + Publicar
+          </Link>
+        </div>
       </div>
 
       {/* Pending rating alert */}
@@ -71,7 +90,7 @@ export default async function DashboardPage() {
           </div>
           {profile.pending_rating_transaction_id && (
             <Link
-              href={`/dashboard/transacciones/${profile.pending_rating_transaction_id}/calificar`}
+              href={`/calificar/${profile.pending_rating_transaction_id}`}
               className="flex-shrink-0 bg-amber-500 text-white text-xs font-bold px-3 py-2 rounded-full hover:bg-amber-600 transition-colors"
             >
               Calificar →
@@ -86,7 +105,7 @@ export default async function DashboardPage() {
           { label: 'Anuncios activos', value: listings?.filter((l: Listing) => l.status === 'active').length ?? 0, icon: '📦' },
           { label: 'Total ventas', value: profile?.total_sales ?? 0, icon: '🤝' },
           { label: 'Calificación', value: profile?.rating_avg ? profile.rating_avg.toFixed(1) : '—', icon: '⭐' },
-          { label: 'Calificaciones', value: profile?.rating_count ?? 0, icon: '📝' },
+          { label: 'Guardados', value: favorites?.length ?? 0, icon: '❤️' },
         ].map((stat) => (
           <div key={stat.label} className="bg-white rounded-xl border border-gray-200 p-4">
             <div className="text-2xl mb-1">{stat.icon}</div>
@@ -108,6 +127,7 @@ export default async function DashboardPage() {
                   <th className="text-left px-4 py-3 font-semibold text-gray-600 hidden sm:table-cell">Precio</th>
                   <th className="text-left px-4 py-3 font-semibold text-gray-600">Estado</th>
                   <th className="text-left px-4 py-3 font-semibold text-gray-600 hidden md:table-cell">Vistas</th>
+                  <th className="text-left px-4 py-3 font-semibold text-gray-600 hidden lg:table-cell">Acciones</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -128,6 +148,16 @@ export default async function DashboardPage() {
                       </span>
                     </td>
                     <td className="px-4 py-3 text-gray-500 hidden md:table-cell">{listing.view_count}</td>
+                    <td className="px-4 py-3 hidden lg:table-cell">
+                      {listing.status === 'active' && (
+                        <Link
+                          href={`/listing/${listing.slug}#transaction`}
+                          className="text-xs text-blue-600 hover:underline font-medium"
+                        >
+                          Marcar vendido
+                        </Link>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -143,6 +173,52 @@ export default async function DashboardPage() {
         )}
       </section>
 
+      {/* Saved listings (Guardados) */}
+      {savedListings.length > 0 && (
+        <section className="mb-8">
+          <h2 className="font-bold text-gray-800 mb-4">
+            Guardados
+            <span className="font-normal text-sm text-gray-500 ml-2">({savedListings.length})</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {savedListings.map((listing) => (
+              <Link
+                key={listing.id}
+                href={`/listing/${listing.slug}`}
+                className="bg-white rounded-xl border border-gray-200 p-3 flex items-start gap-3 hover:border-emerald-300 hover:shadow-sm transition-all"
+              >
+                {listing.images?.[0]?.url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={listing.images[0].url}
+                    alt={listing.title}
+                    className="w-14 h-14 object-cover rounded-lg flex-shrink-0"
+                  />
+                ) : (
+                  <div className="w-14 h-14 bg-gray-100 rounded-lg flex-shrink-0 flex items-center justify-center text-gray-300 text-xl">
+                    📦
+                  </div>
+                )}
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-gray-800 line-clamp-2 leading-snug">{listing.title}</p>
+                  {listing.price != null && listing.price_type !== 'contact' ? (
+                    <p className="text-sm font-bold text-emerald-700 mt-0.5">{formatCOP(listing.price)}</p>
+                  ) : listing.price_type === 'free' ? (
+                    <p className="text-sm font-bold text-emerald-600 mt-0.5">Gratis</p>
+                  ) : null}
+                  {listing.location && (
+                    <p className="text-xs text-gray-400 mt-0.5">{listing.location.city}</p>
+                  )}
+                  {listing.status !== 'active' && (
+                    <span className="text-xs text-red-500 font-medium">{STATUS_LABELS[listing.status] ?? listing.status}</span>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Transactions */}
       {transactions && transactions.length > 0 && (
         <section>
@@ -151,11 +227,12 @@ export default async function DashboardPage() {
             <div className="divide-y divide-gray-100">
               {(transactions as Transaction[]).map((tx) => {
                 const isBuyer = tx.buyer_id === user.id;
+                const txListing = (tx as unknown as { listing?: { title?: string; slug?: string } }).listing;
                 return (
                   <div key={tx.id} className="px-4 py-4 flex items-start justify-between gap-4">
                     <div className="min-w-0">
                       <p className="text-sm font-medium text-gray-800 line-clamp-1">
-                        {(tx as unknown as { listing?: { title?: string } }).listing?.title}
+                        {txListing?.title}
                       </p>
                       <p className="text-xs text-gray-500 mt-0.5">
                         {isBuyer ? 'Compra' : 'Venta'} · {timeAgo(tx.created_at)}
@@ -165,11 +242,19 @@ export default async function DashboardPage() {
                       <p className="text-sm font-semibold text-gray-800">
                         {tx.agreed_price ? formatCOP(tx.agreed_price) : '—'}
                       </p>
-                      <span className={`text-xs font-medium ${tx.status === 'completed' ? 'text-emerald-600' : tx.status === 'disputed' ? 'text-red-600' : 'text-gray-500'}`}>
-                        {tx.status === 'completed' ? 'Completada' :
-                          tx.status === 'initiated' ? 'Iniciada' :
-                          tx.status === 'disputed' ? 'Disputada' : tx.status}
-                      </span>
+                      <div className="flex items-center gap-2 justify-end mt-0.5">
+                        <span className={`text-xs font-medium ${tx.status === 'completed' ? 'text-emerald-600' : tx.status === 'disputed' ? 'text-red-600' : 'text-gray-500'}`}>
+                          {tx.status === 'completed' ? 'Completada' :
+                            tx.status === 'initiated' ? 'Iniciada' :
+                            tx.status === 'disputed' ? 'Disputada' : tx.status}
+                        </span>
+                        <Link
+                          href={`/calificar/${tx.id}`}
+                          className="text-xs text-amber-600 hover:underline font-medium"
+                        >
+                          Calificar
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 );

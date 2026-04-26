@@ -1,9 +1,9 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 
-const protectedRoutes = ['/publicar', '/dashboard'];
+const protectedRoutes = ['/publicar', '/dashboard', '/perfil/editar'];
 
-export default async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(

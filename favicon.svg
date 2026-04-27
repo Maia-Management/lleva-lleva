@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Lleva Lleva — Dark bg, coral/orange LL lettermark + shopping bag -->
+  <rect width="512" height="512" rx="102" ry="102" fill="#1A1A2E"/>
+  <!-- Coral glow ring -->
+  <rect x="6" y="6" width="500" height="500" rx="98" ry="98" fill="none" stroke="#FF6B35" stroke-width="5" opacity="0.35"/>
+  <!-- Shopping bag shape -->
+  <path d="M170 220 L140 380 L372 380 L342 220 Z" fill="#FF6B35" opacity="0.2"/>
+  <path d="M170 220 L140 380 L372 380 L342 220 Z" fill="none" stroke="#FF6B35" stroke-width="10" stroke-linejoin="round"/>
+  <!-- Bag handles -->
+  <path d="M200 220 C200 180 220 155 256 155 C292 155 312 180 312 220" fill="none" stroke="#FF6B35" stroke-width="10" stroke-linecap="round"/>
+  <!-- LL lettermark on bag -->
+  <text x="256" y="330" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="110" fill="#FF6B35" text-anchor="middle" letter-spacing="-2">LL</text>
+  <!-- Speed lines (delivery motion) -->
+  <rect x="98" y="268" width="30" height="7" rx="3" fill="#FF6B35" opacity="0.4"/>
+  <rect x="88" y="285" width="22" height="5" rx="2" fill="#FF6B35" opacity="0.3"/>
+</svg>

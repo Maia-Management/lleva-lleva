@@ -54,7 +54,27 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+        {/* Maia Group ecosystem */}
+        <div className="border-t border-gray-800 mt-10 pt-6 text-xs text-gray-600 text-center">
+          <p className="mb-2">
+            Parte del ecosistema{' '}
+            <a href="https://maia-management.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">Maia Group</a>
+            {' · '}
+            <a href="https://maia-legal.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Maia Legal</a>
+            {' · '}
+            <a href="https://maia-realty.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Maia Realty</a>
+            {' · '}
+            <a href="https://maia-masters.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Maia Masters</a>
+          </p>
+          <p className="mb-4">
+            Trabaja con nosotros →{' '}
+            <a href="https://maia-management.com/empleo.html" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+              Únete al equipo Maia
+            </a>
+          </p>
+        </div>
+
+        <div className="border-t border-gray-800 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
           <p>© {new Date().getFullYear()} LlevaLleva.co — Todos los derechos reservados</p>
           <p>Hecho con 🇨🇴 en Colombia</p>
         </div>

@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+﻿import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/auth/', '/dashboard/', '/publicar/'],
     },
-    sitemap: 'https://lleva-lleva.com/sitemap.xml',
+    sitemap: 'https://llevalleva.co/sitemap.xml',
   };
 }

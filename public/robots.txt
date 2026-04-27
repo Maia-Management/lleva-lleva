@@ -1,0 +1,6 @@
+﻿User-agent: *
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /publicar/
+Sitemap: https://llevalleva.co/sitemap.xml

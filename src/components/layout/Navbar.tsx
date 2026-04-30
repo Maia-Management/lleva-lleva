@@ -36,7 +36,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-extrabold text-amber-500 tracking-tight">
+          <span className="text-2xl font-extrabold text-amber-600 tracking-tight">
             Lleva
           </span>
           <span className="text-2xl font-extrabold text-navy-800 tracking-tight">
@@ -48,6 +48,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/listings"
+            prefetch={false}
             className="text-sm font-medium text-navy-600 hover:text-navy-800 transition-colors"
           >
             {t("nav.explore")}
@@ -61,7 +62,7 @@ export default function Navbar() {
                 <Heart className="w-4 h-4" />
                 {t("nav.favorites")}
               </Link>
-              <Link href="/listings/new">
+              <Link href="/listings/new" prefetch={false}>
                 <Button size="sm">
                   <Plus className="w-4 h-4" />
                   {t("nav.publish")}
@@ -70,6 +71,7 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
+                  aria-label={t("nav.myProfile")}
                   className="flex items-center gap-2 p-2 rounded-lg hover:bg-navy-50 transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center">
@@ -109,6 +111,8 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-2">
           <LanguageToggle />
           <button
+            aria-label={menuOpen ? "Cerrar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
             className="p-2 rounded-lg hover:bg-navy-50"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -126,6 +130,7 @@ export default function Navbar() {
         <div className="md:hidden border-t border-navy-100 bg-white px-4 py-4 space-y-3">
           <Link
             href="/listings"
+            prefetch={false}
             onClick={() => setMenuOpen(false)}
             className="block text-sm font-medium text-navy-700 py-2"
           >
@@ -142,6 +147,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/listings/new"
+                prefetch={false}
                 onClick={() => setMenuOpen(false)}
                 className="block"
               >

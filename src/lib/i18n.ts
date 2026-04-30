@@ -68,6 +68,7 @@ const translations = {
   "footer.about": { es: "Sobre nosotros", en: "About us" },
   "footer.safety": { es: "Consejos de seguridad", en: "Safety tips" },
   "footer.terms": { es: "Terminos y condiciones", en: "Terms & conditions" },
+  "footer.privacy": { es: "Privacidad", en: "Privacy" },
   "footer.contact": { es: "Contacto", en: "Contact" },
   "footer.copy": {
     es: "Lleva Lleva. Parte del ecosistema Maia Management Group.",

@@ -27,7 +27,7 @@ export default function CategoryFilter() {
         onClick={() => handleChange("")}
         className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
           !current
-            ? "bg-amber-500 text-white"
+            ? "bg-amber-700 text-white"
             : "bg-navy-100 text-navy-600 hover:bg-navy-200"
         }`}
       >
@@ -41,7 +41,7 @@ export default function CategoryFilter() {
             onClick={() => handleChange(cat.value)}
             className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
               current === cat.value
-                ? "bg-amber-500 text-white"
+                ? "bg-amber-700 text-white"
                 : "bg-navy-100 text-navy-600 hover:bg-navy-200"
             }`}
           >

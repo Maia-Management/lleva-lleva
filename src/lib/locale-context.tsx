@@ -27,7 +27,13 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const saved = localStorage.getItem("lleva-locale") as Locale | null;
     if (saved === "en" || saved === "es") {
-      setLocaleState(saved);
+      let active = true;
+      queueMicrotask(() => {
+        if (active) setLocaleState(saved);
+      });
+      return () => {
+        active = false;
+      };
     }
   }, []);
 

@@ -17,7 +17,7 @@ export default function HomeContent() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold text-navy-800 mb-4">
             {t("hero.title1")}
-            <span className="text-amber-500">{t("hero.title2")}</span>
+            <span className="text-amber-600">{t("hero.title2")}</span>
           </h1>
           <p className="text-lg md:text-xl text-navy-500 max-w-2xl mx-auto mb-8">
             {t("hero.subtitle")}
@@ -29,7 +29,7 @@ export default function HomeContent() {
                 {t("hero.explore")}
               </Button>
             </Link>
-            <Link href="/listings/new">
+            <Link href="/listings/new" prefetch={false}>
               <Button variant="outline" size="lg">
                 {t("hero.postFree")}
                 <ArrowRight className="w-5 h-5" />
@@ -52,6 +52,7 @@ export default function HomeContent() {
                 <Link
                   key={category.value}
                   href={`/listings?category=${category.value}`}
+                  prefetch={false}
                   className="group flex flex-col items-center gap-3 p-6 rounded-xl border border-navy-100 hover:border-amber-300 hover:shadow-md transition-all"
                 >
                   <div
@@ -108,13 +109,13 @@ export default function HomeContent() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-amber-500 to-amber-600">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-amber-700 to-amber-800">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             {t("cta.title")}
           </h2>
-          <p className="text-amber-100 mb-6">{t("cta.subtitle")}</p>
-          <Link href="/listings/new">
+          <p className="text-white mb-6">{t("cta.subtitle")}</p>
+          <Link href="/listings/new" prefetch={false}>
             <Button variant="secondary" size="lg">
               {t("cta.button")}
               <ArrowRight className="w-5 h-5" />

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
 import ProfileEditor from "@/components/profile/ProfileEditor";
-import DeleteListingButton from "@/components/listings/DeleteListingButton";
 import TranslatedText from "@/components/ui/TranslatedText";
 import type { Listing, Profile } from "@/lib/types";
 import type { Metadata } from "next";

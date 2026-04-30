@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ImagePlus, X, Loader2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -152,10 +153,12 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
               key={i}
               className="relative w-24 h-24 rounded-lg overflow-hidden border border-navy-200"
             >
-              <img
+              <Image
                 src={url}
                 alt={`Foto ${i + 1}`}
-                className="w-full h-full object-cover"
+                fill
+                sizes="96px"
+                className="object-cover"
               />
               <button
                 type="button"

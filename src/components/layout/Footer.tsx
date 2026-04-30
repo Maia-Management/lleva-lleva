@@ -33,6 +33,7 @@ export default function Footer() {
                 <li key={cat.value}>
                   <Link
                     href={`/listings?category=${cat.value}`}
+                    prefetch={false}
                     className="text-sm text-navy-400 hover:text-white transition-colors"
                   >
                     {getCategoryLabel(cat.value, locale)}
@@ -72,6 +73,14 @@ export default function Footer() {
                   {t("footer.terms")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-navy-400 hover:text-white transition-colors"
+                >
+                  {t("footer.privacy")}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -81,12 +90,12 @@ export default function Footer() {
               {t("footer.contact")}
             </h3>
             <p className="text-sm text-navy-400">Santa Marta, Colombia</p>
-            <p className="text-sm text-navy-400 mt-1">hola@llevalleva.co</p>
+            <p className="text-sm text-navy-400 mt-1">hola@lleva-lleva.com</p>
           </div>
         </div>
 
         <div className="border-t border-navy-700 mt-8 pt-6 text-center">
-          <p className="text-xs text-navy-500">
+          <p className="text-xs text-navy-400">
             &copy; {new Date().getFullYear()} {t("footer.copy")}
           </p>
         </div>

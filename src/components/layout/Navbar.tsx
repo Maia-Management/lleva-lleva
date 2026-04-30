@@ -19,6 +19,24 @@ type IdleWindow = typeof window & {
   cancelIdleCallback?: (handle: number) => void;
 };
 
+function hasStoredSupabaseSession() {
+  try {
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const key = localStorage.key(i);
+      if (key?.startsWith("sb-") && key.includes("auth-token")) {
+        return true;
+      }
+    }
+  } catch {}
+
+  return document.cookie
+    .split(";")
+    .some(
+      (cookie) =>
+        cookie.trim().startsWith("sb-") && cookie.includes("auth-token"),
+    );
+}
+
 export default function Navbar() {
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,6 +49,12 @@ export default function Navbar() {
     let timeoutHandle: ReturnType<typeof setTimeout> | null = null;
     let unsubscribe: (() => void) | null = null;
     const browserWindow = window as IdleWindow;
+
+    if (!hasStoredSupabaseSession()) {
+      return () => {
+        active = false;
+      };
+    }
 
     const loadAuth = async () => {
       const { createClient } = await import("@/lib/supabase/client");

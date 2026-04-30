@@ -9,7 +9,10 @@ export default function Footer() {
   const { t, locale } = useLocale();
 
   return (
-    <footer className="bg-navy-800 text-navy-300 mt-auto min-h-[840px] md:min-h-0">
+    <footer
+      className="bg-navy-800 text-navy-300 mt-auto min-h-[840px] md:min-h-0"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "840px" }}
+    >
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}

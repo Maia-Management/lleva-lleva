@@ -69,7 +69,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">
+      <body
+        className="min-h-full flex flex-col font-sans"
+        data-cache-version="20260430-lleva-public-nav"
+      >
         <LocaleProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

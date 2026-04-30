@@ -9,6 +9,7 @@ import Button from "@/components/ui/Button";
 
 export default function HomeContent() {
   const { t, locale } = useLocale();
+  const publishHref = "/auth/login?redirect=/listings/new";
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function HomeContent() {
                 {t("hero.explore")}
               </Button>
             </Link>
-            <Link href="/listings/new" prefetch={false}>
+            <Link href={publishHref} prefetch={false}>
               <Button variant="outline" size="lg">
                 {t("hero.postFree")}
                 <ArrowRight className="w-5 h-5" />
@@ -115,7 +116,7 @@ export default function HomeContent() {
             {t("cta.title")}
           </h2>
           <p className="text-white mb-6">{t("cta.subtitle")}</p>
-          <Link href="/listings/new" prefetch={false}>
+          <Link href={publishHref} prefetch={false}>
             <Button variant="secondary" size="lg">
               {t("cta.button")}
               <ArrowRight className="w-5 h-5" />

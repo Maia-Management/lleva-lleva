@@ -10,7 +10,32 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Explorar anuncios — Lleva Lleva",
-  description: "Encuentra lo que buscas en tu ciudad. Clasificados gratuitos.",
+  description:
+    "Explora clasificados gratuitos en Colombia por ciudad, categoria y busqueda. Encuentra productos, servicios, vivienda, empleo y oportunidades locales.",
+  alternates: {
+    canonical: "/listings",
+  },
+  openGraph: {
+    title: "Explorar anuncios — Lleva Lleva",
+    description:
+      "Busca clasificados gratuitos en Colombia por ciudad, categoria y palabra clave.",
+    url: "/listings",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Lleva Lleva clasificados gratis en Colombia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Explorar anuncios — Lleva Lleva",
+    description:
+      "Busca clasificados gratuitos en Colombia por ciudad, categoria y palabra clave.",
+    images: ["/og-image.svg"],
+  },
 };
 
 async function ListingsContent({
@@ -54,6 +79,20 @@ export default function ListingsPage({
         as="h1"
         className="text-2xl font-bold text-navy-800 mb-6"
       />
+      <div className="max-w-3xl space-y-3 text-sm leading-6 text-navy-600 mb-6">
+        <p>
+          Explora anuncios activos de vendedores locales en Colombia. Puedes
+          filtrar por ciudad, categoria o palabra clave para encontrar
+          productos, servicios, vivienda, empleo, vehiculos, eventos y
+          oportunidades de comunidad cerca de ti.
+        </p>
+        <p>
+          Cada anuncio esta pensado para contacto directo y negociacion clara.
+          Revisa fotos, precio, descripcion y ubicacion antes de escribir por
+          WhatsApp, y usa los consejos de seguridad si vas a reunirte en
+          persona.
+        </p>
+      </div>
 
       {/* Filters */}
       <Suspense>

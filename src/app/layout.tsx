@@ -10,14 +10,16 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const siteDescription =
+  "Compra, vende e intercambia en tu ciudad. Clasificados gratuitos para Colombia. La alternativa confiable a Facebook Marketplace.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://lleva-lleva.com"),
   title: {
     default: "Lleva Lleva — Clasificados gratis en Colombia",
     template: "%s | Lleva Lleva",
   },
-  description:
-    "Compra, vende e intercambia en tu ciudad. Clasificados gratuitos para Colombia. La alternativa confiable a Facebook Marketplace.",
+  description: siteDescription,
   keywords: [
     "clasificados",
     "colombia",
@@ -28,12 +30,25 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Lleva Lleva — Clasificados gratis en Colombia",
-    description:
-      "Compra, vende e intercambia en tu ciudad. Clasificados gratuitos para Colombia.",
+    description: siteDescription,
     url: "https://lleva-lleva.com",
     siteName: "Lleva Lleva",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Lleva Lleva clasificados gratis en Colombia",
+      },
+    ],
     locale: "es_CO",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lleva Lleva — Clasificados gratis en Colombia",
+    description: siteDescription,
+    images: ["/og-image.svg"],
   },
   alternates: {
     canonical: "/",

@@ -1,31 +1,83 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, Plus, User, LogOut, Heart } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
 import { useLocale } from "@/lib/locale-context";
-import type { User as SupabaseUser } from "@supabase/supabase-js";
+import type {
+  SupabaseClient,
+  User as SupabaseUser,
+} from "@supabase/supabase-js";
 import Button from "@/components/ui/Button";
 import LanguageToggle from "./LanguageToggle";
+
+type IdleWindow = typeof window & {
+  requestIdleCallback?: (
+    callback: () => void,
+    options?: { timeout?: number },
+  ) => number;
+  cancelIdleCallback?: (handle: number) => void;
+};
 
 export default function Navbar() {
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const supabase = createClient();
+  const supabaseRef = useRef<SupabaseClient | null>(null);
   const { t } = useLocale();
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data: { user } }) => setUser(user));
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-    return () => subscription.unsubscribe();
-  }, [supabase.auth]);
+    let active = true;
+    let idleHandle: number | null = null;
+    let timeoutHandle: ReturnType<typeof setTimeout> | null = null;
+    let unsubscribe: (() => void) | null = null;
+    const browserWindow = window as IdleWindow;
+
+    const loadAuth = async () => {
+      const { createClient } = await import("@/lib/supabase/client");
+      if (!active) return;
+
+      const supabase = createClient();
+      supabaseRef.current = supabase;
+
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!active) return;
+      setUser(user);
+
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+        if (active) setUser(session?.user ?? null);
+      });
+      unsubscribe = () => subscription.unsubscribe();
+    };
+
+    if (browserWindow.requestIdleCallback) {
+      idleHandle = browserWindow.requestIdleCallback(
+        () => {
+          void loadAuth();
+        },
+        { timeout: 2500 },
+      );
+    } else {
+      timeoutHandle = setTimeout(() => {
+        void loadAuth();
+      }, 1200);
+    }
+
+    return () => {
+      active = false;
+      if (idleHandle !== null) browserWindow.cancelIdleCallback?.(idleHandle);
+      if (timeoutHandle !== null) clearTimeout(timeoutHandle);
+      unsubscribe?.();
+    };
+  }, []);
 
   const handleSignOut = async () => {
+    const supabase =
+      supabaseRef.current ??
+      (await import("@/lib/supabase/client")).createClient();
     await supabase.auth.signOut();
     setUser(null);
     setMenuOpen(false);

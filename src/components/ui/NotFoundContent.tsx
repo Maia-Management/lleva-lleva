@@ -10,7 +10,7 @@ export default function NotFoundContent() {
   return (
     <div className="flex items-center justify-center min-h-[60vh] px-4">
       <div className="text-center">
-        <h1 className="text-6xl font-extrabold text-amber-500 mb-4">404</h1>
+        <h1 className="text-6xl font-extrabold text-amber-600 mb-4">404</h1>
         <h2 className="text-xl font-bold text-navy-800 mb-2">
           {t("notFound.title")}
         </h2>

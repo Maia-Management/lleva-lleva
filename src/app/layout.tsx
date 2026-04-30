@@ -11,7 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lleva Lleva — Clasificados Gratis en Colombia",
+  metadataBase: new URL("https://lleva-lleva.com"),
+  title: {
+    default: "Lleva Lleva — Clasificados gratis en Colombia",
+    template: "%s | Lleva Lleva",
+  },
   description:
     "Compra, vende e intercambia en tu ciudad. Clasificados gratuitos para Colombia. La alternativa confiable a Facebook Marketplace.",
   keywords: [
@@ -23,15 +27,24 @@ export const metadata: Metadata = {
     "usado",
   ],
   openGraph: {
-    title: "Lleva Lleva — Clasificados Gratis en Colombia",
+    title: "Lleva Lleva — Clasificados gratis en Colombia",
     description:
       "Compra, vende e intercambia en tu ciudad. Clasificados gratuitos para Colombia.",
+    url: "https://lleva-lleva.com",
+    siteName: "Lleva Lleva",
     locale: "es_CO",
     type: "website",
   },
-    other: {
-          "google-adsense-account": "ca-pub-2469196723812841",
-    },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

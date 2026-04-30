@@ -38,7 +38,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
           </div>
         )}
         {listing.is_bumped && (
-          <Badge className="absolute top-2 left-2 bg-amber-500 text-white">
+          <Badge className="absolute top-2 left-2 bg-amber-700 text-white">
             {t("listings.featured")}
           </Badge>
         )}

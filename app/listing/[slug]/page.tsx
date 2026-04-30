@@ -59,8 +59,75 @@ export default async function ListingPage({ params }: Props) {
   // Increment view count (fire and forget)
   supabase.rpc('fn_increment_view_count', { listing_id: listing.id });
 
+  // ── JobPosting schema (Google Jobs) ────────────────────────────────────────
+  // Activates for any listing whose category slug contains a job-related keyword.
+  // All required JobPosting fields are populated from live listing data so every
+  // job listing on the platform becomes independently eligible for Google Jobs.
+  const JOB_SLUG_KEYWORDS = ['empleo', 'trabajo', 'oferta', 'vacante', 'job'];
+  const categorySlug = (listing.category?.slug ?? '') + (listing.category?.slug_path ?? '');
+  const isJobListing = JOB_SLUG_KEYWORDS.some((kw) => categorySlug.toLowerCase().includes(kw));
+
+  const jobPostingSchema = isJobListing
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'JobPosting',
+        title: listing.title,
+        description: listing.description,
+        datePosted: listing.published_at ?? listing.created_at,
+        ...(listing.expires_at ? { validThrough: listing.expires_at } : {}),
+        hiringOrganization: {
+          '@type': 'Organization',
+          name: listing.seller?.business_name ?? listing.seller?.display_name ?? 'Empresa en Lleva Lleva',
+          sameAs: `https://llevalleva.co/perfil/${listing.seller?.username ?? ''}`,
+        },
+        jobLocation: listing.is_nationwide
+          ? undefined
+          : listing.location
+          ? {
+              '@type': 'Place',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: listing.location.city,
+                addressRegion: listing.location.department,
+                addressCountry: 'CO',
+              },
+            }
+          : undefined,
+        ...(listing.is_nationwide
+          ? {
+              applicantLocationRequirements: { '@type': 'Country', name: 'Colombia' },
+              jobLocationType: 'TELECOMMUTE',
+            }
+          : {}),
+        ...(listing.price != null && listing.price_type === 'fixed'
+          ? {
+              baseSalary: {
+                '@type': 'MonetaryAmount',
+                currency: listing.currency ?? 'COP',
+                value: {
+                  '@type': 'QuantitativeValue',
+                  value: listing.price,
+                  unitText: 'MONTH',
+                },
+              },
+            }
+          : {}),
+        employmentType: 'OTHER',
+        url: `https://llevalleva.co/listing/${listing.slug}`,
+      }
+    : null;
+  // ───────────────────────────────────────────────────────────────────────────
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
+      {/* JobPosting structured data for Google Jobs */}
+      {jobPostingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+        />
+      )}
+
       {/* Breadcrumb */}
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5 flex-wrap">
         <Link href="/" className="hover:text-emerald-600">Inicio</Link>

@@ -50,11 +50,25 @@ const nextConfig: NextConfig = {
         value: "DENY",
       },
     ];
+    const rootCacheHeaders = [
+      {
+        key: "Cache-Control",
+        value: "no-store",
+      },
+      {
+        key: "Netlify-CDN-Cache-Control",
+        value: "no-store",
+      },
+    ];
 
     return [
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        source: "/",
+        headers: rootCacheHeaders,
       },
     ];
   },

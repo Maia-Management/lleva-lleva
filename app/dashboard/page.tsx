@@ -40,7 +40,7 @@ export default async function DashboardPage() {
   ]);
 
   const STATUS_COLORS: Record<string, string> = {
-    active: 'bg-emerald-100 text-emerald-700',
+    active: 'bg-brand-blue-50 text-brand-blue',
     draft: 'bg-gray-100 text-gray-600',
     paused: 'bg-yellow-100 text-yellow-700',
     sold: 'bg-blue-100 text-blue-700',
@@ -68,13 +68,13 @@ export default async function DashboardPage() {
         <div className="flex items-center gap-2">
           <Link
             href="/perfil/editar"
-            className="inline-flex items-center gap-1.5 bg-white border border-gray-200 text-gray-600 text-sm font-semibold px-3 py-2 rounded-full hover:border-emerald-300 hover:text-emerald-700 transition-colors"
+            className="inline-flex items-center gap-1.5 bg-white border border-gray-200 text-gray-600 text-sm font-semibold px-3 py-2 rounded-full hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
           >
             ✏️ Editar perfil
           </Link>
           <Link
             href="/publicar"
-            className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-sm font-bold px-4 py-2.5 rounded-full hover:bg-emerald-700 transition-colors"
+            className="inline-flex items-center gap-1.5 bg-brand-blue text-white text-sm font-bold px-4 py-2.5 rounded-full hover:bg-brand-blue-700 transition-colors"
           >
             + Publicar
           </Link>
@@ -83,15 +83,15 @@ export default async function DashboardPage() {
 
       {/* Pending rating alert */}
       {profile?.has_pending_rating && (
-        <div className="bg-amber-50 border border-amber-300 rounded-2xl p-4 mb-6 flex items-center justify-between gap-4">
+        <div className="bg-brand-yellow/10 border border-brand-yellow/40 rounded-2xl p-4 mb-6 flex items-center justify-between gap-4">
           <div>
-            <p className="font-semibold text-amber-800 text-sm">⭐ Calificación pendiente</p>
-            <p className="text-xs text-amber-700 mt-0.5">Califica tu última transacción para desbloquear nuevas publicaciones.</p>
+            <p className="font-semibold text-ink text-sm">⭐ Calificación pendiente</p>
+            <p className="text-xs text-brand-yellow-600 mt-0.5">Califica tu última transacción para desbloquear nuevas publicaciones.</p>
           </div>
           {profile.pending_rating_transaction_id && (
             <Link
               href={`/calificar/${profile.pending_rating_transaction_id}`}
-              className="flex-shrink-0 bg-amber-500 text-white text-xs font-bold px-3 py-2 rounded-full hover:bg-amber-600 transition-colors"
+              className="flex-shrink-0 bg-brand-yellow text-ink text-xs font-bold px-3 py-2 rounded-full hover:bg-brand-yellow-600 transition-colors"
             >
               Calificar →
             </Link>
@@ -134,7 +134,7 @@ export default async function DashboardPage() {
                 {(listings as Listing[]).map((listing) => (
                   <tr key={listing.id} className="hover:bg-gray-50 transition-colors">
                     <td className="px-4 py-3">
-                      <Link href={`/listing/${listing.slug}`} className="font-medium text-gray-800 hover:text-emerald-700 line-clamp-1">
+                      <Link href={`/listing/${listing.slug}`} className="font-medium text-gray-800 hover:text-brand-blue line-clamp-1">
                         {listing.title}
                       </Link>
                       <p className="text-xs text-gray-400">{timeAgo(listing.created_at)}</p>
@@ -166,7 +166,7 @@ export default async function DashboardPage() {
         ) : (
           <div className="text-center py-12 bg-white rounded-2xl border border-gray-200">
             <p className="text-gray-400 text-sm mb-4">No tienes anuncios aún.</p>
-            <Link href="/publicar" className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-emerald-700 transition-colors">
+            <Link href="/publicar" className="inline-flex items-center gap-1.5 bg-brand-blue text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-brand-blue-700 transition-colors">
               + Publicar primer anuncio
             </Link>
           </div>
@@ -185,7 +185,7 @@ export default async function DashboardPage() {
               <Link
                 key={listing.id}
                 href={`/listing/${listing.slug}`}
-                className="bg-white rounded-xl border border-gray-200 p-3 flex items-start gap-3 hover:border-emerald-300 hover:shadow-sm transition-all"
+                className="bg-white rounded-xl border border-gray-200 p-3 flex items-start gap-3 hover:border-brand-blue/40 hover:shadow-sm transition-all"
               >
                 {listing.images?.[0]?.url ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -202,9 +202,9 @@ export default async function DashboardPage() {
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-gray-800 line-clamp-2 leading-snug">{listing.title}</p>
                   {listing.price != null && listing.price_type !== 'contact' ? (
-                    <p className="text-sm font-bold text-emerald-700 mt-0.5">{formatCOP(listing.price)}</p>
+                    <p className="text-sm font-bold text-brand-blue mt-0.5">{formatCOP(listing.price)}</p>
                   ) : listing.price_type === 'free' ? (
-                    <p className="text-sm font-bold text-emerald-600 mt-0.5">Gratis</p>
+                    <p className="text-sm font-bold text-brand-blue mt-0.5">Gratis</p>
                   ) : null}
                   {listing.location && (
                     <p className="text-xs text-gray-400 mt-0.5">{listing.location.city}</p>
@@ -243,14 +243,14 @@ export default async function DashboardPage() {
                         {tx.agreed_price ? formatCOP(tx.agreed_price) : '—'}
                       </p>
                       <div className="flex items-center gap-2 justify-end mt-0.5">
-                        <span className={`text-xs font-medium ${tx.status === 'completed' ? 'text-emerald-600' : tx.status === 'disputed' ? 'text-red-600' : 'text-gray-500'}`}>
+                        <span className={`text-xs font-medium ${tx.status === 'completed' ? 'text-brand-blue' : tx.status === 'disputed' ? 'text-red-600' : 'text-gray-500'}`}>
                           {tx.status === 'completed' ? 'Completada' :
                             tx.status === 'initiated' ? 'Iniciada' :
                             tx.status === 'disputed' ? 'Disputada' : tx.status}
                         </span>
                         <Link
                           href={`/calificar/${tx.id}`}
-                          className="text-xs text-amber-600 hover:underline font-medium"
+                          className="text-xs text-brand-yellow-600 hover:underline font-medium"
                         >
                           Calificar
                         </Link>

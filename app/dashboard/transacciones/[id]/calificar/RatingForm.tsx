@@ -90,7 +90,7 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
               className="text-3xl transition-transform hover:scale-110 focus:outline-none"
               aria-label={`${star} estrellas`}
             >
-              <span className={star <= displayStars ? 'text-amber-400' : 'text-gray-200'}>★</span>
+              <span className={star <= displayStars ? 'text-brand-yellow' : 'text-gray-200'}>★</span>
             </button>
           ))}
         </div>
@@ -113,8 +113,8 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
               onClick={() => toggleTag(tag.value)}
               className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                 selectedTags.includes(tag.value)
-                  ? 'bg-emerald-600 border-emerald-600 text-white'
-                  : 'bg-white border-gray-200 text-gray-600 hover:border-emerald-300'
+                  ? 'bg-brand-blue border-brand-blue text-white'
+                  : 'bg-white border-gray-200 text-gray-600 hover:border-brand-blue/40'
               }`}
             >
               {tag.label}
@@ -132,7 +132,7 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
           rows={3}
           maxLength={500}
           placeholder="Cuéntale a la comunidad sobre tu experiencia..."
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
         />
         <p className="text-xs text-gray-400 text-right mt-1">{comment.length}/500</p>
       </div>
@@ -140,7 +140,7 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
       <button
         type="submit"
         disabled={loading || score === 0}
-        className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-brand-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? 'Enviando...' : 'Enviar calificación'}
       </button>

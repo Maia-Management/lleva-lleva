@@ -17,25 +17,33 @@ export default function Header() {
   }, [router]);
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-surface border-b border-line sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-black text-emerald-600 tracking-tight">
-              Lleva<span className="text-gray-900">Lleva</span>
+          {/* Logo — blue dominant, yellow accent dot for the wordmark */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <span className="inline-block w-2 h-2 rounded-full bg-brand-yellow group-hover:bg-brand-red transition-colors" aria-hidden="true" />
+            <span className="text-xl font-black text-brand-blue tracking-tight">
+              Lleva<span className="text-ink">Lleva</span>
             </span>
-            <span className="hidden sm:block text-xs text-gray-500 font-medium">.co</span>
           </Link>
 
-          {/* Search bar - desktop */}
+          {/* Search bar — desktop */}
           <div className="hidden md:flex flex-1 max-w-lg mx-6">
-            <form action="/buscar" className="w-full">
+            <form action="/buscar" className="w-full relative">
+              <svg
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-2/60 pointer-events-none"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
               <input
                 type="search"
                 name="q"
                 placeholder="¿Qué estás buscando?"
-                className="w-full px-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                aria-label="Buscar anuncios"
+                className="w-full pl-10 pr-4 py-2 text-sm bg-white border border-line rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent placeholder:text-ink-2/60"
               />
             </form>
           </div>
@@ -44,22 +52,23 @@ export default function Header() {
           <nav className="flex items-center gap-2">
             <Link
               href="/publicar"
-              className="hidden sm:inline-flex items-center gap-1.5 bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-emerald-700 transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 bg-brand-yellow text-ink text-sm font-bold px-4 py-2 rounded-full hover:bg-brand-yellow-600 transition-colors shadow-sm"
             >
-              <span>+</span> Publicar
+              <span aria-hidden="true">+</span> Publicar
             </Link>
             <Link
               href="/auth/login"
-              className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="text-sm text-ink-2 hover:text-brand-blue px-3 py-2 rounded-lg hover:bg-brand-blue-50 transition-colors font-medium"
             >
               Ingresar
             </Link>
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="md:hidden p-2 rounded-lg hover:bg-brand-blue-50 text-ink"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menú"
+              aria-expanded={menuOpen}
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
               </svg>
@@ -69,12 +78,20 @@ export default function Header() {
 
         {/* Mobile search */}
         <div className="md:hidden pb-3">
-          <form action="/buscar">
+          <form action="/buscar" className="relative">
+            <svg
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-2/60 pointer-events-none"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <input
               type="search"
               name="q"
               placeholder="¿Qué estás buscando?"
-              className="w-full px-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              aria-label="Buscar anuncios"
+              className="w-full pl-10 pr-4 py-2 text-sm bg-white border border-line rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue placeholder:text-ink-2/60"
             />
           </form>
         </div>
@@ -82,18 +99,18 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
+        <div className="md:hidden border-t border-line bg-surface">
           <div className="px-4 py-3 space-y-2">
-            <Link href="/publicar" className="block w-full text-center bg-emerald-600 text-white text-sm font-semibold px-4 py-2.5 rounded-full">
+            <Link href="/publicar" className="block w-full text-center bg-brand-yellow text-ink text-sm font-bold px-4 py-2.5 rounded-full hover:bg-brand-yellow-600 transition-colors">
               + Publicar anuncio
             </Link>
-            <Link href="/auth/login" className="block text-center text-sm text-gray-700 py-2">
+            <Link href="/auth/login" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
               Ingresar
             </Link>
-            <Link href="/auth/register" className="block text-center text-sm text-gray-700 py-2">
+            <Link href="/auth/register" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
               Crear cuenta
             </Link>
-            <Link href="/dashboard" className="block text-center text-sm text-gray-700 py-2">
+            <Link href="/dashboard" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
               Mi cuenta
             </Link>
           </div>

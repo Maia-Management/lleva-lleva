@@ -10,7 +10,7 @@ export default function ContactoPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <div className="mb-10">
@@ -27,7 +27,7 @@ export default function ContactoPage() {
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             Para preguntas sobre tu cuenta, anuncios o el funcionamiento de la plataforma.
           </p>
-          <p className="text-sm text-emerald-700 font-medium">hola@lleva-lleva.com</p>
+          <p className="text-sm text-brand-blue font-medium">hola@lleva-lleva.com</p>
         </div>
 
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
@@ -47,7 +47,7 @@ export default function ContactoPage() {
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             Revisa nuestras preguntas frecuentes antes de escribirnos — quizás encuentras la respuesta allí.
           </p>
-          <Link href="/ayuda" className="text-sm text-emerald-600 font-medium hover:underline">
+          <Link href="/ayuda" className="text-sm text-brand-blue font-medium hover:underline">
             Ver preguntas frecuentes →
           </Link>
         </div>
@@ -58,7 +58,7 @@ export default function ContactoPage() {
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             Para propuestas comerciales, alianzas o publicidad en la plataforma.
           </p>
-          <p className="text-sm text-emerald-700 font-medium">alianzas@lleva-lleva.com</p>
+          <p className="text-sm text-brand-blue font-medium">alianzas@lleva-lleva.com</p>
         </div>
       </div>
 

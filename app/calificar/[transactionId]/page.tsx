@@ -135,7 +135,7 @@ export default function CalificarPage() {
   if (loading) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
-        <div className="animate-spin w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full" />
+        <div className="animate-spin w-8 h-8 border-2 border-brand-blue border-t-transparent rounded-full" />
       </div>
     );
   }
@@ -162,7 +162,7 @@ export default function CalificarPage() {
         </p>
         <button
           onClick={() => router.push('/dashboard')}
-          className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors text-sm"
+          className="inline-flex items-center gap-2 bg-brand-blue text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-blue-700 transition-colors text-sm"
         >
           Ir al dashboard
         </button>
@@ -182,7 +182,7 @@ export default function CalificarPage() {
           <p className="text-sm text-gray-500 mb-1">{listingTitle}</p>
         )}
         {rateeDisplay && (
-          <p className="text-sm text-emerald-700 font-medium mb-6">
+          <p className="text-sm text-brand-blue font-medium mb-6">
             Calificando a: {rateeDisplay}
           </p>
         )}
@@ -216,8 +216,8 @@ export default function CalificarPage() {
                   onClick={() => toggleTag(tag.value)}
                   className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                     selectedTags.includes(tag.value)
-                      ? 'bg-emerald-600 text-white border-emerald-600'
-                      : 'bg-white text-gray-600 border-gray-200 hover:border-emerald-300'
+                      ? 'bg-brand-blue text-white border-brand-blue'
+                      : 'bg-white text-gray-600 border-gray-200 hover:border-brand-blue/40'
                   }`}
                 >
                   {tag.label}
@@ -234,7 +234,7 @@ export default function CalificarPage() {
               onChange={(e) => setComment(e.target.value)}
               rows={3}
               placeholder="Cuéntanos cómo fue la experiencia..."
-              className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 resize-none"
+              className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
             />
           </div>
 
@@ -245,7 +245,7 @@ export default function CalificarPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors disabled:opacity-60 text-sm"
+            className="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-brand-blue-700 transition-colors disabled:opacity-60 text-sm"
           >
             {submitting ? 'Enviando...' : 'Enviar calificación'}
           </button>

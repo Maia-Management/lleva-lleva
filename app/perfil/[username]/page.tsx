@@ -64,14 +64,14 @@ export default async function ProfilePage({ params }: Props) {
       {/* Profile header */}
       <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-6">
         <div className="flex items-start gap-4">
-          <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-black text-2xl flex-shrink-0">
+          <div className="w-16 h-16 rounded-full bg-brand-blue-50 flex items-center justify-center text-brand-blue font-black text-2xl flex-shrink-0">
             {p.display_name?.charAt(0).toUpperCase()}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-xl font-bold text-gray-900">{p.display_name}</h1>
               {p.is_verified && (
-                <span className="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">
+                <span className="inline-flex items-center gap-1 bg-brand-blue-50 text-brand-blue text-xs font-semibold px-2 py-0.5 rounded-full">
                   ✓ Verificado
                 </span>
               )}

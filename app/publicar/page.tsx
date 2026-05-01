@@ -41,15 +41,15 @@ export default async function PublicarPage() {
 
       {/* Soft-block warning */}
       {profile?.has_pending_rating && (
-        <div className="bg-amber-50 border border-amber-300 rounded-2xl p-5 mb-6">
-          <h2 className="font-bold text-amber-800 mb-1">⭐ Tienes una calificación pendiente</h2>
-          <p className="text-sm text-amber-700 mb-3">
+        <div className="bg-brand-yellow/10 border border-brand-yellow/40 rounded-2xl p-5 mb-6">
+          <h2 className="font-bold text-ink mb-1">⭐ Tienes una calificación pendiente</h2>
+          <p className="text-sm text-brand-yellow-600 mb-3">
             Para publicar nuevos anuncios, primero debes calificar tu última transacción. Esto ayuda a mantener la confianza en la plataforma.
           </p>
           {profile.pending_rating_transaction_id && (
             <a
               href={`/dashboard/transacciones/${profile.pending_rating_transaction_id}/calificar`}
-              className="inline-flex items-center gap-2 bg-amber-500 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-amber-600 transition-colors"
+              className="inline-flex items-center gap-2 bg-brand-yellow text-ink text-sm font-semibold px-4 py-2 rounded-full hover:bg-brand-yellow-600 transition-colors"
             >
               Calificar ahora →
             </a>

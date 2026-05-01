@@ -89,7 +89,7 @@ export default function AyudaPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <div className="mb-10">
@@ -117,14 +117,14 @@ export default function AyudaPage() {
         ))}
       </div>
 
-      <div className="mt-12 bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center">
+      <div className="mt-12 bg-brand-blue-50 border border-brand-blue/20 rounded-2xl p-6 text-center">
         <h2 className="font-bold text-gray-900 mb-2">¿No encontraste lo que buscabas?</h2>
         <p className="text-gray-600 text-sm mb-4">
           Escríbenos y te ayudaremos lo antes posible.
         </p>
         <Link
           href="/contacto"
-          className="inline-block bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-emerald-700 transition-colors"
+          className="inline-block bg-brand-blue text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-blue-700 transition-colors"
         >
           Contactar soporte
         </Link>

@@ -112,7 +112,7 @@ export default function ActualizarPasswordPage() {
   if (checking) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center">
-        <div className="animate-spin w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full" />
+        <div className="animate-spin w-6 h-6 border-2 border-brand-blue border-t-transparent rounded-full" />
       </div>
     );
   }
@@ -124,7 +124,7 @@ export default function ActualizarPasswordPage() {
         {/* Logo + heading */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <span className="text-3xl font-black text-emerald-600">
+            <span className="text-3xl font-black text-brand-blue">
               Lleva<span className="text-gray-900">Lleva</span>
             </span>
             <span className="text-gray-500">.co</span>
@@ -169,7 +169,7 @@ export default function ActualizarPasswordPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Mínimo 8 caracteres"
                 minLength={8}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
               />
             </div>
 
@@ -187,14 +187,14 @@ export default function ActualizarPasswordPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Repite tu contraseña"
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-brand-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? 'Actualizando…' : 'Actualizar contraseña'}
             </button>
@@ -202,7 +202,7 @@ export default function ActualizarPasswordPage() {
             <div className="text-center">
               <Link
                 href="/auth/login"
-                className="text-xs text-gray-500 hover:text-emerald-600"
+                className="text-xs text-gray-500 hover:text-brand-blue"
               >
                 ← Volver al inicio de sesión
               </Link>

@@ -10,7 +10,7 @@ export default function TerminosPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <h1 className="text-3xl font-black text-gray-900 mb-2">Términos y Condiciones</h1>
@@ -102,7 +102,7 @@ export default function TerminosPage() {
           <p>
             LlevaLleva.co no interviene en los conflictos surgidos entre compradores y vendedores. Sin embargo,
             ponemos a disposición un canal de reporte para irregularidades en{' '}
-            <Link href="/reportar" className="text-emerald-600 hover:underline">nuestra página de reportes</Link>.
+            <Link href="/reportar" className="text-brand-blue hover:underline">nuestra página de reportes</Link>.
           </p>
           <p className="mt-2">
             Cualquier controversia derivada del uso de la Plataforma que no pueda resolverse directamente entre
@@ -153,7 +153,7 @@ export default function TerminosPage() {
           <h2 className="text-xl font-bold text-gray-900 mb-3">12. Contacto</h2>
           <p>
             Para consultas sobre estos términos, puede contactarnos a través de nuestra{' '}
-            <Link href="/contacto" className="text-emerald-600 hover:underline">página de contacto</Link>.
+            <Link href="/contacto" className="text-brand-blue hover:underline">página de contacto</Link>.
           </p>
         </section>
 

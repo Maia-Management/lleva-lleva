@@ -77,7 +77,7 @@ export default function ProfileEditForm({ profile, locations }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {success && (
-        <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm rounded-xl px-4 py-3">
+        <div className="bg-brand-blue-50 border border-brand-blue/20 text-brand-blue text-sm rounded-xl px-4 py-3">
           ✅ Perfil actualizado correctamente.
         </div>
       )}
@@ -98,7 +98,7 @@ export default function ProfileEditForm({ profile, locations }: Props) {
           onChange={(e) => setDisplayName(e.target.value)}
           required
           maxLength={80}
-          className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
           placeholder="Tu nombre o nombre de negocio"
         />
       </div>
@@ -111,7 +111,7 @@ export default function ProfileEditForm({ profile, locations }: Props) {
           onChange={(e) => setBio(e.target.value)}
           rows={3}
           maxLength={300}
-          className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 resize-none"
+          className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
           placeholder="Cuéntanos un poco sobre ti…"
         />
         <p className="text-xs text-gray-400 mt-1">{bio.length}/300</p>
@@ -123,7 +123,7 @@ export default function ProfileEditForm({ profile, locations }: Props) {
         <select
           value={city}
           onChange={(e) => setCity(e.target.value)}
-          className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 bg-white"
+          className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
         >
           <option value="">Selecciona tu ciudad</option>
           {cityOptions.map((loc) => (
@@ -145,7 +145,7 @@ export default function ProfileEditForm({ profile, locations }: Props) {
             type="tel"
             value={whatsapp}
             onChange={(e) => setWhatsapp(e.target.value.replace(/\D/g, ''))}
-            className="w-full border border-gray-200 rounded-xl pl-7 pr-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+            className="w-full border border-gray-200 rounded-xl pl-7 pr-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
             placeholder="573001234567"
             maxLength={15}
           />
@@ -167,7 +167,7 @@ export default function ProfileEditForm({ profile, locations }: Props) {
         <button
           type="submit"
           disabled={saving}
-          className="flex-1 bg-emerald-600 text-white font-semibold py-3 rounded-xl text-sm hover:bg-emerald-700 transition-colors disabled:opacity-60"
+          className="flex-1 bg-brand-blue text-white font-semibold py-3 rounded-xl text-sm hover:bg-brand-blue-700 transition-colors disabled:opacity-60"
         >
           {saving ? 'Guardando...' : 'Guardar cambios'}
         </button>

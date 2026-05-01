@@ -2,24 +2,49 @@
 @import "tailwindcss";
 
 /* ============================================================
-   CSS CUSTOM PROPERTIES
-   FIX: Added --text-muted-accessible custom property (Audit Finding #2)
-   Gray-400 (#9CA3AF) fails WCAG AA for small text on white.
-   Gray-500 (#6B7280) meets WCAG AA (4.63:1 contrast ratio).
-   Use var(--text-muted-accessible) in components instead of
-   text-gray-400 for any small or body-level muted text.
+   BRAND PALETTE — Colombia flag, used with restraint.
+   Blue dominates (nav, footer, headings); yellow is reserved
+   for primary CTAs and price/active accents; red is rare and
+   intentional (featured / urgent only). Dark navy carries
+   body text — richer than pure black, ties to the blue family.
+
+   Tailwind 4 @theme: every --color-* token here is exposed as
+   bg-/text-/border-/ring- utility classes automatically.
+   Default Tailwind palette stays available; this is additive.
+   ============================================================ */
+@theme {
+  --color-brand-blue:        #003893;
+  --color-brand-blue-700:    #002a6e;
+  --color-brand-blue-50:     #e8edf7;
+  --color-brand-yellow:      #FCD116;
+  --color-brand-yellow-600:  #e6bd0e;
+  --color-brand-red:         #CE1126;
+  --color-brand-red-700:     #a50e1e;
+  --color-ink:               #001A4D;
+  --color-ink-2:             #2c3a5e;
+  --color-surface:           #FFFFFF;
+  --color-bg:                #F8F8F8;
+  --color-line:              #E2E5EE;
+}
+
+/* ============================================================
+   CSS custom properties for non-utility usage
+   --text-muted-accessible: gray-500 — WCAG AA on white
+   --color-accent: brand-blue — focus-visible outline color
    ============================================================ */
 :root {
-  --text-muted-accessible: #6B7280; /* gray-500 — WCAG AA compliant on white */
-  --color-accent: #10b981;          /* emerald-500 — primary brand accent */
+  --text-muted-accessible: #6B7280;
+  --color-accent: #003893;
 }
 
 /* ============================================================
    BASE BODY STYLES
-   (Unchanged from original — preserved as-is)
+   Body text uses the dark-navy ink token (--color-ink) so it
+   ties into the blue family rather than reading as pure black.
    ============================================================ */
 body {
-  @apply text-gray-900;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
   line-height: 1.6;
 }
 
@@ -33,12 +58,12 @@ body {
    fallback layer for high-contrast / forced-colors modes.
    ============================================================ */
 :focus-visible {
-  outline: 2px solid var(--color-accent, #10b981); /* FIX: use accent variable */
+  outline: 2px solid var(--color-accent, #003893);
   outline-offset: 2px;
   border-radius: 2px;
-  /* FIX: secondary glow ring — helps visibility if outline is stripped
+  /* secondary glow ring — visibility fallback if outline is stripped
      by a browser theme or forced-colors polyfill */
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 0 4px rgba(0, 56, 147, 0.2);
 }
 
 /* ============================================================
@@ -137,7 +162,7 @@ body {
      custom focus replacement. Search codebase for:
        "outline-none" / "focus:outline-none"
      and replace with `focus:outline-none focus-visible:ring-2
-     focus-visible:ring-emerald-500` if Tailwind ring utilities are
+     focus-visible:ring-brand-blue` if Tailwind ring utilities are
      preferred, OR simply remove the outline-none override to let
      the globals.css :focus-visible rule take effect.
 

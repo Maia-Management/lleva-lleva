@@ -51,9 +51,9 @@ export default async function RatingPage({ params }: Props) {
       </p>
 
       {existingRating ? (
-        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center">
-          <p className="text-emerald-700 font-semibold">✓ Ya calificaste esta transacción.</p>
-          <p className="text-sm text-emerald-600 mt-1">Gracias por ayudar a la comunidad.</p>
+        <div className="bg-brand-blue-50 border border-brand-blue/20 rounded-2xl p-6 text-center">
+          <p className="text-brand-blue font-semibold">✓ Ya calificaste esta transacción.</p>
+          <p className="text-sm text-brand-blue mt-1">Gracias por ayudar a la comunidad.</p>
         </div>
       ) : (
         <RatingForm

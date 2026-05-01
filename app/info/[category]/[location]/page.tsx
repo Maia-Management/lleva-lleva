@@ -110,16 +110,16 @@ export default async function InfoPage({ params }: Props) {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
       {/* Breadcrumb */}
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5 flex-wrap">
-        <Link href="/" className="hover:text-emerald-600">Inicio</Link>
+        <Link href="/" className="hover:text-brand-blue">Inicio</Link>
         <span>›</span>
-        <Link href="/categorias/informacion-publica" className="hover:text-emerald-600">Información Pública</Link>
+        <Link href="/categorias/informacion-publica" className="hover:text-brand-blue">Información Pública</Link>
         <span>›</span>
         <span className="text-gray-700">{content?.title ?? location}</span>
       </nav>
 
       <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-xl">📋</div>
+          <div className="w-10 h-10 rounded-xl bg-brand-blue-50 flex items-center justify-center text-xl">📋</div>
           <div>
             <h1 className="text-xl font-bold text-gray-900">{content?.title ?? location}</h1>
             <p className="text-xs text-gray-500">Información de referencia · LlevaLleva.co</p>
@@ -131,13 +131,13 @@ export default async function InfoPage({ params }: Props) {
             <ul className="space-y-4">
               {content.content.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-white0 mt-0.5 flex-shrink-0">✓</span>
                   <p className="text-sm text-gray-700 leading-relaxed">{item}</p>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
-              <p className="text-xs text-amber-700">
+            <div className="mt-8 bg-brand-yellow/10 border border-brand-yellow/30 rounded-xl p-4">
+              <p className="text-xs text-brand-yellow-600">
                 <strong>Aviso:</strong> Esta información es de referencia y puede estar desactualizada.
                 Siempre verifica con las entidades oficiales antes de tomar decisiones.
               </p>
@@ -158,7 +158,7 @@ export default async function InfoPage({ params }: Props) {
             <Link
               key={slug}
               href={`/info/info-publica/${slug}`}
-              className={`text-sm px-3 py-2 rounded-xl border transition-colors ${slug === location ? 'border-emerald-300 bg-emerald-50 text-emerald-700 font-medium' : 'border-gray-200 bg-white text-gray-600 hover:border-emerald-200 hover:text-emerald-700'}`}
+              className={`text-sm px-3 py-2 rounded-xl border transition-colors ${slug === location ? 'border-brand-blue/40 bg-brand-blue-50 text-brand-blue font-medium' : 'border-gray-200 bg-white text-gray-600 hover:border-brand-blue/20 hover:text-brand-blue'}`}
             >
               {info.title}
             </Link>

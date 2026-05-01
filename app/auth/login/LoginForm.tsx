@@ -37,13 +37,13 @@ export default function LoginForm() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <span className="text-3xl font-black text-emerald-600">Lleva<span className="text-gray-900">Lleva</span></span>
+            <span className="text-3xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
             <span className="text-gray-500">.co</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Ingresar a tu cuenta</h1>
           <p className="text-sm text-gray-500 mt-1">
             ¿No tienes cuenta?{' '}
-            <Link href="/auth/register" className="text-emerald-600 font-semibold hover:underline">
+            <Link href="/auth/register" className="text-brand-blue font-semibold hover:underline">
               Crear cuenta gratis
             </Link>
           </p>
@@ -67,7 +67,7 @@ export default function LoginForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="tu@correo.com"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
             />
           </div>
 
@@ -82,12 +82,12 @@ export default function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Tu contraseña"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
             />
           </div>
 
           <div className="text-right">
-            <Link href="/auth/reset-password" className="text-xs text-gray-500 hover:text-emerald-600">
+            <Link href="/auth/reset-password" className="text-xs text-gray-500 hover:text-brand-blue">
               ¿Olvidaste tu contraseña?
             </Link>
           </div>
@@ -95,7 +95,7 @@ export default function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-brand-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? 'Ingresando...' : 'Ingresar'}
           </button>

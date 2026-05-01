@@ -77,7 +77,7 @@ export default function TransactionButtons({
 
   if (done) {
     return (
-      <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 mb-4 text-sm text-emerald-700 font-medium text-center">
+      <div className="bg-brand-blue-50 border border-brand-blue/20 rounded-xl p-3 mb-4 text-sm text-brand-blue font-medium text-center">
         ✅ {isOwner ? 'Anuncio marcado como vendido' : 'Compra confirmada — ¡recibirás un WhatsApp con el enlace de calificación!'}
       </div>
     );
@@ -137,7 +137,7 @@ export default function TransactionButtons({
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder={listingPrice ? `${Math.round(listingPrice)}` : 'Ej: 150000'}
-                    className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                    className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                   />
                   {listingPrice && (
                     <p className="text-xs text-gray-400 mt-1">Precio anunciado: {formatCOP(listingPrice)}</p>
@@ -163,7 +163,7 @@ export default function TransactionButtons({
                 type="button"
                 onClick={isOwner ? handleSell : handleBuy}
                 disabled={loading}
-                className="flex-1 bg-emerald-600 text-white font-semibold py-3 rounded-xl text-sm hover:bg-emerald-700 transition-colors disabled:opacity-60"
+                className="flex-1 bg-brand-blue text-white font-semibold py-3 rounded-xl text-sm hover:bg-brand-blue-700 transition-colors disabled:opacity-60"
               >
                 {loading ? 'Procesando...' : isOwner ? 'Confirmar venta' : 'Confirmar compra'}
               </button>

@@ -130,11 +130,11 @@ export default async function ListingPage({ params }: Props) {
 
       {/* Breadcrumb */}
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5 flex-wrap">
-        <Link href="/" className="hover:text-emerald-600">Inicio</Link>
+        <Link href="/" className="hover:text-brand-blue">Inicio</Link>
         <span>›</span>
         {listing.category && (
           <>
-            <Link href={`/categorias/${listing.category.slug}`} className="hover:text-emerald-600">
+            <Link href={`/categorias/${listing.category.slug}`} className="hover:text-brand-blue">
               {listing.category.name_es}
             </Link>
             <span>›</span>
@@ -160,7 +160,7 @@ export default async function ListingPage({ params }: Props) {
           <div className="bg-white rounded-2xl border border-gray-200 p-5 space-y-4">
             <div>
               {listing.is_featured && (
-                <span className="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded-full mb-2 uppercase tracking-wide">
+                <span className="inline-block bg-brand-red text-white text-xs font-bold px-2 py-0.5 rounded-full mb-2 uppercase tracking-wide">
                   Destacado
                 </span>
               )}
@@ -237,7 +237,7 @@ export default async function ListingPage({ params }: Props) {
           <div className="bg-white rounded-2xl border border-gray-200 p-5 sticky top-20">
             <div className="mb-4">
               {listing.price_type === 'free' ? (
-                <p className="text-3xl font-black text-emerald-600">Gratis</p>
+                <p className="text-3xl font-black text-brand-blue">Gratis</p>
               ) : listing.price_type === 'contact' ? (
                 <p className="text-lg font-semibold text-gray-600">Precio a convenir</p>
               ) : listing.price != null ? (
@@ -293,14 +293,14 @@ export default async function ListingPage({ params }: Props) {
             <div className="bg-white rounded-2xl border border-gray-200 p-5">
               <h2 className="font-semibold text-gray-700 mb-3 text-sm">Vendedor</h2>
               <Link href={`/perfil/${seller.username}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-lg flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-brand-blue-50 flex items-center justify-center text-brand-blue font-bold text-lg flex-shrink-0">
                   {seller.display_name?.charAt(0).toUpperCase()}
                 </div>
                 <div>
                   <p className="font-semibold text-gray-800 flex items-center gap-1">
                     {seller.display_name}
                     {seller.is_verified && (
-                      <span title="Verificado" className="text-emerald-500">✓</span>
+                      <span title="Verificado" className="text-white0">✓</span>
                     )}
                   </p>
                   {seller.business_name && (
@@ -320,9 +320,9 @@ export default async function ListingPage({ params }: Props) {
           )}
 
           {/* Safety tips */}
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
-            <h3 className="font-semibold text-amber-800 text-sm mb-2">⚠️ Consejos de seguridad</h3>
-            <ul className="text-xs text-amber-700 space-y-1">
+          <div className="bg-brand-yellow/10 border border-brand-yellow/30 rounded-2xl p-4">
+            <h3 className="font-semibold text-ink text-sm mb-2">⚠️ Consejos de seguridad</h3>
+            <ul className="text-xs text-brand-yellow-600 space-y-1">
               <li>• Reúnete en lugares públicos y seguros</li>
               <li>• Verifica el artículo antes de pagar</li>
               <li>• Desconfía de precios muy por debajo del mercado</li>

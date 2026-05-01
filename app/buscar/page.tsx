@@ -122,22 +122,22 @@ export default async function BuscarPage({ searchParams }: Props) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
       {/* Breadcrumb */}
-      <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5">
-        <Link href="/" className="hover:text-emerald-600">Inicio</Link>
-        <span>›</span>
-        <span className="text-gray-700">Buscar</span>
+      <nav className="text-xs text-ink-2/70 mb-4 flex items-center gap-1.5" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-brand-blue">Inicio</Link>
+        <span aria-hidden="true">›</span>
+        <span className="text-ink">Buscar</span>
         {q && (
           <>
-            <span>›</span>
-            <span className="text-gray-700">&ldquo;{q}&rdquo;</span>
+            <span aria-hidden="true">›</span>
+            <span className="text-ink">&ldquo;{q}&rdquo;</span>
           </>
         )}
       </nav>
 
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900 mb-4">
+        <h1 className="text-xl font-bold text-ink mb-4">
           {q ? (
-            <>Resultados para <span className="text-emerald-600">&ldquo;{q}&rdquo;</span></>
+            <>Resultados para <span className="text-brand-blue">&ldquo;{q}&rdquo;</span></>
           ) : (
             'Buscar anuncios'
           )}
@@ -153,7 +153,7 @@ export default async function BuscarPage({ searchParams }: Props) {
 
       {/* Results count */}
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-ink-2/80">
           {hasResults
             ? `${listings!.length === perPage ? `${perPage}+` : listings!.length} anuncio${listings!.length !== 1 ? 's' : ''} encontrado${listings!.length !== 1 ? 's' : ''}`
             : hasFilters
@@ -174,7 +174,8 @@ export default async function BuscarPage({ searchParams }: Props) {
             name="orden"
             defaultValue={orden}
             onChange={(e) => (e.target.form as HTMLFormElement).submit()}
-            className="text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+            aria-label="Ordenar resultados"
+            className="text-sm border border-line rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-blue bg-surface text-ink"
           >
             <option value="recientes">Más recientes</option>
             <option value="precio_asc">Precio: menor a mayor</option>
@@ -193,7 +194,7 @@ export default async function BuscarPage({ searchParams }: Props) {
             <div className="flex justify-center mt-8">
               <Link
                 href={`/buscar?${new URLSearchParams({ ...sp, page: String(page + 1) })}`}
-                className="bg-white border border-gray-200 text-gray-700 text-sm font-medium px-6 py-2.5 rounded-full hover:border-emerald-300 hover:text-emerald-700 transition-colors"
+                className="bg-surface border border-line text-ink text-sm font-medium px-6 py-2.5 rounded-full hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
               >
                 Ver más resultados →
               </Link>
@@ -201,9 +202,9 @@ export default async function BuscarPage({ searchParams }: Props) {
           )}
         </>
       ) : (
-        <div className="text-center py-16 text-gray-500">
-          <div className="text-5xl mb-4">🔍</div>
-          <p className="font-semibold text-gray-700 mb-2">
+        <div className="text-center py-16 text-ink-2/80">
+          <div className="text-5xl mb-4" aria-hidden="true">🔍</div>
+          <p className="font-semibold text-ink mb-2">
             {hasFilters ? 'No encontramos resultados' : 'Empieza tu búsqueda'}
           </p>
           <p className="text-sm">
@@ -214,7 +215,7 @@ export default async function BuscarPage({ searchParams }: Props) {
           {hasFilters && (
             <Link
               href="/buscar"
-              className="inline-block mt-4 text-emerald-600 text-sm hover:underline"
+              className="inline-block mt-4 text-brand-blue text-sm hover:underline font-medium"
             >
               Limpiar filtros
             </Link>
@@ -222,7 +223,7 @@ export default async function BuscarPage({ searchParams }: Props) {
           <div className="mt-6">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-emerald-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-brand-yellow text-ink text-sm font-bold px-5 py-2.5 rounded-full hover:bg-brand-yellow-600 transition-colors shadow-sm"
             >
               Ver todos los anuncios
             </Link>

@@ -37,7 +37,7 @@ BEGIN
     v_sel_mapana,
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.mapana.marine@llevalleva.co',
+    'bot.mapana.marine@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false

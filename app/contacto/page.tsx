@@ -27,7 +27,7 @@ export default function ContactoPage() {
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             Para preguntas sobre tu cuenta, anuncios o el funcionamiento de la plataforma.
           </p>
-          <p className="text-sm text-emerald-700 font-medium">hola@llevalleva.co</p>
+          <p className="text-sm text-emerald-700 font-medium">hola@lleva-lleva.com</p>
         </div>
 
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
@@ -58,7 +58,7 @@ export default function ContactoPage() {
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             Para propuestas comerciales, alianzas o publicidad en la plataforma.
           </p>
-          <p className="text-sm text-emerald-700 font-medium">alianzas@llevalleva.co</p>
+          <p className="text-sm text-emerald-700 font-medium">alianzas@lleva-lleva.com</p>
         </div>
       </div>
 

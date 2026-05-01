@@ -1,7 +1,7 @@
 ﻿import { MetadataRoute } from 'next';
 import { createClient } from '@/lib/supabase/server';
 
-const BASE_URL = 'https://llevalleva.co';
+const BASE_URL = 'https://lleva-lleva.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static routes

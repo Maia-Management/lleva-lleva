@@ -44,7 +44,7 @@ export function buildWhatsAppMessage(
   listingId: string,
   listingSlug: string
 ): string {
-  return `Hola! Vi tu anuncio '${listingTitle}' en LlevaLleva y estoy interesado. Ref: LL-${listingId.slice(0, 8).toUpperCase()}. https://llevalleva.co/listing/${listingSlug}`;
+  return `Hola! Vi tu anuncio '${listingTitle}' en LlevaLleva y estoy interesado. Ref: LL-${listingId.slice(0, 8).toUpperCase()}. https://lleva-lleva.com/listing/${listingSlug}`;
 }
 
 export function timeAgo(dateString: string): string {

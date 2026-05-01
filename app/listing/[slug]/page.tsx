@@ -78,7 +78,7 @@ export default async function ListingPage({ params }: Props) {
         hiringOrganization: {
           '@type': 'Organization',
           name: listing.seller?.business_name ?? listing.seller?.display_name ?? 'Empresa en Lleva Lleva',
-          sameAs: `https://llevalleva.co/perfil/${listing.seller?.username ?? ''}`,
+          sameAs: `https://lleva-lleva.com/perfil/${listing.seller?.username ?? ''}`,
         },
         jobLocation: listing.is_nationwide
           ? undefined
@@ -113,7 +113,7 @@ export default async function ListingPage({ params }: Props) {
             }
           : {}),
         employmentType: 'OTHER',
-        url: `https://llevalleva.co/listing/${listing.slug}`,
+        url: `https://lleva-lleva.com/listing/${listing.slug}`,
       }
     : null;
   // ───────────────────────────────────────────────────────────────────────────

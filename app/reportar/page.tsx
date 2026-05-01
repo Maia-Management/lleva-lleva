@@ -59,12 +59,12 @@ export default function ReportarPage() {
           <li>Si tienes capturas de pantalla o evidencia, adjúntalas.</li>
         </ul>
         <a
-          href="mailto:reportar@llevalleva.co"
+          href="mailto:reportar@lleva-lleva.com"
           className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-red-700 transition-colors"
         >
           Enviar reporte por correo
         </a>
-        <p className="text-xs text-gray-400 mt-3">reportar@llevalleva.co</p>
+        <p className="text-xs text-gray-400 mt-3">reportar@lleva-lleva.com</p>
       </div>
 
       <div className="mt-8 text-center">

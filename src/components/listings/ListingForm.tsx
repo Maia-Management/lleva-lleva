@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ImagePlus, X, Loader2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { CATEGORIES, CITIES } from "@/lib/constants";
+import { CATEGORIES, CITIES, formatCityName } from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
 import { getCategoryLabel } from "@/lib/i18n";
 import Button from "@/components/ui/Button";
@@ -162,6 +162,7 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
               />
               <button
                 type="button"
+                aria-label={`Eliminar foto ${i + 1}`}
                 onClick={() => removeImage(i)}
                 className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-0.5"
               >
@@ -172,6 +173,7 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
           {images.length < 8 && (
             <button
               type="button"
+              aria-label={t("form.photos")}
               onClick={() => fileInputRef.current?.click()}
               disabled={uploading}
               className="w-24 h-24 rounded-lg border-2 border-dashed border-navy-200 hover:border-amber-400 flex items-center justify-center transition-colors"
@@ -190,12 +192,14 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
           accept="image/*"
           multiple
           onChange={handleImageUpload}
+          aria-label={t("form.photos")}
           className="hidden"
         />
       </div>
 
       {/* Title */}
       <Input
+        id="listing-title"
         label={`${t("form.title")} *`}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -206,10 +210,14 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
 
       {/* Description */}
       <div>
-        <label className="block text-sm font-medium text-navy-700 mb-1">
+        <label
+          htmlFor="listing-description"
+          className="block text-sm font-medium text-navy-700 mb-1"
+        >
           {t("form.description")} *
         </label>
         <textarea
+          id="listing-description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder={t("form.descPlaceholder")}
@@ -223,6 +231,7 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
       {/* Price + Category */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Input
+          id="listing-price"
           label={t("form.price")}
           type="number"
           value={price}
@@ -231,10 +240,14 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
           min="0"
         />
         <div>
-          <label className="block text-sm font-medium text-navy-700 mb-1">
+          <label
+            htmlFor="listing-category"
+            className="block text-sm font-medium text-navy-700 mb-1"
+          >
             {t("form.category")} *
           </label>
           <select
+            id="listing-category"
             value={category}
             onChange={(e) => setCategory(e.target.value as Category)}
             className="w-full rounded-lg border border-navy-200 bg-white px-3 py-2 text-sm text-navy-700 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
@@ -251,23 +264,30 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
       {/* City + WhatsApp */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-navy-700 mb-1">
+          <label
+            htmlFor="listing-city"
+            className="block text-sm font-medium text-navy-700 mb-1"
+          >
             {t("form.city")} *
           </label>
           <select
+            id="listing-city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             className="w-full rounded-lg border border-navy-200 bg-white px-3 py-2 text-sm text-navy-700 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
           >
             {CITIES.map((c) => (
               <option key={c} value={c}>
-                {c}
+                {formatCityName(c)}
               </option>
             ))}
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-navy-700 mb-1">
+          <label
+            htmlFor="listing-whatsapp"
+            className="block text-sm font-medium text-navy-700 mb-1"
+          >
             {t("form.whatsapp")} *
           </label>
           <div className="flex">
@@ -275,6 +295,7 @@ export default function ListingForm({ listing, userId }: ListingFormProps) {
               +57
             </span>
             <input
+              id="listing-whatsapp"
               type="tel"
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value.replace(/\D/g, ""))}

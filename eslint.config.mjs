@@ -12,6 +12,7 @@ const eslintConfig = defineConfig([
     ".netlify/**",
     "out/**",
     "build/**",
+    ".codex-chrome-*/**",
     "next-env.d.ts",
   ]),
 ]);

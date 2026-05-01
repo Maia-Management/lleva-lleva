@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useLocale } from "@/lib/locale-context";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import { CITIES } from "@/lib/constants";
+import { CITIES, formatCityName } from "@/lib/constants";
 import type { Profile } from "@/lib/types";
 
 interface ProfileEditorProps {
@@ -48,6 +48,7 @@ export default function ProfileEditor({ profile }: ProfileEditorProps) {
       className="bg-white rounded-xl border border-navy-100 p-6 space-y-4"
     >
       <Input
+        id="profile-name"
         label={t("profile.name")}
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -55,23 +56,30 @@ export default function ProfileEditor({ profile }: ProfileEditorProps) {
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-navy-700 mb-1">
+          <label
+            htmlFor="profile-city"
+            className="block text-sm font-medium text-navy-700 mb-1"
+          >
             {t("form.city")}
           </label>
           <select
+            id="profile-city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             className="w-full rounded-lg border border-navy-200 bg-white px-3 py-2 text-sm text-navy-700 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
           >
             {CITIES.map((c) => (
               <option key={c} value={c}>
-                {c}
+                {formatCityName(c)}
               </option>
             ))}
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-navy-700 mb-1">
+          <label
+            htmlFor="profile-whatsapp"
+            className="block text-sm font-medium text-navy-700 mb-1"
+          >
             WhatsApp
           </label>
           <div className="flex">
@@ -79,6 +87,7 @@ export default function ProfileEditor({ profile }: ProfileEditorProps) {
               +57
             </span>
             <input
+              id="profile-whatsapp"
               type="tel"
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value.replace(/\D/g, ""))}

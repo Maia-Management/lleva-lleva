@@ -52,7 +52,12 @@ export default function DeleteListingButton({
   }
 
   return (
-    <Button variant="ghost" size="sm" onClick={() => setConfirming(true)}>
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={() => setConfirming(true)}
+      aria-label="Eliminar anuncio"
+    >
       <Trash2 className="w-4 h-4 text-red-500" />
     </Button>
   );

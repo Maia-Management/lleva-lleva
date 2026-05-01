@@ -81,14 +81,14 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
             Ingresa para publicar y guardar anuncios
           </h1>
           <p className="text-sm text-navy-500 mt-3 leading-6">
-            Usa tu numero de celular colombiano para acceder a Lleva Lleva,
+            Usa tu número de celular colombiano para acceder a Lleva Lleva,
             publicar clasificados gratis, guardar anuncios favoritos y gestionar
             tus conversaciones con vendedores locales.
           </p>
           <p className="text-sm text-navy-500 mt-3 leading-6">
-            El ingreso por codigo SMS ayuda a reducir cuentas falsas y mantiene
-            el proceso simple para compradores, vendedores y pequenos negocios
-            que necesitan volver rapido a sus anuncios.
+            El ingreso por código SMS ayuda a reducir cuentas falsas y mantiene
+            el proceso simple para compradores, vendedores y pequeños negocios
+            que necesitan volver rápido a sus anuncios.
           </p>
           <p className="text-sm font-semibold text-navy-700 mt-4">
             {step === "phone" ? t("auth.loginTitle") : t("auth.verifyTitle")}
@@ -109,7 +109,10 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
         {step === "phone" ? (
           <form onSubmit={handleSendOTP} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-navy-700 mb-1">
+              <label
+                htmlFor="login-phone"
+                className="block text-sm font-medium text-navy-700 mb-1"
+              >
                 {t("auth.phoneLabel")}
               </label>
               <div className="flex">
@@ -117,6 +120,7 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
                   +57
                 </span>
                 <input
+                  id="login-phone"
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
@@ -134,6 +138,7 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
         ) : (
           <form onSubmit={handleVerifyOTP} className="space-y-4">
             <Input
+              id="login-code"
               label={t("auth.codeLabel")}
               type="text"
               value={otp}

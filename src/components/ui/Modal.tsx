@@ -33,7 +33,9 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold text-navy-800">{title}</h2>
           <button
+            type="button"
             onClick={onClose}
+            aria-label="Cerrar"
             className="p-1 rounded-lg hover:bg-navy-100 transition-colors"
           >
             <X className="w-5 h-5 text-navy-500" />

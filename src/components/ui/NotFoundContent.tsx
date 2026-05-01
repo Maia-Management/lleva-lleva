@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale } from "@/lib/locale-context";
-import Button from "@/components/ui/Button";
+import { buttonClassName } from "@/components/ui/Button";
 
 export default function NotFoundContent() {
   const { t } = useLocale();
@@ -15,8 +15,8 @@ export default function NotFoundContent() {
           {t("notFound.title")}
         </h2>
         <p className="text-navy-500 mb-6">{t("notFound.desc")}</p>
-        <Link href="/">
-          <Button>{t("notFound.home")}</Button>
+        <Link href="/" className={buttonClassName()}>
+          {t("notFound.home")}
         </Link>
       </div>
     </div>

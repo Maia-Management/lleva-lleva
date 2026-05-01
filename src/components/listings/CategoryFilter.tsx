@@ -24,7 +24,9 @@ export default function CategoryFilter() {
   return (
     <div className="flex flex-wrap gap-2">
       <button
+        type="button"
         onClick={() => handleChange("")}
+        aria-pressed={!current}
         className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
           !current
             ? "bg-amber-700 text-white"
@@ -38,7 +40,9 @@ export default function CategoryFilter() {
         return (
           <button
             key={cat.value}
+            type="button"
             onClick={() => handleChange(cat.value)}
+            aria-pressed={current === cat.value}
             className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
               current === cat.value
                 ? "bg-amber-700 text-white"

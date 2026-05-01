@@ -6,7 +6,7 @@ import type { Listing } from "@/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Favoritos — Lleva Lleva",
+  title: "Favoritos",
 };
 
 export default async function FavoritesPage() {

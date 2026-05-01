@@ -5,7 +5,7 @@ import { Search, Shield, MessageCircle, ArrowRight } from "lucide-react";
 import { CATEGORIES } from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
 import { getCategoryLabel } from "@/lib/i18n";
-import Button from "@/components/ui/Button";
+import { buttonClassName } from "@/components/ui/Button";
 
 export default function HomeContent() {
   const { t, locale } = useLocale();
@@ -24,17 +24,17 @@ export default function HomeContent() {
             {t("hero.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/listings">
-              <Button size="lg">
+            <Link href="/listings" className={buttonClassName({ size: "lg" })}>
                 <Search className="w-5 h-5" />
                 {t("hero.explore")}
-              </Button>
             </Link>
-            <Link href={publishHref} prefetch={false}>
-              <Button variant="outline" size="lg">
+            <Link
+              href={publishHref}
+              prefetch={false}
+              className={buttonClassName({ variant: "outline", size: "lg" })}
+            >
                 {t("hero.postFree")}
                 <ArrowRight className="w-5 h-5" />
-              </Button>
             </Link>
           </div>
         </div>
@@ -116,11 +116,13 @@ export default function HomeContent() {
             {t("cta.title")}
           </h2>
           <p className="text-white mb-6">{t("cta.subtitle")}</p>
-          <Link href={publishHref} prefetch={false}>
-            <Button variant="secondary" size="lg">
+          <Link
+            href={publishHref}
+            prefetch={false}
+            className={buttonClassName({ variant: "secondary", size: "lg" })}
+          >
               {t("cta.button")}
               <ArrowRight className="w-5 h-5" />
-            </Button>
           </Link>
         </div>
       </section>

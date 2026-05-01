@@ -2,8 +2,8 @@
 
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost" | "whatsapp";
-type Size = "sm" | "md" | "lg";
+export type Variant = "primary" | "secondary" | "outline" | "ghost" | "whatsapp";
+export type Size = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
@@ -28,6 +28,18 @@ const sizes: Record<Size, string> = {
   lg: "px-6 py-3 text-base",
 };
 
+export function buttonClassName({
+  variant = "primary",
+  size = "md",
+  className = "",
+}: {
+  variant?: Variant;
+  size?: Size;
+  className?: string;
+} = {}) {
+  return `inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 ${variants[variant]} ${sizes[size]} ${className}`;
+}
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -45,7 +57,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         disabled={disabled || loading}
-        className={`inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
+        className={`${buttonClassName({
+          variant,
+          size,
+          className,
+        })} disabled:opacity-50 disabled:cursor-not-allowed`}
         {...props}
       >
         {loading && (

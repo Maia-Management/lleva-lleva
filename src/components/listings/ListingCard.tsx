@@ -3,7 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { formatPrice, timeAgo, getCategoryInfo } from "@/lib/constants";
+import {
+  formatCityName,
+  formatPrice,
+  timeAgo,
+  getCategoryInfo,
+} from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
 import { getCategoryLabel } from "@/lib/i18n";
 import Badge from "@/components/ui/Badge";
@@ -60,7 +65,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
         </p>
         <div className="flex items-center gap-1 mt-2 text-xs text-navy-400">
           <MapPin className="w-3 h-3" />
-          <span>{listing.city}</span>
+          <span>{formatCityName(listing.city)}</span>
           <span className="mx-1">&middot;</span>
           <span>{timeAgo(listing.created_at)}</span>
         </div>

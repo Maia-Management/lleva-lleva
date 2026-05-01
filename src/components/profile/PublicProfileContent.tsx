@@ -1,6 +1,7 @@
 "use client";
 
 import { Shield, MapPin, Calendar } from "lucide-react";
+import { formatCityName } from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
 import ListingGrid from "@/components/listings/ListingGrid";
 import type { Listing, Profile } from "@/lib/types";
@@ -40,7 +41,7 @@ export default function PublicProfileContent({
               {profile.city && (
                 <span className="flex items-center gap-1">
                   <MapPin className="w-4 h-4" />
-                  {profile.city}
+                  {formatCityName(profile.city)}
                 </span>
               )}
               <span className="flex items-center gap-1">

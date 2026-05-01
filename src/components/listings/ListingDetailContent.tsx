@@ -8,11 +8,16 @@ import {
   Shield,
   Pencil,
 } from "lucide-react";
-import { formatPrice, timeAgo, getCategoryInfo } from "@/lib/constants";
+import {
+  formatCityName,
+  formatPrice,
+  timeAgo,
+  getCategoryInfo,
+} from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
 import { getCategoryLabel } from "@/lib/i18n";
 import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
+import { buttonClassName } from "@/components/ui/Button";
 import WhatsAppButton from "@/components/listings/WhatsAppButton";
 import FavoriteButton from "@/components/listings/FavoriteButton";
 import ReportButton from "@/components/listings/ReportButton";
@@ -86,7 +91,7 @@ export default function ListingDetailContent({
             <div className="flex items-center gap-4 text-sm text-navy-500">
               <span className="flex items-center gap-1">
                 <MapPin className="w-4 h-4" />
-                {listing.city}
+                {formatCityName(listing.city)}
               </span>
               <span className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />
@@ -103,11 +108,15 @@ export default function ListingDetailContent({
 
             {isOwner && (
               <div className="flex gap-2">
-                <Link href={`/listings/${listing.id}/edit`} className="flex-1">
-                  <Button variant="outline" className="w-full">
+                <Link
+                  href={`/listings/${listing.id}/edit`}
+                  className={buttonClassName({
+                    variant: "outline",
+                    className: "w-full",
+                  })}
+                >
                     <Pencil className="w-4 h-4" />
                     {t("detail.edit")}
-                  </Button>
                 </Link>
               </div>
             )}

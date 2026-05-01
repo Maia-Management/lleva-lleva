@@ -18,7 +18,7 @@ export async function generateMetadata({
     .single();
 
   return {
-    title: `${profile?.full_name ?? "User"} — Lleva Lleva`,
+    title: profile?.full_name ?? "Usuario",
   };
 }
 

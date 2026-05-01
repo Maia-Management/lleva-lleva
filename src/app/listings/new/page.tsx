@@ -5,7 +5,7 @@ import TranslatedText from "@/components/ui/TranslatedText";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Publicar anuncio — Lleva Lleva",
+  title: "Publicar anuncio",
 };
 
 export default async function NewListingPage() {

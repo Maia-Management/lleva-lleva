@@ -9,16 +9,16 @@ import type { Listing } from "@/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Explorar anuncios — Lleva Lleva",
+  title: "Explorar anuncios",
   description:
-    "Explora clasificados gratuitos en Colombia por ciudad, categoria y busqueda. Encuentra productos, servicios, vivienda, empleo y oportunidades locales.",
+    "Explora clasificados gratuitos en Colombia por ciudad, categoría y búsqueda. Encuentra productos, servicios, vivienda, empleo y oportunidades locales.",
   alternates: {
     canonical: "/listings",
   },
   openGraph: {
     title: "Explorar anuncios — Lleva Lleva",
     description:
-      "Busca clasificados gratuitos en Colombia por ciudad, categoria y palabra clave.",
+      "Busca clasificados gratuitos en Colombia por ciudad, categoría y palabra clave.",
     url: "/listings",
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Explorar anuncios — Lleva Lleva",
     description:
-      "Busca clasificados gratuitos en Colombia por ciudad, categoria y palabra clave.",
+      "Busca clasificados gratuitos en Colombia por ciudad, categoría y palabra clave.",
     images: ["/og-image.svg"],
   },
 };
@@ -82,13 +82,13 @@ export default function ListingsPage({
       <div className="max-w-3xl space-y-3 text-sm leading-6 text-navy-600 mb-6">
         <p>
           Explora anuncios activos de vendedores locales en Colombia. Puedes
-          filtrar por ciudad, categoria o palabra clave para encontrar
-          productos, servicios, vivienda, empleo, vehiculos, eventos y
+          filtrar por ciudad, categoría o palabra clave para encontrar
+          productos, servicios, vivienda, empleo, vehículos, eventos y
           oportunidades de comunidad cerca de ti.
         </p>
         <p>
-          Cada anuncio esta pensado para contacto directo y negociacion clara.
-          Revisa fotos, precio, descripcion y ubicacion antes de escribir por
+          Cada anuncio está pensado para contacto directo y negociación clara.
+          Revisa fotos, precio, descripción y ubicación antes de escribir por
           WhatsApp, y usa los consejos de seguridad si vas a reunirte en
           persona.
         </p>

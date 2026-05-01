@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { MapPin } from "lucide-react";
-import { CITIES } from "@/lib/constants";
+import { CITIES, formatCityName } from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
 
 export default function CityFilter() {
@@ -27,12 +27,13 @@ export default function CityFilter() {
       <select
         value={current}
         onChange={handleChange}
+        aria-label={t("listings.allCities")}
         className="pl-9 pr-8 py-2.5 rounded-lg border border-navy-200 bg-white text-sm text-navy-700 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 appearance-none cursor-pointer"
       >
         <option value="">{t("listings.allCities")}</option>
         {CITIES.map((city) => (
           <option key={city} value={city}>
-            {city}
+            {formatCityName(city)}
           </option>
         ))}
       </select>

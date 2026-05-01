@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!listing) return { title: "Lleva Lleva" };
 
   return {
-    title: `${listing.title} — Lleva Lleva`,
+    title: listing.title,
     description: listing.description.slice(0, 160),
     openGraph: {
       title: listing.title,

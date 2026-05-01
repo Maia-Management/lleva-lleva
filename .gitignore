@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+.codex-chrome-*/
+*-mobile.png
+chrome-*.log
+*-next-start.*.log
 
 # next.js
 /.next/

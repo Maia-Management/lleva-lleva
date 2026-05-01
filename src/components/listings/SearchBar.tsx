@@ -30,6 +30,7 @@ export default function SearchBar() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder={t("listings.search")}
+        aria-label={t("listings.search")}
         className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-navy-200 bg-white text-sm text-navy-800 placeholder:text-navy-400 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 transition-colors"
       />
     </form>

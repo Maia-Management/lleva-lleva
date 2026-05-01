@@ -50,7 +50,7 @@ export const CATEGORIES: CategoryInfo[] = [
   {
     value: "vehicles",
     label: "Vehicles",
-    labelEs: "Vehiculos",
+    labelEs: "Vehículos",
     icon: Car,
     color: "bg-red-100 text-red-700",
   },
@@ -80,6 +80,15 @@ export const CITIES = [
   "Bucaramanga",
   "Pereira",
 ];
+
+const CITY_LABELS: Record<string, string> = {
+  Bogota: "Bogotá",
+  Medellin: "Medellín",
+};
+
+export function formatCityName(city: string): string {
+  return CITY_LABELS[city] ?? city;
+}
 
 export const REPORT_REASONS = [
   { value: "scam", label: "Estafa / Scam" },

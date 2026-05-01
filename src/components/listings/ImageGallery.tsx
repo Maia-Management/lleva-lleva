@@ -37,6 +37,8 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
         {images.length > 1 && (
           <>
             <button
+              type="button"
+              aria-label="Foto anterior"
               onClick={() =>
                 setCurrent((p) => (p === 0 ? images.length - 1 : p - 1))
               }
@@ -45,6 +47,8 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
               <ChevronLeft className="w-5 h-5 text-navy-700" />
             </button>
             <button
+              type="button"
+              aria-label="Foto siguiente"
               onClick={() =>
                 setCurrent((p) => (p === images.length - 1 ? 0 : p + 1))
               }
@@ -65,6 +69,9 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
           {images.map((img, i) => (
             <button
               key={i}
+              type="button"
+              aria-label={`Ver foto ${i + 1}`}
+              aria-current={i === current ? "true" : undefined}
               onClick={() => setCurrent(i)}
               className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-colors ${
                 i === current ? "border-amber-500" : "border-transparent"

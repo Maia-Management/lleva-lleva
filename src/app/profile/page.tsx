@@ -8,7 +8,7 @@ import type { Listing, Profile } from "@/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mi Perfil — Lleva Lleva",
+  title: "Mi Perfil",
 };
 
 export default async function MyProfilePage() {

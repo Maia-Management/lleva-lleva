@@ -6,7 +6,7 @@ import type { Listing } from "@/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Editar anuncio — Lleva Lleva",
+  title: "Editar anuncio",
 };
 
 export default async function EditListingPage({

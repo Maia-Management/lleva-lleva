@@ -8,7 +8,7 @@ import type {
   SupabaseClient,
   User as SupabaseUser,
 } from "@supabase/supabase-js";
-import Button from "@/components/ui/Button";
+import { buttonClassName } from "@/components/ui/Button";
 import LanguageToggle from "./LanguageToggle";
 
 type IdleWindow = typeof window & {
@@ -138,11 +138,13 @@ export default function Navbar() {
                 <Heart className="w-4 h-4" />
                 {t("nav.favorites")}
               </Link>
-              <Link href="/listings/new" prefetch={false}>
-                <Button size="sm">
+              <Link
+                href="/listings/new"
+                prefetch={false}
+                className={buttonClassName({ size: "sm" })}
+              >
                   <Plus className="w-4 h-4" />
                   {t("nav.publish")}
-                </Button>
               </Link>
               <div className="relative">
                 <button
@@ -176,8 +178,8 @@ export default function Navbar() {
               </div>
             </>
           ) : (
-            <Link href="/auth/login">
-              <Button size="sm">{t("nav.signIn")}</Button>
+            <Link href="/auth/login" className={buttonClassName({ size: "sm" })}>
+              {t("nav.signIn")}
             </Link>
           )}
           <LanguageToggle />
@@ -225,12 +227,10 @@ export default function Navbar() {
                 href="/listings/new"
                 prefetch={false}
                 onClick={() => setMenuOpen(false)}
-                className="block"
+                className={buttonClassName({ className: "w-full" })}
               >
-                <Button className="w-full">
                   <Plus className="w-4 h-4" />
                   {t("nav.publish")}
-                </Button>
               </Link>
               <Link
                 href="/profile"
@@ -247,8 +247,12 @@ export default function Navbar() {
               </button>
             </>
           ) : (
-            <Link href="/auth/login" onClick={() => setMenuOpen(false)}>
-              <Button className="w-full">{t("nav.signIn")}</Button>
+            <Link
+              href="/auth/login"
+              onClick={() => setMenuOpen(false)}
+              className={buttonClassName({ className: "w-full" })}
+            >
+              {t("nav.signIn")}
             </Link>
           )}
         </div>

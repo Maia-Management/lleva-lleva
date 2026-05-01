@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { data } = await supabase.from('categories').select('name_es').eq('slug', slug).single();
   return {
     title: data ? `${data.name_es} – Clasificados Colombia` : 'Categoría',
-    description: `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en LlevaLleva.co`,
+    description: `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva`,
   };
 }
 

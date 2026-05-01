@@ -13,8 +13,8 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { username } = await params;
   return {
-    title: `@${username} – LlevaLleva.co`,
-    description: `Perfil de ${username} en LlevaLleva.co`,
+    title: `@${username} – Lleva Lleva`,
+    description: `Perfil de ${username} en Lleva Lleva`,
   };
 }
 

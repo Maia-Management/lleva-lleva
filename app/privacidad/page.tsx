@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Política de Privacidad',
-  description: 'Política de privacidad y tratamiento de datos personales de LlevaLleva.co conforme a la Ley 1581 de 2012.',
+  description: 'Política de privacidad y tratamiento de datos personales de Lleva Lleva conforme a la Ley 1581 de 2012.',
 };
 
 export default function PrivacidadPage() {

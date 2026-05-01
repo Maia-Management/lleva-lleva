@@ -4,8 +4,8 @@ import { Category } from '@/types';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Categorías – LlevaLleva.co',
-  description: 'Explora todas las categorías de clasificados en LlevaLleva.co: vehículos, inmuebles, tecnología, empleos, servicios y mucho más.',
+  title: 'Categorías – Lleva Lleva',
+  description: 'Explora todas las categorías de clasificados en Lleva Lleva: vehículos, inmuebles, tecnología, empleos, servicios y mucho más.',
 };
 
 export default async function CategoriasPage() {

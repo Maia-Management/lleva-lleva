@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, location } = await params;
   return {
     title: `Información ${category} – ${location}`,
-    description: `Información pública sobre ${category} en ${location}. LlevaLleva.co`,
+    description: `Información pública sobre ${category} en ${location}. Lleva Lleva`,
   };
 }
 

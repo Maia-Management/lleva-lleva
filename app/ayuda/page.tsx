@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Centro de Ayuda',
-  description: 'Preguntas frecuentes y ayuda para usar LlevaLleva.co.',
+  description: 'Preguntas frecuentes y ayuda para usar Lleva Lleva.',
 };
 
 const faqs = [

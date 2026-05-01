@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
 import AdBanner from "@/components/ads/AdBanner";
 import { Listing } from "@/types";
+
+export const metadata: Metadata = {
+  title: 'Lleva Lleva – Clasificados Colombia',
+  description: 'El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más en lleva-lleva.com.',
+};
 
 const TOP_CATEGORIES = [
   { slug: "vehiculos", name: "Vehículos", icon: "🚗" },

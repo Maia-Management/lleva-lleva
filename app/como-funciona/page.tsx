@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '¿Cómo funciona LlevaLleva?',
-  description: 'Aprende cómo publicar y comprar en LlevaLleva.co, el clasificado colombiano.',
+  description: 'Aprende cómo publicar y comprar en Lleva Lleva, el clasificado colombiano.',
 };
 
 const steps = {

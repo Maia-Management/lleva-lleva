@@ -4,7 +4,7 @@ import PublicarForm from './PublicarForm';
 
 export const metadata = {
   title: 'Publicar anuncio',
-  description: 'Publica tu anuncio gratis en LlevaLleva.co',
+  description: 'Publica tu anuncio gratis en Lleva Lleva',
 };
 
 export default async function PublicarPage() {

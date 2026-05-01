@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Reportar un Problema',
-  description: 'Reporta anuncios fraudulentos, contenido prohibido o problemas en LlevaLleva.co.',
+  description: 'Reporta anuncios fraudulentos, contenido prohibido o problemas en Lleva Lleva.',
 };
 
 export default function ReportarPage() {

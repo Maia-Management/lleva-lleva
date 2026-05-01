@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Consejos de Seguridad',
-  description: 'Consejos para realizar transacciones seguras en LlevaLleva.co. Protégete al comprar y vender en línea.',
+  description: 'Consejos para realizar transacciones seguras en Lleva Lleva. Protégete al comprar y vender en línea.',
 };
 
 const tips = [

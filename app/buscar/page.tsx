@@ -23,8 +23,8 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const sp = await searchParams;
   const query = sp.q?.trim();
   return {
-    title: query ? `"${query}" – Buscar en LlevaLleva` : 'Buscar anuncios – LlevaLleva',
-    description: `Encuentra ${query ?? 'lo que buscas'} en LlevaLleva.co – Clasificados de Colombia`,
+    title: query ? `"${query}" – Buscar en Lleva Lleva` : 'Buscar anuncios – Lleva Lleva',
+    description: `Encuentra ${query ?? 'lo que buscas'} en Lleva Lleva – Clasificados de Colombia`,
   };
 }
 

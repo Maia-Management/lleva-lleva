@@ -3,25 +3,21 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Phone } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
-import { useLocale } from "@/lib/locale-context";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 
-interface LoginClientProps {
-  redirect?: string;
-}
-
-export default function LoginClient({ redirect = "/" }: LoginClientProps) {
+export default function LoginClient() {
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState<"phone" | "otp">("phone");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
-  const supabase = createClient();
-  const { t } = useLocale();
+
+  const getRedirectPath = () => {
+    if (typeof window === "undefined") return "/";
+    return new URLSearchParams(window.location.search).get("redirect") || "/";
+  };
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, "");
@@ -37,6 +33,8 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
     setError("");
 
     const formattedPhone = formatPhone(phone);
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
     const { error } = await supabase.auth.signInWithOtp({
       phone: formattedPhone,
     });
@@ -55,6 +53,8 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
     setError("");
 
     const formattedPhone = formatPhone(phone);
+    const { createClient } = await import("@/lib/supabase/client");
+    const supabase = createClient();
     const { error } = await supabase.auth.verifyOtp({
       phone: formattedPhone,
       token: otp,
@@ -64,112 +64,94 @@ export default function LoginClient({ redirect = "/" }: LoginClientProps) {
     if (error) {
       setError(error.message);
     } else {
-      router.push(redirect);
+      router.push(getRedirectPath());
       router.refresh();
     }
     setLoading(false);
   };
 
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Phone className="w-8 h-8 text-amber-600" />
-          </div>
-          <h1 className="text-2xl font-bold text-navy-800">
-            Ingresa para publicar y guardar anuncios
-          </h1>
-          <p className="text-sm text-navy-500 mt-3 leading-6">
-            Usa tu número de celular colombiano para acceder a Lleva Lleva,
-            publicar clasificados gratis, guardar anuncios favoritos y gestionar
-            tus conversaciones con vendedores locales.
-          </p>
-          <p className="text-sm text-navy-500 mt-3 leading-6">
-            El ingreso por código SMS ayuda a reducir cuentas falsas y mantiene
-            el proceso simple para compradores, vendedores y pequeños negocios
-            que necesitan volver rápido a sus anuncios.
-          </p>
-          <p className="text-sm font-semibold text-navy-700 mt-4">
-            {step === "phone" ? t("auth.loginTitle") : t("auth.verifyTitle")}
-          </p>
-          <p className="text-sm text-navy-500 mt-1">
-            {step === "phone"
-              ? t("auth.phoneHint")
-              : `${t("auth.codeSent")} +57${phone.replace(/\D/g, "")}`}
-          </p>
-        </div>
-
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-3 mb-4">
-            {error}
-          </div>
-        )}
-
-        {step === "phone" ? (
-          <form onSubmit={handleSendOTP} className="space-y-4">
-            <div>
-              <label
-                htmlFor="login-phone"
-                className="block text-sm font-medium text-navy-700 mb-1"
-              >
-                {t("auth.phoneLabel")}
-              </label>
-              <div className="flex">
-                <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-navy-200 bg-navy-50 text-sm text-navy-500">
-                  +57
-                </span>
-                <input
-                  id="login-phone"
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
-                  placeholder={t("auth.phonePlaceholder")}
-                  maxLength={10}
-                  className="flex-1 rounded-r-lg border border-navy-200 px-3 py-2 text-sm text-navy-800 placeholder:text-navy-400 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
-                  required
-                />
-              </div>
-            </div>
-            <Button type="submit" loading={loading} className="w-full">
-              {t("auth.sendCode")}
-            </Button>
-          </form>
-        ) : (
-          <form onSubmit={handleVerifyOTP} className="space-y-4">
-            <Input
-              id="login-code"
-              label={t("auth.codeLabel")}
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
-              placeholder="123456"
-              maxLength={6}
-              required
-            />
-            <Button type="submit" loading={loading} className="w-full">
-              {t("auth.verify")}
-            </Button>
-            <button
-              type="button"
-              onClick={() => {
-                setStep("phone");
-                setOtp("");
-              }}
-              className="w-full text-sm text-navy-500 hover:text-navy-700"
-            >
-              {t("auth.changeNumber")}
-            </button>
-          </form>
-        )}
-
-        <p className="text-center text-xs text-navy-400 mt-6">
-          {t("auth.terms")}{" "}
-          <Link href="/terms" className="underline">
-            {t("auth.termsLink")}
-          </Link>
+    <>
+      <div className="text-center mb-8">
+        <p className="text-sm font-semibold text-navy-700">
+          {step === "phone" ? "Acceso con SMS" : "Confirma tu código"}
+        </p>
+        <p className="text-sm text-navy-500 mt-1">
+          {step === "phone"
+            ? "Te enviaremos un código para entrar sin contraseña."
+            : `Código enviado a +57${phone.replace(/\D/g, "")}`}
         </p>
       </div>
-    </div>
+
+      {error && (
+        <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-3 mb-4">
+          {error}
+        </div>
+      )}
+
+      {step === "phone" ? (
+        <form onSubmit={handleSendOTP} className="space-y-4">
+          <div>
+            <label
+              htmlFor="login-phone"
+              className="block text-sm font-medium text-navy-700 mb-1"
+            >
+              Celular colombiano
+            </label>
+            <div className="flex">
+              <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-navy-200 bg-navy-50 text-sm text-navy-500">
+                +57
+              </span>
+              <input
+                id="login-phone"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
+                placeholder="300 123 4567"
+                maxLength={10}
+                className="flex-1 rounded-r-lg border border-navy-200 px-3 py-2 text-sm text-navy-800 placeholder:text-navy-400 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
+                required
+              />
+            </div>
+          </div>
+          <Button type="submit" loading={loading} className="w-full">
+            Enviar código
+          </Button>
+        </form>
+      ) : (
+        <form onSubmit={handleVerifyOTP} className="space-y-4">
+          <Input
+            id="login-code"
+            label="Código SMS"
+            type="text"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
+            placeholder="123456"
+            maxLength={6}
+            required
+          />
+          <Button type="submit" loading={loading} className="w-full">
+            Ingresar
+          </Button>
+          <button
+            type="button"
+            onClick={() => {
+              setStep("phone");
+              setOtp("");
+            }}
+            className="w-full text-sm text-navy-500 hover:text-navy-700"
+          >
+            Cambiar número
+          </button>
+        </form>
+      )}
+
+      <p className="text-center text-xs text-navy-600 mt-6">
+        Al continuar aceptas los{" "}
+        <Link href="/terms" className="font-medium text-navy-700 underline">
+          términos de uso
+        </Link>
+      </p>
+    </>
   );
 }

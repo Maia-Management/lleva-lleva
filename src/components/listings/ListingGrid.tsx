@@ -18,10 +18,10 @@ export default function ListingGrid({
   if (listings.length === 0) {
     return (
       <div className="text-center py-16">
-        <p className="text-navy-400 text-lg">
+        <p className="text-navy-600 text-lg">
           {emptyMessage ?? t("listings.empty")}
         </p>
-        <p className="text-navy-300 text-sm mt-1">{t("listings.emptyHint")}</p>
+        <p className="text-navy-500 text-sm mt-1">{t("listings.emptyHint")}</p>
       </div>
     );
   }

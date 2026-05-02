@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { LocaleProvider } from "@/lib/locale-context";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 const siteDescription =
   "Compra, vende e intercambia en tu ciudad. Clasificados gratuitos para Colombia. La alternativa confiable a Facebook Marketplace.";
@@ -68,10 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} h-full antialiased`}>
+    <html lang="es" className="h-full antialiased">
       <body
         className="min-h-full flex flex-col font-sans"
-        data-cache-version="20260430-lleva-public-nav"
+        data-cache-version="20260501-lleva-publicity-audit"
       >
         <LocaleProvider>
           <Navbar />

@@ -14,7 +14,9 @@ interface ProfileEditorProps {
 }
 
 export default function ProfileEditor({ profile }: ProfileEditorProps) {
-  const [name, setName] = useState(profile.full_name ?? "");
+  const [name, setName] = useState(
+    profile.display_name ?? profile.full_name ?? "",
+  );
   const [city, setCity] = useState(profile.city ?? "Santa Marta");
   const [whatsapp, setWhatsapp] = useState(profile.whatsapp_number ?? "");
   const [saving, setSaving] = useState(false);
@@ -30,7 +32,7 @@ export default function ProfileEditor({ profile }: ProfileEditorProps) {
     await supabase
       .from("profiles")
       .update({
-        full_name: name.trim(),
+        display_name: name.trim(),
         city,
         whatsapp_number: whatsapp.replace(/\D/g, ""),
       })

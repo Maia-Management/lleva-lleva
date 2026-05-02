@@ -28,6 +28,22 @@ const translations = {
   "cat.vehicles": { es: "Vehículos", en: "Vehicles" },
   "cat.events": { es: "Eventos", en: "Events" },
   "cat.community": { es: "Comunidad", en: "Community" },
+  "cat.vehiculos": { es: "Vehículos", en: "Vehicles" },
+  "cat.inmuebles": { es: "Inmuebles", en: "Real estate" },
+  "cat.tecnologia": { es: "Tecnología", en: "Technology" },
+  "cat.hogar-y-jardin": { es: "Hogar y Jardín", en: "Home & garden" },
+  "cat.servicios": { es: "Servicios", en: "Services" },
+  "cat.empleo": { es: "Empleo", en: "Jobs" },
+  "cat.nautico-y-pesca": { es: "Náutico y Pesca", en: "Marine & fishing" },
+  "cat.moda-y-belleza": { es: "Moda y Belleza", en: "Fashion & beauty" },
+  "cat.turismo-y-hospedaje": { es: "Turismo y Hospedaje", en: "Tourism & stays" },
+  "cat.educacion-y-formacion": { es: "Educación y Formación", en: "Education" },
+  "cat.mascotas-y-animales": { es: "Mascotas y Animales", en: "Pets & animals" },
+  "cat.deportes-y-fitness": { es: "Deportes y Fitness", en: "Sports & fitness" },
+  "cat.negocios-e-industria": { es: "Negocios e Industria", en: "Business & industry" },
+  "cat.agro-y-campo": { es: "Agro y Campo", en: "Agriculture" },
+  "cat.comunidad": { es: "Comunidad", en: "Community" },
+  "cat.informacion-publica": { es: "Información Pública", en: "Public information" },
 
   // How it works
   "how.title": { es: "Cómo funciona", en: "How it works" },
@@ -115,7 +131,7 @@ const translations = {
     en: "Describe your item, service or listing...",
   },
   "form.price": { es: "Precio (COP)", en: "Price (COP)" },
-  "form.priceFree": { es: "0 = Gratis", en: "0 = Free" },
+  "form.priceFree": { es: "Vacío = consultar precio", en: "Blank = contact for price" },
   "form.category": { es: "Categoría", en: "Category" },
   "form.city": { es: "Ciudad", en: "City" },
   "form.whatsapp": { es: "WhatsApp", en: "WhatsApp" },
@@ -174,6 +190,7 @@ const translations = {
   "report.detailsPlaceholder": { es: "Describe el problema...", en: "Describe the issue..." },
   "report.submit": { es: "Enviar reporte", en: "Submit report" },
   "report.success": { es: "Reporte enviado. Gracias por ayudar.", en: "Report sent. Thanks for helping." },
+  "report.error": { es: "No se pudo enviar el reporte. Inténtalo de nuevo.", en: "Could not send the report. Please try again." },
   "report.scam": { es: "Estafa / Scam", en: "Scam / Fraud" },
   "report.inappropriate": { es: "Contenido inapropiado", en: "Inappropriate content" },
   "report.spam": { es: "Spam", en: "Spam" },
@@ -205,5 +222,10 @@ export function getCategoryLabel(
   locale: Locale
 ): string {
   const key = `cat.${category}` as TranslationKey;
-  return t(key, locale);
+  const translated = t(key, locale);
+  if (translated !== key) return translated;
+  return category
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
 }

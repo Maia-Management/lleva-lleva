@@ -17,6 +17,7 @@ export default function ReportButton({ listingId }: ReportButtonProps) {
   const [description, setDescription] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
   const supabase = createClient();
   const { t } = useLocale();
 
@@ -38,18 +39,26 @@ export default function ReportButton({ listingId }: ReportButtonProps) {
     }
 
     setSubmitting(true);
-    await supabase.from("reports").insert({
+    setError("");
+    const reasonWithDetails = description.trim()
+      ? `${reason}: ${description.trim()}`
+      : reason;
+    const { error: insertError } = await supabase.from("reports").insert({
       listing_id: listingId,
       reporter_id: user.id,
-      reason,
-      description: description.trim() || null,
+      reason: reasonWithDetails,
     });
     setSubmitting(false);
+    if (insertError) {
+      setError(t("report.error"));
+      return;
+    }
     setSubmitted(true);
     setTimeout(() => {
       setOpen(false);
       setSubmitted(false);
       setDescription("");
+      setError("");
     }, 2000);
   };
 
@@ -73,6 +82,11 @@ export default function ReportButton({ listingId }: ReportButtonProps) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {error && (
+              <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+                {error}
+              </div>
+            )}
             <div>
               <label
                 htmlFor="report-reason"

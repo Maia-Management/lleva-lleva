@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import PublicProfileContent from "@/components/profile/PublicProfileContent";
+import { LISTING_SELECT, mapListing } from "@/lib/listing-data";
 import type { Listing, Profile } from "@/lib/types";
 import type { Metadata } from "next";
 
@@ -13,12 +14,12 @@ export async function generateMetadata({
   const supabase = await createClient();
   const { data: profile } = await supabase
     .from("profiles")
-    .select("full_name")
+    .select("display_name, username")
     .eq("id", id)
     .single();
 
   return {
-    title: profile?.full_name ?? "Usuario",
+    title: profile?.display_name ?? profile?.username ?? "Usuario",
   };
 }
 
@@ -40,15 +41,15 @@ export default async function PublicProfilePage({
 
   const { data: listings } = await supabase
     .from("listings")
-    .select("*")
-    .eq("user_id", id)
+    .select(LISTING_SELECT)
+    .eq("seller_id", id)
     .eq("status", "active")
     .order("created_at", { ascending: false });
 
   return (
     <PublicProfileContent
       profile={profile as Profile}
-      listings={(listings as Listing[]) ?? []}
+      listings={((listings ?? []).map(mapListing) as Listing[]) ?? []}
     />
   );
 }

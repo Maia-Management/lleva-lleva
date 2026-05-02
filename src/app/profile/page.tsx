@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
 import ProfileEditor from "@/components/profile/ProfileEditor";
 import TranslatedText from "@/components/ui/TranslatedText";
+import { LISTING_SELECT, mapListing } from "@/lib/listing-data";
 import type { Listing, Profile } from "@/lib/types";
 import type { Metadata } from "next";
 
@@ -27,8 +28,8 @@ export default async function MyProfilePage() {
 
   const { data: listings } = await supabase
     .from("listings")
-    .select("*")
-    .eq("user_id", user.id)
+    .select(LISTING_SELECT)
+    .eq("seller_id", user.id)
     .order("created_at", { ascending: false });
 
   return (
@@ -50,7 +51,7 @@ export default async function MyProfilePage() {
           </Link>
         </div>
         <ListingGrid
-          listings={(listings as Listing[]) ?? []}
+          listings={((listings ?? []).map(mapListing) as Listing[]) ?? []}
           emptyMessage={undefined}
         />
       </div>

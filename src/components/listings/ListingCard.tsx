@@ -10,7 +10,6 @@ import {
   getCategoryInfo,
 } from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
-import { getCategoryLabel } from "@/lib/i18n";
 import Badge from "@/components/ui/Badge";
 import type { Listing } from "@/lib/types";
 
@@ -20,11 +19,11 @@ interface ListingCardProps {
 
 export default function ListingCard({ listing }: ListingCardProps) {
   const category = getCategoryInfo(listing.category);
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
 
   return (
     <Link
-      href={`/listings/${listing.id}`}
+      href={`/listings/${listing.slug}`}
       className="group block rounded-xl border border-navy-100 bg-white overflow-hidden hover:shadow-lg hover:border-amber-200 transition-all"
     >
       {/* Image */}
@@ -54,16 +53,16 @@ export default function ListingCard({ listing }: ListingCardProps) {
         <div className="flex items-center gap-2 mb-1">
           <Badge className={category.color}>
             <category.icon className="w-3 h-3" />
-            {getCategoryLabel(listing.category, locale)}
+            {listing.category_label}
           </Badge>
         </div>
-        <h3 className="font-semibold text-navy-800 text-sm line-clamp-2 mb-1 group-hover:text-amber-600 transition-colors">
+        <h2 className="font-semibold text-navy-800 text-sm line-clamp-2 mb-1 group-hover:text-amber-700 transition-colors">
           {listing.title}
-        </h3>
-        <p className="text-lg font-bold text-amber-600">
-          {formatPrice(listing.price)}
+        </h2>
+        <p className="text-lg font-bold text-amber-700">
+          {formatPrice(listing.price, listing.price_type)}
         </p>
-        <div className="flex items-center gap-1 mt-2 text-xs text-navy-400">
+        <div className="flex items-center gap-1 mt-2 text-xs text-navy-600">
           <MapPin className="w-3 h-3" />
           <span>{formatCityName(listing.city)}</span>
           <span className="mx-1">&middot;</span>

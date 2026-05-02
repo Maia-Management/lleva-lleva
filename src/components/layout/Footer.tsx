@@ -25,9 +25,9 @@ export default function Footer() {
 
           {/* Categories */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-3">
+            <h2 className="text-sm font-semibold text-white mb-3">
               {t("footer.categories")}
-            </h3>
+            </h2>
             <ul className="space-y-2">
               {CATEGORIES.map((cat) => (
                 <li key={cat.value}>
@@ -45,9 +45,9 @@ export default function Footer() {
 
           {/* Info */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-3">
+            <h2 className="text-sm font-semibold text-white mb-3">
               {t("footer.info")}
-            </h3>
+            </h2>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -86,9 +86,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-3">
+            <h2 className="text-sm font-semibold text-white mb-3">
               {t("footer.contact")}
-            </h3>
+            </h2>
             <p className="text-sm text-navy-400">Santa Marta, Colombia</p>
             <p className="text-sm text-navy-400 mt-1">hola@lleva-lleva.com</p>
           </div>

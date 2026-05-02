@@ -16,6 +16,7 @@ export default function PublicProfileContent({
   listings,
 }: PublicProfileContentProps) {
   const { t, locale } = useLocale();
+  const displayName = profile.display_name ?? profile.full_name;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
@@ -24,12 +25,12 @@ export default function PublicProfileContent({
         <div className="flex items-center gap-4">
           <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center">
             <span className="text-2xl font-bold text-amber-700">
-              {(profile.full_name?.[0] ?? "U").toUpperCase()}
+              {(displayName?.[0] ?? "U").toUpperCase()}
             </span>
           </div>
           <div>
             <h1 className="text-xl font-bold text-navy-800">
-              {profile.full_name ?? t("profile.user")}
+              {displayName ?? t("profile.user")}
             </h1>
             <div className="flex items-center gap-3 mt-1 text-sm text-navy-500">
               {profile.is_verified && (
@@ -59,7 +60,7 @@ export default function PublicProfileContent({
 
       {/* Listings */}
       <h2 className="text-lg font-semibold text-navy-800 mb-4">
-        {t("profile.listingsOf")} {profile.full_name ?? t("profile.user")}
+        {t("profile.listingsOf")} {displayName ?? t("profile.user")}
       </h2>
       <ListingGrid listings={listings} />
     </div>

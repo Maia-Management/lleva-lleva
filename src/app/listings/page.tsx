@@ -5,7 +5,11 @@ import SearchBar from "@/components/listings/SearchBar";
 import CategoryFilter from "@/components/listings/CategoryFilter";
 import CityFilter from "@/components/listings/CityFilter";
 import TranslatedText from "@/components/ui/TranslatedText";
-import type { Listing } from "@/lib/types";
+import {
+  filterListings,
+  LISTING_SELECT,
+  mapListing,
+} from "@/lib/listing-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -50,28 +54,29 @@ async function ListingsContent({
 
   const supabase = await createClient();
 
-  let dbQuery = supabase
+  const { data } = await supabase
     .from("listings")
-    .select("*, profiles(*)")
+    .select(LISTING_SELECT)
     .eq("status", "active")
-    .order("is_bumped", { ascending: false })
     .order("created_at", { ascending: false })
-    .limit(40);
+    .limit(200);
 
-  if (category) dbQuery = dbQuery.eq("category", category);
-  if (city) dbQuery = dbQuery.eq("city", city);
-  if (query) dbQuery = dbQuery.textSearch("fts", query, { type: "websearch" });
+  const listings = filterListings((data ?? []).map(mapListing), {
+    category,
+    city,
+    query,
+  }).slice(0, 24);
 
-  const { data: listings } = await dbQuery;
-
-  return <ListingGrid listings={(listings as Listing[]) ?? []} />;
+  return <ListingGrid listings={listings} />;
 }
 
-export default function ListingsPage({
+export default async function ListingsPage({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const results = await ListingsContent({ searchParams });
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
       <TranslatedText
@@ -108,27 +113,7 @@ export default function ListingsPage({
       </Suspense>
 
       {/* Results */}
-      <Suspense
-        fallback={
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-navy-100 overflow-hidden animate-pulse"
-              >
-                <div className="aspect-[4/3] bg-navy-100" />
-                <div className="p-3 space-y-2">
-                  <div className="h-4 bg-navy-100 rounded w-1/3" />
-                  <div className="h-4 bg-navy-100 rounded w-2/3" />
-                  <div className="h-5 bg-navy-100 rounded w-1/4" />
-                </div>
-              </div>
-            ))}
-          </div>
-        }
-      >
-        <ListingsContent searchParams={searchParams} />
-      </Suspense>
+      {results}
     </div>
   );
 }

@@ -15,7 +15,6 @@ import {
   getCategoryInfo,
 } from "@/lib/constants";
 import { useLocale } from "@/lib/locale-context";
-import { getCategoryLabel } from "@/lib/i18n";
 import Badge from "@/components/ui/Badge";
 import { buttonClassName } from "@/components/ui/Button";
 import WhatsAppButton from "@/components/listings/WhatsAppButton";
@@ -33,13 +32,13 @@ export default function ListingDetailContent({
   listing,
   isOwner,
 }: ListingDetailContentProps) {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const category = getCategoryInfo(listing.category);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-navy-400 mb-4">
+      <div className="flex items-center gap-2 text-sm text-navy-600 mb-4">
         <Link
           href="/listings"
           className="hover:text-navy-600 transition-colors"
@@ -51,7 +50,7 @@ export default function ListingDetailContent({
           href={`/listings?category=${listing.category}`}
           className="hover:text-navy-600 transition-colors"
         >
-          {getCategoryLabel(listing.category, locale)}
+          {listing.category_label}
         </Link>
         <ChevronRight className="w-4 h-4" />
         <span className="text-navy-600 truncate">{listing.title}</span>
@@ -77,15 +76,15 @@ export default function ListingDetailContent({
           <div className="bg-white rounded-xl border border-navy-100 p-5 space-y-4">
             <Badge className={category.color}>
               <category.icon className="w-3 h-3" />
-              {getCategoryLabel(listing.category, locale)}
+              {listing.category_label}
             </Badge>
 
             <h1 className="text-xl font-bold text-navy-800">
               {listing.title}
             </h1>
 
-            <p className="text-2xl font-bold text-amber-600">
-              {formatPrice(listing.price)}
+            <p className="text-2xl font-bold text-amber-700">
+              {formatPrice(listing.price, listing.price_type)}
             </p>
 
             <div className="flex items-center gap-4 text-sm text-navy-500">
@@ -125,9 +124,9 @@ export default function ListingDetailContent({
           {/* Seller info */}
           {listing.profiles && (
             <div className="bg-white rounded-xl border border-navy-100 p-5">
-              <h3 className="text-sm font-semibold text-navy-800 mb-3">
+              <h2 className="text-sm font-semibold text-navy-800 mb-3">
                 {t("detail.seller")}
-              </h3>
+              </h2>
               <Link
                 href={`/profile/${listing.user_id}`}
                 className="flex items-center gap-3 hover:bg-navy-50 -mx-2 px-2 py-2 rounded-lg transition-colors"
@@ -144,7 +143,7 @@ export default function ListingDetailContent({
                     {listing.profiles.full_name ?? t("profile.user")}
                   </p>
                   {listing.profiles.is_verified && (
-                    <span className="flex items-center gap-1 text-xs text-emerald-600">
+                    <span className="flex items-center gap-1 text-xs text-emerald-700">
                       <Shield className="w-3 h-3" />
                       {t("detail.verified")}
                     </span>

@@ -154,6 +154,36 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ¿Cuánto vale? Tool Card */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <Link
+          href="/cuanto-vale"
+          className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-gradient-to-br from-emerald-50 to-blue-50 border border-emerald-200 hover:border-emerald-400 rounded-2xl p-5 sm:p-6 transition-all hover:shadow-md"
+        >
+          <div
+            className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+            style={{ background: 'linear-gradient(135deg, #FCD116 0%, #003893 60%, #CE1126 100%)' }}
+            aria-hidden="true"
+          >
+            💰
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">
+              Herramienta gratuita
+            </p>
+            <h2 className="text-base sm:text-lg font-black text-gray-900 leading-tight mb-1">
+              ¿Cuánto debería cobrar por esto?
+            </h2>
+            <p className="text-sm text-gray-500 leading-snug">
+              Consulta precios reales de Mercado Libre, OLX y Facebook Marketplace Colombia en segundos.
+            </p>
+          </div>
+          <span className="hidden sm:inline-flex items-center gap-1 text-emerald-700 font-semibold text-sm flex-shrink-0 group-hover:gap-2 transition-all">
+            Consultar precios <span aria-hidden="true">→</span>
+          </span>
+        </Link>
+      </section>
+
       {/* Public Info Section */}
       <section className="bg-white border-t border-b border-gray-200 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">

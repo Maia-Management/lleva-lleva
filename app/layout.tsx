@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -39,6 +39,23 @@ export const metadata: Metadata = {
     siteName: "Lleva Lleva",
     locale: "es_CO",
     type: "website",
+    title: "Lleva Lleva – Clasificados Colombia",
+    description: "El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más.",
+    url: "https://lleva-lleva.com",
+    images: [
+      {
+        url: "https://lleva-lleva.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Lleva Lleva — Clasificados Colombia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lleva Lleva – Clasificados Colombia",
+    description: "El clasificado colombiano. Compra, vende y conecta con personas de tu región.",
+    images: ["https://lleva-lleva.com/og-image.jpg"],
   },
   other: {
     "google-adsense-account": "ca-pub-2469196723812841",
@@ -88,6 +105,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </svg>
         </a>
       </body>
-    </html>
-  );
-}
+    </html>

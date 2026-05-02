@@ -158,8 +158,8 @@ export default function ImageUploader({
           className={`
             border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-colors
             ${dragOver
-              ? 'border-emerald-400 bg-emerald-50'
-              : 'border-gray-300 bg-gray-50 hover:border-emerald-400 hover:bg-emerald-50'
+              ? 'border-brand-blue/60 bg-brand-blue-50'
+              : 'border-gray-300 bg-gray-50 hover:border-brand-blue/60 hover:bg-brand-blue-50'
             }
           `}
         >
@@ -188,7 +188,7 @@ export default function ImageUploader({
           <button
             type="button"
             onClick={() => removeImage(images.length - 1)}
-            className="text-emerald-600 hover:underline"
+            className="text-brand-blue hover:underline"
           >
             Eliminar la última
           </button>

@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Reportar un Problema',
-  description: 'Reporta anuncios fraudulentos, contenido prohibido o problemas en LlevaLleva.co.',
+  description: 'Reporta anuncios fraudulentos, contenido prohibido o problemas en Lleva Lleva.',
 };
 
 export default function ReportarPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <div className="mb-10">
@@ -21,8 +21,8 @@ export default function ReportarPage() {
         </p>
       </div>
 
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
-        <p className="text-amber-800 text-sm">
+      <div className="bg-brand-yellow/10 border border-brand-yellow/30 rounded-2xl p-5 mb-8">
+        <p className="text-ink text-sm">
           <strong>Nota:</strong> Si eres víctima de un delito (robo, estafa, extorsión), además de
           reportarnos, te recomendamos presentar una denuncia ante la Fiscalía General de la Nación
           o la DIJIN de la Policía Nacional.
@@ -59,18 +59,18 @@ export default function ReportarPage() {
           <li>Si tienes capturas de pantalla o evidencia, adjúntalas.</li>
         </ul>
         <a
-          href="mailto:reportar@llevalleva.co"
+          href="mailto:reportar@lleva-lleva.com"
           className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-red-700 transition-colors"
         >
           Enviar reporte por correo
         </a>
-        <p className="text-xs text-gray-400 mt-3">reportar@llevalleva.co</p>
+        <p className="text-xs text-gray-400 mt-3">reportar@lleva-lleva.com</p>
       </div>
 
       <div className="mt-8 text-center">
         <p className="text-gray-500 text-sm">
           También puedes consultar nuestros{' '}
-          <Link href="/seguridad" className="text-emerald-600 hover:underline">consejos de seguridad</Link>
+          <Link href="/seguridad" className="text-brand-blue hover:underline">consejos de seguridad</Link>
           {' '}para protegerte en futuras transacciones.
         </p>
       </div>

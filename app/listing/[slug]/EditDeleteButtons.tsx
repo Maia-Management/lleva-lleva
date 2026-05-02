@@ -39,11 +39,11 @@ export default function EditDeleteButtons({ listingId, listingSlug }: Props) {
 
   return (
     <>
-      <div className="flex items-center gap-2 mb-4 p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
-        <span className="text-xs text-emerald-700 font-medium flex-1">✏️ Este es tu anuncio</span>
+      <div className="flex items-center gap-2 mb-4 p-3 bg-brand-blue-50 border border-brand-blue/20 rounded-xl">
+        <span className="text-xs text-brand-blue font-medium flex-1">✏️ Este es tu anuncio</span>
         <Link
           href={`/listing/${listingSlug}/edit`}
-          className="text-xs bg-white border border-gray-200 text-gray-700 font-semibold px-3 py-1.5 rounded-lg hover:border-emerald-300 hover:text-emerald-700 transition-colors"
+          className="text-xs bg-white border border-gray-200 text-gray-700 font-semibold px-3 py-1.5 rounded-lg hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
         >
           Editar
         </Link>

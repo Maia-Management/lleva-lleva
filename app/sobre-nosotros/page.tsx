@@ -3,19 +3,19 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Sobre Nosotros',
-  description: 'Conoce a LlevaLleva.co — el clasificado colombiano que conecta compradores y vendedores en Santa Marta y toda Colombia.',
+  description: 'Conoce a Lleva Lleva — el clasificado colombiano que conecta compradores y vendedores en Santa Marta y toda Colombia.',
 };
 
 export default function SobreNosotrosPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <div className="text-center mb-12">
         <Link href="/" className="inline-block mb-6">
-          <span className="text-4xl font-black text-emerald-600">Lleva<span className="text-gray-900">Lleva</span></span>
+          <span className="text-4xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
           <span className="text-gray-500 text-lg">.co</span>
         </Link>
         <h1 className="text-3xl font-black text-gray-900 mb-4">El clasificado colombiano</h1>
@@ -27,7 +27,7 @@ export default function SobreNosotrosPage() {
 
       <div className="space-y-8 text-gray-700 leading-relaxed">
 
-        <section className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8">
+        <section className="bg-brand-blue-50 border border-brand-blue/20 rounded-2xl p-8">
           <h2 className="text-xl font-bold text-gray-900 mb-3">Nuestra misión</h2>
           <p>
             LlevaLleva nació en Santa Marta, Colombia, con un propósito claro: crear el espacio digital
@@ -89,7 +89,7 @@ export default function SobreNosotrosPage() {
       <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
         <Link
           href="/publicar"
-          className="inline-block bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-emerald-700 transition-colors text-center"
+          className="inline-block bg-brand-blue text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-blue-700 transition-colors text-center"
         >
           Publicar gratis
         </Link>

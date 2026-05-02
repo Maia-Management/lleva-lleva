@@ -53,9 +53,9 @@ export default async function EditListingPage({ params }: Props) {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5">
-        <Link href="/" className="hover:text-emerald-600">Inicio</Link>
+        <Link href="/" className="hover:text-brand-blue">Inicio</Link>
         <span>›</span>
-        <Link href={`/listing/${slug}`} className="hover:text-emerald-600 line-clamp-1 max-w-xs">
+        <Link href={`/listing/${slug}`} className="hover:text-brand-blue line-clamp-1 max-w-xs">
           {listing.title}
         </Link>
         <span>›</span>

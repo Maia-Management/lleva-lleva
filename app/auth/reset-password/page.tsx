@@ -35,7 +35,7 @@ export default function ResetPasswordPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <span className="text-3xl font-black text-emerald-600">Lleva<span className="text-gray-900">Lleva</span></span>
+            <span className="text-3xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
             <span className="text-gray-500">.co</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Restablecer contraseña</h1>
@@ -55,7 +55,7 @@ export default function ResetPasswordPage() {
             <p className="text-gray-400 text-xs mb-4">Revisa también la carpeta de spam.</p>
             <Link
               href="/auth/login"
-              className="inline-block text-emerald-600 text-sm font-semibold hover:underline"
+              className="inline-block text-brand-blue text-sm font-semibold hover:underline"
             >
               ← Volver al inicio de sesión
             </Link>
@@ -79,20 +79,20 @@ export default function ResetPasswordPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@correo.com"
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-brand-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? 'Enviando...' : 'Enviar enlace de recuperación'}
             </button>
 
             <div className="text-center">
-              <Link href="/auth/login" className="text-xs text-gray-500 hover:text-emerald-600">
+              <Link href="/auth/login" className="text-xs text-gray-500 hover:text-brand-blue">
                 ← Volver al inicio de sesión
               </Link>
             </div>

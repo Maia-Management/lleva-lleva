@@ -73,13 +73,13 @@ export default function RegisterPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <span className="text-3xl font-black text-emerald-600">Lleva<span className="text-gray-900">Lleva</span></span>
+            <span className="text-3xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
             <span className="text-gray-500">.co</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Crear cuenta gratis</h1>
           <p className="text-sm text-gray-500 mt-1">
             ¿Ya tienes cuenta?{' '}
-            <Link href="/auth/login" className="text-emerald-600 font-semibold hover:underline">
+            <Link href="/auth/login" className="text-brand-blue font-semibold hover:underline">
               Ingresar
             </Link>
           </p>
@@ -101,13 +101,13 @@ export default function RegisterPage() {
               value={form.name}
               onChange={handleChange}
               placeholder="Tu nombre"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Nombre de usuario</label>
-            <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-emerald-500">
+            <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-brand-blue">
               <span className="px-3 py-2.5 bg-gray-50 text-gray-500 text-sm border-r border-gray-300">@</span>
               <input
                 name="username"
@@ -134,7 +134,7 @@ export default function RegisterPage() {
               value={form.email}
               onChange={handleChange}
               placeholder="tu@correo.com"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
             />
           </div>
 
@@ -148,14 +148,14 @@ export default function RegisterPage() {
               onChange={handleChange}
               placeholder="Mínimo 8 caracteres"
               minLength={8}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors disabled:opacity-60"
+            className="w-full bg-brand-blue text-white font-bold py-3 rounded-xl hover:bg-brand-blue-700 transition-colors disabled:opacity-60"
           >
             {loading ? 'Creando cuenta...' : 'Crear cuenta gratis'}
           </button>

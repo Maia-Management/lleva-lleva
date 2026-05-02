@@ -14,15 +14,15 @@ const AD_EVERY = 5;
 export default function ListingGrid({ listings, emptyMessage = 'No hay anuncios disponibles.', showAds = false }: Props) {
   if (listings.length === 0) {
     return (
-      <div className="text-center py-12 text-gray-400">
-        <svg className="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="text-center py-12 text-ink-2/70">
+        <svg className="w-12 h-12 mx-auto mb-3 text-line" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
             d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <p className="text-sm mb-4">{emptyMessage}</p>
         <Link
           href="/publicar"
-          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors"
+          className="inline-flex items-center gap-2 bg-brand-yellow hover:bg-brand-yellow-600 text-ink font-bold text-sm px-5 py-2.5 rounded-full transition-colors shadow-sm"
         >
           + Sé el primero en publicar gratis
         </Link>

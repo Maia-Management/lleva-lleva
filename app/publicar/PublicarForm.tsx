@@ -168,7 +168,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           value={form.title}
           onChange={handleChange}
           placeholder="Ej: Toyota Hilux 2020 – Full equipo"
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
         />
       </div>
 
@@ -188,7 +188,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           required
           value={form.category_id}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
         >
           <option value="">Selecciona una categoría</option>
           {parentCats.map((parent) => {
@@ -211,7 +211,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
         <label className="block text-sm font-semibold text-gray-700 mb-1">
           Ciudad
           {form.is_nationwide && (
-            <span className="ml-2 text-xs font-normal text-emerald-600">(no aplica — anuncio nacional)</span>
+            <span className="ml-2 text-xs font-normal text-brand-blue">(no aplica — anuncio nacional)</span>
           )}
         </label>
         <select
@@ -219,7 +219,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           value={form.is_nationwide ? '' : form.location_id}
           onChange={handleChange}
           disabled={form.is_nationwide}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white disabled:bg-gray-50 disabled:text-gray-400"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white disabled:bg-gray-50 disabled:text-gray-400"
         >
           <option value="">Selecciona una ciudad</option>
           {Object.entries(groupedLocations).sort().map(([dept, locs]) => (
@@ -240,7 +240,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           type="checkbox"
           checked={form.is_nationwide}
           onChange={handleChange}
-          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
+          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-blue focus:ring-brand-blue"
         />
         <div>
           <label htmlFor="is_nationwide" className="text-sm font-semibold text-gray-700 cursor-pointer">
@@ -264,7 +264,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           value={form.description}
           onChange={handleChange}
           placeholder="Describe en detalle lo que ofreces: características, estado, motivo de venta..."
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
         />
         <p className="text-xs text-gray-400 text-right mt-1">{form.description.length}/3000</p>
       </div>
@@ -277,7 +277,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
             name="price_type"
             value={form.price_type}
             onChange={handleChange}
-            className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+            className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
           >
             <option value="fixed">Precio fijo</option>
             <option value="negotiable">Negociable</option>
@@ -296,7 +296,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
               value={form.price}
               onChange={handleChange}
               placeholder="Ej: 2500000"
-              className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
             />
           </div>
         )}
@@ -309,7 +309,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           name="condition"
           value={form.condition}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
         >
           <option value="">No aplica (servicio)</option>
           <option value="new">Nuevo</option>
@@ -325,7 +325,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
         <label className="block text-sm font-semibold text-gray-700 mb-1">
           Tu número de WhatsApp
         </label>
-        <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-emerald-500">
+        <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-brand-blue">
           <span className="px-3 py-3 bg-gray-50 text-gray-500 text-sm border-r border-gray-300">+57</span>
           <input
             name="whatsapp"
@@ -342,7 +342,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
       </div>
 
       {uploadProgress && (
-        <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm rounded-xl px-4 py-3 flex items-center gap-2">
+        <div className="bg-brand-blue-50 border border-brand-blue/20 text-brand-blue text-sm rounded-xl px-4 py-3 flex items-center gap-2">
           <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
@@ -354,7 +354,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
       <button
         type="submit"
         disabled={loading || blocked}
-        className="w-full bg-emerald-600 text-white font-bold py-4 rounded-xl text-base hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-brand-blue text-white font-bold py-4 rounded-xl text-base hover:bg-brand-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? uploadProgress || 'Publicando...' : blocked ? 'Califica primero para publicar' : 'Publicar anuncio gratis'}
       </button>

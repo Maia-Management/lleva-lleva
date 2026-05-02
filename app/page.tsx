@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
 import AdBanner from "@/components/ads/AdBanner";
 import { Listing } from "@/types";
+
+export const metadata: Metadata = {
+  title: 'Lleva Lleva – Clasificados Colombia',
+  description: 'El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más en lleva-lleva.com.',
+};
 
 const TOP_CATEGORIES = [
   { slug: "vehiculos", name: "Vehículos", icon: "🚗" },
@@ -70,27 +76,31 @@ export default async function HomePage() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      {/* Hero — solid Colombian blue with a subtle horizon glow.
+          Yellow on the headline accent + yellow CTA carry the Colombian identity
+          without the saturated emerald look. */}
+      <section className="relative bg-brand-blue text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue to-ink" aria-hidden="true" />
+        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-brand-yellow/10 blur-3xl" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
           <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-3">
+            <h1 className="text-3xl sm:text-5xl font-black leading-[1.05] mb-4 tracking-tight">
               Compra y vende en<br />
-              <span className="text-emerald-200">toda Colombia</span>
+              <span className="text-brand-yellow">toda Colombia</span>
             </h1>
-            <p className="text-emerald-100 text-base sm:text-lg mb-8">
+            <p className="text-white/80 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
               El clasificado colombiano de confianza. Conectamos compradores y vendedores en tu región.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/publicar"
-                className="inline-flex items-center justify-center gap-2 bg-white text-emerald-700 font-bold px-6 py-3 rounded-full hover:bg-emerald-50 transition-colors text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2 bg-brand-yellow text-ink font-bold px-6 py-3 rounded-full hover:bg-brand-yellow-600 transition-colors text-sm sm:text-base shadow-lg shadow-black/10"
               >
                 + Publicar gratis
               </Link>
               <Link
                 href="/categorias/vehiculos"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/10 transition-colors text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/10 hover:border-white/50 transition-colors text-sm sm:text-base"
               >
                 Ver anuncios
               </Link>
@@ -101,16 +111,16 @@ export default async function HomePage() {
 
       {/* Category Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <h2 className="text-lg font-bold text-gray-800 mb-4">Explorar categorías</h2>
+        <h2 className="text-lg font-bold text-ink mb-4">Explorar categorías</h2>
         <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 sm:gap-3">
           {TOP_CATEGORIES.map((cat) => (
             <Link
               key={cat.slug}
               href={`/categorias/${cat.slug}`}
-              className="flex flex-col items-center gap-1.5 p-2 sm:p-3 bg-white rounded-xl border border-gray-200 hover:border-emerald-300 hover:shadow-sm transition-all text-center group"
+              className="flex flex-col items-center gap-1.5 p-2 sm:p-3 bg-surface rounded-xl border border-line hover:border-brand-blue/40 hover:bg-brand-blue-50/40 hover:shadow-sm transition-all text-center group"
             >
               <span className="text-2xl sm:text-3xl">{cat.icon}</span>
-              <span className="text-[10px] sm:text-xs font-medium text-gray-600 group-hover:text-emerald-700 leading-tight">
+              <span className="text-[10px] sm:text-xs font-medium text-ink-2 group-hover:text-brand-blue leading-tight">
                 {cat.name}
               </span>
             </Link>
@@ -127,7 +137,10 @@ export default async function HomePage() {
       {featuredListings && featuredListings.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold text-gray-800">⭐ Anuncios destacados</h2>
+            <h2 className="text-lg font-bold text-ink flex items-center gap-2">
+              <span className="inline-block w-1.5 h-5 rounded-full bg-brand-red" aria-hidden="true" />
+              Anuncios destacados
+            </h2>
           </div>
           <ListingGrid listings={featuredListings as Listing[]} showAds />
         </section>
@@ -141,7 +154,10 @@ export default async function HomePage() {
       {/* Recent listings */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-bold text-gray-800">Anuncios recientes</h2>
+          <h2 className="text-lg font-bold text-ink flex items-center gap-2">
+            <span className="inline-block w-1.5 h-5 rounded-full bg-brand-blue" aria-hidden="true" />
+            Anuncios recientes
+          </h2>
         </div>
         <ListingGrid
           listings={(recentListings as Listing[]) ?? []}
@@ -155,10 +171,10 @@ export default async function HomePage() {
       </section>
 
       {/* Public Info Section */}
-      <section className="bg-white border-t border-b border-gray-200 mt-8">
+      <section className="bg-surface border-t border-b border-line mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <h2 className="text-lg font-bold text-gray-800 mb-2">Información Pública</h2>
-          <p className="text-sm text-gray-500 mb-5">
+          <h2 className="text-lg font-bold text-ink mb-2">Información Pública</h2>
+          <p className="text-sm text-ink-2/80 mb-5">
             Consulta precios de referencia, trámites y noticias actualizadas de Colombia.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -166,12 +182,12 @@ export default async function HomePage() {
               <Link
                 key={item.slug}
                 href={`/info/info-publica/${item.slug}`}
-                className="flex flex-col gap-2 p-4 bg-gray-50 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 border border-gray-200 transition-all"
+                className="flex flex-col gap-2 p-4 bg-bg rounded-xl border border-line hover:bg-brand-blue-50/60 hover:border-brand-blue/30 transition-all"
               >
                 <span className="text-2xl">{item.icon}</span>
                 <div>
-                  <p className="font-semibold text-sm text-gray-800">{item.title}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{item.desc}</p>
+                  <p className="font-semibold text-sm text-ink">{item.title}</p>
+                  <p className="text-xs text-ink-2/70 mt-0.5">{item.desc}</p>
                 </div>
               </Link>
             ))}
@@ -188,19 +204,19 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           <div className="p-6">
-            <div className="text-3xl mb-3">🔒</div>
-            <h3 className="font-bold text-gray-800 mb-1">Seguro y confiable</h3>
-            <p className="text-sm text-gray-500">Sistema de calificaciones verificadas para compradores y vendedores.</p>
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue-50 text-brand-blue mb-3 text-2xl" aria-hidden="true">🔒</div>
+            <h3 className="font-bold text-ink mb-1">Seguro y confiable</h3>
+            <p className="text-sm text-ink-2/80">Sistema de calificaciones verificadas para compradores y vendedores.</p>
           </div>
           <div className="p-6">
-            <div className="text-3xl mb-3">💬</div>
-            <h3 className="font-bold text-gray-800 mb-1">Contacto directo</h3>
-            <p className="text-sm text-gray-500">Conecta directamente por WhatsApp con el vendedor, sin intermediarios.</p>
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue-50 text-brand-blue mb-3 text-2xl" aria-hidden="true">💬</div>
+            <h3 className="font-bold text-ink mb-1">Contacto directo</h3>
+            <p className="text-sm text-ink-2/80">Conecta directamente por WhatsApp con el vendedor, sin intermediarios.</p>
           </div>
           <div className="p-6">
-            <div className="text-3xl mb-3">🇨🇴</div>
-            <h3 className="font-bold text-gray-800 mb-1">Hecho en Colombia</h3>
-            <p className="text-sm text-gray-500">Plataforma diseñada para el mercado colombiano, en español.</p>
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue-50 mb-3 text-2xl" aria-hidden="true">🇨🇴</div>
+            <h3 className="font-bold text-ink mb-1">Hecho en Colombia</h3>
+            <p className="text-sm text-ink-2/80">Plataforma diseñada para el mercado colombiano, en español.</p>
           </div>
         </div>
       </section>

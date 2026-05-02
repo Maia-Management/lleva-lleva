@@ -96,7 +96,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
           maxLength={120}
           value={form.title}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
         />
       </div>
 
@@ -108,7 +108,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
           required
           value={form.category_id}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
         >
           <option value="">Selecciona una categoría</option>
           {parentCats.map((parent) => {
@@ -131,7 +131,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
         <label className="block text-sm font-semibold text-gray-700 mb-1">
           Ciudad
           {form.is_nationwide && (
-            <span className="ml-2 text-xs font-normal text-emerald-600">(no aplica — anuncio nacional)</span>
+            <span className="ml-2 text-xs font-normal text-brand-blue">(no aplica — anuncio nacional)</span>
           )}
         </label>
         <select
@@ -139,7 +139,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
           value={form.is_nationwide ? '' : form.location_id}
           onChange={handleChange}
           disabled={form.is_nationwide}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white disabled:bg-gray-50 disabled:text-gray-400"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white disabled:bg-gray-50 disabled:text-gray-400"
         >
           <option value="">Selecciona una ciudad</option>
           {Object.entries(groupedLocations).sort().map(([dept, locs]) => (
@@ -160,7 +160,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
           type="checkbox"
           checked={form.is_nationwide}
           onChange={handleChange}
-          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
+          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-blue focus:ring-brand-blue"
         />
         <label htmlFor="is_nationwide" className="text-sm font-semibold text-gray-700 cursor-pointer">
           Disponible en todo Colombia 🇨🇴
@@ -178,7 +178,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
           maxLength={3000}
           value={form.description}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
         />
         <p className="text-xs text-gray-400 text-right mt-1">{form.description.length}/3000</p>
       </div>
@@ -191,7 +191,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
             name="price_type"
             value={form.price_type}
             onChange={handleChange}
-            className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+            className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
           >
             <option value="fixed">Precio fijo</option>
             <option value="negotiable">Negociable</option>
@@ -209,7 +209,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
               min="0"
               value={form.price}
               onChange={handleChange}
-              className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-3 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
             />
           </div>
         )}
@@ -222,7 +222,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
           name="condition"
           value={form.condition}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
         >
           <option value="">No aplica (servicio)</option>
           <option value="new">Nuevo</option>
@@ -244,7 +244,7 @@ export default function EditListingForm({ listing, categories, locations }: Prop
         <button
           type="submit"
           disabled={loading}
-          className="flex-1 bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm hover:bg-emerald-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="flex-1 bg-brand-blue text-white font-bold py-3 rounded-xl text-sm hover:bg-brand-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? 'Guardando...' : 'Guardar cambios'}
         </button>

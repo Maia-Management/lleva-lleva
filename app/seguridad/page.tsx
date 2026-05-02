@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Consejos de Seguridad',
-  description: 'Consejos para realizar transacciones seguras en LlevaLleva.co. Protégete al comprar y vender en línea.',
+  description: 'Consejos para realizar transacciones seguras en Lleva Lleva. Protégete al comprar y vender en línea.',
 };
 
 const tips = [
@@ -63,7 +63,7 @@ export default function SeguridadPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <div className="mb-10">
@@ -74,8 +74,8 @@ export default function SeguridadPage() {
         </p>
       </div>
 
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-10">
-        <p className="text-amber-800 text-sm font-medium">
+      <div className="bg-brand-yellow/10 border border-brand-yellow/30 rounded-2xl p-5 mb-10">
+        <p className="text-ink text-sm font-medium">
           ⚠️ <strong>Recuerda:</strong> LlevaLleva es una plataforma de contacto entre particulares. No
           intermediamos en los pagos ni garantizamos las transacciones. Siempre actúa con precaución.
         </p>

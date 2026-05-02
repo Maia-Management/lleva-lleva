@@ -8,7 +8,7 @@ import Script from "next/script";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://llevalleva.co"),
+  metadataBase: new URL("https://lleva-lleva.com"),
   title: {
     default: "Lleva Lleva – Clasificados Colombia",
     template: "%s | Lleva Lleva",
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     "El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más.",
   keywords: ["clasificados", "colombia", "comprar", "vender", "barranquilla", "bogota", "medellin"],
   alternates: {
-    canonical: "https://llevalleva.co",
+    canonical: "https://lleva-lleva.com",
     languages: {
-      "es": "https://llevalleva.co",
-      "en": "https://llevalleva.co",
-      "x-default": "https://llevalleva.co",
+      "es": "https://lleva-lleva.com",
+      "en": "https://lleva-lleva.com",
+      "x-default": "https://lleva-lleva.com",
     },
   },
   robots: {

@@ -4,8 +4,8 @@ import { Category } from '@/types';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Categorías – LlevaLleva.co',
-  description: 'Explora todas las categorías de clasificados en LlevaLleva.co: vehículos, inmuebles, tecnología, empleos, servicios y mucho más.',
+  title: 'Categorías – Lleva Lleva',
+  description: 'Explora todas las categorías de clasificados en Lleva Lleva: vehículos, inmuebles, tecnología, empleos, servicios y mucho más.',
 };
 
 export default async function CategoriasPage() {
@@ -34,13 +34,13 @@ export default async function CategoriasPage() {
           <Link
             key={cat.id}
             href={`/categorias/${cat.slug}`}
-            className="group flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-2xl p-5 hover:border-emerald-300 hover:shadow-md transition-all duration-200 text-center"
+            className="group flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-2xl p-5 hover:border-brand-blue/40 hover:shadow-md transition-all duration-200 text-center"
           >
             <span className="text-4xl leading-none" role="img" aria-label={cat.name_es}>
               {cat.icon ?? '📦'}
             </span>
             <div>
-              <p className="text-sm font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors leading-tight">
+              <p className="text-sm font-semibold text-gray-800 group-hover:text-brand-blue transition-colors leading-tight">
                 {cat.name_es}
               </p>
               {cat.listing_count > 0 && (
@@ -57,7 +57,7 @@ export default async function CategoriasPage() {
       <div className="mt-10 text-center">
         <Link
           href="/buscar"
-          className="inline-flex items-center gap-2 bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors text-sm"
+          className="inline-flex items-center gap-2 bg-brand-blue text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-blue-700 transition-colors text-sm"
         >
           🔍 Ver todos los anuncios
         </Link>

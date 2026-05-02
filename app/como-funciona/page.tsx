@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '¿Cómo funciona LlevaLleva?',
-  description: 'Aprende cómo publicar y comprar en LlevaLleva.co, el clasificado colombiano.',
+  description: 'Aprende cómo publicar y comprar en Lleva Lleva, el clasificado colombiano.',
 };
 
 const steps = {
@@ -57,7 +57,7 @@ export default function ComoFuncionaPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-emerald-600 hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
 
       <div className="text-center mb-12">
@@ -71,13 +71,13 @@ export default function ComoFuncionaPage() {
       {/* Sell section */}
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-6">
-          <span className="bg-emerald-100 text-emerald-700 text-sm font-bold px-3 py-1 rounded-full">Para vender</span>
+          <span className="bg-brand-blue-50 text-brand-blue text-sm font-bold px-3 py-1 rounded-full">Para vender</span>
           <h2 className="text-xl font-bold text-gray-900">Publica en minutos</h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {steps.vender.map((s) => (
             <div key={s.num} className="bg-white border border-gray-200 rounded-2xl p-6">
-              <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-black mb-3">
+              <div className="w-8 h-8 bg-brand-blue text-white rounded-full flex items-center justify-center text-sm font-black mb-3">
                 {s.num}
               </div>
               <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
@@ -88,7 +88,7 @@ export default function ComoFuncionaPage() {
         <div className="mt-5 text-center">
           <Link
             href="/publicar"
-            className="inline-block bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-emerald-700 transition-colors"
+            className="inline-block bg-brand-blue text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-blue-700 transition-colors"
           >
             Publicar gratis ahora
           </Link>
@@ -147,9 +147,9 @@ export default function ComoFuncionaPage() {
       <div className="mt-8 text-center">
         <p className="text-gray-600 text-sm">
           ¿Tienes más preguntas?{' '}
-          <Link href="/ayuda" className="text-emerald-600 hover:underline font-medium">Visita nuestro centro de ayuda</Link>
+          <Link href="/ayuda" className="text-brand-blue hover:underline font-medium">Visita nuestro centro de ayuda</Link>
           {' '}o{' '}
-          <Link href="/contacto" className="text-emerald-600 hover:underline font-medium">contáctanos</Link>.
+          <Link href="/contacto" className="text-brand-blue hover:underline font-medium">contáctanos</Link>.
         </p>
       </div>
     </div>

@@ -81,8 +81,8 @@ export default function SearchFilters({ categories, locations }: Props) {
       {/* Search input */}
       <div className="relative">
         <svg
-          className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
-          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-2/60 pointer-events-none"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -92,18 +92,20 @@ export default function SearchFilters({ categories, locations }: Props) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="¿Qué estás buscando?"
-          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          aria-label="Buscar"
+          className="w-full pl-10 pr-4 py-3 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue placeholder:text-ink-2/60 text-ink"
           autoFocus
         />
       </div>
 
-      {/* Filters row */}
+      {/* Filters row — 2 cols on mobile, 4 on desktop */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {/* Category */}
         <select
           value={categoria}
           onChange={(e) => setCategoria(e.target.value)}
-          className="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          aria-label="Categoría"
+          className="w-full px-3 py-2.5 border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-surface text-ink"
         >
           <option value="">Todas las categorías</option>
           {parentCats.map((parent) => {
@@ -124,7 +126,8 @@ export default function SearchFilters({ categories, locations }: Props) {
         <select
           value={ciudad}
           onChange={(e) => setCiudad(e.target.value)}
-          className="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          aria-label="Ciudad"
+          className="w-full px-3 py-2.5 border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-surface text-ink"
         >
           <option value="">Todas las ciudades</option>
           {uniqueDepts.map((dept) => (
@@ -140,7 +143,8 @@ export default function SearchFilters({ categories, locations }: Props) {
         <select
           value={condicion}
           onChange={(e) => setCondicion(e.target.value)}
-          className="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+          aria-label="Estado"
+          className="w-full px-3 py-2.5 border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-surface text-ink"
         >
           <option value="">Cualquier estado</option>
           <option value="new">Nuevo</option>
@@ -157,17 +161,19 @@ export default function SearchFilters({ categories, locations }: Props) {
             value={precioMin}
             onChange={(e) => setPrecioMin(e.target.value)}
             placeholder="Min COP"
+            aria-label="Precio mínimo"
             min="0"
-            className="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full px-3 py-2.5 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue text-ink placeholder:text-ink-2/60"
           />
-          <span className="text-gray-400 text-xs flex-shrink-0">–</span>
+          <span className="text-ink-2/60 text-xs flex-shrink-0" aria-hidden="true">–</span>
           <input
             type="number"
             value={precioMax}
             onChange={(e) => setPrecioMax(e.target.value)}
             placeholder="Max"
+            aria-label="Precio máximo"
             min="0"
-            className="w-full px-3 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full px-3 py-2.5 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue text-ink placeholder:text-ink-2/60"
           />
         </div>
       </div>
@@ -176,39 +182,39 @@ export default function SearchFilters({ categories, locations }: Props) {
       {(q || categoria || ciudad || condicion || precioMin || precioMax) && (
         <div className="flex flex-wrap gap-2">
           {q && (
-            <span className="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-xs px-3 py-1 rounded-full border border-emerald-200">
+            <span className="inline-flex items-center gap-1 bg-brand-blue-50 text-brand-blue text-xs px-3 py-1 rounded-full border border-brand-blue/20 font-medium">
               &ldquo;{q}&rdquo;
-              <button onClick={() => setQ('')} className="ml-1 hover:text-emerald-900">×</button>
+              <button onClick={() => setQ('')} aria-label={`Quitar búsqueda "${q}"`} className="ml-1 hover:text-brand-blue-700">×</button>
             </span>
           )}
           {categoria && (
-            <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               {categories.find((c) => c.slug === categoria)?.name_es ?? categoria}
-              <button onClick={() => setCategoria('')} className="ml-1 hover:text-gray-900">×</button>
+              <button onClick={() => setCategoria('')} aria-label="Quitar categoría" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           {ciudad && (
-            <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               📍 {ciudad}
-              <button onClick={() => setCiudad('')} className="ml-1 hover:text-gray-900">×</button>
+              <button onClick={() => setCiudad('')} aria-label="Quitar ciudad" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           {condicion && (
-            <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               {condicion === 'new' ? 'Nuevo' : condicion === 'like_new' ? 'Como nuevo' :
                condicion === 'good' ? 'Buen estado' : condicion === 'fair' ? 'Estado regular' : 'Para repuestos'}
-              <button onClick={() => setCondicion('')} className="ml-1 hover:text-gray-900">×</button>
+              <button onClick={() => setCondicion('')} aria-label="Quitar estado" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           {(precioMin || precioMax) && (
-            <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               ${precioMin || '0'} – ${precioMax || '∞'}
-              <button onClick={() => { setPrecioMin(''); setPrecioMax(''); }} className="ml-1 hover:text-gray-900">×</button>
+              <button onClick={() => { setPrecioMin(''); setPrecioMax(''); }} aria-label="Quitar rango de precio" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           <button
             onClick={() => { setQ(''); setCategoria(''); setCiudad(''); setCondicion(''); setPrecioMin(''); setPrecioMax(''); }}
-            className="text-xs text-gray-500 hover:text-gray-700 px-2 py-1 hover:underline"
+            className="text-xs text-ink-2/80 hover:text-brand-blue px-2 py-1 hover:underline font-medium"
           >
             Limpiar todo
           </button>

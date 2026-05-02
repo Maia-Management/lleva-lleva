@@ -3,7 +3,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://llevalleva.co';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lleva-lleva.com';
 const MAIA_BOT_NUMBER = '19034598763';
 
 async function sendWhatsAppMessage(to: string, body: string): Promise<void> {

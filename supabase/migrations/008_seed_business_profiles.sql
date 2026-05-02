@@ -23,7 +23,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000001',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.elsanatorio@llevalleva.co',
+    'bot.elsanatorio@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -32,7 +32,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000002',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.junohousestudios@llevalleva.co',
+    'bot.junohousestudios@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -41,7 +41,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000003',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.maiamasters@llevalleva.co',
+    'bot.maiamasters@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -50,7 +50,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000004',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.triviummagnum@llevalleva.co',
+    'bot.triviummagnum@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -59,7 +59,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000005',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.maialegal@llevalleva.co',
+    'bot.maialegal@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -68,7 +68,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000006',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.maiamanagement@llevalleva.co',
+    'bot.maiamanagement@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -77,7 +77,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000007',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.maiarealty@llevalleva.co',
+    'bot.maiarealty@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -86,7 +86,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000008',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.llavelabs@llevalleva.co',
+    'bot.llavelabs@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -95,7 +95,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000009',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.maiaaerial@llevalleva.co',
+    'bot.maiaaerial@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false
@@ -104,7 +104,7 @@ INSERT INTO auth.users (
     'a1b2c3d4-0001-0001-0001-000000000010',
     '00000000-0000-0000-0000-000000000000',
     'authenticated', 'authenticated',
-    'bot.llevalleva@llevalleva.co',
+    'bot.llevalleva@lleva-lleva.com',
     NULL, now(),
     '{"provider":"email","providers":["email"]}', '{"bot":true}',
     now(), now(), false, false

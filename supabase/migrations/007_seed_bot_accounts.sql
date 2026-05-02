@@ -12,7 +12,7 @@ BEGIN
 
 -- ============================================================
 -- PASO 1: Insertar usuarios en auth.users
--- Cada bot tiene email interno @internal.llevalleva.co
+-- Cada bot tiene email interno @internal.lleva-lleva.com
 -- encrypted_password vacío — estos bots nunca hacen login por contraseña
 -- ============================================================
 
@@ -32,81 +32,81 @@ INSERT INTO auth.users (
 ) VALUES
 
 -- SERVICIOS PÚBLICOS
-('00000000-0000-4000-b000-000000000001','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.metroagua-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000002','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.aire-caribe-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000003','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.surtigas-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000004','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.etb-avisos-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000005','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.claro-avisos-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000006','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.movistar-avisos-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000007','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.tigo-avisos-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000001','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.metroagua-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000002','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.aire-caribe-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000003','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.surtigas-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000004','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.etb-avisos-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000005','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.claro-avisos-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000006','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.movistar-avisos-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000007','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.tigo-avisos-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- ALCALDÍA Y GOBIERNO DISTRITAL
-('00000000-0000-4000-b000-000000000008','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.alcaldia-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000009','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.transito-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000010','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.salud-distrital-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000011','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.educacion-distrital-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000012','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.planeacion-distrital-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000013','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.curaduria-urbana-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000014','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.dadsa-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000015','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sec-gobierno-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000016','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.inspecciones-policia-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000017','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.catastro-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000008','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.alcaldia-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000009','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.transito-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000010','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.salud-distrital-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000011','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.educacion-distrital-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000012','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.planeacion-distrital-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000013','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.curaduria-urbana-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000014','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.dadsa-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000015','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sec-gobierno-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000016','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.inspecciones-policia-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000017','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.catastro-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- GOBERNACIÓN DEL MAGDALENA
-('00000000-0000-4000-b000-000000000018','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.gobernacion-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000019','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.infraestructura-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000018','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.gobernacion-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000019','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.infraestructura-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- SEGURIDAD Y EMERGENCIAS
-('00000000-0000-4000-b000-000000000020','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.policia-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000021','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.bomberos-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000022','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.defensa-civil-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000023','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ungrd-alertas@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000024','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.cruz-roja-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000020','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.policia-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000021','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.bomberos-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000022','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.defensa-civil-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000023','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ungrd-alertas@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000024','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.cruz-roja-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- ENTIDADES NACIONALES
-('00000000-0000-4000-b000-000000000025','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.dian-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000026','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.migracion-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000027','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.registraduria-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000028','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sena-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000029','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.icbf-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000030','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.rama-judicial-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000031','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.notarias-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000032','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sic-alertas@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000033','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.mintrabajo-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000025','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.dian-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000026','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.migracion-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000027','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.registraduria-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000028','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sena-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000029','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.icbf-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000030','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.rama-judicial-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000031','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.notarias-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000032','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sic-alertas@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000033','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.mintrabajo-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- SALUD
-('00000000-0000-4000-b000-000000000034','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.hospital-central-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000035','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ese-reverend-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000036','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ins-alertas-regionales@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000034','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.hospital-central-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000035','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ese-reverend-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000036','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ins-alertas-regionales@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- TRANSPORTE E INFRAESTRUCTURA
-('00000000-0000-4000-b000-000000000037','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.aeropuerto-simon-bolivar@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000038','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.terminal-transportes-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000039','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.invias-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000040','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ani-viales-caribe@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000037','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.aeropuerto-simon-bolivar@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000038','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.terminal-transportes-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000039','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.invias-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000040','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ani-viales-caribe@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- MEDIO AMBIENTE
-('00000000-0000-4000-b000-000000000041','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ideam-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000042','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.dimar-capuerto-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000043','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.parques-tayrona@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000044','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.parques-sierra-nevada@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000045','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.corpamag-alertas@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000046','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.invemar-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000041','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.ideam-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000042','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.dimar-capuerto-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000043','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.parques-tayrona@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000044','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.parques-sierra-nevada@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000045','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.corpamag-alertas@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000046','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.invemar-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- EDUCACIÓN SUPERIOR
-('00000000-0000-4000-b000-000000000047','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.unimagdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000048','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.unad-zona-caribe@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000047','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.unimagdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000048','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.unad-zona-caribe@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- ECONOMÍA Y COMERCIO
-('00000000-0000-4000-b000-000000000049','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.camara-comercio-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000050','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.banrep-santa-marta@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000051','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.fenalco-magdalena@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000049','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.camara-comercio-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000050','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.banrep-santa-marta@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000051','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.fenalco-magdalena@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
 
 -- CULTURA Y TURISMO
-('00000000-0000-4000-b000-000000000052','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.procolombia-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000053','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sec-cultura-sm@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000054','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.festival-vallenato@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
-('00000000-0000-4000-b000-000000000055','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.icanh-caribe@internal.llevalleva.co','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now())
+('00000000-0000-4000-b000-000000000052','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.procolombia-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000053','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.sec-cultura-sm@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000054','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.festival-vallenato@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now()),
+('00000000-0000-4000-b000-000000000055','00000000-0000-0000-0000-000000000000','authenticated','authenticated','bot.icanh-caribe@internal.lleva-lleva.com','',now(),'{"provider":"email","providers":["email"],"is_bot":true}','{}',false,now(),now())
 
 ON CONFLICT (id) DO NOTHING;
 

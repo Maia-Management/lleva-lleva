@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { data } = await supabase.from('categories').select('name_es').eq('slug', slug).single();
   return {
     title: data ? `${data.name_es} – Clasificados Colombia` : 'Categoría',
-    description: `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en LlevaLleva.co`,
+    description: `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva`,
   };
 }
 
@@ -78,7 +78,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
       {/* Breadcrumb */}
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5">
-        <Link href="/" className="hover:text-emerald-600">Inicio</Link>
+        <Link href="/" className="hover:text-brand-blue">Inicio</Link>
         <span>›</span>
         <span className="text-gray-700">{category.name_es}</span>
       </nav>
@@ -97,7 +97,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   <li>
                     <Link
                       href={`/categorias/${category.slug}`}
-                      className="block text-sm py-1 px-2 rounded-lg font-semibold text-emerald-700 bg-emerald-50"
+                      className="block text-sm py-1 px-2 rounded-lg font-semibold text-brand-blue bg-brand-blue-50"
                     >
                       Todo en {category.name_es}
                     </Link>
@@ -125,7 +125,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   <select
                     name="orden"
                     defaultValue={orden}
-                    className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-blue"
                   >
                     <option value="recientes">Más recientes</option>
                     <option value="precio_asc">Precio: menor a mayor</option>
@@ -139,7 +139,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                     name="precio_min"
                     defaultValue={sp.precio_min}
                     placeholder="0"
-                    className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-blue"
                   />
                 </div>
                 <div>
@@ -149,12 +149,12 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                     name="precio_max"
                     defaultValue={sp.precio_max}
                     placeholder="Sin límite"
-                    className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-blue"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-emerald-600 text-white text-sm font-semibold py-2 rounded-lg hover:bg-emerald-700 transition-colors"
+                  className="w-full bg-brand-blue text-white text-sm font-semibold py-2 rounded-lg hover:bg-brand-blue-700 transition-colors"
                 >
                   Aplicar filtros
                 </button>
@@ -195,7 +195,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
             <div className="flex justify-center mt-8">
               <Link
                 href={`?${new URLSearchParams({ ...sp, page: String(page + 1) })}`}
-                className="bg-white border border-gray-200 text-gray-700 text-sm font-medium px-6 py-2.5 rounded-full hover:border-emerald-300 hover:text-emerald-700 transition-colors"
+                className="bg-white border border-gray-200 text-gray-700 text-sm font-medium px-6 py-2.5 rounded-full hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
               >
                 Ver más anuncios →
               </Link>

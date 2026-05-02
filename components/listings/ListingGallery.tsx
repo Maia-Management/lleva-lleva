@@ -82,7 +82,7 @@ export default function ListingGallery({ images, title }: Props) {
               type="button"
               onClick={() => setActiveIdx(i)}
               className={`flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-colors ${
-                i === activeIdx ? 'border-emerald-500' : 'border-gray-200 hover:border-emerald-300'
+                i === activeIdx ? 'border-brand-blue' : 'border-gray-200 hover:border-brand-blue/40'
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

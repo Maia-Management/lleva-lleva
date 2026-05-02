@@ -5,7 +5,7 @@ import { Profile, Location } from '@/types';
 import Link from 'next/link';
 import ProfileEditForm from './ProfileEditForm';
 
-export const metadata: Metadata = { title: 'Editar perfil – LlevaLleva.co' };
+export const metadata: Metadata = { title: 'Editar perfil – Lleva Lleva' };
 
 export default async function EditProfilePage() {
   const supabase = await createClient();

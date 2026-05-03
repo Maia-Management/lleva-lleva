@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /auth/
+Disallow: /dashboard/
 
 # Block AI training bots
 User-agent: GPTBot

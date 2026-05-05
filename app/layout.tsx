@@ -70,6 +70,7 @@ const organizationJsonLd = {
   telephone: "+19034598763",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Level 11",
     addressLocality: "Santa Marta",
     addressRegion: "Magdalena",
     addressCountry: "CO",

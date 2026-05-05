@@ -68,11 +68,17 @@ const organizationJsonLd = {
   name: "Lleva Lleva",
   url: "https://lleva-lleva.com",
   telephone: "+19034598763",
+  email: "info@maia-management.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Santa Marta",
     addressRegion: "Magdalena",
     addressCountry: "CO",
+  },
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Maia Management Group S.A.S.",
+    url: "https://maia-management.com",
   },
 };
 

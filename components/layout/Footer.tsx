@@ -60,7 +60,9 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-10 pt-6 text-xs text-white/50 text-center">
           <p className="mb-2">
             Parte del ecosistema{' '}
-            <a href="https://maia-management.com" target="_blank" rel="noopener noreferrer" className="text-brand-yellow hover:text-brand-yellow-600 transition-colors font-medium">Maia Group</a>
+            <a href="https://the-maia-group.com" target="_blank" rel="noopener noreferrer" className="text-brand-yellow hover:text-brand-yellow-600 transition-colors font-medium">The Maia Group</a>
+            {' · '}
+            <a href="https://maia-management.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Management</a>
             {' · '}
             <a href="https://maia-legal.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Legal</a>
             {' · '}

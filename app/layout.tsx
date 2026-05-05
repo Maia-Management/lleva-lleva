@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: "https://lleva-lleva.com",
     images: [
       {
-        url: "https://lleva-lleva.com/og-image.jpg",
+        url: "https://lleva-lleva.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Lleva Lleva — Clasificados Colombia",
@@ -55,10 +55,24 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lleva Lleva – Clasificados Colombia",
     description: "El clasificado colombiano. Compra, vende y conecta con personas de tu región.",
-    images: ["https://lleva-lleva.com/og-image.jpg"],
+    images: ["https://lleva-lleva.com/og-image.png"],
   },
   other: {
     "google-adsense-account": "ca-pub-2469196723812841",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Lleva Lleva",
+  url: "https://lleva-lleva.com",
+  telephone: "+19034598763",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Santa Marta",
+    addressRegion: "Magdalena",
+    addressCountry: "CO",
   },
 };
 
@@ -70,6 +84,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2469196723812841"
           crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body className={`${geist.className} bg-gray-50 min-h-screen flex flex-col antialiased`}>
@@ -105,4 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </svg>
         </a>
       </body>
-    </html>
+    </html>
+  );
+}
+

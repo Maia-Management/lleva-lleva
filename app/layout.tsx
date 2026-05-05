@@ -66,14 +66,31 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Lleva Lleva",
+  alternateName: "LlevaLleva.co",
   url: "https://lleva-lleva.com",
+  logo: "https://lleva-lleva.com/og-image.png",
+  description:
+    "El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más.",
+  email: "hola@lleva-lleva.com",
   telephone: "+19034598763",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11",
     addressLocality: "Santa Marta",
     addressRegion: "Magdalena",
     addressCountry: "CO",
   },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "hola@lleva-lleva.com",
+      telephone: "+19034598763",
+      areaServed: "CO",
+      availableLanguage: ["Spanish", "English"],
+    },
+  ],
+  areaServed: { "@type": "Country", name: "Colombia" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -10,6 +10,27 @@ export const metadata: Metadata = {
   description: 'El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más en lleva-lleva.com.',
 };
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://lleva-lleva.com/#website',
+  url: 'https://lleva-lleva.com',
+  name: 'Lleva Lleva',
+  alternateName: 'LlevaLleva.co',
+  inLanguage: 'es-CO',
+  description:
+    'El clasificado colombiano. Compra, vende y conecta con personas de tu región.',
+  publisher: { '@type': 'Organization', name: 'Lleva Lleva' },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://lleva-lleva.com/buscar?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 const TOP_CATEGORIES = [
   { slug: "vehiculos", name: "Vehículos", icon: "🚗" },
   { slug: "inmuebles", name: "Inmuebles", icon: "🏠" },
@@ -76,6 +97,10 @@ export default async function HomePage() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       {/* Hero — solid Colombian blue with a subtle horizon glow.
           Yellow on the headline accent + yellow CTA carry the Colombian identity
           without the saturated emerald look. */}

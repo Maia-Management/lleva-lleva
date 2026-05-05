@@ -6,9 +6,54 @@ export const metadata: Metadata = {
   description: 'Contáctate con el equipo de Lleva Lleva.',
 };
 
+const contactPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': 'https://lleva-lleva.com/contacto#contactpage',
+  url: 'https://lleva-lleva.com/contacto',
+  inLanguage: 'es-CO',
+  name: 'Contacto — Lleva Lleva',
+  description: 'Contáctate con el equipo de Lleva Lleva.',
+  isPartOf: { '@id': 'https://lleva-lleva.com/#website' },
+  about: {
+    '@type': 'Organization',
+    name: 'Lleva Lleva',
+    url: 'https://lleva-lleva.com',
+    email: 'hola@lleva-lleva.com',
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'hola@lleva-lleva.com',
+        areaServed: 'CO',
+        availableLanguage: ['Spanish', 'English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'alianzas@lleva-lleva.com',
+        areaServed: 'CO',
+        availableLanguage: ['Spanish', 'English'],
+      },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress:
+        'Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11',
+      addressLocality: 'Santa Marta',
+      addressRegion: 'Magdalena',
+      addressCountry: 'CO',
+    },
+  },
+};
+
 export default function ContactoPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
+      />
       <div className="mb-8">
         <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>

@@ -85,9 +85,29 @@ const faqs = [
   },
 ];
 
+const faqPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://lleva-lleva.com/ayuda#faq',
+  inLanguage: 'es-CO',
+  url: 'https://lleva-lleva.com/ayuda',
+  name: 'Centro de Ayuda — Lleva Lleva',
+  mainEntity: faqs.flatMap((section) =>
+    section.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  ),
+};
+
 export default function AyudaPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd) }}
+      />
       <div className="mb-8">
         <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>

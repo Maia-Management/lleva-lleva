@@ -6,6 +6,25 @@ export const metadata: Metadata = {
   description: 'Aprende cómo publicar y comprar en Lleva Lleva, el clasificado colombiano.',
 };
 
+const comoFuncionaFaqs = [
+  {
+    q: '¿Cuánto cuesta publicar un anuncio?',
+    a: 'Publicar en LlevaLleva es completamente gratuito. No cobramos comisiones por las transacciones.',
+  },
+  {
+    q: '¿LlevaLleva procesa los pagos?',
+    a: 'No. LlevaLleva es una plataforma de contacto. Los pagos se acuerdan directamente entre comprador y vendedor.',
+  },
+  {
+    q: '¿Cómo reporto un anuncio sospechoso?',
+    a: 'Puedes usar nuestro formulario de reporte disponible en cada anuncio o en la página de reportes.',
+  },
+  {
+    q: '¿Puedo publicar si soy empresa o comercio?',
+    a: 'Sí, tanto particulares como negocios pueden publicar en LlevaLleva.',
+  },
+];
+
 const steps = {
   vender: [
     {
@@ -53,9 +72,63 @@ const steps = {
   ],
 };
 
+const howToSell = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  '@id': 'https://lleva-lleva.com/como-funciona#vender',
+  inLanguage: 'es-CO',
+  name: 'Cómo vender en LlevaLleva',
+  description:
+    'Pasos para crear una cuenta y publicar un anuncio gratuito en el clasificado colombiano LlevaLleva.',
+  totalTime: 'PT10M',
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'COP', value: 0 },
+  step: steps.vender.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.body,
+    url: `https://lleva-lleva.com/como-funciona#vender-${s.num}`,
+  })),
+};
+
+const howToBuy = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  '@id': 'https://lleva-lleva.com/como-funciona#comprar',
+  inLanguage: 'es-CO',
+  name: 'Cómo comprar en LlevaLleva',
+  description:
+    'Pasos para encontrar productos, contactar al vendedor y cerrar una compra de forma segura en LlevaLleva.',
+  step: steps.comprar.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.body,
+    url: `https://lleva-lleva.com/como-funciona#comprar-${s.num}`,
+  })),
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://lleva-lleva.com/como-funciona#faq',
+  inLanguage: 'es-CO',
+  mainEntity: comoFuncionaFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 export default function ComoFuncionaPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([howToSell, howToBuy, faqJsonLd]),
+        }}
+      />
       <div className="mb-8">
         <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>
@@ -118,24 +191,7 @@ export default function ComoFuncionaPage() {
       <div className="bg-gray-50 rounded-2xl p-8">
         <h2 className="text-xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
         <div className="space-y-5">
-          {[
-            {
-              q: '¿Cuánto cuesta publicar un anuncio?',
-              a: 'Publicar en LlevaLleva es completamente gratuito. No cobramos comisiones por las transacciones.',
-            },
-            {
-              q: '¿LlevaLleva procesa los pagos?',
-              a: 'No. LlevaLleva es una plataforma de contacto. Los pagos se acuerdan directamente entre comprador y vendedor.',
-            },
-            {
-              q: '¿Cómo reporto un anuncio sospechoso?',
-              a: 'Puedes usar nuestro formulario de reporte disponible en cada anuncio o en la página de reportes.',
-            },
-            {
-              q: '¿Puedo publicar si soy empresa o comercio?',
-              a: 'Sí, tanto particulares como negocios pueden publicar en LlevaLleva.',
-            },
-          ].map((faq, i) => (
+          {comoFuncionaFaqs.map((faq, i) => (
             <div key={i}>
               <p className="font-semibold text-gray-900 mb-1">{faq.q}</p>
               <p className="text-gray-600 text-sm">{faq.a}</p>

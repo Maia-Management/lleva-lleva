@@ -6,9 +6,43 @@ export const metadata: Metadata = {
   description: 'Conoce a Lleva Lleva — el clasificado colombiano que conecta compradores y vendedores en Santa Marta y toda Colombia.',
 };
 
+const aboutPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': 'https://lleva-lleva.com/sobre-nosotros#aboutpage',
+  url: 'https://lleva-lleva.com/sobre-nosotros',
+  inLanguage: 'es-CO',
+  name: 'Sobre Nosotros — Lleva Lleva',
+  description:
+    'Conoce a Lleva Lleva — el clasificado colombiano que conecta compradores y vendedores en Santa Marta y toda Colombia.',
+  isPartOf: { '@id': 'https://lleva-lleva.com/#website' },
+  about: {
+    '@type': 'Organization',
+    name: 'Lleva Lleva',
+    url: 'https://lleva-lleva.com',
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'Santa Marta, Magdalena, Colombia',
+    },
+    areaServed: { '@type': 'Country', name: 'Colombia' },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress:
+        'Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11',
+      addressLocality: 'Santa Marta',
+      addressRegion: 'Magdalena',
+      addressCountry: 'CO',
+    },
+  },
+};
+
 export default function SobreNosotrosPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+      />
       <div className="mb-8">
         <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
       </div>

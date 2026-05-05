@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: "https://lleva-lleva.com",
     images: [
       {
-        url: "https://lleva-lleva.com/og-image.jpg",
+        url: "https://lleva-lleva.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Lleva Lleva — Clasificados Colombia",
@@ -55,11 +55,42 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lleva Lleva – Clasificados Colombia",
     description: "El clasificado colombiano. Compra, vende y conecta con personas de tu región.",
-    images: ["https://lleva-lleva.com/og-image.jpg"],
+    images: ["https://lleva-lleva.com/og-image.png"],
   },
   other: {
     "google-adsense-account": "ca-pub-2469196723812841",
   },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Lleva Lleva",
+  alternateName: "LlevaLleva.co",
+  url: "https://lleva-lleva.com",
+  logo: "https://lleva-lleva.com/og-image.png",
+  description:
+    "El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más.",
+  email: "hola@lleva-lleva.com",
+  telephone: "+19034598763",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11",
+    addressLocality: "Santa Marta",
+    addressRegion: "Magdalena",
+    addressCountry: "CO",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "hola@lleva-lleva.com",
+      telephone: "+19034598763",
+      areaServed: "CO",
+      availableLanguage: ["Spanish", "English"],
+    },
+  ],
+  areaServed: { "@type": "Country", name: "Colombia" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -70,6 +101,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2469196723812841"
           crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body className={`${geist.className} bg-gray-50 min-h-screen flex flex-col antialiased`}>
@@ -105,4 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </svg>
         </a>
       </body>
-    </html>
+    </html>
+  );
+}
+

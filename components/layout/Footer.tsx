@@ -69,9 +69,17 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} LlevaLleva — Todos los derechos reservados</p>
-          <p>Hecho con 🇨🇴 en Colombia</p>
+        <div className="border-t border-white/10 pt-4 text-xs text-white/40 space-y-2">
+          <p className="text-center sm:text-left">
+            MAIA MANAGEMENT GROUP S.A.S. — NIT 901.862.977-7
+          </p>
+          <p className="text-center sm:text-left">
+            Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11, Santa Marta, Magdalena, Colombia
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+            <p>© {new Date().getFullYear()} LlevaLleva — Todos los derechos reservados</p>
+            <p>Hecho con 🇨🇴 en Colombia</p>
+          </div>
         </div>
       </div>
     </footer>

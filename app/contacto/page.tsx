@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Contacto',
   description: 'Contáctate con el equipo de Lleva Lleva.',
+  alternates: { canonical: 'https://lleva-lleva.com/contacto' },
 };
 
 const contactPageJsonLd = {

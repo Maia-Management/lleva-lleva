@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Política de Privacidad',
   description: 'Política de privacidad y tratamiento de datos personales de Lleva Lleva conforme a la Ley 1581 de 2012.',
+  alternates: { canonical: 'https://lleva-lleva.com/privacidad' },
 };
 
 export default function PrivacidadPage() {
@@ -21,9 +22,14 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">1. Responsable del tratamiento</h2>
           <p>
-            LlevaLleva (en adelante "LlevaLleva") es el responsable del tratamiento de los datos personales
-            recogidos a través de la plataforma. Operamos desde Santa Marta, Colombia, y nos regimos por la
-            Ley 1581 de 2012 y el Decreto 1377 de 2013.
+            LlevaLleva es una marca operada por <strong>MAIA MANAGEMENT GROUP S.A.S.</strong>,
+            sociedad colombiana identificada con <strong>NIT 901.862.977-7</strong>, responsable
+            del tratamiento de los datos personales recogidos a través de la plataforma.
+          </p>
+          <p className="mt-2">
+            Operamos desde Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11,
+            Santa Marta, Magdalena, Colombia, y nos regimos por la Ley 1581 de 2012 y el
+            Decreto 1377 de 2013.
           </p>
         </section>
 

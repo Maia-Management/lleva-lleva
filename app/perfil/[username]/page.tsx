@@ -20,34 +20,49 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProfilePage({ params }: Props) {
   const { username } = await params;
-  const supabase = await createClient();
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('username', username)
-    .eq('is_active', true)
-    .single();
+  let profile: Profile | null = null;
+  let listings: Listing[] | null = null;
+  let ratings: Rating[] | null = null;
+
+  try {
+    const supabase = await createClient();
+
+    const { data: profileData } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('username', username)
+      .eq('is_active', true)
+      .single();
+
+    profile = profileData as Profile | null;
+
+    if (profile) {
+      const [{ data: listingsData }, { data: ratingsData }] = await Promise.all([
+        supabase
+          .from('listings')
+          .select('*, category:categories(*), location:locations(*)')
+          .eq('seller_id', profile.id)
+          .eq('status', 'active')
+          .order('published_at', { ascending: false })
+          .limit(24),
+        supabase
+          .from('ratings')
+          .select('*, rater:profiles(username, display_name, avatar_url)')
+          .eq('ratee_id', profile.id)
+          .order('created_at', { ascending: false })
+          .limit(10),
+      ]);
+      listings = listingsData;
+      ratings = ratingsData;
+    }
+  } catch (err) {
+    console.error('[ProfilePage] Supabase error:', err);
+  }
 
   if (!profile) notFound();
 
-  const p = profile as Profile;
-
-  const [{ data: listings }, { data: ratings }] = await Promise.all([
-    supabase
-      .from('listings')
-      .select('*, category:categories(*), location:locations(*)')
-      .eq('seller_id', p.id)
-      .eq('status', 'active')
-      .order('published_at', { ascending: false })
-      .limit(24),
-    supabase
-      .from('ratings')
-      .select('*, rater:profiles(username, display_name, avatar_url)')
-      .eq('ratee_id', p.id)
-      .order('created_at', { ascending: false })
-      .limit(10),
-  ]);
+  const p = profile;
 
   const RATING_TAG_LABELS: Record<string, string> = {
     fast_response: 'Respuesta rápida',

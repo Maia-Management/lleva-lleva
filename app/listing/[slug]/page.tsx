@@ -21,62 +21,70 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const supabase = await createClient();
-  const { data } = await supabase
-    .from('listings')
-    .select('title, description, meta_title, meta_description, slug, images')
-    .eq('slug', slug)
-    .single();
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from('listings')
+      .select('title, description, meta_title, meta_description, slug, images')
+      .eq('slug', slug)
+      .single();
 
-  if (!data) return { title: 'Anuncio no encontrado' };
+    if (!data) return { title: 'Anuncio no encontrado' };
 
-  const title = data.meta_title ?? data.title;
-  const description = data.meta_description ?? data.description?.slice(0, 160);
-  const ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? 'https://lleva-lleva.com/og-image.png';
-  const canonicalUrl = `https://lleva-lleva.com/listing/${data.slug}`;
+    const title = data.meta_title ?? data.title;
+    const description = data.meta_description ?? data.description?.slice(0, 160);
+    const ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? 'https://lleva-lleva.com/og-image.png';
+    const canonicalUrl = `https://lleva-lleva.com/listing/${data.slug}`;
 
-  return {
-    title,
-    description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
+    return {
       title,
       description,
-      url: canonicalUrl,
-      type: 'website',
-      images: [{ url: ogImage, width: 800, height: 600, alt: title }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
+      alternates: { canonical: canonicalUrl },
+      openGraph: {
+        title,
+        description,
+        url: canonicalUrl,
+        type: 'website',
+        images: [{ url: ogImage, width: 800, height: 600, alt: title }],
+      },
+      twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
+    };
+  } catch {
+    return { title: 'Anuncio – Lleva Lleva' };
+  }
 }
 
 export default async function ListingPage({ params }: Props) {
   const { slug } = await params;
-  const supabase = await createClient();
 
-  const { data } = await supabase
-    .from('listings')
-    .select('*, seller:profiles(*), category:categories(*), location:locations(*)')
-    .eq('slug', slug)
-    .in('status', ['active', 'paused'])
-    .single();
+  let listing: Listing | null = null;
+  let isOwner = false;
 
-  if (!data) notFound();
+  try {
+    const supabase = await createClient();
 
-  const listing = data as Listing;
+    const { data } = await supabase
+      .from('listings')
+      .select('*, seller:profiles(*), category:categories(*), location:locations(*)')
+      .eq('slug', slug)
+      .in('status', ['active', 'paused'])
+      .single();
+
+    listing = data as Listing | null;
+
+    if (listing) {
+      const { data: { user } } = await supabase.auth.getUser();
+      isOwner = user?.id === listing.seller_id;
+      // Increment view count (fire and forget)
+      supabase.rpc('fn_increment_view_count', { listing_id: listing.id });
+    }
+  } catch (err) {
+    console.error('[ListingPage] Supabase error:', err);
+  }
+
+  if (!listing) notFound();
+
   const seller = listing.seller;
-
-  // Get current user to check ownership
-  const { data: { user } } = await supabase.auth.getUser();
-  const isOwner = user?.id === listing.seller_id;
-
-  // Increment view count (fire and forget)
-  supabase.rpc('fn_increment_view_count', { listing_id: listing.id });
 
   // ── JobPosting schema (Google Jobs) ────────────────────────────────────────
   // Activates for any listing whose category slug contains a job-related keyword.

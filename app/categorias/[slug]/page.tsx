@@ -13,76 +13,77 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const supabase = await createClient();
-  const { data } = await supabase.from('categories').select('name_es, slug').eq('slug', slug).single();
-  const title = data ? `${data.name_es} – Clasificados Colombia` : 'Categoría';
-  const description = `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva – clasificados de Colombia`;
-  const canonicalUrl = `https://lleva-lleva.com/categorias/${data?.slug ?? slug}`;
-  return {
-    title,
-    description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase.from('categories').select('name_es, slug').eq('slug', slug).single();
+    const title = data ? `${data.name_es} – Clasificados Colombia` : 'Categoría';
+    const description = `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva – clasificados de Colombia`;
+    const canonicalUrl = `https://lleva-lleva.com/categorias/${data?.slug ?? slug}`;
+    return {
       title,
       description,
-      url: canonicalUrl,
-      type: 'website',
-    },
-  };
+      alternates: { canonical: canonicalUrl },
+      openGraph: { title, description, url: canonicalUrl, type: 'website' },
+    };
+  } catch {
+    return { title: 'Categoría – Lleva Lleva' };
+  }
 }
 
 export default async function CategoryPage({ params, searchParams }: Props) {
   const { slug } = await params;
   const sp = await searchParams;
-  const supabase = await createClient();
-
-  // Fetch category (may be parent or child)
-  const { data: category } = await supabase
-    .from('categories')
-    .select('*, parent:categories(id, name_es, slug)')
-    .eq('slug', slug)
-    .single();
-
-  if (!category) notFound();
-
-  // Fetch subcategories if this is a parent
-  const { data: subcategories } = await supabase
-    .from('categories')
-    .select('*')
-    .eq('parent_id', category.id)
-    .eq('is_active', true)
-    .order('sort_order');
-
-  // Gather all category IDs for the query (this cat + all children)
-  const catIds = [category.id, ...(subcategories?.map((s: Category) => s.id) ?? [])];
-
-  // Build listing query
-  let query = supabase
-    .from('listings')
-    .select('*, seller:profiles(*), category:categories(*), location:locations(*)')
-    .in('category_id', catIds)
-    .eq('status', 'active');
-
-  if (sp.ciudad) {
-    query = query.eq('location.city', sp.ciudad);
-  }
-  if (sp.precio_min) {
-    query = query.gte('price', parseInt(sp.precio_min));
-  }
-  if (sp.precio_max) {
-    query = query.lte('price', parseInt(sp.precio_max));
-  }
-
   const orden = sp.orden ?? 'recientes';
-  if (orden === 'precio_asc') query = query.order('price', { ascending: true });
-  else if (orden === 'precio_desc') query = query.order('price', { ascending: false });
-  else query = query.order('published_at', { ascending: false });
-
   const page = parseInt(sp.page ?? '1');
   const perPage = 24;
-  query = query.range((page - 1) * perPage, page * perPage - 1);
 
-  const { data: listings } = await query;
+  let category: (Category & { parent?: { id: string; name_es: string; slug: string } | null }) | null = null;
+  let subcategories: Category[] | null = null;
+  let listings: Listing[] | null = null;
+
+  try {
+    const supabase = await createClient();
+
+    const { data: cat } = await supabase
+      .from('categories')
+      .select('*, parent:categories(id, name_es, slug)')
+      .eq('slug', slug)
+      .single();
+    category = cat;
+
+    if (cat) {
+      const { data: subs } = await supabase
+        .from('categories')
+        .select('*')
+        .eq('parent_id', cat.id)
+        .eq('is_active', true)
+        .order('sort_order');
+      subcategories = subs;
+
+      const catIds = [cat.id, ...(subs?.map((s: Category) => s.id) ?? [])];
+      let query = supabase
+        .from('listings')
+        .select('*, seller:profiles(*), category:categories(*), location:locations(*)')
+        .in('category_id', catIds)
+        .eq('status', 'active');
+
+      if (sp.ciudad) query = query.eq('location.city', sp.ciudad);
+      if (sp.precio_min) query = query.gte('price', parseInt(sp.precio_min));
+      if (sp.precio_max) query = query.lte('price', parseInt(sp.precio_max));
+
+      if (orden === 'precio_asc') query = query.order('price', { ascending: true });
+      else if (orden === 'precio_desc') query = query.order('price', { ascending: false });
+      else query = query.order('published_at', { ascending: false });
+
+      query = query.range((page - 1) * perPage, page * perPage - 1);
+      const { data: lists } = await query;
+      listings = lists;
+    }
+  } catch (err) {
+    console.error('[CategoryPage] Supabase error:', err);
+  }
+
+  if (!category) notFound();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">

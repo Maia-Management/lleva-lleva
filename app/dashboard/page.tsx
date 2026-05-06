@@ -8,36 +8,50 @@ import { formatCOP, timeAgo } from '@/lib/utils';
 export const metadata: Metadata = { title: 'Mi cuenta' };
 
 export default async function DashboardPage() {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) redirect('/auth/login?redirectTo=/dashboard');
+  let profile = null;
+  let listings = null;
+  let transactions = null;
+  let favorites = null;
 
-  const [
-    { data: profile },
-    { data: listings },
-    { data: transactions },
-    { data: favorites },
-  ] = await Promise.all([
-    supabase.from('profiles').select('*').eq('id', user.id).single(),
-    supabase
-      .from('listings')
-      .select('*, location:locations(*), category:categories(*)')
-      .eq('seller_id', user.id)
-      .order('created_at', { ascending: false })
-      .limit(20),
-    supabase
-      .from('transactions')
-      .select('*, listing:listings(title, slug), buyer:profiles!buyer_id(display_name), seller:profiles!seller_id(display_name)')
-      .or(`buyer_id.eq.${user.id},seller_id.eq.${user.id}`)
-      .order('created_at', { ascending: false })
-      .limit(10),
-    supabase
-      .from('favorites')
-      .select('*, listing:listings(id, title, slug, price, price_type, images, status, location:locations(city, department))')
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false })
-      .limit(24),
-  ]);
+  try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) redirect('/auth/login?redirectTo=/dashboard');
+
+    const [
+      { data: profileData },
+      { data: listingsData },
+      { data: transactionsData },
+      { data: favoritesData },
+    ] = await Promise.all([
+      supabase.from('profiles').select('*').eq('id', user.id).single(),
+      supabase
+        .from('listings')
+        .select('*, location:locations(*), category:categories(*)')
+        .eq('seller_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(20),
+      supabase
+        .from('transactions')
+        .select('*, listing:listings(title, slug), buyer:profiles!buyer_id(display_name), seller:profiles!seller_id(display_name)')
+        .or(`buyer_id.eq.${user.id},seller_id.eq.${user.id}`)
+        .order('created_at', { ascending: false })
+        .limit(10),
+      supabase
+        .from('favorites')
+        .select('*, listing:listings(id, title, slug, price, price_type, images, status, location:locations(city, department))')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(24),
+    ]);
+    profile = profileData;
+    listings = listingsData;
+    transactions = transactionsData;
+    favorites = favoritesData;
+  } catch (err) {
+    console.error('[DashboardPage] Supabase error:', err);
+    redirect('/auth/login?redirectTo=/dashboard');
+  }
 
   const STATUS_COLORS: Record<string, string> = {
     active: 'bg-brand-blue-50 text-brand-blue',

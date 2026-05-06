@@ -22,6 +22,23 @@ export const metadata: Metadata = {
     siteName: 'LlevaLleva',
     locale: 'es_CO',
     type: 'website',
+    images: [
+      {
+        url: 'https://lleva-lleva.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: '¿Cuánto vale? — Calculadora de precios Colombia',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@llevalleva',
+    creator: '@llevalleva',
+    title: '¿Cuánto vale? – Calculadora de precios Colombia',
+    description:
+      'Descubre el precio justo para lo que quieres vender. Datos reales de los marketplaces colombianos.',
+    images: ['https://lleva-lleva.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://lleva-lleva.com/cuanto-vale',

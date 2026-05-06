@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   description:
     "El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más.",
   keywords: ["clasificados", "colombia", "comprar", "vender", "barranquilla", "bogota", "medellin"],
+  authors: [{ name: "Lleva Lleva", url: "https://lleva-lleva.com" }],
+  creator: "Lleva Lleva",
+  publisher: "Lleva Lleva",
   alternates: {
     canonical: "https://lleva-lleva.com",
     languages: {
@@ -53,6 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@llevalleva",
+    creator: "@llevalleva",
     title: "Lleva Lleva – Clasificados Colombia",
     description: "El clasificado colombiano. Compra, vende y conecta con personas de tu región.",
     images: ["https://lleva-lleva.com/og-image.png"],
@@ -92,6 +97,21 @@ const organizationJsonLd = {
   areaServed: { "@type": "Country", name: "Colombia" },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Lleva Lleva",
+  url: "https://lleva-lleva.com",
+  description:
+    "Clasificados generales en Colombia y Venezuela — compra, vende y encuentra lo que necesitas",
+  inLanguage: ["es-CO", "es-VE"],
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://lleva-lleva.com/buscar?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
@@ -104,6 +124,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className={`${geist.className} bg-gray-50 min-h-screen flex flex-col antialiased`}>

@@ -24,15 +24,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const supabase = await createClient();
   const { data } = await supabase
     .from('listings')
-    .select('title, description, meta_title, meta_description')
+    .select('title, description, meta_title, meta_description, slug, images')
     .eq('slug', slug)
     .single();
 
   if (!data) return { title: 'Anuncio no encontrado' };
 
+  const title = data.meta_title ?? data.title;
+  const description = data.meta_description ?? data.description?.slice(0, 160);
+  const ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? 'https://lleva-lleva.com/og-image.png';
+  const canonicalUrl = `https://lleva-lleva.com/listing/${data.slug}`;
+
   return {
-    title: data.meta_title ?? data.title,
-    description: data.meta_description ?? data.description?.slice(0, 160),
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: 'website',
+      images: [{ url: ogImage, width: 800, height: 600, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 

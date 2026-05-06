@@ -14,10 +14,20 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const supabase = await createClient();
-  const { data } = await supabase.from('categories').select('name_es').eq('slug', slug).single();
+  const { data } = await supabase.from('categories').select('name_es, slug').eq('slug', slug).single();
+  const title = data ? `${data.name_es} – Clasificados Colombia` : 'Categoría';
+  const description = `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva – clasificados de Colombia`;
+  const canonicalUrl = `https://lleva-lleva.com/categorias/${data?.slug ?? slug}`;
   return {
-    title: data ? `${data.name_es} – Clasificados Colombia` : 'Categoría',
-    description: `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva`,
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: 'website',
+    },
   };
 }
 

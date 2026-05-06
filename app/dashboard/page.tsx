@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import { Listing, Transaction } from '@/types';
 import { formatCOP, timeAgo } from '@/lib/utils';
+import type { User } from '@supabase/supabase-js';
 
 export const metadata: Metadata = { title: 'Mi cuenta' };
 
@@ -12,10 +13,12 @@ export default async function DashboardPage() {
   let listings = null;
   let transactions = null;
   let favorites = null;
+  let user: User | null = null;
 
   try {
     const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user: authUser } } = await supabase.auth.getUser();
+    user = authUser;
     if (!user) redirect('/auth/login?redirectTo=/dashboard');
 
     const [

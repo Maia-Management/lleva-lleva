@@ -77,22 +77,32 @@ const PUBLIC_INFO = [
 ];
 
 export default async function HomePage() {
-  const supabase = await createClient();
+  let featuredListings = null;
+  let recentListings = null;
 
-  const { data: featuredListings } = await supabase
-    .from("listings")
-    .select("*, seller:profiles(*), category:categories(*), location:locations(*)")
-    .eq("status", "active")
-    .eq("is_featured", true)
-    .order("published_at", { ascending: false })
-    .limit(8);
+  try {
+    const supabase = await createClient();
 
-  const { data: recentListings } = await supabase
-    .from("listings")
-    .select("*, seller:profiles(*), category:categories(*), location:locations(*)")
-    .eq("status", "active")
-    .order("published_at", { ascending: false })
-    .limit(16);
+    const { data: featured } = await supabase
+      .from("listings")
+      .select("*, seller:profiles(*), category:categories(*), location:locations(*)")
+      .eq("status", "active")
+      .eq("is_featured", true)
+      .order("published_at", { ascending: false })
+      .limit(8);
+
+    const { data: recent } = await supabase
+      .from("listings")
+      .select("*, seller:profiles(*), category:categories(*), location:locations(*)")
+      .eq("status", "active")
+      .order("published_at", { ascending: false })
+      .limit(16);
+
+    featuredListings = featured;
+    recentListings = recent;
+  } catch (err) {
+    console.error("[HomePage] Supabase error — rendering without listings:", err);
+  }
 
   return (
     <div>

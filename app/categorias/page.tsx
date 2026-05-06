@@ -17,16 +17,20 @@ export const metadata: Metadata = {
 };
 
 export default async function CategoriasPage() {
-  const supabase = await createClient();
+  let cats: Category[] = [];
 
-  const { data: categories } = await supabase
-    .from('categories')
-    .select('*')
-    .is('parent_id', null)
-    .eq('is_active', true)
-    .order('sort_order');
-
-  const cats = (categories as Category[]) ?? [];
+  try {
+    const supabase = await createClient();
+    const { data: categories } = await supabase
+      .from('categories')
+      .select('*')
+      .is('parent_id', null)
+      .eq('is_active', true)
+      .order('sort_order');
+    cats = (categories as Category[]) ?? [];
+  } catch (err) {
+    console.error('[CategoriasPage] Supabase error:', err);
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">

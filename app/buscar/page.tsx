@@ -38,94 +38,89 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
 export default async function BuscarPage({ searchParams }: Props) {
   const sp = await searchParams;
-  const supabase = await createClient();
-
   const q = sp.q?.trim() ?? '';
   const page = Math.max(1, parseInt(sp.page ?? '1'));
   const perPage = 24;
+  const orden = sp.orden ?? 'recientes';
+  const hasFilters = !!(q || sp.categoria || sp.ciudad || sp.condicion || sp.precio_min || sp.precio_max);
 
-  // Fetch filter data
-  const [{ data: categories }, { data: locations }] = await Promise.all([
-    supabase
-      .from('categories')
-      .select('id, name_es, slug, parent_id, sort_order')
-      .eq('is_active', true)
-      .order('sort_order'),
-    supabase
-      .from('locations')
-      .select('city, department')
-      .eq('is_active', true)
-      .order('department')
-      .order('city'),
-  ]);
+  let listings: Listing[] | null = null;
+  let categories: Category[] | null = null;
+  let locations: Array<{ city: string; department: string }> | null = null;
 
-  // Build the listings query
-  let query = supabase
-    .from('listings')
-    .select('*, seller:profiles(*), category:categories(*), location:locations(*)')
-    .eq('status', 'active');
+  try {
+    const supabase = await createClient();
 
-  // Full-text search: search title and description
-  if (q) {
-    query = query.or(`title.ilike.%${q}%,description.ilike.%${q}%`);
-  }
+    // Fetch filter data
+    const [{ data: cats }, { data: locs }] = await Promise.all([
+      supabase
+        .from('categories')
+        .select('id, name_es, slug, parent_id, sort_order')
+        .eq('is_active', true)
+        .order('sort_order'),
+      supabase
+        .from('locations')
+        .select('city, department')
+        .eq('is_active', true)
+        .order('department')
+        .order('city'),
+    ]);
+    categories = cats as Category[];
+    locations = locs as Array<{ city: string; department: string }>;
 
-  // Category filter by slug
-  if (sp.categoria) {
-    const { data: cat } = await supabase
-      .from('categories')
-      .select('id')
-      .eq('slug', sp.categoria)
-      .single();
-    if (cat) {
-      // Also include subcategories
-      const { data: subcats } = await supabase
+    // Build the listings query
+    let query = supabase
+      .from('listings')
+      .select('*, seller:profiles(*), category:categories(*), location:locations(*)')
+      .eq('status', 'active');
+
+    if (q) {
+      query = query.or(`title.ilike.%${q}%,description.ilike.%${q}%`);
+    }
+
+    if (sp.categoria) {
+      const { data: cat } = await supabase
         .from('categories')
         .select('id')
-        .eq('parent_id', cat.id);
-      const ids = [cat.id, ...(subcats?.map((s: { id: string }) => s.id) ?? [])];
-      query = query.in('category_id', ids);
+        .eq('slug', sp.categoria)
+        .single();
+      if (cat) {
+        const { data: subcats } = await supabase
+          .from('categories')
+          .select('id')
+          .eq('parent_id', cat.id);
+        const ids = [cat.id, ...(subcats?.map((s: { id: string }) => s.id) ?? [])];
+        query = query.in('category_id', ids);
+      }
     }
-  }
 
-  // City filter - match city name (case-insensitive via slug comparison)
-  if (sp.ciudad) {
-    // Ciudad param is slugified city name; find the matching city
-    const citySlug = sp.ciudad.toLowerCase();
-    const matchedLoc = (locations as Array<{ city: string; department: string }>)?.find(
-      (l: { city: string; department: string }) => l.city.toLowerCase().replace(/\s+/g, '-') === citySlug
-    );
-    if (matchedLoc) {
-      query = query.eq('location.city', matchedLoc.city);
+    if (sp.ciudad) {
+      const citySlug = sp.ciudad.toLowerCase();
+      const matchedLoc = locations?.find(
+        (l) => l.city.toLowerCase().replace(/\s+/g, '-') === citySlug
+      );
+      if (matchedLoc) {
+        query = query.eq('location.city', matchedLoc.city);
+      }
     }
+
+    if (sp.condicion) query = query.eq('condition', sp.condicion);
+    if (sp.precio_min) query = query.gte('price', parseInt(sp.precio_min));
+    if (sp.precio_max) query = query.lte('price', parseInt(sp.precio_max));
+
+    if (orden === 'precio_asc') query = query.order('price', { ascending: true });
+    else if (orden === 'precio_desc') query = query.order('price', { ascending: false });
+    else query = query.order('published_at', { ascending: false });
+
+    query = query.range((page - 1) * perPage, page * perPage - 1);
+
+    const { data } = await query;
+    listings = data as Listing[];
+  } catch (err) {
+    console.error('[BuscarPage] Supabase error:', err);
   }
-
-  // Condition filter
-  if (sp.condicion) {
-    query = query.eq('condition', sp.condicion);
-  }
-
-  // Price filters
-  if (sp.precio_min) {
-    query = query.gte('price', parseInt(sp.precio_min));
-  }
-  if (sp.precio_max) {
-    query = query.lte('price', parseInt(sp.precio_max));
-  }
-
-  // Sort
-  const orden = sp.orden ?? 'recientes';
-  if (orden === 'precio_asc') query = query.order('price', { ascending: true });
-  else if (orden === 'precio_desc') query = query.order('price', { ascending: false });
-  else query = query.order('published_at', { ascending: false });
-
-  // Pagination
-  query = query.range((page - 1) * perPage, page * perPage - 1);
-
-  const { data: listings } = await query;
 
   const hasResults = (listings?.length ?? 0) > 0;
-  const hasFilters = !!(q || sp.categoria || sp.ciudad || sp.condicion || sp.precio_min || sp.precio_max);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">

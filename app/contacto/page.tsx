@@ -114,7 +114,7 @@ export default function ContactoPage() {
           urgentes de contenido ilegal o fraudulento, haremos lo posible por actuar en menos de 24 horas.
         </p>
         <p className="text-gray-500 text-sm mt-3">
-          LlevaLleva.co opera desde Santa Marta, Colombia 🇨🇴
+          LlevaLleva opera desde Santa Marta, Colombia 🇨🇴
         </p>
       </div>
     </div>

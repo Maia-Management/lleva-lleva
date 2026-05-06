@@ -16,7 +16,6 @@ const websiteJsonLd = {
   '@id': 'https://lleva-lleva.com/#website',
   url: 'https://lleva-lleva.com',
   name: 'Lleva Lleva',
-  alternateName: 'LlevaLleva.co',
   inLanguage: 'es-CO',
   description:
     'El clasificado colombiano. Compra, vende y conecta con personas de tu región.',

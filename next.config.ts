@@ -21,7 +21,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://tweuhyqajcnzsqelbtwt.supabase.co https://lh3.googleusercontent.com",
       "font-src 'self'",
-      "connect-src 'self' https://tweuhyqajcnzsqelbtwt.supabase.co wss://tweuhyqajcnzsqelbtwt.supabase.co",
+      "connect-src 'self' https://tweuhyqajcnzsqelbtwt.supabase.co wss://tweuhyqajcnzsqelbtwt.supabase.co https://www.google-analytics.com https://analytics.google.com",
       "frame-src 'self' https://pagead2.googlesyndication.com",
       "media-src 'self' https://tweuhyqajcnzsqelbtwt.supabase.co",
     ].join("; "),

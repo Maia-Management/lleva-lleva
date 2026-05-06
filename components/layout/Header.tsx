@@ -1,17 +1,33 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import type { User } from '@supabase/supabase-js';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    let sub: { unsubscribe: () => void } | null = null;
+    import('@/lib/supabase/client').then(({ createClient }) => {
+      const supabase = createClient();
+      supabase.auth.getUser().then(({ data }) => setUser(data.user));
+      const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+        setUser(session?.user ?? null);
+      });
+      sub = subscription;
+    });
+    return () => { sub?.unsubscribe(); };
+  }, []);
 
   const handleSignOut = useCallback(async () => {
     const { createClient } = await import('@/lib/supabase/client');
     const supabase = createClient();
     await supabase.auth.signOut();
+    setUser(null);
     router.push('/');
     router.refresh();
   }, [router]);
@@ -56,12 +72,33 @@ export default function Header() {
             >
               <span aria-hidden="true">+</span> Publicar
             </Link>
-            <Link
-              href="/auth/login"
-              className="text-sm text-ink-2 hover:text-brand-blue px-3 py-2 rounded-lg hover:bg-brand-blue-50 transition-colors font-medium"
-            >
-              Ingresar
-            </Link>
+            {user ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="hidden sm:inline-flex text-sm text-ink-2 hover:text-brand-blue px-3 py-2 rounded-lg hover:bg-brand-blue-50 transition-colors font-medium items-center gap-1.5"
+                >
+                  <span className="inline-block w-6 h-6 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                    {(user.email ?? 'U').charAt(0).toUpperCase()}
+                  </span>
+                  <span className="max-w-[80px] truncate">{user.email?.split('@')[0]}</span>
+                </Link>
+                <button
+                  onClick={handleSignOut}
+                  className="hidden sm:inline-flex text-xs text-ink-2/70 hover:text-red-500 px-2 py-1 rounded transition-colors"
+                  aria-label="Cerrar sesión"
+                >
+                  Salir
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/auth/login"
+                className="text-sm text-ink-2 hover:text-brand-blue px-3 py-2 rounded-lg hover:bg-brand-blue-50 transition-colors font-medium"
+              >
+                Ingresar
+              </Link>
+            )}
             <button
               className="md:hidden p-2 rounded-lg hover:bg-brand-blue-50 text-ink"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -104,15 +141,28 @@ export default function Header() {
             <Link href="/publicar" className="block w-full text-center bg-brand-yellow text-ink text-sm font-bold px-4 py-2.5 rounded-full hover:bg-brand-yellow-600 transition-colors">
               + Publicar anuncio
             </Link>
-            <Link href="/auth/login" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
-              Ingresar
-            </Link>
-            <Link href="/auth/register" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
-              Crear cuenta
-            </Link>
-            <Link href="/dashboard" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
-              Mi cuenta
-            </Link>
+            {user ? (
+              <>
+                <Link href="/dashboard" className="block text-center text-sm text-ink py-2 hover:text-brand-blue font-medium">
+                  Mi cuenta ({user.email?.split('@')[0]})
+                </Link>
+                <button
+                  onClick={handleSignOut}
+                  className="block w-full text-center text-sm text-red-500 py-2 hover:text-red-700"
+                >
+                  Cerrar sesión
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/auth/login" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
+                  Ingresar
+                </Link>
+                <Link href="/auth/register" className="block text-center text-sm text-ink py-2 hover:text-brand-blue">
+                  Crear cuenta
+                </Link>
+              </>
+            )}
           </div>
         </div>
       )}

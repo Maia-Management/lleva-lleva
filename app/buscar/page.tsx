@@ -22,9 +22,17 @@ interface Props {
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const sp = await searchParams;
   const query = sp.q?.trim();
+  const title = query ? `"${query}" – Buscar en Lleva Lleva` : 'Buscar anuncios – Lleva Lleva';
+  const description = `Encuentra ${query ?? 'lo que buscas'} en Lleva Lleva – Clasificados de Colombia`;
   return {
-    title: query ? `"${query}" – Buscar en Lleva Lleva` : 'Buscar anuncios – Lleva Lleva',
-    description: `Encuentra ${query ?? 'lo que buscas'} en Lleva Lleva – Clasificados de Colombia`,
+    title,
+    description,
+    alternates: {
+      canonical: query
+        ? `https://lleva-lleva.com/buscar?q=${encodeURIComponent(query)}`
+        : 'https://lleva-lleva.com/buscar',
+    },
+    robots: query ? { index: false, follow: true } : { index: true, follow: true },
   };
 }
 

@@ -46,13 +46,6 @@ export default function Footer() {
               <li><Link href="/contacto" className="hover:text-brand-yellow transition-colors">Contacto</Link></li>
               <li><Link href="/reportar" className="hover:text-brand-yellow transition-colors">Reportar un problema</Link></li>
             </ul>
-            <div className="mt-4">
-              <p className="text-xs text-white/40">Síguenos en:</p>
-              <div className="flex gap-3 mt-2">
-                <a href="#" className="text-white/60 hover:text-brand-yellow transition-colors text-sm">Instagram</a>
-                <a href="#" className="text-white/60 hover:text-brand-yellow transition-colors text-sm">Facebook</a>
-              </div>
-            </div>
           </div>
         </div>
 

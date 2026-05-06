@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { createClient } from '@/lib/supabase/server';
+import type { User } from '@supabase/supabase-js';
 import { Listing } from '@/types';
 import { formatCOP, timeAgo, CONDITION_LABELS, PRICE_TYPE_LABELS } from '@/lib/utils';
 import WhatsAppButton from '@/components/listings/WhatsAppButton';
@@ -59,6 +60,7 @@ export default async function ListingPage({ params }: Props) {
 
   let listing: Listing | null = null;
   let isOwner = false;
+  let user: User | null = null;
 
   try {
     const supabase = await createClient();
@@ -73,7 +75,8 @@ export default async function ListingPage({ params }: Props) {
     listing = data as Listing | null;
 
     if (listing) {
-      const { data: { user } } = await supabase.auth.getUser();
+      const { data: { user: authUser } } = await supabase.auth.getUser();
+      user = authUser;
       isOwner = user?.id === listing.seller_id;
       // Increment view count (fire and forget)
       supabase.rpc('fn_increment_view_count', { listing_id: listing.id });

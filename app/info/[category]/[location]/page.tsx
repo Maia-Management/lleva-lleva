@@ -122,7 +122,7 @@ export default async function InfoPage({ params }: Props) {
           <div className="w-10 h-10 rounded-xl bg-brand-blue-50 flex items-center justify-center text-xl">📋</div>
           <div>
             <h1 className="text-xl font-bold text-gray-900">{content?.title ?? location}</h1>
-            <p className="text-xs text-gray-500">Información de referencia · LlevaLleva.co</p>
+            <p className="text-xs text-gray-500">Información de referencia · LlevaLleva</p>
           </div>
         </div>
 

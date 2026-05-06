@@ -21,7 +21,7 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">1. Responsable del tratamiento</h2>
           <p>
-            LlevaLleva.co (en adelante "LlevaLleva") es el responsable del tratamiento de los datos personales
+            LlevaLleva (en adelante "LlevaLleva") es el responsable del tratamiento de los datos personales
             recogidos a través de la plataforma. Operamos desde Santa Marta, Colombia, y nos regimos por la
             Ley 1581 de 2012 y el Decreto 1377 de 2013.
           </p>
@@ -117,7 +117,7 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">9. Menores de edad</h2>
           <p>
-            LlevaLleva.co no está dirigida a personas menores de 18 años. Si detectamos que hemos recopilado
+            LlevaLleva no está dirigida a personas menores de 18 años. Si detectamos que hemos recopilado
             datos de un menor sin el consentimiento de sus padres o tutores, procederemos a eliminar dicha
             información de inmediato.
           </p>

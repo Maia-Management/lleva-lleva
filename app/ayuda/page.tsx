@@ -115,7 +115,7 @@ export default function AyudaPage() {
       <div className="mb-10">
         <h1 className="text-3xl font-black text-gray-900 mb-3">Centro de Ayuda</h1>
         <p className="text-gray-600 text-lg">
-          Encuentra respuestas a las preguntas más frecuentes sobre LlevaLleva.co.
+          Encuentra respuestas a las preguntas más frecuentes sobre LlevaLleva.
         </p>
       </div>
 

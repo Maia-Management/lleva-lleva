@@ -6,6 +6,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Categorías – Lleva Lleva',
   description: 'Explora todas las categorías de clasificados en Lleva Lleva: vehículos, inmuebles, tecnología, empleos, servicios y mucho más.',
+  alternates: { canonical: 'https://lleva-lleva.com/categorias' },
+  openGraph: {
+    title: 'Categorías – Lleva Lleva',
+    description: 'Explora todas las categorías de clasificados en Lleva Lleva.',
+    url: 'https://lleva-lleva.com/categorias',
+    type: 'website',
+    images: [{ url: 'https://lleva-lleva.com/og-image.png', width: 1200, height: 630, alt: 'Categorías Lleva Lleva' }],
+  },
 };
 
 export default async function CategoriasPage() {

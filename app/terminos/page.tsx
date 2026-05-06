@@ -21,12 +21,12 @@ export default function TerminosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">1. Aceptación de los términos</h2>
           <p>
-            Al acceder y utilizar la plataforma LlevaLleva.co (en adelante "la Plataforma"), usted acepta quedar
+            Al acceder y utilizar la plataforma LlevaLleva (en adelante "la Plataforma"), usted acepta quedar
             vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguno de estos términos,
             le pedimos que se abstenga de utilizar la Plataforma.
           </p>
           <p className="mt-2">
-            LlevaLleva.co es una plataforma de clasificados en línea operada desde Santa Marta, Colombia, que
+            LlevaLleva es una plataforma de clasificados en línea operada desde Santa Marta, Colombia, que
             facilita el contacto entre compradores y vendedores particulares y comerciales dentro del territorio colombiano.
           </p>
         </section>
@@ -34,7 +34,7 @@ export default function TerminosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">2. Descripción del servicio</h2>
           <p>
-            LlevaLleva.co es un mercado en línea que permite a los usuarios publicar, buscar y gestionar anuncios
+            LlevaLleva es un mercado en línea que permite a los usuarios publicar, buscar y gestionar anuncios
             de compraventa de bienes y servicios. La Plataforma actúa únicamente como intermediario tecnológico;
             no es parte de las transacciones entre usuarios y no asume responsabilidad por el contenido de los
             anuncios ni por el resultado de las negociaciones.
@@ -47,10 +47,10 @@ export default function TerminosPage() {
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li>Mantener la confidencialidad de sus credenciales de acceso.</li>
             <li>Toda actividad que ocurra bajo su cuenta.</li>
-            <li>Notificar de inmediato a LlevaLleva.co cualquier uso no autorizado de su cuenta.</li>
+            <li>Notificar de inmediato a LlevaLleva cualquier uso no autorizado de su cuenta.</li>
           </ul>
           <p className="mt-2">
-            LlevaLleva.co se reserva el derecho de suspender o eliminar cuentas que infrinjan estos términos,
+            LlevaLleva se reserva el derecho de suspender o eliminar cuentas que infrinjan estos términos,
             sin previo aviso.
           </p>
         </section>
@@ -80,7 +80,7 @@ export default function TerminosPage() {
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">6. Artículos y servicios prohibidos</h2>
-          <p>Está estrictamente prohibido publicar en LlevaLleva.co anuncios que involucren:</p>
+          <p>Está estrictamente prohibido publicar en LlevaLleva anuncios que involucren:</p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li>Armas de fuego, municiones y explosivos sin la debida autorización legal.</li>
             <li>Sustancias controladas, narcóticos o drogas ilegales.</li>
@@ -92,7 +92,7 @@ export default function TerminosPage() {
             <li>Cualquier bien o servicio cuya comercialización esté prohibida por la ley colombiana.</li>
           </ul>
           <p className="mt-2">
-            LlevaLleva.co podrá retirar sin previo aviso cualquier anuncio que, a su sola discreción, considere
+            LlevaLleva podrá retirar sin previo aviso cualquier anuncio que, a su sola discreción, considere
             contrario a la ley o a estos términos.
           </p>
         </section>
@@ -100,7 +100,7 @@ export default function TerminosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">7. Resolución de disputas</h2>
           <p>
-            LlevaLleva.co no interviene en los conflictos surgidos entre compradores y vendedores. Sin embargo,
+            LlevaLleva no interviene en los conflictos surgidos entre compradores y vendedores. Sin embargo,
             ponemos a disposición un canal de reporte para irregularidades en{' '}
             <Link href="/reportar" className="text-brand-blue hover:underline">nuestra página de reportes</Link>.
           </p>
@@ -114,8 +114,8 @@ export default function TerminosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">8. Limitación de responsabilidad</h2>
           <p>
-            LlevaLleva.co no garantiza la exactitud, legalidad ni calidad de los anuncios publicados en la
-            Plataforma. En la máxima medida permitida por la ley colombiana, LlevaLleva.co no será responsable
+            LlevaLleva no garantiza la exactitud, legalidad ni calidad de los anuncios publicados en la
+            Plataforma. En la máxima medida permitida por la ley colombiana, LlevaLleva no será responsable
             por daños directos, indirectos, incidentales o consecuentes derivados del uso de la Plataforma o
             de las transacciones realizadas a través de ella.
           </p>
@@ -124,9 +124,9 @@ export default function TerminosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">9. Propiedad intelectual</h2>
           <p>
-            El nombre, logotipo, diseño y contenido propio de LlevaLleva.co son propiedad de LlevaLleva.co o sus
+            El nombre, logotipo, diseño y contenido propio de LlevaLleva son propiedad de LlevaLleva o sus
             licenciantes. Queda prohibida su reproducción total o parcial sin autorización escrita. Los usuarios
-            conservan los derechos sobre el contenido que publican, pero otorgan a LlevaLleva.co una licencia no
+            conservan los derechos sobre el contenido que publican, pero otorgan a LlevaLleva una licencia no
             exclusiva para mostrarlo en la Plataforma.
           </p>
         </section>
@@ -134,7 +134,7 @@ export default function TerminosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">10. Modificaciones a los términos</h2>
           <p>
-            LlevaLleva.co podrá actualizar estos Términos y Condiciones en cualquier momento. Los cambios
+            LlevaLleva podrá actualizar estos Términos y Condiciones en cualquier momento. Los cambios
             entrarán en vigencia al momento de su publicación en la Plataforma. El uso continuado de la
             Plataforma tras la publicación de cambios constituye la aceptación de los nuevos términos.
           </p>

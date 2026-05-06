@@ -73,7 +73,7 @@ export default function SobreNosotrosPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">¿Qué es LlevaLleva?</h2>
           <p>
-            LlevaLleva.co es una plataforma de clasificados en línea donde particulares y negocios pueden
+            LlevaLleva es una plataforma de clasificados en línea donde particulares y negocios pueden
             publicar anuncios de cualquier categoría: vehículos, inmuebles, tecnología, ropa, muebles,
             servicios, náutico y mucho más.
           </p>

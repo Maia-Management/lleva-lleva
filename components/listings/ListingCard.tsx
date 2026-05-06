@@ -43,8 +43,8 @@ export default function ListingCard({ listing }: Props) {
               {CONDITION_LABELS[listing.condition]}
             </span>
           )}
-          {/* Favorite button overlay */}
-          <div className="absolute top-2 right-2" onClick={(e) => e.preventDefault()}>
+          {/* Favorite button overlay — FavoriteButton handles stopPropagation internally */}
+          <div className="absolute top-2 right-2">
             <FavoriteButton listingId={listing.id} size="sm" />
           </div>
         </div>

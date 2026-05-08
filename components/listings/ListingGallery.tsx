@@ -37,6 +37,10 @@ export default function ListingGallery({ images, title }: Props) {
           src={sorted[activeIdx].url}
           alt={sorted[activeIdx].alt ?? title}
           className="w-full h-full object-cover transition-opacity duration-200"
+          loading="eager"
+          fetchPriority="high"
+          width={800}
+          height={600}
         />
 
         {/* Nav arrows */}
@@ -90,6 +94,9 @@ export default function ListingGallery({ images, title }: Props) {
                 src={img.url}
                 alt={img.alt ?? `Imagen ${i + 1}`}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                width={64}
+                height={64}
               />
             </button>
           ))}
@@ -117,6 +124,9 @@ export default function ListingGallery({ images, title }: Props) {
               src={sorted[activeIdx].url}
               alt={sorted[activeIdx].alt ?? title}
               className="w-full max-h-[85vh] object-contain rounded-xl"
+              loading="lazy"
+              width={1200}
+              height={900}
             />
 
             {sorted.length > 1 && (

@@ -23,6 +23,8 @@ export default function ListingCard({ listing }: Props) {
               alt={listing.title}
               loading="lazy"
               decoding="async"
+              width={400}
+              height={300}
               className="w-full h-full object-cover"
             />
           ) : (

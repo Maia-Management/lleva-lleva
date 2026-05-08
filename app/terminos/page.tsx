@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Términos y Condiciones',
   description: 'Términos y condiciones de uso de Lleva Lleva — el clasificado colombiano.',
+  alternates: { canonical: 'https://lleva-lleva.com/terminos' },
 };
 
 export default function TerminosPage() {

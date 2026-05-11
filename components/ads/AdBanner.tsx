@@ -18,6 +18,19 @@ declare global {
 
 const PUB_ID = 'ca-pub-2469196723812841';
 
+/**
+ * Reserve minimum height per format to prevent Cumulative Layout Shift (CLS).
+ * The ad container must have a stable height before the ad loads so surrounding
+ * content doesn't shift when the ad unit expands from 0px.
+ * https://web.dev/cls/
+ */
+const MIN_HEIGHT: Record<string, number> = {
+  horizontal: 90,   // Leaderboard (728×90) / mobile banner (320×50)
+  vertical: 600,    // Wide skyscraper (160×600)
+  rectangle: 250,   // Medium rectangle (300×250)
+  auto: 90,         // Conservative fallback — auto-ads typically renders a banner first
+};
+
 export default function AdBanner({
   slot,
   format = 'auto',
@@ -38,8 +51,13 @@ export default function AdBanner({
     }
   }, []);
 
+  const minHeight = MIN_HEIGHT[format] ?? 90;
+
   return (
-    <div className={`overflow-hidden text-center ${className}`}>
+    <div
+      className={`overflow-hidden text-center ${className}`}
+      style={{ minHeight, contain: 'layout' }}
+    >
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}

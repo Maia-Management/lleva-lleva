@@ -45,3 +45,6 @@ deno.lock
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code worktrees and local state (must never be committed)
+.claude/

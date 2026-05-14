@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Información ${category} – ${location}`,
     description: `Información pública sobre ${category} en ${location}. Lleva Lleva`,
+    alternates: { canonical: `https://lleva-lleva.com/info/${category}/${location}` },
   };
 }
 
@@ -113,13 +114,13 @@ export default async function InfoPage({ params }: Props) {
             <ul className="space-y-4">
               {content.content.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-white0 mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-brand-blue mt-0.5 flex-shrink-0">✓</span>
                   <p className="text-sm text-gray-700 leading-relaxed">{item}</p>
                 </li>
               ))}
             </ul>
             <div className="mt-8 bg-brand-yellow/10 border border-brand-yellow/30 rounded-xl p-4">
-              <p className="text-xs text-brand-yellow-600">
+              <p className="text-xs text-ink-2">
                 <strong>Aviso:</strong> Esta información es de referencia y puede estar desactualizada.
                 Siempre verifica con las entidades oficiales antes de tomar decisiones.
               </p>

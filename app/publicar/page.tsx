@@ -5,6 +5,7 @@ import PublicarForm from './PublicarForm';
 export const metadata = {
   title: 'Publicar anuncio',
   description: 'Publica tu anuncio gratis en Lleva Lleva',
+  alternates: { canonical: 'https://lleva-lleva.com/publicar' },
 };
 
 export default async function PublicarPage() {
@@ -43,7 +44,7 @@ export default async function PublicarPage() {
       {profile?.has_pending_rating && (
         <div className="bg-brand-yellow/10 border border-brand-yellow/40 rounded-2xl p-5 mb-6">
           <h2 className="font-bold text-ink mb-1">⭐ Tienes una calificación pendiente</h2>
-          <p className="text-sm text-brand-yellow-600 mb-3">
+          <p className="text-sm text-ink-2 mb-3">
             Para publicar nuevos anuncios, primero debes calificar tu última transacción. Esto ayuda a mantener la confianza en la plataforma.
           </p>
           {profile.pending_rating_transaction_id && (

@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Sobre Nosotros',
   description: 'Conoce a Lleva Lleva — el clasificado colombiano que conecta compradores y vendedores en Santa Marta y toda Colombia.',
+  alternates: { canonical: 'https://lleva-lleva.com/sobre-nosotros' },
 };
 
 const aboutPageJsonLd = {

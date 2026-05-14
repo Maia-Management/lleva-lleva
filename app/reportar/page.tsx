@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Reportar un Problema',
   description: 'Reporta anuncios fraudulentos, contenido prohibido o problemas en Lleva Lleva.',
+  alternates: { canonical: 'https://lleva-lleva.com/reportar' },
 };
 
 export default function ReportarPage() {

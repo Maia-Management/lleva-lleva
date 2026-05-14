@@ -11,23 +11,39 @@ interface Props {
   searchParams: Promise<{ ciudad?: string; orden?: string; precio_min?: string; precio_max?: string; page?: string }>;
 }
 
+function labelFromSlug(slug: string) {
+  return slug
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  let name = labelFromSlug(slug);
+  let canonicalUrl = `https://lleva-lleva.com/categorias/${slug}`;
+
   try {
     const supabase = await createClient();
     const { data } = await supabase.from('categories').select('name_es, slug').eq('slug', slug).single();
-    const title = data ? `${data.name_es} – Clasificados Colombia` : 'Categoría';
-    const description = `Encuentra los mejores anuncios de ${data?.name_es ?? ''} en Lleva Lleva – clasificados de Colombia`;
-    const canonicalUrl = `https://lleva-lleva.com/categorias/${data?.slug ?? slug}`;
-    return {
-      title,
-      description,
-      alternates: { canonical: canonicalUrl },
-      openGraph: { title, description, url: canonicalUrl, type: 'website' },
-    };
+    if (data) {
+      name = data.name_es;
+      canonicalUrl = `https://lleva-lleva.com/categorias/${data.slug}`;
+    }
   } catch {
-    return { title: 'Categoría – Lleva Lleva' };
+    // Keep complete metadata even if the database lookup is unavailable.
   }
+
+  const title = `${name} – Clasificados Colombia`;
+  const description = `Encuentra anuncios de ${name} en Lleva Lleva, el clasificado colombiano para comprar y vender en tu región.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title, description, url: canonicalUrl, type: 'website' },
+  };
 }
 
 export default async function CategoryPage({ params, searchParams }: Props) {
@@ -99,10 +115,10 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         <aside className="lg:w-56 flex-shrink-0">
           <div className="bg-white rounded-2xl border border-gray-200 p-4 space-y-4">
             <div>
-              <h2 className="font-bold text-gray-800 text-sm mb-3 flex items-center gap-2">
+              <p className="font-bold text-gray-800 text-sm mb-3 flex items-center gap-2">
                 <span className="text-lg">{category.icon ?? '📦'}</span>
                 {category.name_es}
-              </h2>
+              </p>
               {subcategories && subcategories.length > 0 && (
                 <ul className="space-y-1">
                   <li>
@@ -129,7 +145,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
             {/* Filters */}
             <div className="border-t border-gray-100 pt-4">
-              <h3 className="font-semibold text-gray-700 text-xs uppercase tracking-wide mb-3">Filtros</h3>
+              <p className="font-semibold text-gray-700 text-xs uppercase tracking-wide mb-3">Filtros</p>
               <form className="space-y-3">
                 <div>
                   <label className="block text-xs text-gray-500 mb-1" htmlFor="orden">Ordenar por</label>

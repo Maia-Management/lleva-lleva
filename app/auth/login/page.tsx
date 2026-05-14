@@ -1,7 +1,11 @@
 import { Suspense } from 'react';
 import LoginForm from './LoginForm';
 
-export const metadata = { title: 'Ingresar' };
+export const metadata = {
+  title: 'Ingresar',
+  description: 'Ingresa a tu cuenta de Lleva Lleva para publicar, guardar y gestionar anuncios.',
+  alternates: { canonical: 'https://lleva-lleva.com/auth/login' },
+};
 
 export default function LoginPage() {
   return (

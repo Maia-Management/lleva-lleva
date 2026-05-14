@@ -105,7 +105,7 @@ export default async function DashboardPage() {
         <div className="bg-brand-yellow/10 border border-brand-yellow/40 rounded-2xl p-4 mb-6 flex items-center justify-between gap-4">
           <div>
             <p className="font-semibold text-ink text-sm">⭐ Calificación pendiente</p>
-            <p className="text-xs text-brand-yellow-600 mt-0.5">Califica tu última transacción para desbloquear nuevas publicaciones.</p>
+            <p className="text-xs text-ink-2 mt-0.5">Califica tu última transacción para desbloquear nuevas publicaciones.</p>
           </div>
           {profile.pending_rating_transaction_id && (
             <Link
@@ -269,7 +269,7 @@ export default async function DashboardPage() {
                         </span>
                         <Link
                           href={`/calificar/${tx.id}`}
-                          className="text-xs text-brand-yellow-600 hover:underline font-medium"
+                          className="text-xs text-brand-blue hover:underline font-medium"
                         >
                           Calificar
                         </Link>

@@ -20,8 +20,22 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+function titleFromSlug(slug: string) {
+  return slug
+    .replace(/-\d+$/, '')
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  let title = titleFromSlug(slug);
+  let description = `Consulta este anuncio en Lleva Lleva, el clasificado colombiano para comprar, vender y contactar personas de tu región.`;
+  let ogImage = 'https://lleva-lleva.com/og-image.png';
+  const canonicalUrl = `https://lleva-lleva.com/listing/${slug}`;
+
   try {
     const supabase = await createClient();
     const { data } = await supabase
@@ -30,29 +44,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       .eq('slug', slug)
       .single();
 
-    if (!data) return { title: 'Anuncio no encontrado' };
+    if (data) {
+      title = data.meta_title ?? data.title;
+      description = data.meta_description ?? data.description?.slice(0, 160) ?? description;
+      ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? ogImage;
+    }
+  } catch {
+    // Keep complete metadata even if the database lookup is unavailable.
+  }
 
-    const title = data.meta_title ?? data.title;
-    const description = data.meta_description ?? data.description?.slice(0, 160);
-    const ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? 'https://lleva-lleva.com/og-image.png';
-    const canonicalUrl = `https://lleva-lleva.com/listing/${data.slug}`;
-
-    return {
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
       title,
       description,
-      alternates: { canonical: canonicalUrl },
-      openGraph: {
-        title,
-        description,
-        url: canonicalUrl,
-        type: 'website',
-        images: [{ url: ogImage, width: 800, height: 600, alt: title }],
-      },
-      twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
-    };
-  } catch {
-    return { title: 'Anuncio – Lleva Lleva' };
-  }
+      url: canonicalUrl,
+      type: 'website',
+      images: [{ url: ogImage, width: 800, height: 600, alt: title }],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
+  };
 }
 
 export default async function ListingPage({ params }: Props) {
@@ -330,7 +343,7 @@ export default async function ListingPage({ params }: Props) {
                   <p className="font-semibold text-gray-800 flex items-center gap-1">
                     {seller.display_name}
                     {seller.is_verified && (
-                      <span title="Verificado" className="text-white0">✓</span>
+                      <span title="Verificado" className="text-brand-blue">✓</span>
                     )}
                   </p>
                   {seller.business_name && (
@@ -352,7 +365,7 @@ export default async function ListingPage({ params }: Props) {
           {/* Safety tips */}
           <div className="bg-brand-yellow/10 border border-brand-yellow/30 rounded-2xl p-4">
             <h3 className="font-semibold text-ink text-sm mb-2">⚠️ Consejos de seguridad</h3>
-            <ul className="text-xs text-brand-yellow-600 space-y-1">
+            <ul className="text-xs text-ink-2 space-y-1">
               <li>• Reúnete en lugares públicos y seguros</li>
               <li>• Verifica el artículo antes de pagar</li>
               <li>• Desconfía de precios muy por debajo del mercado</li>

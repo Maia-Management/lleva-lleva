@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Consejos de Seguridad',
   description: 'Consejos para realizar transacciones seguras en Lleva Lleva. Protégete al comprar y vender en línea.',
+  alternates: { canonical: 'https://lleva-lleva.com/seguridad' },
 };
 
 const tips = [

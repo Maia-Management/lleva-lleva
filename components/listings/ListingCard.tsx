@@ -53,9 +53,9 @@ export default function ListingCard({ listing }: Props) {
 
         {/* Content */}
         <div className="p-3">
-          <h3 className="text-sm font-semibold text-ink line-clamp-2 leading-snug group-hover:text-brand-blue transition-colors">
+          <p className="text-sm font-semibold text-ink line-clamp-2 leading-snug group-hover:text-brand-blue transition-colors">
             {listing.title}
-          </h3>
+          </p>
 
           <div className="mt-2">
             {isPriceVisible && listing.price != null ? (

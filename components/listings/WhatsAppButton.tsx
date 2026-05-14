@@ -59,7 +59,7 @@ export default function WhatsAppButton({
     <button
       onClick={handleClick}
       disabled={loading}
-      className="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1da851] active:bg-[#128c7e] text-white font-bold py-4 px-6 rounded-2xl text-base transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-green-200"
+      className="w-full flex items-center justify-center gap-3 bg-[#075E54] hover:bg-[#064c44] active:bg-[#043b35] text-white font-bold py-4 px-6 rounded-2xl text-base transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-green-200"
     >
       {loading ? (
         <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">

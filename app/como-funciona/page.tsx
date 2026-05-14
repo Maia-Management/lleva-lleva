@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '¿Cómo funciona LlevaLleva?',
   description: 'Aprende cómo publicar y comprar en Lleva Lleva, el clasificado colombiano.',
+  alternates: { canonical: 'https://lleva-lleva.com/como-funciona' },
 };
 
 const comoFuncionaFaqs = [

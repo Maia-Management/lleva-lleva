@@ -165,7 +165,7 @@ export default async function BuscarPage({ searchParams }: Props) {
         </p>
 
         {/* Sort */}
-        <form method="get" action="/buscar">
+        <form method="get" action="/buscar" className="flex items-center gap-2">
           {/* Preserve existing params */}
           {q && <input type="hidden" name="q" value={q} />}
           {sp.categoria && <input type="hidden" name="categoria" value={sp.categoria} />}
@@ -176,7 +176,6 @@ export default async function BuscarPage({ searchParams }: Props) {
           <select
             name="orden"
             defaultValue={orden}
-            onChange={(e) => (e.target.form as HTMLFormElement).submit()}
             aria-label="Ordenar resultados"
             className="text-sm border border-line rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-blue bg-surface text-ink"
           >
@@ -184,6 +183,12 @@ export default async function BuscarPage({ searchParams }: Props) {
             <option value="precio_asc">Precio: menor a mayor</option>
             <option value="precio_desc">Precio: mayor a menor</option>
           </select>
+          <button
+            type="submit"
+            className="text-sm border border-line rounded-lg px-3 py-1.5 bg-surface text-ink font-medium hover:border-brand-blue/40 hover:text-brand-blue transition-colors"
+          >
+            Aplicar
+          </button>
         </form>
       </div>
 

@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `@${username} – Lleva Lleva`,
     description: `Perfil de ${username} en Lleva Lleva`,
+    alternates: { canonical: `https://lleva-lleva.com/perfil/${username}` },
   };
 }
 

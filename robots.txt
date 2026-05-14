@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lleva-lleva.com/sitemap.xml

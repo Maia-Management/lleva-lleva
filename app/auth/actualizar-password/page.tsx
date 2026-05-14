@@ -16,7 +16,16 @@ export default function ActualizarPasswordPage() {
 
   useEffect(() => {
     const supabase = createClient();
-    let fallbackTimer: ReturnType<typeof setTimeout>;
+    // Fallback: if no recovery event fires within 3 s, check once more then redirect
+    const fallbackTimer = setTimeout(() => {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        if (!session) {
+          router.replace('/auth/login?error=link-expirado');
+        } else {
+          setChecking(false);
+        }
+      });
+    }, 3000);
 
     // If there's already a valid session (e.g. page refresh after auth), show form immediately
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -47,17 +56,6 @@ export default function ActualizarPasswordPage() {
         router.replace('/auth/login?error=link-expirado');
       }
     });
-
-    // Fallback: if no recovery event fires within 3 s, check once more then redirect
-    fallbackTimer = setTimeout(() => {
-      supabase.auth.getSession().then(({ data: { session } }) => {
-        if (!session) {
-          router.replace('/auth/login?error=link-expirado');
-        } else {
-          setChecking(false);
-        }
-      });
-    }, 3000);
 
     return () => {
       subscription.unsubscribe();
@@ -127,7 +125,7 @@ export default function ActualizarPasswordPage() {
             <span className="text-3xl font-black text-brand-blue">
               Lleva<span className="text-gray-900">Lleva</span>
             </span>
-            <span className="text-gray-500">.co</span>
+            <span className="text-gray-600">.com</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Nueva contraseña</h1>
           <p className="text-sm text-gray-500 mt-1">
@@ -155,10 +153,7 @@ export default function ActualizarPasswordPage() {
             )}
 
             <div>
-              <label
-                className="block text-sm font-medium text-gray-700 mb-1"
-                htmlFor="password"
-              >
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Nueva contraseña
               </label>
               <input
@@ -174,10 +169,7 @@ export default function ActualizarPasswordPage() {
             </div>
 
             <div>
-              <label
-                className="block text-sm font-medium text-gray-700 mb-1"
-                htmlFor="confirmPassword"
-              >
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
                 Confirmar contraseña
               </label>
               <input

@@ -78,12 +78,14 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
 
       {/* Stars */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-3">¿Cómo fue tu experiencia?</label>
-        <div className="flex gap-2">
+        <p id="experience-rating-label" className="block text-sm font-semibold text-gray-700 mb-3">¿Cómo fue tu experiencia?</p>
+        <div className="flex gap-2" role="radiogroup" aria-labelledby="experience-rating-label">
           {[1, 2, 3, 4, 5].map((star) => (
             <button
               key={star}
               type="button"
+              role="radio"
+              aria-checked={score === star}
               onClick={() => setScore(star)}
               onMouseEnter={() => setHovered(star)}
               onMouseLeave={() => setHovered(0)}
@@ -104,12 +106,13 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
 
       {/* Tags */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-2">¿Qué resaltarías? (opcional)</label>
-        <div className="flex flex-wrap gap-2">
+        <p id="rating-tags-label" className="block text-sm font-semibold text-gray-700 mb-2">¿Qué resaltarías? (opcional)</p>
+        <div className="flex flex-wrap gap-2" aria-labelledby="rating-tags-label">
           {[...POSITIVE_TAGS, ...NEGATIVE_TAGS].map((tag) => (
             <button
               key={tag.value}
               type="button"
+              aria-pressed={selectedTags.includes(tag.value)}
               onClick={() => toggleTag(tag.value)}
               className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                 selectedTags.includes(tag.value)
@@ -125,8 +128,9 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
 
       {/* Comment */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Comentario (opcional)</label>
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="rating-comment">Comentario (opcional)</label>
         <textarea
+          id="rating-comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           rows={3}
@@ -134,7 +138,7 @@ export default function RatingForm({ transactionId, raterId, rateeId, listingId,
           placeholder="Cuéntale a la comunidad sobre tu experiencia..."
           className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
         />
-        <p className="text-xs text-gray-400 text-right mt-1">{comment.length}/500</p>
+        <p className="text-xs text-gray-600 text-right mt-1">{comment.length}/500</p>
       </div>
 
       <button

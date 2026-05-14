@@ -695,6 +695,7 @@ async function main() {
   console.log(`  Profiles:   ${profileCount}`);
   console.log(`  Listings:   ${listingCount}`);
   console.log(`  Locations:  ${locCount}`);
+  console.log(`  Seeded/updated this run: ${totalInserted}`);
   console.log('\nDone!');
 }
 

@@ -18,7 +18,7 @@ export default function Error({
     <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 text-center">
       <div className="text-5xl mb-4" aria-hidden="true">⚠️</div>
       <h1 className="text-xl font-bold text-ink mb-2">Algo salió mal</h1>
-      <p className="text-sm text-ink-2/80 mb-6 max-w-md">
+      <p className="text-sm text-ink-2 mb-6 max-w-md">
         Ocurrió un error inesperado. Por favor intenta de nuevo o regresa al inicio.
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
@@ -36,7 +36,7 @@ export default function Error({
         </Link>
       </div>
       {error.digest && (
-        <p className="mt-6 text-xs text-ink-2/50">Código: {error.digest}</p>
+        <p className="mt-6 text-xs text-ink-2">Código: {error.digest}</p>
       )}
     </div>
   );

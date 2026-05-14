@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import { createClient } from '@/lib/supabase/server';
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 interface Props {
@@ -16,23 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function InfoPage({ params }: Props) {
-  const { category, location } = await params;
-  const supabase = await createClient();
-
-  // Find the category
-  const { data: cat } = await supabase
-    .from('categories')
-    .select('*, parent:categories(name_es, slug)')
-    .eq('slug', location)
-    .single();
-
-  // Fetch bot listings for this category + location combo
-  const { data: listings } = await supabase
-    .from('listings')
-    .select('*, location:locations(*)')
-    .eq('status', 'active')
-    .ilike('tags', `%${location}%`)
-    .limit(20);
+  const { location } = await params;
 
   const INFO_CONTENT: Record<string, { title: string; content: string[] }> = {
     tramites: {

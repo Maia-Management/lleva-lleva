@@ -74,7 +74,7 @@ export default function RegisterPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
             <span className="text-3xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
-            <span className="text-gray-500">.co</span>
+            <span className="text-gray-600">.com</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Crear cuenta gratis</h1>
           <p className="text-sm text-gray-500 mt-1">
@@ -93,8 +93,9 @@ export default function RegisterPage() {
           )}
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">Nombre completo</label>
             <input
+              id="name"
               name="name"
               type="text"
               required
@@ -106,10 +107,11 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Nombre de usuario</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="username">Nombre de usuario</label>
             <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-brand-blue">
               <span className="px-3 py-2.5 bg-gray-50 text-gray-500 text-sm border-r border-gray-300">@</span>
               <input
+                id="username"
                 name="username"
                 type="text"
                 required
@@ -122,12 +124,13 @@ export default function RegisterPage() {
                 className="flex-1 px-3 py-2.5 text-sm focus:outline-none"
               />
             </div>
-            <p className="text-xs text-gray-400 mt-1">Solo minúsculas, números, guiones</p>
+            <p className="text-xs text-gray-600 mt-1">Solo minúsculas, números, guiones</p>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">Correo electrónico</label>
             <input
+              id="email"
               name="email"
               type="email"
               required
@@ -139,8 +142,9 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="password">Contraseña</label>
             <input
+              id="password"
               name="password"
               type="password"
               required
@@ -160,7 +164,7 @@ export default function RegisterPage() {
             {loading ? 'Creando cuenta...' : 'Crear cuenta gratis'}
           </button>
 
-          <p className="text-xs text-gray-400 text-center">
+          <p className="text-xs text-gray-600 text-center">
             Al registrarte aceptas los{' '}
             <Link href="/terminos" className="hover:underline">Términos y condiciones</Link>
             {' '}y{' '}

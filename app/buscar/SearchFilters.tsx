@@ -81,7 +81,7 @@ export default function SearchFilters({ categories, locations }: Props) {
       {/* Search input */}
       <div className="relative">
         <svg
-          className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-2/60 pointer-events-none"
+          className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-2/80 pointer-events-none"
           fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -93,7 +93,7 @@ export default function SearchFilters({ categories, locations }: Props) {
           onChange={(e) => setQ(e.target.value)}
           placeholder="¿Qué estás buscando?"
           aria-label="Buscar"
-          className="w-full pl-10 pr-4 py-3 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue placeholder:text-ink-2/60 text-ink"
+          className="w-full pl-10 pr-4 py-3 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue placeholder:text-ink-2/80 text-ink"
           autoFocus
         />
       </div>
@@ -163,9 +163,9 @@ export default function SearchFilters({ categories, locations }: Props) {
             placeholder="Min COP"
             aria-label="Precio mínimo"
             min="0"
-            className="w-full px-3 py-2.5 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue text-ink placeholder:text-ink-2/60"
+            className="w-full px-3 py-2.5 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue text-ink placeholder:text-ink-2/80"
           />
-          <span className="text-ink-2/60 text-xs flex-shrink-0" aria-hidden="true">–</span>
+          <span className="text-ink-2/80 text-xs flex-shrink-0" aria-hidden="true">–</span>
           <input
             type="number"
             value={precioMax}
@@ -173,7 +173,7 @@ export default function SearchFilters({ categories, locations }: Props) {
             placeholder="Max"
             aria-label="Precio máximo"
             min="0"
-            className="w-full px-3 py-2.5 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue text-ink placeholder:text-ink-2/60"
+            className="w-full px-3 py-2.5 bg-surface border border-line rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue text-ink placeholder:text-ink-2/80"
           />
         </div>
       </div>

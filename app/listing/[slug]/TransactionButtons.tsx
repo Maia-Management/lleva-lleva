@@ -129,10 +129,11 @@ export default function TransactionButtons({
                   Registra la transacción y recibirás un WhatsApp para dejar tu calificación.
                 </p>
                 <div className="mb-4">
-                  <label className="text-xs font-medium text-gray-600 block mb-1">
+                  <label htmlFor="agreed-price" className="text-xs font-medium text-gray-600 block mb-1">
                     Precio pactado (opcional)
                   </label>
                   <input
+                    id="agreed-price"
                     type="number"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
@@ -140,7 +141,7 @@ export default function TransactionButtons({
                     className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                   />
                   {listingPrice && (
-                    <p className="text-xs text-gray-400 mt-1">Precio anunciado: {formatCOP(listingPrice)}</p>
+                    <p className="text-xs text-gray-600 mt-1">Precio anunciado: {formatCOP(listingPrice)}</p>
                   )}
                 </div>
               </>

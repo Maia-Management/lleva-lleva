@@ -8,6 +8,8 @@ import type { User } from '@supabase/supabase-js';
 
 export const metadata: Metadata = { title: 'Mi cuenta' };
 
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   let profile = null;
   let listings = null;
@@ -154,7 +156,7 @@ export default async function DashboardPage() {
                       <Link href={`/listing/${listing.slug}`} className="font-medium text-gray-800 hover:text-brand-blue line-clamp-1">
                         {listing.title}
                       </Link>
-                      <p className="text-xs text-gray-400">{timeAgo(listing.created_at)}</p>
+                      <p className="text-xs text-gray-600">{timeAgo(listing.created_at)}</p>
                     </td>
                     <td className="px-4 py-3 hidden sm:table-cell text-gray-700">
                       {listing.price ? formatCOP(listing.price) : '—'}
@@ -182,7 +184,7 @@ export default async function DashboardPage() {
           </div>
         ) : (
           <div className="text-center py-12 bg-white rounded-2xl border border-gray-200">
-            <p className="text-gray-400 text-sm mb-4">No tienes anuncios aún.</p>
+            <p className="text-gray-600 text-sm mb-4">No tienes anuncios aún.</p>
             <Link href="/publicar" className="inline-flex items-center gap-1.5 bg-brand-blue text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-brand-blue-700 transition-colors">
               + Publicar primer anuncio
             </Link>
@@ -224,7 +226,7 @@ export default async function DashboardPage() {
                     <p className="text-sm font-bold text-brand-blue mt-0.5">Gratis</p>
                   ) : null}
                   {listing.location && (
-                    <p className="text-xs text-gray-400 mt-0.5">{listing.location.city}</p>
+                    <p className="text-xs text-gray-600 mt-0.5">{listing.location.city}</p>
                   )}
                   {listing.status !== 'active' && (
                     <span className="text-xs text-red-500 font-medium">{STATUS_LABELS[listing.status] ?? listing.status}</span>

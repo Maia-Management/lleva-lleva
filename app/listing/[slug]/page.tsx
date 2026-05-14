@@ -293,7 +293,7 @@ export default async function ListingPage({ params }: Props) {
               sellerUserType={seller?.user_type ?? 'bot'}
             />
 
-            <p className="text-xs text-gray-400 text-center mt-3 mb-3">
+            <p className="text-xs text-gray-600 text-center mt-3 mb-3">
               Tu número NO se comparte con el vendedor
             </p>
 
@@ -342,7 +342,7 @@ export default async function ListingPage({ params }: Props) {
                     </div>
                   )}
                   {seller.city && (
-                    <p className="text-xs text-gray-400 mt-0.5">📍 {seller.city}</p>
+                    <p className="text-xs text-gray-600 mt-0.5">📍 {seller.city}</p>
                   )}
                 </div>
               </Link>

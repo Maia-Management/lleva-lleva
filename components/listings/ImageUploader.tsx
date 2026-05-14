@@ -155,6 +155,15 @@ export default function ImageUploader({
           onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
           onDragLeave={() => setDragOver(false)}
           onClick={() => inputRef.current?.click()}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              inputRef.current?.click();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Agregar fotos del anuncio"
           className={`
             border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-colors
             ${dragOver
@@ -167,15 +176,17 @@ export default function ImageUploader({
           <p className="text-sm font-medium text-gray-700">
             Toca para agregar fotos
           </p>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-600 mt-1">
             {images.length}/{maxImages} imágenes · JPG, PNG o WebP · máx {maxSizeMB} MB c/u
           </p>
           <input
             ref={inputRef}
+            id="listing-images"
             type="file"
             accept="image/*"
             multiple
             capture={undefined}
+            aria-label="Fotos del anuncio"
             className="hidden"
             onChange={(e) => addFiles(e.target.files)}
           />
@@ -183,7 +194,7 @@ export default function ImageUploader({
       )}
 
       {!canAddMore && (
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-gray-600 text-center">
           Límite de {maxImages} imágenes alcanzado.{' '}
           <button
             type="button"
@@ -195,7 +206,7 @@ export default function ImageUploader({
         </p>
       )}
 
-      <p className="text-xs text-gray-400">
+      <p className="text-xs text-gray-600">
         💡 La primera imagen será la foto principal. Pasa el cursor sobre una imagen para reordenar o eliminar.
       </p>
     </div>

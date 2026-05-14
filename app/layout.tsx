@@ -117,11 +117,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <head>
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2469196723812841"
-          crossOrigin="anonymous"
-        />
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
@@ -131,7 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${geist.className} bg-gray-50 min-h-screen flex flex-col antialiased`}>
-        <Script src="/consent-banner.js" strategy="afterInteractive" />
+        <Script src="/consent-banner.js" strategy="beforeInteractive" />
         {/* Google Analytics 4 — set NEXT_PUBLIC_GA_MEASUREMENT_ID in production env to activate */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
@@ -150,7 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        {/* Floating WhatsApp Button — links to Maia Bot on WhatsApp */}
+        {/* Floating WhatsApp button for Maia */}
         <a
           href="https://wa.me/19034598763"
           target="_blank"
@@ -181,4 +176,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
+

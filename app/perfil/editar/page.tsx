@@ -23,7 +23,7 @@ export default async function EditProfilePage() {
     <div className="max-w-lg mx-auto px-4 sm:px-6 py-8">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <Link href="/dashboard" className="text-gray-400 hover:text-gray-600 transition-colors">
+        <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors" aria-label="Volver al panel">
           ←
         </Link>
         <div>

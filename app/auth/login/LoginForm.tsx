@@ -38,7 +38,7 @@ export default function LoginForm() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
             <span className="text-3xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
-            <span className="text-gray-500">.co</span>
+            <span className="text-gray-600">.com</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Ingresar a tu cuenta</h1>
           <p className="text-sm text-gray-500 mt-1">

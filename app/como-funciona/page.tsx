@@ -130,7 +130,7 @@ export default function ComoFuncionaPage() {
         }}
       />
       <div className="mb-8">
-        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue underline underline-offset-2">← Volver al inicio</Link>
       </div>
 
       <div className="text-center mb-12">
@@ -203,9 +203,9 @@ export default function ComoFuncionaPage() {
       <div className="mt-8 text-center">
         <p className="text-gray-600 text-sm">
           ¿Tienes más preguntas?{' '}
-          <Link href="/ayuda" className="text-brand-blue hover:underline font-medium">Visita nuestro centro de ayuda</Link>
+          <Link href="/ayuda" className="text-brand-blue font-medium underline underline-offset-2">Visita nuestro centro de ayuda</Link>
           {' '}o{' '}
-          <Link href="/contacto" className="text-brand-blue hover:underline font-medium">contáctanos</Link>.
+          <Link href="/contacto" className="text-brand-blue font-medium underline underline-offset-2">contáctanos</Link>.
         </p>
       </div>
     </div>

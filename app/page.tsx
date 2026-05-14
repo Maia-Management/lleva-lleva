@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: 'El clasificado colombiano. Compra, vende y conecta con personas de tu región. Vehículos, inmuebles, tecnología, náutico y más en lleva-lleva.com.',
 };
 
+export const dynamic = 'force-dynamic';
+
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -238,7 +240,7 @@ export default async function HomePage() {
       <section className="bg-surface border-t border-b border-line mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <h2 className="text-lg font-bold text-ink mb-2">Información Pública</h2>
-          <p className="text-sm text-ink-2/80 mb-5">
+          <p className="text-sm text-ink-2 mb-5">
             Consulta precios de referencia, trámites y noticias actualizadas de Colombia.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -251,7 +253,7 @@ export default async function HomePage() {
                 <span className="text-2xl">{item.icon}</span>
                 <div>
                   <p className="font-semibold text-sm text-ink">{item.title}</p>
-                  <p className="text-xs text-ink-2/70 mt-0.5">{item.desc}</p>
+                  <p className="text-xs text-ink-2 mt-0.5">{item.desc}</p>
                 </div>
               </Link>
             ))}
@@ -270,17 +272,17 @@ export default async function HomePage() {
           <div className="p-6">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue-50 text-brand-blue mb-3 text-2xl" aria-hidden="true">🔒</div>
             <h3 className="font-bold text-ink mb-1">Seguro y confiable</h3>
-            <p className="text-sm text-ink-2/80">Sistema de calificaciones verificadas para compradores y vendedores.</p>
+            <p className="text-sm text-ink-2">Sistema de calificaciones verificadas para compradores y vendedores.</p>
           </div>
           <div className="p-6">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue-50 text-brand-blue mb-3 text-2xl" aria-hidden="true">💬</div>
             <h3 className="font-bold text-ink mb-1">Contacto directo</h3>
-            <p className="text-sm text-ink-2/80">Conecta directamente por WhatsApp con el vendedor, sin intermediarios.</p>
+            <p className="text-sm text-ink-2">Conecta directamente por WhatsApp con el vendedor, sin intermediarios.</p>
           </div>
           <div className="p-6">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue-50 mb-3 text-2xl" aria-hidden="true">🇨🇴</div>
             <h3 className="font-bold text-ink mb-1">Hecho en Colombia</h3>
-            <p className="text-sm text-ink-2/80">Plataforma diseñada para el mercado colombiano, en español.</p>
+            <p className="text-sm text-ink-2">Plataforma diseñada para el mercado colombiano, en español.</p>
           </div>
         </div>
       </section>

@@ -50,7 +50,7 @@ export default function SobreNosotrosPage() {
       <div className="text-center mb-12">
         <Link href="/" className="inline-block mb-6">
           <span className="text-4xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
-          <span className="text-gray-500 text-lg">.co</span>
+          <span className="text-gray-600 text-lg">.com</span>
         </Link>
         <h1 className="text-3xl font-black text-gray-900 mb-4">El clasificado colombiano</h1>
         <p className="text-gray-600 text-lg leading-relaxed">

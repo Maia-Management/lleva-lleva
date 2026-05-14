@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function CategoriasPage() {
   let cats: Category[] = [];
 
@@ -56,7 +58,7 @@ export default async function CategoriasPage() {
                 {cat.name_es}
               </p>
               {cat.listing_count > 0 && (
-                <p className="text-xs text-gray-400 mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   {cat.listing_count.toLocaleString('es-CO')} anuncios
                 </p>
               )}

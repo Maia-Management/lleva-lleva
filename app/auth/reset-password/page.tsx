@@ -36,7 +36,7 @@ export default function ResetPasswordPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
             <span className="text-3xl font-black text-brand-blue">Lleva<span className="text-gray-900">Lleva</span></span>
-            <span className="text-gray-500">.co</span>
+            <span className="text-gray-600">.com</span>
           </Link>
           <h1 className="text-xl font-bold text-gray-800 mt-4">Restablecer contraseña</h1>
           <p className="text-sm text-gray-500 mt-1">
@@ -52,7 +52,7 @@ export default function ResetPasswordPage() {
               Si existe una cuenta con el correo <strong>{email}</strong>, recibirás un enlace
               para restablecer tu contraseña en los próximos minutos.
             </p>
-            <p className="text-gray-400 text-xs mb-4">Revisa también la carpeta de spam.</p>
+            <p className="text-gray-600 text-xs mb-4">Revisa también la carpeta de spam.</p>
             <Link
               href="/auth/login"
               className="inline-block text-brand-blue text-sm font-semibold hover:underline"

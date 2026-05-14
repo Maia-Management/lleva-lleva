@@ -125,7 +125,7 @@ export default async function BuscarPage({ searchParams }: Props) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
       {/* Breadcrumb */}
-      <nav className="text-xs text-ink-2/70 mb-4 flex items-center gap-1.5" aria-label="Breadcrumb">
+      <nav className="text-xs text-ink-2 mb-4 flex items-center gap-1.5" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-brand-blue">Inicio</Link>
         <span aria-hidden="true">›</span>
         <span className="text-ink">Buscar</span>

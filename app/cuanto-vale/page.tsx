@@ -84,7 +84,7 @@ export default function CuantoValePage() {
       <PriceChecker />
 
       {/* Disclaimer */}
-      <p className="text-center text-xs text-gray-400 mt-8 leading-relaxed">
+      <p className="text-center text-xs text-gray-600 mt-8 leading-relaxed">
         Los precios son estimaciones basadas en anuncios públicos. Los
         resultados pueden variar según el estado del artículo, la ciudad y la
         demanda actual.

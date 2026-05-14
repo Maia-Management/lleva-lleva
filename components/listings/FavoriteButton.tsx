@@ -76,7 +76,7 @@ export default function FavoriteButton({ listingId, size = 'md' }: Props) {
       className={`${iconSize} flex items-center justify-center rounded-full transition-all duration-150 disabled:opacity-60
         ${isFav
           ? 'bg-red-50 text-red-500 hover:bg-red-100'
-          : 'bg-white/80 text-gray-400 hover:text-red-400 hover:bg-white'
+          : 'bg-white/80 text-gray-500 hover:text-red-600 hover:bg-white'
         } backdrop-blur-sm shadow-sm border border-white/60`}
     >
       {isFav ? '❤️' : '🤍'}

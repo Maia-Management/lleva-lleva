@@ -11,7 +11,7 @@ export default function PrivacidadPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue underline underline-offset-2">← Volver al inicio</Link>
       </div>
 
       <h1 className="text-3xl font-black text-gray-900 mb-2">Política de Privacidad</h1>
@@ -98,7 +98,7 @@ export default function PrivacidadPage() {
           </ul>
           <p className="mt-2">
             Para ejercer sus derechos, puede contactarnos a través de nuestra{' '}
-            <Link href="/contacto" className="text-brand-blue hover:underline">página de contacto</Link>.
+            <Link href="/contacto" className="text-brand-blue font-medium underline underline-offset-2">página de contacto</Link>.
           </p>
         </section>
 
@@ -143,7 +143,7 @@ export default function PrivacidadPage() {
           <p>
             Para cualquier consulta relacionada con esta política o con el tratamiento de sus datos personales,
             contáctenos a través de nuestra{' '}
-            <Link href="/contacto" className="text-brand-blue hover:underline">página de contacto</Link>.
+            <Link href="/contacto" className="text-brand-blue font-medium underline underline-offset-2">página de contacto</Link>.
           </p>
         </section>
 

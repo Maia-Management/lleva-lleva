@@ -104,10 +104,7 @@ export default function PriceChecker() {
       {/* ── Search Form ─────────────────────────────────────────── */}
       <form onSubmit={handleSubmit} className="mb-6">
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 sm:p-6">
-          <label
-            htmlFor="item-input"
-            className="block text-sm font-semibold text-gray-800 mb-2"
-          >
+          <label htmlFor="item-input" className="block text-sm font-semibold text-gray-800 mb-2">
             ¿Qué quieres vender?
           </label>
           <textarea
@@ -116,7 +113,7 @@ export default function PriceChecker() {
             onChange={(e) => setItem(e.target.value)}
             placeholder='Ej: iPhone 14 128GB negro, bicicleta de montaña Trek, sofá de 3 puestos beige...'
             rows={2}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none mb-3 text-gray-900 placeholder:text-gray-400"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none mb-3 text-gray-900 placeholder:text-gray-600"
             required
           />
           <div className="flex flex-col sm:flex-row gap-3">
@@ -152,7 +149,7 @@ export default function PriceChecker() {
               Gemini está buscando en los marketplaces de Colombia...
             </p>
           </div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-600">
             Revisando Mercado Libre, OLX, Facebook Marketplace y más
           </p>
         </div>
@@ -181,7 +178,7 @@ export default function PriceChecker() {
                 <h2 className="font-bold text-gray-900 text-base leading-tight">
                   Rango de precios: {lastItem}
                 </h2>
-                <p className="text-xs text-gray-400 mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   Actualizado: {result.updated} · Basado en anuncios reales de Colombia
                 </p>
               </div>
@@ -215,7 +212,7 @@ export default function PriceChecker() {
                       {formatCOP(result.low)}
                     </p>
                   </div>
-                  <p className="text-[10px] text-gray-400">20% más baratos</p>
+                  <p className="text-[10px] text-gray-600">20% más baratos</p>
                 </div>
 
                 {/* Mid — highlighted */}
@@ -239,7 +236,7 @@ export default function PriceChecker() {
                       {formatCOP(result.mid)}
                     </p>
                   </div>
-                  <p className="text-[10px] text-gray-400">Precio mediano</p>
+                  <p className="text-[10px] text-gray-600">Precio mediano</p>
                 </div>
 
                 {/* High */}
@@ -261,7 +258,7 @@ export default function PriceChecker() {
                       {formatCOP(result.high)}
                     </p>
                   </div>
-                  <p className="text-[10px] text-gray-400">20% más caros</p>
+                  <p className="text-[10px] text-gray-600">20% más caros</p>
                 </div>
               </div>
 
@@ -280,7 +277,7 @@ export default function PriceChecker() {
                   style={{ width: '30%', backgroundColor: C.red }}
                 />
               </div>
-              <div className="flex justify-between text-[10px] text-gray-400 mt-1.5">
+              <div className="flex justify-between text-[10px] text-gray-600 mt-1.5">
                 <span>Más barato</span>
                 <span>Precio ideal</span>
                 <span>Más caro</span>
@@ -352,12 +349,12 @@ export default function PriceChecker() {
 
       {/* Empty state before first search */}
       {!result && !loading && !error && (
-        <div className="text-center py-10 text-gray-400">
+        <div className="text-center py-10 text-gray-600">
           <div className="text-4xl mb-3">🇨🇴</div>
           <p className="text-sm">
             Escribe lo que quieres vender arriba y descubre su precio justo.
           </p>
-          <p className="text-xs mt-1 text-gray-300">
+          <p className="text-xs mt-1 text-gray-600">
             Datos de Mercado Libre, OLX, Facebook Marketplace y más
           </p>
         </div>

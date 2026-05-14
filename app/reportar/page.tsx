@@ -10,7 +10,7 @@ export default function ReportarPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-8">
-        <Link href="/" className="text-sm text-brand-blue hover:underline">← Volver al inicio</Link>
+        <Link href="/" className="text-sm text-brand-blue underline underline-offset-2">← Volver al inicio</Link>
       </div>
 
       <div className="mb-10">
@@ -64,13 +64,13 @@ export default function ReportarPage() {
         >
           Enviar reporte por correo
         </a>
-        <p className="text-xs text-gray-400 mt-3">reportar@lleva-lleva.com</p>
+        <p className="text-xs text-gray-600 mt-3">reportar@lleva-lleva.com</p>
       </div>
 
       <div className="mt-8 text-center">
         <p className="text-gray-500 text-sm">
           También puedes consultar nuestros{' '}
-          <Link href="/seguridad" className="text-brand-blue hover:underline">consejos de seguridad</Link>
+          <Link href="/seguridad" className="text-brand-blue font-medium underline underline-offset-2">consejos de seguridad</Link>
           {' '}para protegerte en futuras transacciones.
         </p>
       </div>

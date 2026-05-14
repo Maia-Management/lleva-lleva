@@ -62,17 +62,17 @@ export default function ListingCard({ listing }: Props) {
               <p className="text-base font-black text-ink">
                 <span className="border-b-2 border-brand-yellow pb-0.5">{formatCOP(listing.price)}</span>
                 {listing.price_type === 'negotiable' && (
-                  <span className="text-xs font-normal text-ink-2/70 ml-1.5">· Neg.</span>
+                  <span className="text-xs font-normal text-ink-2 ml-1.5">· Neg.</span>
                 )}
               </p>
             ) : listing.price_type === 'free' ? (
               <p className="text-base font-black text-brand-blue">Gratis</p>
             ) : (
-              <p className="text-sm text-ink-2/70 italic">Precio a convenir</p>
+              <p className="text-sm text-ink-2 italic">Precio a convenir</p>
             )}
           </div>
 
-          <div className="mt-2 flex items-center justify-between text-xs text-ink-2/70">
+          <div className="mt-2 flex items-center justify-between text-xs text-ink-2">
             <span className="truncate">
               {listing.is_nationwide
                 ? '🇨🇴 Todo Colombia'

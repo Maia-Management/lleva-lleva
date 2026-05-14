@@ -86,7 +86,7 @@
         analytics: prefs.analytics ? true : false,
         ads:       prefs.ads       ? true : false
       };
-      try { localStorage.setItem(CONFIG.storageKey, JSON.stringify(record)); } catch (e) {}
+      try { localStorage.setItem(CONFIG.storageKey, JSON.stringify(record)); } catch {}
     },
     load: function () {
       try {
@@ -97,9 +97,9 @@
         var age = new Date().getTime() - record.timestamp;
         if (age > CONFIG.expiryMs) { localStorage.removeItem(CONFIG.storageKey); return null; }
         return record;
-      } catch (e) { return null; }
+      } catch { return null; }
     },
-    clear: function () { try { localStorage.removeItem(CONFIG.storageKey); } catch (e) {} }
+    clear: function () { try { localStorage.removeItem(CONFIG.storageKey); } catch {} }
   };
 
   /* ── 3. CONSENT DISPATCHER ── */
@@ -122,6 +122,13 @@
         'consent_version':             CONFIG.version,
         'consent_timestamp':           new Date().getTime()
       });
+      try {
+        window.dispatchEvent(new CustomEvent('maia-consent-updated', { detail: prefs }));
+      } catch {
+        var event = document.createEvent('CustomEvent');
+        event.initCustomEvent('maia-consent-updated', false, false, prefs);
+        window.dispatchEvent(event);
+      }
       ConsentDispatcher._dispatchFbq(prefs.ads);
     },
     _dispatchFbq: function (granted) {
@@ -147,7 +154,7 @@
       '#maia-consent-banner{background:#1B2A4A;color:#fff;width:100%;max-width:900px;border-radius:12px 12px 0 0;padding:24px 28px 20px;box-shadow:0 -4px 32px rgba(0,0,0,0.35);box-sizing:border-box;font-size:14px;line-height:1.55}' +
       '#maia-consent-banner .mcb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}' +
       '#maia-consent-banner .mcb-title{font-family:Montserrat,Inter,Arial,sans-serif;font-size:17px;font-weight:700;color:#fff;margin:0}' +
-      '#maia-consent-banner .mcb-logo{font-size:11px;color:#8fa3c0;text-align:right;line-height:1.3}' +
+      '#maia-consent-banner .mcb-logo{font-size:11px;color:#c8d8ec;text-align:right;line-height:1.3}' +
       '#maia-consent-banner .mcb-body{color:#c8d8ec;margin-bottom:16px}' +
       '#maia-consent-banner .mcb-body a{color:#E8F0F8;text-decoration:underline}' +
       '#maia-consent-banner .mcb-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px}' +
@@ -155,7 +162,7 @@
       '#maia-consent-banner .mcb-btn:hover{opacity:.88}' +
       '#maia-consent-banner .mcb-btn-accept{background:#2E75B6;color:#fff}' +
       '#maia-consent-banner .mcb-btn-reject{background:transparent;color:#E8F0F8;border:1.5px solid #2E75B6}' +
-      '#maia-consent-banner .mcb-btn-custom{background:transparent;color:#8fa3c0;border:1.5px solid #374f6e}' +
+      '#maia-consent-banner .mcb-btn-custom{background:transparent;color:#E8F0F8;border:1.5px solid #5f7694}' +
       '#maia-consent-banner .mcb-btn-save{background:#2E75B6;color:#fff;margin-top:8px}' +
       '#maia-consent-panel{display:none;margin-top:16px;border-top:1px solid #2c3f5e;padding-top:16px}' +
       '#maia-consent-panel.mcb-open{display:block}' +
@@ -163,7 +170,7 @@
       '#maia-consent-panel .mcb-category:last-child{border-bottom:none}' +
       '#maia-consent-panel .mcb-cat-info{flex:1;padding-right:16px}' +
       '#maia-consent-panel .mcb-cat-title{font-weight:600;color:#fff;display:block;margin-bottom:2px}' +
-      '#maia-consent-panel .mcb-cat-desc{color:#8fa3c0;font-size:12px}' +
+      '#maia-consent-panel .mcb-cat-desc{color:#c8d8ec;font-size:12px}' +
       '.mcb-toggle-wrap{display:flex;align-items:center;flex-shrink:0}' +
       '.mcb-toggle{position:relative;width:44px;height:24px;display:inline-block}' +
       '.mcb-toggle input{opacity:0;width:0;height:0;position:absolute}' +
@@ -172,8 +179,8 @@
       '.mcb-toggle input:checked+.mcb-toggle-slider{background:#2E75B6}' +
       '.mcb-toggle input:checked+.mcb-toggle-slider:before{transform:translateX(20px)}' +
       '.mcb-toggle input:disabled+.mcb-toggle-slider{opacity:.55;cursor:not-allowed}' +
-      '.mcb-always-on{font-size:11px;color:#8fa3c0;margin-left:8px;white-space:nowrap}' +
-      '#maia-consent-banner .mcb-footer-note{font-size:11px;color:#5c7a9e;margin-top:10px}' +
+      '.mcb-always-on{font-size:11px;color:#c8d8ec;margin-left:8px;white-space:nowrap}' +
+      '#maia-consent-banner .mcb-footer-note{font-size:11px;color:#c8d8ec;margin-top:10px}' +
       '@media(max-width:600px){#maia-consent-banner{padding:18px 16px 14px;border-radius:10px 10px 0 0;max-width:calc(100% - 32px);margin:0 16px}#maia-consent-banner .mcb-header{flex-direction:column;align-items:flex-start;gap:4px}#maia-consent-banner .mcb-actions{flex-direction:column}#maia-consent-banner .mcb-btn{width:100%;text-align:center}}';
     var style = document.createElement('style');
     style.id = 'maia-consent-styles';
@@ -235,18 +242,17 @@
       this.bindEvents();
     },
     bindEvents: function () {
-      var self = this;
       var btnA = document.getElementById('mcb-accept-all');
-      if (btnA) btnA.onclick = function () { self.handleConsent({ analytics: true, ads: true }); };
+      if (btnA) btnA.onclick = function () { this.handleConsent({ analytics: true, ads: true }); }.bind(this);
       var btnR = document.getElementById('mcb-reject-all');
-      if (btnR) btnR.onclick = function () { self.handleConsent({ analytics: false, ads: false }); };
-      if (self.btnCustom) self.btnCustom.onclick = function () { self.togglePanel(); };
+      if (btnR) btnR.onclick = function () { this.handleConsent({ analytics: false, ads: false }); }.bind(this);
+      if (this.btnCustom) this.btnCustom.onclick = function () { this.togglePanel(); }.bind(this);
       var btnS = document.getElementById('mcb-save-custom');
       if (btnS) btnS.onclick = function () {
         var ac = document.getElementById('mcb-toggle-analytics');
         var ad = document.getElementById('mcb-toggle-ads');
-        self.handleConsent({ analytics: ac ? ac.checked : false, ads: ad ? ad.checked : false });
-      };
+        this.handleConsent({ analytics: ac ? ac.checked : false, ads: ad ? ad.checked : false });
+      }.bind(this);
     },
     togglePanel: function () {
       var isOpen = this.panel.className.indexOf('mcb-open') !== -1;
@@ -287,7 +293,11 @@
     BannerController.init();
   }
   if (document.readyState === 'loading') {
-    document.addEventListener ? document.addEventListener('DOMContentLoaded', bootstrap) : document.attachEvent('onreadystatechange', function () { if (document.readyState === 'complete') bootstrap(); });
+    if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', bootstrap);
+    } else {
+      document.attachEvent('onreadystatechange', function () { if (document.readyState === 'complete') bootstrap(); });
+    }
   } else {
     bootstrap();
   }

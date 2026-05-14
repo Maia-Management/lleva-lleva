@@ -132,8 +132,9 @@ export default async function CategoryPage({ params, searchParams }: Props) {
               <h3 className="font-semibold text-gray-700 text-xs uppercase tracking-wide mb-3">Filtros</h3>
               <form className="space-y-3">
                 <div>
-                  <label className="block text-xs text-gray-500 mb-1">Ordenar por</label>
+                  <label className="block text-xs text-gray-500 mb-1" htmlFor="orden">Ordenar por</label>
                   <select
+                    id="orden"
                     name="orden"
                     defaultValue={orden}
                     className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-blue"
@@ -144,8 +145,9 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 mb-1">Precio mínimo (COP)</label>
+                  <label className="block text-xs text-gray-500 mb-1" htmlFor="precio_min">Precio mínimo (COP)</label>
                   <input
+                    id="precio_min"
                     type="number"
                     name="precio_min"
                     defaultValue={sp.precio_min}
@@ -154,8 +156,9 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 mb-1">Precio máximo (COP)</label>
+                  <label className="block text-xs text-gray-500 mb-1" htmlFor="precio_max">Precio máximo (COP)</label>
                   <input
+                    id="precio_max"
                     type="number"
                     name="precio_max"
                     defaultValue={sp.precio_max}

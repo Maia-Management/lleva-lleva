@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white/70 mt-16">
+    <footer className="bg-ink text-white/80 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
@@ -12,13 +12,13 @@ export default function Footer() {
                 Lleva<span className="text-brand-yellow">Lleva</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed text-white/60">
+            <p className="text-sm leading-relaxed text-white/75">
               El clasificado colombiano. Compra, vende y conecta con personas de tu región.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-sm mb-3">Categorías populares</h3>
+            <p className="text-white font-semibold text-sm mb-3">Categorías populares</p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/categorias/vehiculos" className="hover:text-brand-yellow transition-colors">Vehículos</Link></li>
               <li><Link href="/categorias/inmuebles" className="hover:text-brand-yellow transition-colors">Inmuebles</Link></li>
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-sm mb-3">LlevaLleva</h3>
+            <p className="text-white font-semibold text-sm mb-3">LlevaLleva</p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/publicar" className="hover:text-brand-yellow transition-colors">Publicar gratis</Link></li>
               <li><Link href="/como-funciona" className="hover:text-brand-yellow transition-colors">¿Cómo funciona?</Link></li>
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-sm mb-3">Soporte</h3>
+            <p className="text-white font-semibold text-sm mb-3">Soporte</p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/ayuda" className="hover:text-brand-yellow transition-colors">Centro de ayuda</Link></li>
               <li><Link href="/contacto" className="hover:text-brand-yellow transition-colors">Contacto</Link></li>
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         {/* Maia Group ecosystem */}
-        <div className="border-t border-white/10 mt-10 pt-6 text-xs text-white/50 text-center">
+        <div className="border-t border-white/10 mt-10 pt-6 text-xs text-white/75 text-center">
           <p className="mb-2">
             Parte del ecosistema{' '}
             <a href="https://maia-management.com" target="_blank" rel="noopener noreferrer" className="text-brand-yellow hover:text-brand-yellow-600 transition-colors font-medium">Maia Group</a>
@@ -69,7 +69,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="border-t border-white/10 pt-4 text-xs text-white/40 space-y-2">
+        <div className="border-t border-white/10 pt-4 text-xs text-white/75 space-y-2">
           <p className="text-center sm:text-left">
             MAIA MANAGEMENT GROUP S.A.S. — NIT 901.862.977-7
           </p>

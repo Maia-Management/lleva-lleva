@@ -190,12 +190,15 @@ export default function CalificarPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Star score */}
           <div>
-            <label className="text-sm font-semibold text-gray-700 block mb-2">Calificación</label>
-            <div className="flex gap-2">
+            <p id="score-label" className="text-sm font-semibold text-gray-700 block mb-2">Calificación</p>
+            <div className="flex gap-2" role="radiogroup" aria-labelledby="score-label">
               {[1, 2, 3, 4, 5].map((s) => (
                 <button
                   key={s}
                   type="button"
+                  role="radio"
+                  aria-checked={score === s}
+                  aria-label={`${s} estrellas`}
                   onClick={() => setScore(s)}
                   className={`text-3xl transition-transform hover:scale-110 ${s <= score ? 'opacity-100' : 'opacity-30'}`}
                 >
@@ -207,12 +210,13 @@ export default function CalificarPage() {
 
           {/* Tags */}
           <div>
-            <label className="text-sm font-semibold text-gray-700 block mb-2">Etiquetas (opcional)</label>
-            <div className="flex flex-wrap gap-2">
+            <p id="tags-label" className="text-sm font-semibold text-gray-700 block mb-2">Etiquetas (opcional)</p>
+            <div className="flex flex-wrap gap-2" aria-labelledby="tags-label">
               {RATING_TAGS.map((tag) => (
                 <button
                   key={tag.value}
                   type="button"
+                  aria-pressed={selectedTags.includes(tag.value)}
                   onClick={() => toggleTag(tag.value)}
                   className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                     selectedTags.includes(tag.value)
@@ -228,8 +232,9 @@ export default function CalificarPage() {
 
           {/* Comment */}
           <div>
-            <label className="text-sm font-semibold text-gray-700 block mb-2">Comentario (opcional)</label>
+            <label className="text-sm font-semibold text-gray-700 block mb-2" htmlFor="transaction-comment">Comentario (opcional)</label>
             <textarea
+              id="transaction-comment"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               rows={3}

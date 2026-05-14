@@ -146,7 +146,7 @@ export default async function ProfilePage({ params }: Props) {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-700">{rating.rater?.display_name}</p>
-                      <p className="text-xs text-gray-400">{timeAgo(rating.created_at)}</p>
+                      <p className="text-xs text-gray-600">{timeAgo(rating.created_at)}</p>
                     </div>
                   </div>
                   <StarRating rating={rating.score} size="sm" />

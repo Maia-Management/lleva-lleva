@@ -159,8 +159,9 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
 
       {/* Title */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Título del anuncio *</label>
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="title">Título del anuncio *</label>
         <input
+          id="title"
           name="title"
           type="text"
           required
@@ -174,16 +175,17 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
 
       {/* Images */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-2">
-          Fotos <span className="font-normal text-gray-400">(hasta 5, recomendado)</span>
+        <label htmlFor="listing-images" className="block text-sm font-semibold text-gray-700 mb-2">
+          Fotos <span className="font-normal text-gray-600">(hasta 5, recomendado)</span>
         </label>
         <ImageUploader images={images} onChange={setImages} />
       </div>
 
       {/* Category */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Categoría *</label>
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="category_id">Categoría *</label>
         <select
+          id="category_id"
           name="category_id"
           required
           value={form.category_id}
@@ -208,18 +210,19 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
 
       {/* Location */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="location_id">
           Ciudad
           {form.is_nationwide && (
             <span className="ml-2 text-xs font-normal text-brand-blue">(no aplica — anuncio nacional)</span>
           )}
         </label>
         <select
+          id="location_id"
           name="location_id"
           value={form.is_nationwide ? '' : form.location_id}
           onChange={handleChange}
           disabled={form.is_nationwide}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white disabled:bg-gray-50 disabled:text-gray-400"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white disabled:bg-gray-50 disabled:text-gray-600"
         >
           <option value="">Selecciona una ciudad</option>
           {Object.entries(groupedLocations).sort().map(([dept, locs]) => (
@@ -246,7 +249,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           <label htmlFor="is_nationwide" className="text-sm font-semibold text-gray-700 cursor-pointer">
             Disponible en todo Colombia 🇨🇴
           </label>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-gray-600 mt-0.5">
             Tu anuncio aparecerá en búsquedas de cualquier ciudad. Ideal para servicios nacionales, empleos con reubicación o cursos online.
           </p>
         </div>
@@ -254,8 +257,9 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
 
       {/* Description */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Descripción *</label>
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="description">Descripción *</label>
         <textarea
+          id="description"
           name="description"
           required
           rows={5}
@@ -266,14 +270,15 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
           placeholder="Describe en detalle lo que ofreces: características, estado, motivo de venta..."
           className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
         />
-        <p className="text-xs text-gray-400 text-right mt-1">{form.description.length}/3000</p>
+        <p className="text-xs text-gray-600 text-right mt-1">{form.description.length}/3000</p>
       </div>
 
       {/* Price type + price */}
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Tipo de precio *</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="price_type">Tipo de precio *</label>
           <select
+            id="price_type"
             name="price_type"
             value={form.price_type}
             onChange={handleChange}
@@ -287,8 +292,9 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
         </div>
         {(form.price_type === 'fixed' || form.price_type === 'negotiable') && (
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Precio (COP) *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="price">Precio (COP) *</label>
             <input
+              id="price"
               name="price"
               type="number"
               required
@@ -304,8 +310,9 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
 
       {/* Condition */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Estado del producto</label>
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="condition">Estado del producto</label>
         <select
+          id="condition"
           name="condition"
           value={form.condition}
           onChange={handleChange}
@@ -322,12 +329,13 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
 
       {/* WhatsApp */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">
+        <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="whatsapp">
           Tu número de WhatsApp
         </label>
         <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-brand-blue">
           <span className="px-3 py-3 bg-gray-50 text-gray-500 text-sm border-r border-gray-300">+57</span>
           <input
+            id="whatsapp"
             name="whatsapp"
             type="tel"
             value={form.whatsapp}
@@ -336,7 +344,7 @@ export default function PublicarForm({ userId, categories, locations, blocked }:
             className="flex-1 px-3 py-3 text-sm focus:outline-none"
           />
         </div>
-        <p className="text-xs text-gray-400 mt-1">
+        <p className="text-xs text-gray-600 mt-1">
           Tu número NO será visible públicamente — solo se usa para el botón de WhatsApp.
         </p>
       </div>

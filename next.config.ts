@@ -29,6 +29,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Keep metadata in <head> for crawlers and SEO audit tools.
+  htmlLimitedBots: /.*/,
   async headers() {
     return [
       {

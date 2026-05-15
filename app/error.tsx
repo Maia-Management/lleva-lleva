@@ -22,7 +22,7 @@ export default function Error({
         Ocurrió un error inesperado. Por favor intenta de nuevo o regresa al inicio.
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
-        <button
+        <button type="button"
           onClick={reset}
           className="px-6 py-2.5 bg-brand-blue text-white rounded-full text-sm font-semibold hover:bg-brand-blue/90 transition-colors"
         >

@@ -83,7 +83,7 @@ export default function Header() {
                   </span>
                   <span className="max-w-[80px] truncate">{user.email?.split('@')[0]}</span>
                 </Link>
-                <button
+                <button type="button"
                   onClick={handleSignOut}
                   className="hidden sm:inline-flex text-xs text-ink-2 hover:text-red-500 px-2 py-1 rounded transition-colors"
                   aria-label="Cerrar sesión"
@@ -99,7 +99,7 @@ export default function Header() {
                 Ingresar
               </Link>
             )}
-            <button
+            <button type="button"
               className="md:hidden p-2 rounded-lg hover:bg-brand-blue-50 text-ink"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menú"
@@ -146,7 +146,7 @@ export default function Header() {
                 <Link href="/dashboard" className="block text-center text-sm text-ink py-2 hover:text-brand-blue font-medium">
                   Mi cuenta ({user.email?.split('@')[0]})
                 </Link>
-                <button
+                <button type="button"
                   onClick={handleSignOut}
                   className="block w-full text-center text-sm text-red-500 py-2 hover:text-red-700"
                 >

@@ -160,7 +160,7 @@ export default function CalificarPage() {
             ? 'Tu calificación ha sido enviada y ayudará a la comunidad de LlevaLleva.'
             : 'Ya enviaste tu calificación para esta transacción.'}
         </p>
-        <button
+        <button type="button"
           onClick={() => router.push('/dashboard')}
           className="inline-flex items-center gap-2 bg-brand-blue text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-blue-700 transition-colors text-sm"
         >

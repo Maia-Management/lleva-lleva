@@ -184,35 +184,35 @@ export default function SearchFilters({ categories, locations }: Props) {
           {q && (
             <span className="inline-flex items-center gap-1 bg-brand-blue-50 text-brand-blue text-xs px-3 py-1 rounded-full border border-brand-blue/20 font-medium">
               &ldquo;{q}&rdquo;
-              <button onClick={() => setQ('')} aria-label={`Quitar búsqueda "${q}"`} className="ml-1 hover:text-brand-blue-700">×</button>
+              <button type="button" onClick={() => setQ('')} aria-label={`Quitar búsqueda "${q}"`} className="ml-1 hover:text-brand-blue-700">×</button>
             </span>
           )}
           {categoria && (
             <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               {categories.find((c) => c.slug === categoria)?.name_es ?? categoria}
-              <button onClick={() => setCategoria('')} aria-label="Quitar categoría" className="ml-1 hover:text-brand-blue">×</button>
+              <button type="button" onClick={() => setCategoria('')} aria-label="Quitar categoría" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           {ciudad && (
             <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               📍 {ciudad}
-              <button onClick={() => setCiudad('')} aria-label="Quitar ciudad" className="ml-1 hover:text-brand-blue">×</button>
+              <button type="button" onClick={() => setCiudad('')} aria-label="Quitar ciudad" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           {condicion && (
             <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               {condicion === 'new' ? 'Nuevo' : condicion === 'like_new' ? 'Como nuevo' :
                condicion === 'good' ? 'Buen estado' : condicion === 'fair' ? 'Estado regular' : 'Para repuestos'}
-              <button onClick={() => setCondicion('')} aria-label="Quitar estado" className="ml-1 hover:text-brand-blue">×</button>
+              <button type="button" onClick={() => setCondicion('')} aria-label="Quitar estado" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
           {(precioMin || precioMax) && (
             <span className="inline-flex items-center gap-1 bg-bg text-ink text-xs px-3 py-1 rounded-full border border-line">
               ${precioMin || '0'} – ${precioMax || '∞'}
-              <button onClick={() => { setPrecioMin(''); setPrecioMax(''); }} aria-label="Quitar rango de precio" className="ml-1 hover:text-brand-blue">×</button>
+              <button type="button" onClick={() => { setPrecioMin(''); setPrecioMax(''); }} aria-label="Quitar rango de precio" className="ml-1 hover:text-brand-blue">×</button>
             </span>
           )}
-          <button
+          <button type="button"
             onClick={() => { setQ(''); setCategoria(''); setCiudad(''); setCondicion(''); setPrecioMin(''); setPrecioMax(''); }}
             className="text-xs text-ink-2/80 hover:text-brand-blue px-2 py-1 hover:underline font-medium"
           >

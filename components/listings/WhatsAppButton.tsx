@@ -56,7 +56,7 @@ export default function WhatsAppButton({
   }
 
   return (
-    <button
+    <button type="button"
       onClick={handleClick}
       disabled={loading}
       className="w-full flex items-center justify-center gap-3 bg-[#075E54] hover:bg-[#064c44] active:bg-[#043b35] text-white font-bold py-4 px-6 rounded-2xl text-base transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-green-200"

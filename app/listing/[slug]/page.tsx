@@ -38,7 +38,7 @@ function compactListingTitle(value: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  let title = titleFromSlug(slug);
+  let title = compactListingTitle(titleFromSlug(slug));
   let description = `Consulta este anuncio en Lleva Lleva, el clasificado colombiano para comprar, vender y contactar personas de tu región.`;
   let ogImage = 'https://lleva-lleva.com/og-image.png';
   const canonicalUrl = `https://lleva-lleva.com/listing/${slug}`;

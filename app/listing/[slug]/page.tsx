@@ -29,6 +29,13 @@ function titleFromSlug(slug: string) {
     .join(' ');
 }
 
+function compactListingTitle(value: string) {
+  const maxLength = 56; // Leaves room for the root layout's " | Lleva Lleva" suffix.
+  if (value.length <= maxLength) return value;
+  const compact = value.slice(0, maxLength + 1).replace(/\s+\S*$/, '').trim();
+  return compact || value.slice(0, maxLength).trim();
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   let title = titleFromSlug(slug);
@@ -45,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       .single();
 
     if (data) {
-      title = data.meta_title ?? data.title;
+      title = compactListingTitle(data.meta_title ?? data.title);
       description = data.meta_description ?? data.description?.slice(0, 160) ?? description;
       ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? ogImage;
     }

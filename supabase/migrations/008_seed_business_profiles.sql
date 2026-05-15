@@ -133,7 +133,7 @@ INSERT INTO profiles (
     'El Sanatorio',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -146,7 +146,7 @@ INSERT INTO profiles (
     'Juno House Studios',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -159,7 +159,7 @@ INSERT INTO profiles (
     'Maia Masters Academy',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -172,7 +172,7 @@ INSERT INTO profiles (
     'Trivium Magnum',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -185,7 +185,7 @@ INSERT INTO profiles (
     'Maia Legal',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -198,7 +198,7 @@ INSERT INTO profiles (
     'Maia Management Group',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -211,7 +211,7 @@ INSERT INTO profiles (
     'Maia Realty',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -224,7 +224,7 @@ INSERT INTO profiles (
     'Llave Labs',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -237,7 +237,7 @@ INSERT INTO profiles (
     'Maia Aerial',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   ),
@@ -250,7 +250,7 @@ INSERT INTO profiles (
     'LlevaLleva',
     NULL,
     'Santa Marta', 'Magdalena',
-    '+573174370575', true,
+    '+19034598763', true,
     true, true,
     now(), now()
   )

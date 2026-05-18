@@ -22,7 +22,7 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">1. Responsable del tratamiento</h2>
           <p>
-            LlevaLleva es una marca operada por <strong>MAIA MANAGEMENT GROUP S.A.S.</strong>,
+            LlevaLleva es una marca operada por <strong>MAIA MANAGEMENT S.A.S.</strong>,
             sociedad colombiana identificada con <strong>NIT 901.862.977-7</strong>, responsable
             del tratamiento de los datos personales recogidos a través de la plataforma.
           </p>

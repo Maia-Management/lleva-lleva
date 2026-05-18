@@ -71,10 +71,16 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-4 text-xs text-white/75 space-y-2">
           <p className="text-center sm:text-left">
-            MAIA MANAGEMENT GROUP S.A.S. — NIT 901.862.977-7
+            MAIA MANAGEMENT S.A.S. — NIT 901.862.977-7
           </p>
           <p className="text-center sm:text-left">
             Calle 24 #3-99, Edificio Banco de Bogotá, Suite 1102, Nivel 11, Santa Marta, Magdalena, Colombia
+          </p>
+          <p className="text-center sm:text-left">
+            Privacidad:{' '}
+            <a href="mailto:privacy@maia-management.com" className="text-brand-yellow hover:text-brand-yellow-600 transition-colors">
+              privacy@maia-management.com
+            </a>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
             <p>© {new Date().getFullYear()} LlevaLleva — Todos los derechos reservados</p>

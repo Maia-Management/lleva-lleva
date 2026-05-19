@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Centro de Ayuda',
-  description: 'Preguntas frecuentes y ayuda para usar Lleva Lleva.',
+  description:
+    'Preguntas frecuentes para comprar, vender, publicar anuncios, gestionar cuentas y usar Lleva Lleva en Colombia.',
   alternates: { canonical: 'https://lleva-lleva.com/ayuda' },
 };
 

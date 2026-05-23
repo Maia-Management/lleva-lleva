@@ -4,7 +4,7 @@ const SITE_URL = 'https://lleva-lleva.com';
 
 const AI_BOTS = [
   'GPTBot',
-  'ChatGPT-User',
+  'herramientas digitales-User',
   'Google-Extended',
   'CCBot',
   'anthropic-ai',

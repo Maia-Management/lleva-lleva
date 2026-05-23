@@ -12,6 +12,7 @@ import EditDeleteButtons from './EditDeleteButtons';
 import TransactionButtons from './TransactionButtons';
 import FavoriteButton from '@/components/listings/FavoriteButton';
 import Link from 'next/link';
+import { getFallbackListingBySlug } from '@/lib/fallback-listings';
 
 const AD_SLOT_LISTING_CONTENT = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_CONTENT ?? '';
 const AD_SLOT_LISTING_SIDEBAR = process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING_SIDEBAR ?? '';
@@ -55,9 +56,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title = compactListingTitle(data.meta_title ?? data.title);
       description = data.meta_description ?? data.description?.slice(0, 160) ?? description;
       ogImage = (data.images as Array<{ url: string }>)?.[0]?.url ?? ogImage;
+    } else {
+      const fallbackListing = getFallbackListingBySlug(slug);
+      if (fallbackListing) {
+        title = compactListingTitle(fallbackListing.meta_title ?? fallbackListing.title);
+        description = fallbackListing.meta_description ?? fallbackListing.description.slice(0, 160);
+      }
     }
   } catch {
-    // Keep complete metadata even if the database lookup is unavailable.
+    const fallbackListing = getFallbackListingBySlug(slug);
+    if (fallbackListing) {
+      title = compactListingTitle(fallbackListing.meta_title ?? fallbackListing.title);
+      description = fallbackListing.meta_description ?? fallbackListing.description.slice(0, 160);
+    }
   }
 
   return {
@@ -105,6 +116,7 @@ export default async function ListingPage({ params }: Props) {
     console.error('[ListingPage] Supabase error:', err);
   }
 
+  if (!listing) listing = getFallbackListingBySlug(slug);
   if (!listing) notFound();
 
   const seller = listing.seller;

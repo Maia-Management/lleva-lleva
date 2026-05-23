@@ -1,5 +1,6 @@
 ﻿import { MetadataRoute } from 'next';
 import { createClient } from '@/lib/supabase/server';
+import { fallbackRecentListings } from '@/lib/fallback-listings';
 
 const BASE_URL = 'https://lleva-lleva.com';
 
@@ -47,6 +48,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const fallbackListingRoutes: MetadataRoute.Sitemap = fallbackRecentListings.map((listing) => ({
+    url: `${BASE_URL}/listing/${listing.slug}`,
+    lastModified: new Date(listing.updated_at),
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
+
   try {
     const supabase = await createClient();
 
@@ -71,7 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .order('updated_at', { ascending: false })
       .limit(5000);
 
-    const listingRoutes: MetadataRoute.Sitemap = (listings ?? []).map((l) => ({
+    const dbListingRoutes: MetadataRoute.Sitemap = (listings ?? []).map((l) => ({
       url: `${BASE_URL}/listing/${l.slug}`,
       lastModified: l.updated_at ? new Date(l.updated_at) : new Date(),
       changeFrequency: 'daily' as const,
@@ -86,9 +94,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return true;
     });
 
+    const listingSeen = new Set<string>();
+    const listingRoutes = [...dbListingRoutes, ...fallbackListingRoutes].filter((r) => {
+      if (listingSeen.has(r.url)) return false;
+      listingSeen.add(r.url);
+      return true;
+    });
+
     return [...staticRoutes, ...mergedCategoryRoutes, ...listingRoutes];
   } catch {
     // If DB is unreachable (e.g. during static build), return static + hardcoded category routes
-    return [...staticRoutes, ...hardcodedCategoryRoutes];
+    return [...staticRoutes, ...hardcodedCategoryRoutes, ...fallbackListingRoutes];
   }
 }

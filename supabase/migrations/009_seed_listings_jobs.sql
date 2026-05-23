@@ -324,7 +324,7 @@ BEGIN
   VALUES (v_sel_masters, v_cat_empleo, v_loc_smt,
     'Instructor Principal — Habilidades Digitales | Maia Masters Academy',
     'instructor-habilidades-digitales-maia-masters-24',
-    E'Maia Masters Academy busca Instructor Principal para liderar nuestro bootcamp de habilidades digitales en Santa Marta.\n\nTemario base: marketing digital, diseño con IA, productividad con herramientas modernas, emprendimiento online.\n\nRequisitos: experiencia práctica y comprobable en al menos 2 de las áreas anteriores, capacidad pedagógica (no se requiere título docente), inglés conversacional, energía y carisma frente a grupo.\n\nContrato a término fijo con renovación. Sede: Centro, Santa Marta. WhatsApp: +19034598763',
+    E'Maia Masters Academy busca Instructor Principal para liderar nuestro bootcamp de habilidades digitales en Santa Marta.\n\nTemario base: marketing digital, diseño con automatización, productividad con herramientas modernas, emprendimiento online.\n\nRequisitos: experiencia práctica y comprobable en al menos 2 de las áreas anteriores, capacidad pedagógica (no se requiere título docente), inglés conversacional, energía y carisma frente a grupo.\n\nContrato a término fijo con renovación. Sede: Centro, Santa Marta. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-masters','instructor','digital','educacion','santa-marta'],
     '[{"url":"/images/maia-masters.jpg","alt":"Maia Masters Academy","order":0}]'
@@ -467,7 +467,7 @@ BEGIN
   );
 
   -- ==============================================================
-  -- MAIA LEGAL / MAIA MANAGEMENT GROUP (36–39)
+  -- MAIA LEGAL / MAIA MANAGEMENT S.A.S. (36–39)
   -- ==============================================================
 
   -- 36. Asistente Jurídico / Paralegal
@@ -486,9 +486,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Asistente Contable | Maia Management Group — Santa Marta',
+    'Asistente Contable | Maia Management S.A.S. — Santa Marta',
     'asistente-contable-maia-management-37',
-    E'Maia Management Group busca Asistente Contable para apoyar la operación financiera del grupo empresarial.\n\nFunciones: causación de facturas, conciliaciones bancarias, preparación de informes de gastos, apoyo en declaraciones de renta y retención.\n\nRequisitos: tecnólogo o profesional en contaduría, manejo de software contable (Siigo o Helio), orden, precisión y confidencialidad.\n\nContrato a término indefinido, prestaciones completas. WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Asistente Contable para apoyar la operación financiera del grupo empresarial.\n\nFunciones: causación de facturas, conciliaciones bancarias, preparación de informes de gastos, apoyo en declaraciones de renta y retención.\n\nRequisitos: tecnólogo o profesional en contaduría, manejo de software contable (Siigo o Helio), orden, precisión y confidencialidad.\n\nContrato a término indefinido, prestaciones completas. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','contable','finanzas','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management","order":0}]'
@@ -498,9 +498,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Recepcionista / Asistente Administrativo | Maia Management Group',
+    'Recepcionista / Asistente Administrativo | Maia Management S.A.S.',
     'recepcionista-admin-maia-management-38',
-    E'Maia Management Group busca Recepcionista y Asistente Administrativo para nuestra oficina en Santa Marta.\n\nFunciones: atención de clientes y visitantes, gestión de agenda, manejo de correspondencia, soporte a diferentes áreas del grupo.\n\nRequisitos: excelente presentación personal, inglés conversacional (indispensable — atendemos clientes internacionales), manejo de Office, actitud positiva.\n\nContrato a término indefinido. WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Recepcionista y Asistente Administrativo para nuestra oficina en Santa Marta.\n\nFunciones: atención de clientes y visitantes, gestión de agenda, manejo de correspondencia, soporte a diferentes áreas del grupo.\n\nRequisitos: excelente presentación personal, inglés conversacional (indispensable — atendemos clientes internacionales), manejo de Office, actitud positiva.\n\nContrato a término indefinido. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','recepcionista','administrativo','ingles','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Oficina","order":0}]'
@@ -510,9 +510,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Nómina | Maia Management Group',
+    'Coordinador/a de Nómina | Maia Management S.A.S.',
     'coordinador-nomina-maia-management-39',
-    E'Maia Management Group busca Coordinador/a de Nómina para administrar la nómina de las diferentes empresas del grupo (restaurante, academia, inmobiliaria y más).\n\nFunciones: liquidación de nómina, cálculo de prestaciones, gestión de seguridad social, novedades de personal, informes a gerencia.\n\nRequisitos: tecnólogo o profesional en contaduría o gestión humana, manejo de software de nómina, conocimiento de legislación laboral colombiana.\n\nCargo parcial. WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Coordinador/a de Nómina para administrar la nómina de las diferentes empresas del grupo (restaurante, academia, inmobiliaria y más).\n\nFunciones: liquidación de nómina, cálculo de prestaciones, gestión de seguridad social, novedades de personal, informes a gerencia.\n\nRequisitos: tecnólogo o profesional en contaduría o gestión humana, manejo de software de nómina, conocimiento de legislación laboral colombiana.\n\nCargo parcial. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','nomina','rrhh','contabilidad','santa-marta','parcial'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Nómina","order":0}]'
@@ -695,7 +695,7 @@ BEGIN
 
   -- ==============================================================
   -- HOGAR — Servicio Doméstico (53–54)
-  -- Posted by Maia Management Group as HR service
+  -- Posted by Maia Management S.A.S. as HR service
   -- ==============================================================
 
   -- 53. Chef / Cocinero/a para el Hogar

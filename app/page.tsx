@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
 import AdBanner from "@/components/ads/AdBanner";
 import { Listing } from "@/types";
+import { fallbackFeaturedListings, fallbackRecentListings, mergeWithFallback } from "@/lib/fallback-listings";
 
 export const metadata: Metadata = {
   title: 'Lleva Lleva – Clasificados Colombia',
@@ -59,8 +60,8 @@ const PUBLIC_INFO = [
 ];
 
 export default async function HomePage() {
-  let featuredListings = null;
-  let recentListings = null;
+  let featuredListings: Listing[] | null = null;
+  let recentListings: Listing[] | null = null;
 
   try {
     const supabase = await createClient();
@@ -80,10 +81,12 @@ export default async function HomePage() {
       .order("published_at", { ascending: false })
       .limit(16);
 
-    featuredListings = featured;
-    recentListings = recent;
+    featuredListings = mergeWithFallback(featured as Listing[] | null, fallbackFeaturedListings, 8);
+    recentListings = mergeWithFallback(recent as Listing[] | null, fallbackRecentListings, 16);
   } catch (err) {
     console.error("[HomePage] Supabase error — rendering without listings:", err);
+    featuredListings = fallbackFeaturedListings;
+    recentListings = fallbackRecentListings;
   }
 
   return (

@@ -789,7 +789,7 @@ INSERT INTO profiles (
     'bot_maia_masters',
     'Maia Masters Academy',
     'bot',
-    'Academia de habilidades digitales para el mundo moderno. Bootcamp intensivo: marketing digital, diseño con IA, inglés para negocios y emprendimiento. Centro, Santa Marta.',
+    'Academia de habilidades digitales para el mundo moderno. Bootcamp intensivo: marketing digital, diseño con automatización, inglés para negocios y emprendimiento. Centro, Santa Marta.',
     'Maia Masters Academy',
     NULL,
     'Santa Marta', 'Magdalena',
@@ -826,10 +826,10 @@ INSERT INTO profiles (
   (
     'a1b2c3d4-0001-0001-0001-000000000006',
     'bot_maia_management',
-    'Maia Management Group',
+    'Maia Management S.A.S.',
     'bot',
     'Grupo empresarial colombiano con operaciones en hospitalidad, tecnología, educación e inmobiliaria. Sede principal en Santa Marta, Costa Caribe.',
-    'Maia Management Group',
+    'Maia Management S.A.S.',
     NULL,
     'Santa Marta', 'Magdalena',
     '+19034598763', true,
@@ -1219,7 +1219,7 @@ BEGIN
   VALUES (v_sel_masters, v_cat_empleo, v_loc_smt,
     'Instructor Principal — Habilidades Digitales | Maia Masters Academy',
     'instructor-habilidades-digitales-maia-masters-24',
-    E'Maia Masters Academy busca Instructor Principal para liderar nuestro bootcamp de habilidades digitales en Santa Marta.\n\nTemario base: marketing digital, diseño con IA, productividad con herramientas modernas, emprendimiento online.\n\nRequisitos: experiencia práctica y comprobable en al menos 2 de las áreas anteriores, capacidad pedagógica (no se requiere título docente), inglés conversacional, energía y carisma frente a grupo.\n\nContrato a término fijo con renovación. Sede: Centro, Santa Marta. WhatsApp: +19034598763',
+    E'Maia Masters Academy busca Instructor Principal para liderar nuestro bootcamp de habilidades digitales en Santa Marta.\n\nTemario base: marketing digital, diseño con automatización, productividad con herramientas modernas, emprendimiento online.\n\nRequisitos: experiencia práctica y comprobable en al menos 2 de las áreas anteriores, capacidad pedagógica (no se requiere título docente), inglés conversacional, energía y carisma frente a grupo.\n\nContrato a término fijo con renovación. Sede: Centro, Santa Marta. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-masters','instructor','digital','educacion','santa-marta'],
     '[{"url":"/images/maia-masters.jpg","alt":"Maia Masters Academy","order":0}]'
@@ -1362,7 +1362,7 @@ BEGIN
   );
 
   -- ==============================================================
-  -- MAIA LEGAL / MAIA MANAGEMENT GROUP (36–39)
+  -- MAIA LEGAL / MAIA MANAGEMENT S.A.S. (36–39)
   -- ==============================================================
 
   -- 36. Asistente Jurídico / Paralegal
@@ -1381,9 +1381,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Asistente Contable | Maia Management Group — Santa Marta',
+    'Asistente Contable | Maia Management S.A.S. — Santa Marta',
     'asistente-contable-maia-management-37',
-    E'Maia Management Group busca Asistente Contable para apoyar la operación financiera del grupo empresarial.\n\nFunciones: causación de facturas, conciliaciones bancarias, preparación de informes de gastos, apoyo en declaraciones de renta y retención.\n\nRequisitos: tecnólogo o profesional en contaduría, manejo de software contable (Siigo o Helio), orden, precisión y confidencialidad.\n\nContrato a término indefinido, prestaciones completas. WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Asistente Contable para apoyar la operación financiera del grupo empresarial.\n\nFunciones: causación de facturas, conciliaciones bancarias, preparación de informes de gastos, apoyo en declaraciones de renta y retención.\n\nRequisitos: tecnólogo o profesional en contaduría, manejo de software contable (Siigo o Helio), orden, precisión y confidencialidad.\n\nContrato a término indefinido, prestaciones completas. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','contable','finanzas','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management","order":0}]'
@@ -1393,9 +1393,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Recepcionista / Asistente Administrativo | Maia Management Group',
+    'Recepcionista / Asistente Administrativo | Maia Management S.A.S.',
     'recepcionista-admin-maia-management-38',
-    E'Maia Management Group busca Recepcionista y Asistente Administrativo para nuestra oficina en Santa Marta.\n\nFunciones: atención de clientes y visitantes, gestión de agenda, manejo de correspondencia, soporte a diferentes áreas del grupo.\n\nRequisitos: excelente presentación personal, inglés conversacional (indispensable — atendemos clientes internacionales), manejo de Office, actitud positiva.\n\nContrato a término indefinido. WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Recepcionista y Asistente Administrativo para nuestra oficina en Santa Marta.\n\nFunciones: atención de clientes y visitantes, gestión de agenda, manejo de correspondencia, soporte a diferentes áreas del grupo.\n\nRequisitos: excelente presentación personal, inglés conversacional (indispensable — atendemos clientes internacionales), manejo de Office, actitud positiva.\n\nContrato a término indefinido. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','recepcionista','administrativo','ingles','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Oficina","order":0}]'
@@ -1405,9 +1405,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Nómina | Maia Management Group',
+    'Coordinador/a de Nómina | Maia Management S.A.S.',
     'coordinador-nomina-maia-management-39',
-    E'Maia Management Group busca Coordinador/a de Nómina para administrar la nómina de las diferentes empresas del grupo (restaurante, academia, inmobiliaria y más).\n\nFunciones: liquidación de nómina, cálculo de prestaciones, gestión de seguridad social, novedades de personal, informes a gerencia.\n\nRequisitos: tecnólogo o profesional en contaduría o gestión humana, manejo de software de nómina, conocimiento de legislación laboral colombiana.\n\nCargo parcial. WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Coordinador/a de Nómina para administrar la nómina de las diferentes empresas del grupo (restaurante, academia, inmobiliaria y más).\n\nFunciones: liquidación de nómina, cálculo de prestaciones, gestión de seguridad social, novedades de personal, informes a gerencia.\n\nRequisitos: tecnólogo o profesional en contaduría o gestión humana, manejo de software de nómina, conocimiento de legislación laboral colombiana.\n\nCargo parcial. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','nomina','rrhh','contabilidad','santa-marta','parcial'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Nómina","order":0}]'
@@ -1590,7 +1590,7 @@ BEGIN
 
   -- ==============================================================
   -- HOGAR — Servicio Doméstico (53–54)
-  -- Posted by Maia Management Group as HR service
+  -- Posted by Maia Management S.A.S. as HR service
   -- ==============================================================
 
   -- 53. Chef / Cocinero/a para el Hogar
@@ -1755,8 +1755,8 @@ BEGIN
   -- ============================================================
 
   UPDATE profiles SET
-    display_name   = 'Be Vida Botánicas',
-    business_name  = 'Be Vida Botánicas',
+    display_name   = 'Be Vida',
+    business_name  = 'Be Vida',
     bio            = 'Productora artesanal de bebidas RTD (ready-to-drink) de la Costa Caribe. Cócteles botánicos, shots de fruta tropical y bebidas de barril en formato Sankey 20L para el canal B2B. Santa Marta, Colombia.',
     updated_at     = now()
   WHERE id = v_sel_bevida;
@@ -1813,9 +1813,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Reclutamiento | Maia Management Group',
+    'Coordinador/a de Reclutamiento | Maia Management S.A.S.',
     'coordinador-reclutamiento-maia-management-63',
-    E'Maia Management Group busca Coordinador/a de Reclutamiento para gestionar los procesos de selección del grupo empresarial y sus empresas aliadas.\n\nFunciones: publicación de vacantes, filtro de hojas de vida, coordinación de entrevistas, verificación de referencias, onboarding de nuevos colaboradores.\n\nRequisitos: tecnólogo o profesional en psicología, administración o gestión humana; experiencia mínima 1 año en selección de personal; manejo de LinkedIn Recruiter y WhatsApp Business.\n\nSalario: $1.800.000 – $2.300.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Coordinador/a de Reclutamiento para gestionar los procesos de selección del grupo empresarial y sus empresas aliadas.\n\nFunciones: publicación de vacantes, filtro de hojas de vida, coordinación de entrevistas, verificación de referencias, onboarding de nuevos colaboradores.\n\nRequisitos: tecnólogo o profesional en psicología, administración o gestión humana; experiencia mínima 1 año en selección de personal; manejo de LinkedIn Recruiter y WhatsApp Business.\n\nSalario: $1.800.000 – $2.300.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','reclutamiento','rrhh','seleccion','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management RRHH","order":0}]'
@@ -1828,9 +1828,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Office Manager | Maia Management Group — Santa Marta',
+    'Office Manager | Maia Management S.A.S. — Santa Marta',
     'office-manager-maia-management-64',
-    E'Maia Management Group busca Office Manager para coordinar el funcionamiento de nuestras oficinas centrales en Santa Marta.\n\nFunciones: gestión de proveedores de servicios de oficina, control de suministros, coordinación de mantenimiento, apoyo logístico a la gerencia, organización de reuniones y viajes corporativos.\n\nRequisitos: mínimo 2 años en cargo similar, inglés intermedio, manejo avanzado de Google Workspace, capacidad de tomar decisiones con autonomía.\n\nSalario: $2.000.000 – $2.800.000 COP/mes + prestaciones completas.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Office Manager para coordinar el funcionamiento de nuestras oficinas centrales en Santa Marta.\n\nFunciones: gestión de proveedores de servicios de oficina, control de suministros, coordinación de mantenimiento, apoyo logístico a la gerencia, organización de reuniones y viajes corporativos.\n\nRequisitos: mínimo 2 años en cargo similar, inglés intermedio, manejo avanzado de Google Workspace, capacidad de tomar decisiones con autonomía.\n\nSalario: $2.000.000 – $2.800.000 COP/mes + prestaciones completas.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','office-manager','administracion','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Oficina","order":0}]'
@@ -1843,54 +1843,54 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Asesor/a Bilingüe de Servicio al Cliente | Maia Management Group',
+    'Asesor/a Bilingüe de Servicio al Cliente | Maia Management S.A.S.',
     'asesor-bilingue-servicio-cliente-maia-65',
-    E'Maia Management Group busca Asesor/a de Servicio al Cliente bilingüe español-inglés para atender a nuestra clientela nacional e internacional.\n\nFunciones: atención por WhatsApp, correo y presencial; resolución de consultas y quejas; direccionamiento a las áreas correctas del grupo (legal, realty, academia).\n\nRequisitos: inglés fluido (escrito y hablado — se evalúa), excelente comunicación, paciencia y orientación al servicio, experiencia mínima 1 año en atención al cliente.\n\nSalario: $1.800.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Asesor/a de Servicio al Cliente bilingüe español-inglés para atender a nuestra clientela nacional e internacional.\n\nFunciones: atención por WhatsApp, correo y presencial; resolución de consultas y quejas; direccionamiento a las áreas correctas del grupo (legal, realty, academia).\n\nRequisitos: inglés fluido (escrito y hablado — se evalúa), excelente comunicación, paciencia y orientación al servicio, experiencia mínima 1 año en atención al cliente.\n\nSalario: $1.800.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','bilingue','servicio-cliente','ingles','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Atención","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- BE VIDA BOTÁNICAS — Production Supervisor (#66)
+  -- BE VIDA — Production Supervisor (#66)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_empleo, v_loc_smt,
-    'Supervisor/a de Producción — Bebidas RTD | Be Vida Botánicas',
+    'Supervisor/a de Producción — Bebidas RTD | Be Vida',
     'supervisor-produccion-be-vida-66',
-    E'Be Vida Botánicas busca Supervisor/a de Producción para liderar el equipo operativo de nuestra planta de bebidas artesanales en Santa Marta.\n\nFunciones: planificación de producción por lotes, supervisión del proceso desde recepción de materia prima hasta empaque, control de BPM, gestión de turnos de operarios.\n\nRequisitos: tecnólogo o profesional en ingeniería de alimentos, producción industrial o áreas afines; mínimo 2 años en cargos similares en industria de alimentos o bebidas; conocimiento de BPM y HACCP.\n\nSalario: $2.200.000 – $3.000.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca Supervisor/a de Producción para liderar el equipo operativo de nuestra planta de bebidas artesanales en Santa Marta.\n\nFunciones: planificación de producción por lotes, supervisión del proceso desde recepción de materia prima hasta empaque, control de BPM, gestión de turnos de operarios.\n\nRequisitos: tecnólogo o profesional en ingeniería de alimentos, producción industrial o áreas afines; mínimo 2 años en cargos similares en industria de alimentos o bebidas; conocimiento de BPM y HACCP.\n\nSalario: $2.200.000 – $3.000.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','be-vida','produccion','supervisor','bebidas','bpm','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Producción","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- BE VIDA BOTÁNICAS — QC Specialist (#67)
+  -- BE VIDA — QC Specialist (#67)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_empleo, v_loc_smt,
-    'Especialista de Control de Calidad — Bebidas | Be Vida Botánicas',
+    'Especialista de Control de Calidad — Bebidas | Be Vida',
     'especialista-qc-be-vida-67',
-    E'Be Vida Botánicas busca Especialista en Control de Calidad (QC) para garantizar que cada lote de nuestras bebidas cumpla con los estándares sensoriales, microbiológicos y de etiquetado.\n\nFunciones: análisis sensorial por lote, toma de muestras para laboratorio, verificación de etiquetado y fechas, gestión de no conformidades, apoyo en trámites INVIMA.\n\nRequisitos: profesional o tecnólogo en ciencias de alimentos, microbiología o afines; experiencia en QC de bebidas o alimentos; conocimiento de normativa INVIMA y BPM.\n\nSalario: $2.000.000 – $2.800.000 COP/mes.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca Especialista en Control de Calidad (QC) para garantizar que cada lote de nuestras bebidas cumpla con los estándares sensoriales, microbiológicos y de etiquetado.\n\nFunciones: análisis sensorial por lote, toma de muestras para laboratorio, verificación de etiquetado y fechas, gestión de no conformidades, apoyo en trámites INVIMA.\n\nRequisitos: profesional o tecnólogo en ciencias de alimentos, microbiología o afines; experiencia en QC de bebidas o alimentos; conocimiento de normativa INVIMA y BPM.\n\nSalario: $2.000.000 – $2.800.000 COP/mes.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','be-vida','calidad','qc','invima','bebidas','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Control Calidad","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- BE VIDA BOTÁNICAS — Warehouse & Logistics Lead (#68)
+  -- BE VIDA — Warehouse & Logistics Lead (#68)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_empleo, v_loc_smt,
-    'Jefe de Bodega y Logística | Be Vida Botánicas — Santa Marta',
+    'Jefe de Bodega y Logística | Be Vida — Santa Marta',
     'jefe-bodega-logistica-be-vida-68',
-    E'Be Vida Botánicas busca Jefe de Bodega y Logística para controlar el inventario de materias primas y producto terminado, y coordinar las entregas B2B en la región.\n\nFunciones: control de inventario (entradas y salidas), gestión de bodega con FIFO, coordinación de despachos a bares, hoteles y distribuidores, relación con transportistas y mensajeros.\n\nRequisitos: tecnólogo en logística, administración o afines; experiencia mínima 2 años en bodega o logística; manejo de Excel o software de inventario; licencia de conducción deseable.\n\nSalario: $1.900.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca Jefe de Bodega y Logística para controlar el inventario de materias primas y producto terminado, y coordinar las entregas B2B en la región.\n\nFunciones: control de inventario (entradas y salidas), gestión de bodega con FIFO, coordinación de despachos a bares, hoteles y distribuidores, relación con transportistas y mensajeros.\n\nRequisitos: tecnólogo en logística, administración o afines; experiencia mínima 2 años en bodega o logística; manejo de Excel o software de inventario; licencia de conducción deseable.\n\nSalario: $1.900.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','be-vida','bodega','logistica','inventario','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Bodega","order":0}]'
@@ -1965,7 +1965,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, NULL,
     'Diseñador/a Gráfico/a — Grupo Maia | Freelance o Parcial',
     'disenador-grafico-grupo-maia-73',
-    E'Maia Management Group busca Diseñador/a Gráfico/a para apoyar las marcas del grupo: El Sanatorio, Be Vida, Maia Masters Academy, Trivium Magnum y LlevaLleva.\n\nTrabajos frecuentes: diseño de piezas para redes sociales, flyers de eventos, menús, identidad visual y material impreso.\n\nRequisitos: dominio de Adobe Illustrator y Photoshop (o Affinity equivalente), portafolio variado, entrega puntual, disposición para trabajar con briefings creativos específicos por marca.\n\nModalidad: freelance por proyecto o parcial (10–20 hrs/semana). Pago en COP por entregable.\n\nPortafolio + tarifa por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Diseñador/a Gráfico/a para apoyar las marcas del grupo: El Sanatorio, Be Vida, Maia Masters Academy, Trivium Magnum y LlevaLleva.\n\nTrabajos frecuentes: diseño de piezas para redes sociales, flyers de eventos, menús, identidad visual y material impreso.\n\nRequisitos: dominio de Adobe Illustrator y Photoshop (o Affinity equivalente), portafolio variado, entrega puntual, disposición para trabajar con briefings creativos específicos por marca.\n\nModalidad: freelance por proyecto o parcial (10–20 hrs/semana). Pago en COP por entregable.\n\nPortafolio + tarifa por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','diseno','grafico','freelance','marcas','remoto','maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Diseño Gráfico Maia","order":0}]',
@@ -1981,7 +1981,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, NULL,
     'Community Manager / Social Media Manager — Grupo Maia',
     'community-manager-grupo-maia-74',
-    E'Maia Management Group busca Community Manager para gestionar las redes sociales de las marcas del grupo en Instagram y TikTok principalmente.\n\nFunciones: publicación de contenido (en coordinación con diseñador y fotógrafo), respuesta a comentarios y mensajes, reportes mensuales de métricas, propuestas de contenido.\n\nRequisitos: experiencia comprobable manejando cuentas de negocio, conocimiento de Meta Business Suite, creatividad para adaptar el tono por marca (horror/gourmet para El Sanatorio, tropical para Be Vida, académico para Masters).\n\nModalidad: remoto. Salario: $1.500.000 – $2.200.000 COP/mes según experiencia.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Community Manager para gestionar las redes sociales de las marcas del grupo en Instagram y TikTok principalmente.\n\nFunciones: publicación de contenido (en coordinación con diseñador y fotógrafo), respuesta a comentarios y mensajes, reportes mensuales de métricas, propuestas de contenido.\n\nRequisitos: experiencia comprobable manejando cuentas de negocio, conocimiento de Meta Business Suite, creatividad para adaptar el tono por marca (horror/gourmet para El Sanatorio, tropical para Be Vida, académico para Masters).\n\nModalidad: remoto. Salario: $1.500.000 – $2.200.000 COP/mes según experiencia.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','community-manager','redes-sociales','instagram','tiktok','remoto','maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Social Media Maia","order":0}]',
@@ -1997,7 +1997,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, v_loc_smt,
     'Fotógrafo/a y Videoasta — Marcas Maia | Santa Marta (Freelance)',
     'fotografo-videoasta-grupo-maia-75',
-    E'Maia Management Group busca Fotógrafo/a y Videoasta freelance basado/a en Santa Marta para cubrir los proyectos visuales del grupo.\n\nProyectos: fotografía gastronómica para El Sanatorio, videos de producto para Be Vida, contenido de campus para Trivium Magnum, fotografia de inmuebles para Maia Realty.\n\nRequisitos: equipo propio (cámara mirrorless o DSLR, iluminación básica), edición en Lightroom y Premiere/CapCut, portafolio variado, disponibilidad para sesiones en sitio.\n\nPago por sesión según tipo de proyecto. Tarifas a convenir.\n\nPortafolio por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Fotógrafo/a y Videoasta freelance basado/a en Santa Marta para cubrir los proyectos visuales del grupo.\n\nProyectos: fotografía gastronómica para El Sanatorio, videos de producto para Be Vida, contenido de campus para Trivium Magnum, fotografia de inmuebles para Maia Realty.\n\nRequisitos: equipo propio (cámara mirrorless o DSLR, iluminación básica), edición en Lightroom y Premiere/CapCut, portafolio variado, disponibilidad para sesiones en sitio.\n\nPago por sesión según tipo de proyecto. Tarifas a convenir.\n\nPortafolio por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','fotografo','video','freelance','gastronomia','inmobiliaria','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Fotografía Maia","order":0}]'
@@ -2010,9 +2010,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Técnico/a de Soporte IT | Maia Management Group — Santa Marta',
+    'Técnico/a de Soporte IT | Maia Management S.A.S. — Santa Marta',
     'tecnico-soporte-it-maia-management-76',
-    E'Maia Management Group busca Técnico de Soporte IT para dar soporte tecnológico a las oficinas y negocios del grupo en Santa Marta.\n\nFunciones: mantenimiento de computadores y periféricos, soporte de red Wi-Fi y cableado estructurado, configuración de sistemas POS, soporte a usuarios en herramientas Google Workspace y CRM.\n\nRequisitos: técnico o tecnólogo en sistemas, mínimo 1 año de experiencia en soporte técnico, capacidad de diagnóstico rápido, buena disposición con usuarios no técnicos.\n\nSalario: $1.600.000 – $2.200.000 COP/mes. Presencial Santa Marta con visitas a distintos locales del grupo.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Técnico de Soporte IT para dar soporte tecnológico a las oficinas y negocios del grupo en Santa Marta.\n\nFunciones: mantenimiento de computadores y periféricos, soporte de red Wi-Fi y cableado estructurado, configuración de sistemas POS, soporte a usuarios en herramientas Google Workspace y CRM.\n\nRequisitos: técnico o tecnólogo en sistemas, mínimo 1 año de experiencia en soporte técnico, capacidad de diagnóstico rápido, buena disposición con usuarios no técnicos.\n\nSalario: $1.600.000 – $2.200.000 COP/mes. Presencial Santa Marta con visitas a distintos locales del grupo.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','it','soporte','tecnologia','sistemas','santa-marta','tiempo-completo'],
     '[{"url":"/images/maia-management.jpg","alt":"IT Soporte Maia","order":0}]'
@@ -2027,7 +2027,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
     'Conductor/a Mensajero/a — Diligencias y Apoyo Logístico | Grupo Maia',
     'conductor-mensajero-grupo-maia-77',
-    E'Maia Management Group busca Conductor/Mensajero para apoyo logístico y diligencias del grupo empresarial en Santa Marta.\n\nFunciones: diligencias bancarias y ante entidades, entrega de documentos, apoyo en transporte de insumos y equipos entre los diferentes negocios del grupo, transporte ocasional de personal directivo.\n\nRequisitos: licencia de conducción B1 vigente, conocimiento de las vías de Santa Marta y municipios cercanos, puntualidad y confianza absoluta, vehículo propio deseable (se reconoce rodamiento).\n\nSalario: $1.423.500 – $1.700.000 COP/mes + auxilio de transporte + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Conductor/Mensajero para apoyo logístico y diligencias del grupo empresarial en Santa Marta.\n\nFunciones: diligencias bancarias y ante entidades, entrega de documentos, apoyo en transporte de insumos y equipos entre los diferentes negocios del grupo, transporte ocasional de personal directivo.\n\nRequisitos: licencia de conducción B1 vigente, conocimiento de las vías de Santa Marta y municipios cercanos, puntualidad y confianza absoluta, vehículo propio deseable (se reconoce rodamiento).\n\nSalario: $1.423.500 – $1.700.000 COP/mes + auxilio de transporte + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','conductor','mensajero','logistica','santa-marta','tiempo-completo'],
     '[{"url":"/images/maia-management.jpg","alt":"Conductor Maia","order":0}]'
@@ -2053,7 +2053,7 @@ BEGIN
 END $$;
 -- ============================================================
 -- Migration 011: Equipment Wanted Listings (#79–107)
--- All posted by El Sanatorio or Maia Management Group
+-- All posted by El Sanatorio or Maia Management S.A.S.
 -- Depends on: 008_seed_business_profiles.sql
 -- ============================================================
 
@@ -2399,7 +2399,7 @@ BEGIN
   VALUES (v_sel_bevida, v_cat_maquinaria, v_loc_smt,
     'SE COMPRA / SE ALQUILA: Barriles Sankey 20L — Bebidas Artesanales',
     'se-compra-barriles-sankey-20l-101',
-    E'Be Vida Botánicas busca barriles Sankey de 20 litros (acero inoxidable) para envasar y distribuir nuestras bebidas RTD al canal B2B en Santa Marta y la Costa Caribe.\n\nBuscamos:\n• Barriles Sankey 20L en acero inox, tipo D o G\n• En buen estado, sin golpes significativos que comprometan el sello\n• Lote mínimo de 10 unidades\n\nTambién evaluamos contratos de alquiler de barriles con proveedor. Pago inmediato.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca barriles Sankey de 20 litros (acero inoxidable) para envasar y distribuir nuestras bebidas RTD al canal B2B en Santa Marta y la Costa Caribe.\n\nBuscamos:\n• Barriles Sankey 20L en acero inox, tipo D o G\n• En buen estado, sin golpes significativos que comprometan el sello\n• Lote mínimo de 10 unidades\n\nTambién evaluamos contratos de alquiler de barriles con proveedor. Pago inmediato.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','sankey','barril','20l','bebidas','artesanal','b2b','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Barriles Sankey","order":0}]'
@@ -2413,7 +2413,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_ofic, v_loc_smt,
     'SE COMPRA: Escritorios y Sillas de Oficina — Maia Management Santa Marta',
     'se-compra-escritorios-sillas-oficina-102',
-    E'Maia Management Group busca escritorios y sillas ergonómicas de oficina para equipar nuestras instalaciones en Santa Marta.\n\nQué necesitamos:\n• Escritorios modulares o individuales — 6 a 10 puestos\n• Sillas ergonómicas de escritorio con ajuste lumbar\n• Mesa de reuniones para 8–10 personas\n• Armarios o cajoneras de archivo\n\nNuevo o usado en buen estado. Entrega en Santa Marta Centro.\n\nWhatsApp: +19034598763 con fotos y precio.',
+    E'Maia Management S.A.S. busca escritorios y sillas ergonómicas de oficina para equipar nuestras instalaciones en Santa Marta.\n\nQué necesitamos:\n• Escritorios modulares o individuales — 6 a 10 puestos\n• Sillas ergonómicas de escritorio con ajuste lumbar\n• Mesa de reuniones para 8–10 personas\n• Armarios o cajoneras de archivo\n\nNuevo o usado en buen estado. Entrega en Santa Marta Centro.\n\nWhatsApp: +19034598763 con fotos y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','escritorios','sillas','oficina','mobiliario','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Oficina Mobiliario","order":0}]'
@@ -2427,7 +2427,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_tv_audio, v_loc_smt,
     'SE COMPRA: Proyector y Pantalla de Proyección — Sala de Reuniones / Aula',
     'se-compra-proyector-pantalla-proyeccion-103',
-    E'Maia Management Group busca proyector y pantalla para sala de reuniones y aula de Maia Masters Academy.\n\nEspecificaciones:\n• Proyector: mínimo 3.000 lúmenes, resolución 1080p, HDMI y Wi-Fi\n• Pantalla: 100"–120" retráctil o fija\n• Marcas: Epson, BenQ, ViewSonic, LG, Optoma\n\nNuevo o reacondicionado con garantía. También se evalúan TV 85" como alternativa.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca proyector y pantalla para sala de reuniones y aula de Maia Masters Academy.\n\nEspecificaciones:\n• Proyector: mínimo 3.000 lúmenes, resolución 1080p, HDMI y Wi-Fi\n• Pantalla: 100"–120" retráctil o fija\n• Marcas: Epson, BenQ, ViewSonic, LG, Optoma\n\nNuevo o reacondicionado con garantía. También se evalúan TV 85" como alternativa.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','proyector','pantalla','presentaciones','aula','oficina','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Proyector Pantalla","order":0}]'
@@ -2441,7 +2441,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_ofic, v_loc_smt,
     'SE COMPRA: Computadores y Laptops — Oficina y Academia | Santa Marta',
     'se-compra-computadores-laptops-oficina-104',
-    E'Maia Management Group busca computadores de escritorio y laptops para equipar las oficinas y el aula de Maia Masters Academy.\n\nQué buscamos:\n• Laptops: Core i5 o Ryzen 5 de 11ª generación o superior, 8 GB RAM, 256 GB SSD mínimo — 5 a 10 unidades\n• PCs de escritorio: configuración similar — 3 a 5 unidades\n• Monitores adicionales — varios\n\nNuevos, reacondicionados o segunda mano en buen estado funcional.\n\nWhatsApp: +19034598763 con especificaciones y precio.',
+    E'Maia Management S.A.S. busca computadores de escritorio y laptops para equipar las oficinas y el aula de Maia Masters Academy.\n\nQué buscamos:\n• Laptops: Core i5 o Ryzen 5 de 11ª generación o superior, 8 GB RAM, 256 GB SSD mínimo — 5 a 10 unidades\n• PCs de escritorio: configuración similar — 3 a 5 unidades\n• Monitores adicionales — varios\n\nNuevos, reacondicionados o segunda mano en buen estado funcional.\n\nWhatsApp: +19034598763 con especificaciones y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','computador','laptop','pc','oficina','academia','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Laptops Oficina","order":0}]'
@@ -2469,7 +2469,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_carros, v_loc_smt,
     'SE BUSCA: Camioneta o Furgoneta para Distribución — Grupo Maia Santa Marta',
     'se-busca-camioneta-furgoneta-distribucion-106',
-    E'Maia Management Group busca camioneta o furgoneta para apoyo logístico y distribución de Be Vida Botánicas en Santa Marta y la región.\n\nQué buscamos:\n• Camioneta doble cabina o furgoneta de carga liviana\n• Diesel o gasolina, modelo 2015 o más reciente\n• Buen estado mecánico, traspaso limpio\n• Carga útil mínima 800 kg\n\nPago de contado o financiación según oferta.\n\nWhatsApp: +19034598763 con fotos, km y precio.',
+    E'Maia Management S.A.S. busca camioneta o furgoneta para apoyo logístico y distribución de Be Vida en Santa Marta y la región.\n\nQué buscamos:\n• Camioneta doble cabina o furgoneta de carga liviana\n• Diesel o gasolina, modelo 2015 o más reciente\n• Buen estado mecánico, traspaso limpio\n• Carga útil mínima 800 kg\n\nPago de contado o financiación según oferta.\n\nWhatsApp: +19034598763 con fotos, km y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','camioneta','furgoneta','transporte','logistica','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Camioneta","order":0}]'
@@ -2565,7 +2565,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_construccion, v_loc_smt,
     'SE BUSCA: Electricista para Locales Comerciales — Santa Marta',
     'se-busca-electricista-locales-comerciales-109',
-    E'Maia Management Group busca electricista con experiencia en instalaciones comerciales para mantenimiento y obras en los diferentes locales del grupo en Santa Marta.\n\nTrabajos requeridos: revisión y certificación de instalaciones eléctricas, instalación de tomacorrientes y circuitos adicionales, reparaciones de emergencia.\n\nRequisitos: matrícula CONTE vigente, experiencia demostrable en locales comerciales. Trabajo recurrente para el electricista adecuado.\n\nContacto: WhatsApp +19034598763 con tarifas.',
+    E'Maia Management S.A.S. busca electricista con experiencia en instalaciones comerciales para mantenimiento y obras en los diferentes locales del grupo en Santa Marta.\n\nTrabajos requeridos: revisión y certificación de instalaciones eléctricas, instalación de tomacorrientes y circuitos adicionales, reparaciones de emergencia.\n\nRequisitos: matrícula CONTE vigente, experiencia demostrable en locales comerciales. Trabajo recurrente para el electricista adecuado.\n\nContacto: WhatsApp +19034598763 con tarifas.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','electricista','locales-comerciales','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Electricista","order":0}]'
@@ -2577,7 +2577,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_construccion, v_loc_smt,
     'SE BUSCA: Plomero para Locales Comerciales — Santa Marta',
     'se-busca-plomero-locales-comerciales-110',
-    E'Maia Management Group busca plomero con experiencia en instalaciones comerciales para mantenimiento recurrente y obras de adecuación.\n\nTrabajos: instalación de puntos hidráulicos en cocinas y baños, mantenimiento de redes de agua fría/caliente, instalación de sistemas de gas.\n\nRequisitos: experiencia mínima 3 años en plomería comercial, disponibilidad para Santa Marta Centro y otras zonas del Distrito. Trabajo recurrente garantizado.\n\nWhatsApp: +19034598763 con tarifas.',
+    E'Maia Management S.A.S. busca plomero con experiencia en instalaciones comerciales para mantenimiento recurrente y obras de adecuación.\n\nTrabajos: instalación de puntos hidráulicos en cocinas y baños, mantenimiento de redes de agua fría/caliente, instalación de sistemas de gas.\n\nRequisitos: experiencia mínima 3 años en plomería comercial, disponibilidad para Santa Marta Centro y otras zonas del Distrito. Trabajo recurrente garantizado.\n\nWhatsApp: +19034598763 con tarifas.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','plomero','fontanero','locales','comercial','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Plomero","order":0}]'
@@ -2625,7 +2625,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_construccion, v_loc_smt,
     'SE BUSCA: Técnico de Aire Acondicionado / HVAC — Santa Marta',
     'se-busca-tecnico-hvac-aire-acondicionado-114',
-    E'Maia Management Group busca técnico de aires acondicionados para instalación y mantenimiento preventivo y correctivo en los locales del grupo en Santa Marta.\n\nTrabajos: instalación de unidades Split en oficinas y el restaurante, mantenimiento trimestral programado, reparaciones de emergencia.\n\nRequisitos: técnico certificado, disponibilidad en Santa Marta Centro, experiencia en equipos comerciales. Contrato de mantenimiento mensual disponible para el técnico adecuado.\n\nWhatsApp: +19034598763 con tarifas.',
+    E'Maia Management S.A.S. busca técnico de aires acondicionados para instalación y mantenimiento preventivo y correctivo en los locales del grupo en Santa Marta.\n\nTrabajos: instalación de unidades Split en oficinas y el restaurante, mantenimiento trimestral programado, reparaciones de emergencia.\n\nRequisitos: técnico certificado, disponibilidad en Santa Marta Centro, experiencia en equipos comerciales. Contrato de mantenimiento mensual disponible para el técnico adecuado.\n\nWhatsApp: +19034598763 con tarifas.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','hvac','aire-acondicionado','tecnico','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Aire Acondicionado","order":0}]'
@@ -2697,7 +2697,7 @@ BEGIN
   VALUES (v_sel_bevida, v_cat_otros_serv, v_loc_smt,
     'SE BUSCA: Proveedor de Packaging / Empaques — Bebidas RTD Colombia',
     'se-busca-proveedor-packaging-bebidas-120',
-    E'Be Vida Botánicas busca proveedor de empaques y packaging para nuestras bebidas artesanales.\n\nQué necesitamos:\n• Etiquetas adhesivas en material húmedo-resistente (BOPP o similar) — impresión digital\n• Tapas y sellos para envases de vidrio y PET\n• Cajas de cartón corrugado para transporte de 12 y 24 unidades\n• Tubos sellados para shots de fruta (PET o vidrio)\n\nBuscamos proveedor en Colombia con producción mínima flexible para PYME. Precios competitivos y tiempos de entrega cortos.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca proveedor de empaques y packaging para nuestras bebidas artesanales.\n\nQué necesitamos:\n• Etiquetas adhesivas en material húmedo-resistente (BOPP o similar) — impresión digital\n• Tapas y sellos para envases de vidrio y PET\n• Cajas de cartón corrugado para transporte de 12 y 24 unidades\n• Tubos sellados para shots de fruta (PET o vidrio)\n\nBuscamos proveedor en Colombia con producción mínima flexible para PYME. Precios competitivos y tiempos de entrega cortos.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','packaging','empaques','etiquetas','bebidas','colombia'],
     '[{"url":"/images/placeholder.jpg","alt":"Packaging Bebidas","order":0}]'
@@ -2709,7 +2709,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_diseno, v_loc_smt,
     'SE BUSCA: Litografía / Empresa de Impresos — Santa Marta o Regional',
     'se-busca-litografia-impresos-regional-121',
-    E'Maia Management Group busca empresa de impresión para cubrir las necesidades gráficas del grupo empresarial.\n\nQué necesitamos:\n• Tarjetas de presentación (varias marcas del grupo)\n• Flyers y volantes para eventos\n• Menús impresos y laminados para El Sanatorio\n• Pendones y banners\n• Etiquetas y material POP\n\nBuscamos litografía con buena calidad digital e impresión offset, que pueda manejar urgencias. Puede ser en Santa Marta o con servicio de envío.\n\nMuestras y cotizaciones por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca empresa de impresión para cubrir las necesidades gráficas del grupo empresarial.\n\nQué necesitamos:\n• Tarjetas de presentación (varias marcas del grupo)\n• Flyers y volantes para eventos\n• Menús impresos y laminados para El Sanatorio\n• Pendones y banners\n• Etiquetas y material POP\n\nBuscamos litografía con buena calidad digital e impresión offset, que pueda manejar urgencias. Puede ser en Santa Marta o con servicio de envío.\n\nMuestras y cotizaciones por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','litografia','impresos','impresion','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Impresos","order":0}]'
@@ -2721,7 +2721,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_otros_serv, v_loc_smt,
     'SE BUSCA: Empresa de Aseo / Limpieza para Locales Comerciales — Santa Marta',
     'se-busca-empresa-aseo-limpieza-comercial-122',
-    E'Maia Management Group busca empresa de aseo o personal de limpieza para contrato mensual en los locales del grupo.\n\nServicios requeridos:\n• Limpieza profunda diaria de restaurante (El Sanatorio)\n• Aseo de oficinas (3 veces por semana)\n• Desinfección periódica de cocina y zonas de manipulación de alimentos\n• Manejo de desechos\n\nSe busca empresa formal o cooperativa con afiliación de personal a seguridad social. Contrato mensual con posibilidad de ampliar a más locales.\n\nCotización por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca empresa de aseo o personal de limpieza para contrato mensual en los locales del grupo.\n\nServicios requeridos:\n• Limpieza profunda diaria de restaurante (El Sanatorio)\n• Aseo de oficinas (3 veces por semana)\n• Desinfección periódica de cocina y zonas de manipulación de alimentos\n• Manejo de desechos\n\nSe busca empresa formal o cooperativa con afiliación de personal a seguridad social. Contrato mensual con posibilidad de ampliar a más locales.\n\nCotización por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','aseo','limpieza','empresa','locales','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Empresa Aseo","order":0}]'
@@ -2733,7 +2733,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_otros_serv, v_loc_smt,
     'SE BUSCA: Empresa de Vigilancia / Seguridad Privada — Santa Marta',
     'se-busca-empresa-vigilancia-seguridad-privada-123',
-    E'Maia Management Group busca empresa de vigilancia y seguridad privada para brindar protección a los locales del grupo en Santa Marta.\n\nRequisitos:\n• Vigilantes certificados con tarjeta de miembro activo SuperVigilancia\n• Cobertura nocturna y de fin de semana para El Sanatorio\n• Protección de oficinas (turno diurno)\n• Capacidad de respuesta ante emergencias\n\nSe prefieren empresas con supervisión activa de personal y monitoreo en tiempo real.\n\nCotizaciones por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca empresa de vigilancia y seguridad privada para brindar protección a los locales del grupo en Santa Marta.\n\nRequisitos:\n• Vigilantes certificados con tarjeta de miembro activo SuperVigilancia\n• Cobertura nocturna y de fin de semana para El Sanatorio\n• Protección de oficinas (turno diurno)\n• Capacidad de respuesta ante emergencias\n\nSe prefieren empresas con supervisión activa de personal y monitoreo en tiempo real.\n\nCotizaciones por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','seguridad','vigilancia','empresa','locales','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Seguridad Privada","order":0}]'
@@ -2785,7 +2785,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Paquetes de Contabilidad Mensual para Empresas — desde $1.400.000/mes | Maia Management',
     'paquetes-contabilidad-mensual-empresas-maia-management-127',
-    E'Maia Management Group ofrece paquetes de contabilidad mensual para pequeñas y medianas empresas en Colombia.\n\nQué incluye el servicio:\n✓ Causación de facturas de compra y venta\n✓ Conciliaciones bancarias\n✓ Liquidación de impuestos bimestrales (IVA, ICA)\n✓ Retención en la fuente\n✓ Estados financieros mensuales (PyG, Balance)\n✓ Informe de gestión a gerencia\n\nPaquetes desde $1.400.000 COP/mes según volumen de transacciones.\n\nEspecialistas en restaurantes, agencias y empresas de servicios. Trabajo 100% remoto con reunión virtual mensual.\n\nConsulta gratis: WhatsApp +19034598763',
+    E'Maia Management S.A.S. ofrece paquetes de contabilidad mensual para pequeñas y medianas empresas en Colombia.\n\nQué incluye el servicio:\n✓ Causación de facturas de compra y venta\n✓ Conciliaciones bancarias\n✓ Liquidación de impuestos bimestrales (IVA, ICA)\n✓ Retención en la fuente\n✓ Estados financieros mensuales (PyG, Balance)\n✓ Informe de gestión a gerencia\n\nPaquetes desde $1.400.000 COP/mes según volumen de transacciones.\n\nEspecialistas en restaurantes, agencias y empresas de servicios. Trabajo 100% remoto con reunión virtual mensual.\n\nConsulta gratis: WhatsApp +19034598763',
     1400000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','contabilidad','mensual','empresa','pyme','maia-management'],
     '[{"url":"/images/maia-management.jpg","alt":"Contabilidad Mensual","order":0}]'
@@ -2797,7 +2797,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Facturación Electrónica — Habilitación DIAN y Acompañamiento | Maia Management',
     'facturacion-electronica-dian-habilitacion-128',
-    E'Maia Management Group te ayuda a implementar la facturación electrónica en tu empresa colombiana, desde el trámite ante la DIAN hasta la activación del software.\n\nServicio incluye:\n✓ Registro como facturador electrónico ante DIAN\n✓ Selección y configuración del proveedor tecnológico (Siigo, Alegra, Factus, etc.)\n✓ Capacitación al equipo en el uso del sistema\n✓ Soporte en los primeros 30 días de operación\n✓ Revisión de primeros documentos electrónicos\n\nTarifa: desde $800.000 COP (pago único). Mantenimiento mensual disponible.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. te ayuda a implementar la facturación electrónica en tu empresa colombiana, desde el trámite ante la DIAN hasta la activación del software.\n\nServicio incluye:\n✓ Registro como facturador electrónico ante DIAN\n✓ Selección y configuración del proveedor tecnológico (Siigo, Alegra, Factus, etc.)\n✓ Capacitación al equipo en el uso del sistema\n✓ Soporte en los primeros 30 días de operación\n✓ Revisión de primeros documentos electrónicos\n\nTarifa: desde $800.000 COP (pago único). Mantenimiento mensual disponible.\n\nWhatsApp: +19034598763',
     800000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','facturacion','electronica','dian','colombia','pyme'],
     '[{"url":"/images/maia-management.jpg","alt":"Facturación Electrónica","order":0}]'
@@ -2809,7 +2809,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Consultoría DIAN y Cumplimiento Fiscal — Colombia | Maia Management',
     'consultoria-dian-cumplimiento-fiscal-129',
-    E'Maia Management Group ofrece asesoría en cumplimiento fiscal y gestión ante la DIAN para empresas y personas naturales en Colombia.\n\nServicios:\n• Revisión de obligaciones tributarias\n• Respuesta a requerimientos de la DIAN\n• Gestión de devoluciones de IVA\n• Planeación tributaria\n• Asesoría a extranjeros con actividad económica en Colombia\n\nAtendemos empresas de todos los tamaños. Honorarios desde $500.000 COP según complejidad del caso.\n\nConsulta inicial sin costo: WhatsApp +19034598763',
+    E'Maia Management S.A.S. ofrece asesoría en cumplimiento fiscal y gestión ante la DIAN para empresas y personas naturales en Colombia.\n\nServicios:\n• Revisión de obligaciones tributarias\n• Respuesta a requerimientos de la DIAN\n• Gestión de devoluciones de IVA\n• Planeación tributaria\n• Asesoría a extranjeros con actividad económica en Colombia\n\nAtendemos empresas de todos los tamaños. Honorarios desde $500.000 COP según complejidad del caso.\n\nConsulta inicial sin costo: WhatsApp +19034598763',
     500000.00, 'negotiable', 'COP', 'active', now(),
     ARRAY['servicio','dian','fiscal','tributario','colombia','maia-management'],
     '[{"url":"/images/maia-management.jpg","alt":"Consultoría DIAN","order":0}]'
@@ -2821,7 +2821,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_otros_serv, v_loc_smt,
     'Reclutamiento y Colocación de Personal — Costa Caribe | Maia Management',
     'reclutamiento-colocacion-personal-costa-caribe-130',
-    E'Maia Management Group ofrece servicio de reclutamiento, selección y colocación de personal para empresas en Santa Marta y la Costa Caribe colombiana.\n\nQué ofrecemos:\n✓ Publicación de vacantes en múltiples canales\n✓ Filtro de hojas de vida y preselección\n✓ Entrevistas y pruebas psicotécnicas básicas\n✓ Verificación de referencias\n✓ Presentación de terna finalista\n✓ Apoyo en contratación y onboarding\n\nEspecialidad: hospitalidad, gastronomía, servicio al cliente, administrativo y técnico.\n\nTarifa: equivalente a 1 salario mensual bruto del cargo por candidato exitoso.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. ofrece servicio de reclutamiento, selección y colocación de personal para empresas en Santa Marta y la Costa Caribe colombiana.\n\nQué ofrecemos:\n✓ Publicación de vacantes en múltiples canales\n✓ Filtro de hojas de vida y preselección\n✓ Entrevistas y pruebas psicotécnicas básicas\n✓ Verificación de referencias\n✓ Presentación de terna finalista\n✓ Apoyo en contratación y onboarding\n\nEspecialidad: hospitalidad, gastronomía, servicio al cliente, administrativo y técnico.\n\nTarifa: equivalente a 1 salario mensual bruto del cargo por candidato exitoso.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['servicio','reclutamiento','seleccion','personal','rrhh','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Reclutamiento RRHH","order":0}]'
@@ -2845,7 +2845,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Liquidación de Nómina — Outsourcing Nómina Colombia | Maia Management',
     'liquidacion-nomina-outsourcing-colombia-132',
-    E'Maia Management Group ofrece servicio de outsourcing de nómina para empresas colombianas.\n\nServicio incluye:\n✓ Liquidación mensual de salarios\n✓ Cálculo de horas extras, recargos nocturnos y dominicales\n✓ Prestaciones sociales (cesantías, prima, vacaciones)\n✓ Planilla PILA (seguridad social)\n✓ Certificados laborales\n✓ Liquidaciones y paz y salvos\n\nDesde $600.000 COP/mes para empresas hasta 5 empleados. Precio escala según número de trabajadores.\n\nAtendemos empresas en toda Colombia de forma remota.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. ofrece servicio de outsourcing de nómina para empresas colombianas.\n\nServicio incluye:\n✓ Liquidación mensual de salarios\n✓ Cálculo de horas extras, recargos nocturnos y dominicales\n✓ Prestaciones sociales (cesantías, prima, vacaciones)\n✓ Planilla PILA (seguridad social)\n✓ Certificados laborales\n✓ Liquidaciones y paz y salvos\n\nDesde $600.000 COP/mes para empresas hasta 5 empleados. Precio escala según número de trabajadores.\n\nAtendemos empresas en toda Colombia de forma remota.\n\nWhatsApp: +19034598763',
     600000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','nomina','payroll','outsourcing','colombia','maia-management'],
     '[{"url":"/images/maia-management.jpg","alt":"Nómina Outsourcing","order":0}]'
@@ -2859,7 +2859,7 @@ BEGIN
     'cursos-habilidades-digitales-bootcamp-maia-masters-133',
     E'Maia Masters Academy ofrece bootcamps intensivos de habilidades digitales en Santa Marta para personas que quieren actualizarse o cambiar su perfil profesional.\n\nProgramas disponibles:\n📱 Marketing Digital y Redes Sociales — 4 semanas\n🤖 Inteligencia Artificial para el Trabajo — 3 semanas\n💼 Inglés para Negocios — 6 semanas\n🚀 Emprendimiento Digital — 4 semanas\n\nTarifas: desde $1.000.000 COP por módulo / $2.200.000 COP programa completo.\nGrupos pequeños, aprendizaje práctico, certificado de finalización.\nSede: Centro Histórico, Santa Marta.\n\nInformación e inscripciones: WhatsApp +19034598763',
     1000000.00, 'fixed', 'COP', 'active', now(),
-    ARRAY['educacion','curso','digital','marketing','ia','ingles','santa-marta','maia-masters'],
+    ARRAY['educacion','curso','digital','marketing','automatizacion','ingles','santa-marta','maia-masters'],
     '[{"url":"/images/maia-masters.jpg","alt":"Maia Masters Academy","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
@@ -2879,9 +2879,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images, is_nationwide)
   VALUES (v_sel_mgmt, v_cat_diseno, NULL,
-    'Consultoría de Marca y Marketing para Negocios — Maia Management Group',
+    'Consultoría de Marca y Marketing para Negocios — Maia Management S.A.S.',
     'consultoria-marca-marketing-negocios-maia-management-135',
-    E'Maia Management Group ofrece consultoría estratégica de marca y marketing para negocios en Colombia y la región.\n\nQué incluye:\n• Diagnóstico de marca actual\n• Definición de propuesta de valor y posicionamiento\n• Estrategia de contenido para redes sociales\n• Plan de marketing digital (Meta Ads, Google Ads, SEO básico)\n• Diseño o rediseño de identidad visual\n• Acompañamiento mensual\n\nAtendemos restaurantes, hoteles, clínicas, academias y negocios de servicios.\n\nHonorarios desde $2.500.000 COP por proyecto o desde $1.500.000 COP/mes de acompañamiento.\n\nAgenda tu consulta inicial gratuita: WhatsApp +19034598763',
+    E'Maia Management S.A.S. ofrece consultoría estratégica de marca y marketing para negocios en Colombia y la región.\n\nQué incluye:\n• Diagnóstico de marca actual\n• Definición de propuesta de valor y posicionamiento\n• Estrategia de contenido para redes sociales\n• Plan de marketing digital (Meta Ads, Google Ads, SEO básico)\n• Diseño o rediseño de identidad visual\n• Acompañamiento mensual\n\nAtendemos restaurantes, hoteles, clínicas, academias y negocios de servicios.\n\nHonorarios desde $2.500.000 COP por proyecto o desde $1.500.000 COP/mes de acompañamiento.\n\nAgenda tu consulta inicial gratuita: WhatsApp +19034598763',
     2500000.00, 'negotiable', 'COP', 'active', now(),
     ARRAY['servicio','marca','marketing','estrategia','branding','colombia'],
     '[{"url":"/images/maia-management.jpg","alt":"Consultoría Marca","order":0}]',
@@ -2911,7 +2911,7 @@ BEGIN
   VALUES (v_sel_bevida, v_cat_materiales, v_loc_smt,
     'Be Vida Drinks — Bebidas Tropicales en Barril Sankey 20L (Canal B2B)',
     'be-vida-drinks-barril-sankey-20l-b2b-137',
-    E'Be Vida Botánicas pone a disposición del canal B2B (bares, hoteles, restaurantes y tiendas) nuestras bebidas RTD en formato Sankey 20L.\n\nProductos disponibles:\n🌿 Cóctel tropical de guanábana y jengibre\n🍍 Cóctel de piña y hierbabuena con toque de ron\n🌺 Agua de Jamaica con jengibre y menta\n🍋 Limonada de coco con maracuyá\n\nFormato Sankey 20L — listo para conectar a tu grifo. Mínimo de pedido: 2 barriles por referencia.\n\nInteresados en distribución o punto de venta: WhatsApp +19034598763\nMuestras disponibles para prueba.',
+    E'Be Vida pone a disposición del canal B2B (bares, hoteles, restaurantes y tiendas) nuestras bebidas RTD en formato Sankey 20L.\n\nProductos disponibles:\n🌿 Cóctel tropical de guanábana y jengibre\n🍍 Cóctel de piña y hierbabuena con toque de ron\n🌺 Agua de Jamaica con jengibre y menta\n🍋 Limonada de coco con maracuyá\n\nFormato Sankey 20L — listo para conectar a tu grifo. Mínimo de pedido: 2 barriles por referencia.\n\nInteresados en distribución o punto de venta: WhatsApp +19034598763\nMuestras disponibles para prueba.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['venta','be-vida','bebidas','barril','sankey','b2b','tropical','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Drinks Barril","order":0}]'
@@ -2923,7 +2923,7 @@ BEGIN
   VALUES (v_sel_bevida, v_cat_materiales, v_loc_smt,
     'Be Vida Shots — Tubos de Fruta Tropical Sellados | Venta al por Mayor',
     'be-vida-shots-fruta-tropical-venta-mayor-138',
-    E'Be Vida Botánicas lanza su línea de Shots de Fruta Tropical en tubos sellados, ideales para venta en bares, playas, tiendas y eventos.\n\nVariedades:\n• Maracuyá + ginger + toque de ron\n• Guayaba + cítrico + hierbabuena\n• Mango + ají + limón\n• Tamarindo + panela + lima\n\nFormatos de venta:\n• Pack x4 shots — venta al detal\n• Pack x10 shots — venta horeca/tiendas\n• Caja x60 shots — venta mayorista\n\nProducto artesanal, sin conservantes artificiales. Fecha de vencimiento: 30 días refrigerado.\n\nPedidos y distribución: WhatsApp +19034598763',
+    E'Be Vida lanza su línea de Shots de Fruta Tropical en tubos sellados, ideales para venta en bares, playas, tiendas y eventos.\n\nVariedades:\n• Maracuyá + ginger + toque de ron\n• Guayaba + cítrico + hierbabuena\n• Mango + ají + limón\n• Tamarindo + panela + lima\n\nFormatos de venta:\n• Pack x4 shots — venta al detal\n• Pack x10 shots — venta horeca/tiendas\n• Caja x60 shots — venta mayorista\n\nProducto artesanal, sin conservantes artificiales. Fecha de vencimiento: 30 días refrigerado.\n\nPedidos y distribución: WhatsApp +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['venta','be-vida','shots','fruta','tropical','bar','evento','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Shots","order":0}]'
@@ -2935,7 +2935,7 @@ BEGIN
   VALUES (v_sel_bevida, v_cat_materiales, v_loc_smt,
     'Majín Seasoning — Sazonador Artesanal en 3-Pack | Pre-Venta Santa Marta',
     'majin-seasoning-sazonador-artesanal-3pack-139',
-    E'¡Muy pronto! Majín es el sazonador artesanal de la Costa Caribe — mezcla de especias locales, chiles secos y toques tropicales desarrollada por el equipo de Be Vida Botánicas.\n\nFormato de lanzamiento: 3-pack de sobres individuales (perfecto para regalo o prueba).\n\nUsos: carnes a la parrilla, pollo al horno, mariscos, patacones, frito mixto y mucho más.\n\n⚠️ En espera de aprobación INVIMA — disponible en pre-venta con entrega estimada en 60 días.\n\nReserva tu 3-pack: WhatsApp +19034598763\nPromotores y distribuidores bienvenidos.',
+    E'¡Muy pronto! Majín es el sazonador artesanal de la Costa Caribe — mezcla de especias locales, chiles secos y toques tropicales desarrollada por el equipo de Be Vida.\n\nFormato de lanzamiento: 3-pack de sobres individuales (perfecto para regalo o prueba).\n\nUsos: carnes a la parrilla, pollo al horno, mariscos, patacones, frito mixto y mucho más.\n\n⚠️ En espera de aprobación INVIMA — disponible en pre-venta con entrega estimada en 60 días.\n\nReserva tu 3-pack: WhatsApp +19034598763\nPromotores y distribuidores bienvenidos.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['venta','majin','sazonador','condimento','artesanal','costa','santa-marta','preventa'],
     '[{"url":"/images/llave-labs.jpg","alt":"Majín Seasoning","order":0}]'
@@ -2959,9 +2959,9 @@ BEGIN
   VALUES (v_sel_masters, v_cat_talleres, v_loc_smt,
     'Inscripción a Bootcamp — Maia Masters Academy | Cohorte Cero Santa Marta',
     'inscripcion-bootcamp-maia-masters-cohorte-cero-141',
-    E'Inscríbete en la Cohorte Cero de Maia Masters Academy — nuestro grupo fundador con descuento de lanzamiento.\n\n🎓 Programas disponibles:\n• Marketing Digital + IA: 6 semanas — $1.800.000 COP\n• Inglés para Negocios: 8 semanas — $1.400.000 COP  \n• Emprendimiento Digital: 4 semanas — $1.000.000 COP\n• Programa Completo: $2.200.000 COP (ahorra $1.000.000)\n\nCohorte Cero: grupos máximo 15 personas, atención personalizada, sesiones prácticas, certificado digital.\n\n📍 Sede: Centro Histórico, Santa Marta\n🗓️ Inicio: próxima fecha disponible — consultar\n\n¿Quieres más información? WhatsApp +19034598763',
+    E'Inscríbete en la Cohorte Cero de Maia Masters Academy — nuestro grupo fundador con descuento de lanzamiento.\n\n🎓 Programas disponibles:\n• Marketing Digital y Automatización: 6 semanas — $1.800.000 COP\n• Inglés para Negocios: 8 semanas — $1.400.000 COP  \n• Emprendimiento Digital: 4 semanas — $1.000.000 COP\n• Programa Completo: $2.200.000 COP (ahorra $1.000.000)\n\nCohorte Cero: grupos máximo 15 personas, atención personalizada, sesiones prácticas, certificado digital.\n\n📍 Sede: Centro Histórico, Santa Marta\n🗓️ Inicio: próxima fecha disponible — consultar\n\n¿Quieres más información? WhatsApp +19034598763',
     1000000.00, 'fixed', 'COP', 'active', now(),
-    ARRAY['educacion','bootcamp','maia-masters','digital','ia','ingles','santa-marta'],
+    ARRAY['educacion','bootcamp','maia-masters','digital','automatizacion','ingles','santa-marta'],
     '[{"url":"/images/maia-masters.jpg","alt":"Maia Masters Inscripción","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
@@ -2999,7 +2999,7 @@ BEGIN
   VALUES (v_sel_bevida, v_cat_bodegas, v_loc_smt,
     'SE BUSCA: Bodega Industrial para Producción de Bebidas — Barranquilla o Santa Marta',
     'se-busca-bodega-industrial-produccion-bebidas-144',
-    E'Be Vida Botánicas busca bodega o local industrial para expandir la capacidad de producción de nuestra línea de bebidas artesanales RTD.\n\nCaracterísticas requeridas:\n• Área: 200–600 m²\n• Zona industrial o semiindustrial (no residencial)\n• Tres fases eléctricas disponibles\n• Piso en concreto liso, fácil de lavar\n• Baños y zona de vestieres para operarios\n• Acceso para camión de carga\n\nUbicación ideal: Barranquilla zona industrial (Murillo, Galapa) o Santa Marta área de Mamatoco / Terminal.\n\nSe evalúan: arriendo mensual o arriendo con opción de compra.\n\nContacto: WhatsApp +19034598763',
+    E'Be Vida busca bodega o local industrial para expandir la capacidad de producción de nuestra línea de bebidas artesanales RTD.\n\nCaracterísticas requeridas:\n• Área: 200–600 m²\n• Zona industrial o semiindustrial (no residencial)\n• Tres fases eléctricas disponibles\n• Piso en concreto liso, fácil de lavar\n• Baños y zona de vestieres para operarios\n• Acceso para camión de carga\n\nUbicación ideal: Barranquilla zona industrial (Murillo, Galapa) o Santa Marta área de Mamatoco / Terminal.\n\nSe evalúan: arriendo mensual o arriendo con opción de compra.\n\nContacto: WhatsApp +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['inmueble','bodega','industrial','produccion','barranquilla','santa-marta','be-vida'],
     '[{"url":"/images/placeholder.jpg","alt":"Bodega Industrial","order":0}]'
@@ -3039,7 +3039,7 @@ BEGIN
   VALUES (v_sel_masters, v_cat_eventos_loc, v_loc_smt,
     'Jornada de Puertas Abiertas — Maia Masters Academy | Próximamente Santa Marta',
     'puertas-abiertas-maia-masters-academy-santa-marta-147',
-    E'¡Te invitamos a conocer Maia Masters Academy antes de inscribirte!\n\n📅 Jornada de Puertas Abiertas — próxima fecha a confirmar\n📍 Centro Histórico, Santa Marta (dirección por WhatsApp)\n\nEn la jornada podrás:\n• Conocer las instalaciones y el equipo de instructores\n• Asistir a una clase demo de 30 minutos\n• Resolver tus dudas sobre los programas y costos\n• Inscribirte con precio de Cohorte Cero (descuento de lanzamiento)\n\nCursos disponibles: Marketing Digital, IA para el Trabajo, Inglés para Negocios, Emprendimiento Digital.\n\n🎁 Asistentes a la jornada: clase bonus incluida en la primera semana.\n\nReserva tu lugar (cupos limitados): WhatsApp +19034598763',
+    E'¡Te invitamos a conocer Maia Masters Academy antes de inscribirte!\n\n📅 Jornada de Puertas Abiertas — próxima fecha a confirmar\n📍 Centro Histórico, Santa Marta (dirección por WhatsApp)\n\nEn la jornada podrás:\n• Conocer las instalaciones y el equipo de instructores\n• Asistir a una clase demo de 30 minutos\n• Resolver tus dudas sobre los programas y costos\n• Inscribirte con precio de Cohorte Cero (descuento de lanzamiento)\n\nCursos disponibles: Marketing Digital, automatización para el Trabajo, Inglés para Negocios, Emprendimiento Digital.\n\n🎁 Asistentes a la jornada: clase bonus incluida en la primera semana.\n\nReserva tu lugar (cupos limitados): WhatsApp +19034598763',
     NULL, 'free', 'COP', 'active', now(),
     ARRAY['evento','puertas-abiertas','maia-masters','academia','digital','santa-marta'],
     '[{"url":"/images/maia-masters.jpg","alt":"Maia Masters Puertas Abiertas","order":0}]'
@@ -3061,9 +3061,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_varios, v_loc_smt,
-    'Be Vida Botánicas — Convocatoria de Distribuidores y Clientes B2B | Santa Marta',
+    'Be Vida — Convocatoria de Distribuidores y Clientes B2B | Santa Marta',
     'be-vida-botanicas-convocatoria-distribuidores-b2b-149',
-    E'Be Vida Botánicas abre convocatoria para distribuidores y clientes B2B en Santa Marta y la Costa Caribe.\n\nSomos una productora artesanal de bebidas tropicales RTD (ready-to-drink): cócteles botánicos en barril Sankey 20L y shots de fruta sellados.\n\n¿A quién buscamos?\n🍹 Bares y coctelerías que quieran añadir líneas artesanales locales\n🏨 Hoteles y resorts que busquen bebidas premium locales para su oferta\n🛒 Tiendas y licorerías interesadas en distribución\n🚚 Distribuidores de bebidas con red de clientes en la Costa\n\nCondiciones comerciales: precio mayorista, crédito a 15 días para cuentas establecidas, muestra sin costo para primeros pedidos.\n\nContáctanos: WhatsApp +19034598763\n¡Apoya lo artesanal, apoya la Costa!',
+    E'Be Vida abre convocatoria para distribuidores y clientes B2B en Santa Marta y la Costa Caribe.\n\nSomos una productora artesanal de bebidas tropicales RTD (ready-to-drink): cócteles botánicos en barril Sankey 20L y shots de fruta sellados.\n\n¿A quién buscamos?\n🍹 Bares y coctelerías que quieran añadir líneas artesanales locales\n🏨 Hoteles y resorts que busquen bebidas premium locales para su oferta\n🛒 Tiendas y licorerías interesadas en distribución\n🚚 Distribuidores de bebidas con red de clientes en la Costa\n\nCondiciones comerciales: precio mayorista, crédito a 15 días para cuentas establecidas, muestra sin costo para primeros pedidos.\n\nContáctanos: WhatsApp +19034598763\n¡Apoya lo artesanal, apoya la Costa!',
     NULL, 'free', 'COP', 'active', now(),
     ARRAY['anuncio','be-vida','b2b','distribuidores','bebidas','santa-marta','artesanal'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida B2B","order":0}]'
@@ -3134,7 +3134,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'SE BUSCA: Contador/a Público/a — Contrato o Outsourcing | Grupo Maia Santa Marta',
     'se-busca-contador-publico-outsourcing-grupo-maia-152',
-    E'Maia Management Group busca Contador/a Público/a para apoyar la gestión contable y tributaria del grupo empresarial (restaurante, academia, productora de bebidas, firma jurídica e inmobiliaria).\n\nQué necesitamos:\n• Revisión y firma de estados financieros mensuales\n• Declaraciones tributarias: IVA, retención en la fuente, renta\n• Asesoría en planeación fiscal para el grupo\n• Acompañamiento en auditorías o requerimientos DIAN\n• Firma como Contador Público Certificado en documentos oficiales\n\nModalidad: outsourcing (no se requiere presencia diaria). 10–20 horas mensuales estimadas.\nTarjeta profesional vigente indispensable.\n\nHonorarios a convenir según alcance. Preferimos contador con experiencia en hostelería o servicios.\n\nHoja de vida y tarjeta profesional por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Contador/a Público/a para apoyar la gestión contable y tributaria del grupo empresarial (restaurante, academia, productora de bebidas, firma jurídica e inmobiliaria).\n\nQué necesitamos:\n• Revisión y firma de estados financieros mensuales\n• Declaraciones tributarias: IVA, retención en la fuente, renta\n• Asesoría en planeación fiscal para el grupo\n• Acompañamiento en auditorías o requerimientos DIAN\n• Firma como Contador Público Certificado en documentos oficiales\n\nModalidad: outsourcing (no se requiere presencia diaria). 10–20 horas mensuales estimadas.\nTarjeta profesional vigente indispensable.\n\nHonorarios a convenir según alcance. Preferimos contador con experiencia en hostelería o servicios.\n\nHoja de vida y tarjeta profesional por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','contador','contable','tributario','outsourcing','santa-marta','grupo-maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Contador Público","order":0}]'
@@ -3148,7 +3148,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_juridico, v_loc_smt,
     'SE BUSCA: Abogado/a Externo — Litigios y Casos Especiales | Grupo Maia',
     'se-busca-abogado-externo-litigios-grupo-maia-153',
-    E'Maia Management Group y sus empresas buscan abogado o firma de abogados para apoyo jurídico externo en áreas complementarias a las de Maia Legal.\n\nÁreas de interés:\n• Derecho laboral — defensa en demandas laborales\n• Derecho administrativo y permisos municipales (Curaduria, Planeación, Bomberos)\n• Litigios comerciales y cobros de cartera\n• Derecho de propiedad intelectual (marcas, nombres comerciales)\n• Contratos de arrendamiento comercial\n\nBuscamos abogado con tarjeta profesional vigente, experiencia práctica en Santa Marta y disponibilidad para atender casos con relativa rapidez. Se paga por caso o bajo esquema de retainer mensual.\n\nHoja de vida y referencias por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. y sus empresas buscan abogado o firma de abogados para apoyo jurídico externo en áreas complementarias a las de Maia Legal.\n\nÁreas de interés:\n• Derecho laboral — defensa en demandas laborales\n• Derecho administrativo y permisos municipales (Curaduria, Planeación, Bomberos)\n• Litigios comerciales y cobros de cartera\n• Derecho de propiedad intelectual (marcas, nombres comerciales)\n• Contratos de arrendamiento comercial\n\nBuscamos abogado con tarjeta profesional vigente, experiencia práctica en Santa Marta y disponibilidad para atender casos con relativa rapidez. Se paga por caso o bajo esquema de retainer mensual.\n\nHoja de vida y referencias por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','abogado','juridico','litigios','laboral','santa-marta','grupo-maia'],
     '[{"url":"/images/maia-legal.jpg","alt":"Abogado Externo","order":0}]'
@@ -3162,7 +3162,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_serv_tech, NULL,
     'SE BUSCA: Desarrollador/a Web Freelance — Proyectos del Grupo Maia (Remoto)',
     'se-busca-desarrollador-web-freelance-grupo-maia-154',
-    E'Maia Management Group busca desarrollador/a web freelance para proyectos puntuales de sus marcas (El Sanatorio, Be Vida, Trivium Magnum, Maia Masters, LlevaLleva y más).\n\nTipos de trabajo:\n• Landing pages de eventos y lanzamientos\n• Actualizaciones a sitios existentes (WordPress, Webflow, Next.js)\n• Integraciones de WhatsApp Business, Google Analytics y píxeles de Meta\n• Formularios de contacto e inscripción\n• Optimización de velocidad y SEO técnico básico\n\nRequisitos:\n• Portafolio con proyectos reales y funcionales\n• Entrega puntual y comunicación clara\n• Dominio de al menos uno de: WordPress, Webflow, Next.js o React\n• Disponibilidad para proyectos de 1–4 semanas\n\nTrabajo 100% remoto. Pago por proyecto en COP o USD.\n\nPortafolio y tarifas por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca desarrollador/a web freelance para proyectos puntuales de sus marcas (El Sanatorio, Be Vida, Trivium Magnum, Maia Masters, LlevaLleva y más).\n\nTipos de trabajo:\n• Landing pages de eventos y lanzamientos\n• Actualizaciones a sitios existentes (WordPress, Webflow, Next.js)\n• Integraciones de WhatsApp Business, Google Analytics y píxeles de Meta\n• Formularios de contacto e inscripción\n• Optimización de velocidad y SEO técnico básico\n\nRequisitos:\n• Portafolio con proyectos reales y funcionales\n• Entrega puntual y comunicación clara\n• Dominio de al menos uno de: WordPress, Webflow, Next.js o React\n• Disponibilidad para proyectos de 1–4 semanas\n\nTrabajo 100% remoto. Pago por proyecto en COP o USD.\n\nPortafolio y tarifas por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','desarrollador','web','freelance','wordpress','nextjs','remoto','grupo-maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Desarrollador Web","order":0}]',

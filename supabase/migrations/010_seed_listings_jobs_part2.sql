@@ -69,8 +69,8 @@ BEGIN
   -- ============================================================
 
   UPDATE profiles SET
-    display_name   = 'Be Vida Botánicas',
-    business_name  = 'Be Vida Botánicas',
+    display_name   = 'Be Vida',
+    business_name  = 'Be Vida',
     bio            = 'Productora artesanal de bebidas RTD (ready-to-drink) de la Costa Caribe. Cócteles botánicos, shots de fruta tropical y bebidas de barril en formato Sankey 20L para el canal B2B. Santa Marta, Colombia.',
     updated_at     = now()
   WHERE id = v_sel_bevida;
@@ -127,9 +127,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Reclutamiento | Maia Management Group',
+    'Coordinador/a de Reclutamiento | Maia Management S.A.S.',
     'coordinador-reclutamiento-maia-management-63',
-    E'Maia Management Group busca Coordinador/a de Reclutamiento para gestionar los procesos de selección del grupo empresarial y sus empresas aliadas.\n\nFunciones: publicación de vacantes, filtro de hojas de vida, coordinación de entrevistas, verificación de referencias, onboarding de nuevos colaboradores.\n\nRequisitos: tecnólogo o profesional en psicología, administración o gestión humana; experiencia mínima 1 año en selección de personal; manejo de LinkedIn Recruiter y WhatsApp Business.\n\nSalario: $1.800.000 – $2.300.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Coordinador/a de Reclutamiento para gestionar los procesos de selección del grupo empresarial y sus empresas aliadas.\n\nFunciones: publicación de vacantes, filtro de hojas de vida, coordinación de entrevistas, verificación de referencias, onboarding de nuevos colaboradores.\n\nRequisitos: tecnólogo o profesional en psicología, administración o gestión humana; experiencia mínima 1 año en selección de personal; manejo de LinkedIn Recruiter y WhatsApp Business.\n\nSalario: $1.800.000 – $2.300.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','reclutamiento','rrhh','seleccion','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management RRHH","order":0}]'
@@ -142,9 +142,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Office Manager | Maia Management Group — Santa Marta',
+    'Office Manager | Maia Management S.A.S. — Santa Marta',
     'office-manager-maia-management-64',
-    E'Maia Management Group busca Office Manager para coordinar el funcionamiento de nuestras oficinas centrales en Santa Marta.\n\nFunciones: gestión de proveedores de servicios de oficina, control de suministros, coordinación de mantenimiento, apoyo logístico a la gerencia, organización de reuniones y viajes corporativos.\n\nRequisitos: mínimo 2 años en cargo similar, inglés intermedio, manejo avanzado de Google Workspace, capacidad de tomar decisiones con autonomía.\n\nSalario: $2.000.000 – $2.800.000 COP/mes + prestaciones completas.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Office Manager para coordinar el funcionamiento de nuestras oficinas centrales en Santa Marta.\n\nFunciones: gestión de proveedores de servicios de oficina, control de suministros, coordinación de mantenimiento, apoyo logístico a la gerencia, organización de reuniones y viajes corporativos.\n\nRequisitos: mínimo 2 años en cargo similar, inglés intermedio, manejo avanzado de Google Workspace, capacidad de tomar decisiones con autonomía.\n\nSalario: $2.000.000 – $2.800.000 COP/mes + prestaciones completas.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','office-manager','administracion','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Oficina","order":0}]'
@@ -157,54 +157,54 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Asesor/a Bilingüe de Servicio al Cliente | Maia Management Group',
+    'Asesor/a Bilingüe de Servicio al Cliente | Maia Management S.A.S.',
     'asesor-bilingue-servicio-cliente-maia-65',
-    E'Maia Management Group busca Asesor/a de Servicio al Cliente bilingüe español-inglés para atender a nuestra clientela nacional e internacional.\n\nFunciones: atención por WhatsApp, correo y presencial; resolución de consultas y quejas; direccionamiento a las áreas correctas del grupo (legal, realty, academia).\n\nRequisitos: inglés fluido (escrito y hablado — se evalúa), excelente comunicación, paciencia y orientación al servicio, experiencia mínima 1 año en atención al cliente.\n\nSalario: $1.800.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Asesor/a de Servicio al Cliente bilingüe español-inglés para atender a nuestra clientela nacional e internacional.\n\nFunciones: atención por WhatsApp, correo y presencial; resolución de consultas y quejas; direccionamiento a las áreas correctas del grupo (legal, realty, academia).\n\nRequisitos: inglés fluido (escrito y hablado — se evalúa), excelente comunicación, paciencia y orientación al servicio, experiencia mínima 1 año en atención al cliente.\n\nSalario: $1.800.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','bilingue','servicio-cliente','ingles','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Atención","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- BE VIDA BOTÁNICAS — Production Supervisor (#66)
+  -- BE VIDA — Production Supervisor (#66)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_empleo, v_loc_smt,
-    'Supervisor/a de Producción — Bebidas RTD | Be Vida Botánicas',
+    'Supervisor/a de Producción — Bebidas RTD | Be Vida',
     'supervisor-produccion-be-vida-66',
-    E'Be Vida Botánicas busca Supervisor/a de Producción para liderar el equipo operativo de nuestra planta de bebidas artesanales en Santa Marta.\n\nFunciones: planificación de producción por lotes, supervisión del proceso desde recepción de materia prima hasta empaque, control de BPM, gestión de turnos de operarios.\n\nRequisitos: tecnólogo o profesional en ingeniería de alimentos, producción industrial o áreas afines; mínimo 2 años en cargos similares en industria de alimentos o bebidas; conocimiento de BPM y HACCP.\n\nSalario: $2.200.000 – $3.000.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca Supervisor/a de Producción para liderar el equipo operativo de nuestra planta de bebidas artesanales en Santa Marta.\n\nFunciones: planificación de producción por lotes, supervisión del proceso desde recepción de materia prima hasta empaque, control de BPM, gestión de turnos de operarios.\n\nRequisitos: tecnólogo o profesional en ingeniería de alimentos, producción industrial o áreas afines; mínimo 2 años en cargos similares en industria de alimentos o bebidas; conocimiento de BPM y HACCP.\n\nSalario: $2.200.000 – $3.000.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','be-vida','produccion','supervisor','bebidas','bpm','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Producción","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- BE VIDA BOTÁNICAS — QC Specialist (#67)
+  -- BE VIDA — QC Specialist (#67)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_empleo, v_loc_smt,
-    'Especialista de Control de Calidad — Bebidas | Be Vida Botánicas',
+    'Especialista de Control de Calidad — Bebidas | Be Vida',
     'especialista-qc-be-vida-67',
-    E'Be Vida Botánicas busca Especialista en Control de Calidad (QC) para garantizar que cada lote de nuestras bebidas cumpla con los estándares sensoriales, microbiológicos y de etiquetado.\n\nFunciones: análisis sensorial por lote, toma de muestras para laboratorio, verificación de etiquetado y fechas, gestión de no conformidades, apoyo en trámites INVIMA.\n\nRequisitos: profesional o tecnólogo en ciencias de alimentos, microbiología o afines; experiencia en QC de bebidas o alimentos; conocimiento de normativa INVIMA y BPM.\n\nSalario: $2.000.000 – $2.800.000 COP/mes.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca Especialista en Control de Calidad (QC) para garantizar que cada lote de nuestras bebidas cumpla con los estándares sensoriales, microbiológicos y de etiquetado.\n\nFunciones: análisis sensorial por lote, toma de muestras para laboratorio, verificación de etiquetado y fechas, gestión de no conformidades, apoyo en trámites INVIMA.\n\nRequisitos: profesional o tecnólogo en ciencias de alimentos, microbiología o afines; experiencia en QC de bebidas o alimentos; conocimiento de normativa INVIMA y BPM.\n\nSalario: $2.000.000 – $2.800.000 COP/mes.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','be-vida','calidad','qc','invima','bebidas','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Control Calidad","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- BE VIDA BOTÁNICAS — Warehouse & Logistics Lead (#68)
+  -- BE VIDA — Warehouse & Logistics Lead (#68)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_bevida, v_cat_empleo, v_loc_smt,
-    'Jefe de Bodega y Logística | Be Vida Botánicas — Santa Marta',
+    'Jefe de Bodega y Logística | Be Vida — Santa Marta',
     'jefe-bodega-logistica-be-vida-68',
-    E'Be Vida Botánicas busca Jefe de Bodega y Logística para controlar el inventario de materias primas y producto terminado, y coordinar las entregas B2B en la región.\n\nFunciones: control de inventario (entradas y salidas), gestión de bodega con FIFO, coordinación de despachos a bares, hoteles y distribuidores, relación con transportistas y mensajeros.\n\nRequisitos: tecnólogo en logística, administración o afines; experiencia mínima 2 años en bodega o logística; manejo de Excel o software de inventario; licencia de conducción deseable.\n\nSalario: $1.900.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Be Vida busca Jefe de Bodega y Logística para controlar el inventario de materias primas y producto terminado, y coordinar las entregas B2B en la región.\n\nFunciones: control de inventario (entradas y salidas), gestión de bodega con FIFO, coordinación de despachos a bares, hoteles y distribuidores, relación con transportistas y mensajeros.\n\nRequisitos: tecnólogo en logística, administración o afines; experiencia mínima 2 años en bodega o logística; manejo de Excel o software de inventario; licencia de conducción deseable.\n\nSalario: $1.900.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','be-vida','bodega','logistica','inventario','santa-marta'],
     '[{"url":"/images/llave-labs.jpg","alt":"Be Vida Bodega","order":0}]'
@@ -279,7 +279,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, NULL,
     'Diseñador/a Gráfico/a — Grupo Maia | Freelance o Parcial',
     'disenador-grafico-grupo-maia-73',
-    E'Maia Management Group busca Diseñador/a Gráfico/a para apoyar las marcas del grupo: El Sanatorio, Be Vida, Maia Masters Academy, Trivium Magnum y LlevaLleva.\n\nTrabajos frecuentes: diseño de piezas para redes sociales, flyers de eventos, menús, identidad visual y material impreso.\n\nRequisitos: dominio de Adobe Illustrator y Photoshop (o Affinity equivalente), portafolio variado, entrega puntual, disposición para trabajar con briefings creativos específicos por marca.\n\nModalidad: freelance por proyecto o parcial (10–20 hrs/semana). Pago en COP por entregable.\n\nPortafolio + tarifa por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Diseñador/a Gráfico/a para apoyar las marcas del grupo: El Sanatorio, Be Vida, Maia Masters Academy, Trivium Magnum y LlevaLleva.\n\nTrabajos frecuentes: diseño de piezas para redes sociales, flyers de eventos, menús, identidad visual y material impreso.\n\nRequisitos: dominio de Adobe Illustrator y Photoshop (o Affinity equivalente), portafolio variado, entrega puntual, disposición para trabajar con briefings creativos específicos por marca.\n\nModalidad: freelance por proyecto o parcial (10–20 hrs/semana). Pago en COP por entregable.\n\nPortafolio + tarifa por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','diseno','grafico','freelance','marcas','remoto','maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Diseño Gráfico Maia","order":0}]',
@@ -295,7 +295,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, NULL,
     'Community Manager / Social Media Manager — Grupo Maia',
     'community-manager-grupo-maia-74',
-    E'Maia Management Group busca Community Manager para gestionar las redes sociales de las marcas del grupo en Instagram y TikTok principalmente.\n\nFunciones: publicación de contenido (en coordinación con diseñador y fotógrafo), respuesta a comentarios y mensajes, reportes mensuales de métricas, propuestas de contenido.\n\nRequisitos: experiencia comprobable manejando cuentas de negocio, conocimiento de Meta Business Suite, creatividad para adaptar el tono por marca (horror/gourmet para El Sanatorio, tropical para Be Vida, académico para Masters).\n\nModalidad: remoto. Salario: $1.500.000 – $2.200.000 COP/mes según experiencia.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Community Manager para gestionar las redes sociales de las marcas del grupo en Instagram y TikTok principalmente.\n\nFunciones: publicación de contenido (en coordinación con diseñador y fotógrafo), respuesta a comentarios y mensajes, reportes mensuales de métricas, propuestas de contenido.\n\nRequisitos: experiencia comprobable manejando cuentas de negocio, conocimiento de Meta Business Suite, creatividad para adaptar el tono por marca (horror/gourmet para El Sanatorio, tropical para Be Vida, académico para Masters).\n\nModalidad: remoto. Salario: $1.500.000 – $2.200.000 COP/mes según experiencia.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','community-manager','redes-sociales','instagram','tiktok','remoto','maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Social Media Maia","order":0}]',
@@ -311,7 +311,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, v_loc_smt,
     'Fotógrafo/a y Videoasta — Marcas Maia | Santa Marta (Freelance)',
     'fotografo-videoasta-grupo-maia-75',
-    E'Maia Management Group busca Fotógrafo/a y Videoasta freelance basado/a en Santa Marta para cubrir los proyectos visuales del grupo.\n\nProyectos: fotografía gastronómica para El Sanatorio, videos de producto para Be Vida, contenido de campus para Trivium Magnum, fotografia de inmuebles para Maia Realty.\n\nRequisitos: equipo propio (cámara mirrorless o DSLR, iluminación básica), edición en Lightroom y Premiere/CapCut, portafolio variado, disponibilidad para sesiones en sitio.\n\nPago por sesión según tipo de proyecto. Tarifas a convenir.\n\nPortafolio por WhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Fotógrafo/a y Videoasta freelance basado/a en Santa Marta para cubrir los proyectos visuales del grupo.\n\nProyectos: fotografía gastronómica para El Sanatorio, videos de producto para Be Vida, contenido de campus para Trivium Magnum, fotografia de inmuebles para Maia Realty.\n\nRequisitos: equipo propio (cámara mirrorless o DSLR, iluminación básica), edición en Lightroom y Premiere/CapCut, portafolio variado, disponibilidad para sesiones en sitio.\n\nPago por sesión según tipo de proyecto. Tarifas a convenir.\n\nPortafolio por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','fotografo','video','freelance','gastronomia','inmobiliaria','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Fotografía Maia","order":0}]'
@@ -324,9 +324,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Técnico/a de Soporte IT | Maia Management Group — Santa Marta',
+    'Técnico/a de Soporte IT | Maia Management S.A.S. — Santa Marta',
     'tecnico-soporte-it-maia-management-76',
-    E'Maia Management Group busca Técnico de Soporte IT para dar soporte tecnológico a las oficinas y negocios del grupo en Santa Marta.\n\nFunciones: mantenimiento de computadores y periféricos, soporte de red Wi-Fi y cableado estructurado, configuración de sistemas POS, soporte a usuarios en herramientas Google Workspace y CRM.\n\nRequisitos: técnico o tecnólogo en sistemas, mínimo 1 año de experiencia en soporte técnico, capacidad de diagnóstico rápido, buena disposición con usuarios no técnicos.\n\nSalario: $1.600.000 – $2.200.000 COP/mes. Presencial Santa Marta con visitas a distintos locales del grupo.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Técnico de Soporte IT para dar soporte tecnológico a las oficinas y negocios del grupo en Santa Marta.\n\nFunciones: mantenimiento de computadores y periféricos, soporte de red Wi-Fi y cableado estructurado, configuración de sistemas POS, soporte a usuarios en herramientas Google Workspace y CRM.\n\nRequisitos: técnico o tecnólogo en sistemas, mínimo 1 año de experiencia en soporte técnico, capacidad de diagnóstico rápido, buena disposición con usuarios no técnicos.\n\nSalario: $1.600.000 – $2.200.000 COP/mes. Presencial Santa Marta con visitas a distintos locales del grupo.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','it','soporte','tecnologia','sistemas','santa-marta','tiempo-completo'],
     '[{"url":"/images/maia-management.jpg","alt":"IT Soporte Maia","order":0}]'
@@ -341,7 +341,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
     'Conductor/a Mensajero/a — Diligencias y Apoyo Logístico | Grupo Maia',
     'conductor-mensajero-grupo-maia-77',
-    E'Maia Management Group busca Conductor/Mensajero para apoyo logístico y diligencias del grupo empresarial en Santa Marta.\n\nFunciones: diligencias bancarias y ante entidades, entrega de documentos, apoyo en transporte de insumos y equipos entre los diferentes negocios del grupo, transporte ocasional de personal directivo.\n\nRequisitos: licencia de conducción B1 vigente, conocimiento de las vías de Santa Marta y municipios cercanos, puntualidad y confianza absoluta, vehículo propio deseable (se reconoce rodamiento).\n\nSalario: $1.423.500 – $1.700.000 COP/mes + auxilio de transporte + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management S.A.S. busca Conductor/Mensajero para apoyo logístico y diligencias del grupo empresarial en Santa Marta.\n\nFunciones: diligencias bancarias y ante entidades, entrega de documentos, apoyo en transporte de insumos y equipos entre los diferentes negocios del grupo, transporte ocasional de personal directivo.\n\nRequisitos: licencia de conducción B1 vigente, conocimiento de las vías de Santa Marta y municipios cercanos, puntualidad y confianza absoluta, vehículo propio deseable (se reconoce rodamiento).\n\nSalario: $1.423.500 – $1.700.000 COP/mes + auxilio de transporte + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','conductor','mensajero','logistica','santa-marta','tiempo-completo'],
     '[{"url":"/images/maia-management.jpg","alt":"Conductor Maia","order":0}]'

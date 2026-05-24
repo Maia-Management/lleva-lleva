@@ -32,7 +32,9 @@ export default function Footer() {
             <p className="text-white font-semibold text-sm mb-3">LlevaLleva</p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/publicar" className="hover:text-brand-yellow transition-colors">Publicar gratis</Link></li>
+              <li><Link href="/cuanto-vale" className="hover:text-brand-yellow transition-colors">¿Cuánto vale?</Link></li>
               <li><Link href="/como-funciona" className="hover:text-brand-yellow transition-colors">¿Cómo funciona?</Link></li>
+              <li><Link href="/sobre-nosotros" className="hover:text-brand-yellow transition-colors">Sobre nosotros</Link></li>
               <li><Link href="/seguridad" className="hover:text-brand-yellow transition-colors">Consejos de seguridad</Link></li>
               <li><Link href="/terminos" className="hover:text-brand-yellow transition-colors">Términos y condiciones</Link></li>
               <li><Link href="/privacidad" className="hover:text-brand-yellow transition-colors">Política de privacidad</Link></li>

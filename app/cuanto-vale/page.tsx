@@ -72,7 +72,7 @@ export default function CuantoValePage() {
           por esto?
         </h1>
         <p className="text-gray-500 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
-          Describe lo que quieres vender y Gemini buscará precios actuales en{' '}
+          Describe lo que quieres vender y nuestra herramienta buscará precios actuales en{' '}
           <span className="font-semibold text-gray-700">
             Mercado Libre, OLX, Facebook Marketplace
           </span>{' '}

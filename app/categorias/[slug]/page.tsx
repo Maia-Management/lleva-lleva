@@ -101,8 +101,80 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
   if (!category) notFound();
 
+  const categoryUrl = `https://lleva-lleva.com/categorias/${category.slug}`;
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: 'https://lleva-lleva.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Categorías',
+        item: 'https://lleva-lleva.com/categorias',
+      },
+      ...(category.parent
+        ? [
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: category.parent.name_es,
+              item: `https://lleva-lleva.com/categorias/${category.parent.slug}`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              name: category.name_es,
+              item: categoryUrl,
+            },
+          ]
+        : [
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: category.name_es,
+              item: categoryUrl,
+            },
+          ]),
+    ],
+  };
+
+  const itemListSchema =
+    listings && listings.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: `${category.name_es} – Clasificados Colombia`,
+          itemListOrder: 'https://schema.org/ItemListUnordered',
+          numberOfItems: listings.length,
+          itemListElement: listings.slice(0, 24).map((l, i) => ({
+            '@type': 'ListItem',
+            position: (page - 1) * perPage + i + 1,
+            url: `https://lleva-lleva.com/listing/${l.slug}`,
+            name: l.title,
+          })),
+        }
+      : null;
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {itemListSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      )}
+
       {/* Breadcrumb */}
       <nav className="text-xs text-gray-500 mb-4 flex items-center gap-1.5">
         <Link href="/" className="hover:text-brand-blue">Inicio</Link>

@@ -2,18 +2,8 @@ import type { MetadataRoute } from 'next';
 
 const SITE_URL = 'https://lleva-lleva.com';
 
-const AI_BOTS = [
-  'GPTBot',
-  'herramientas digitales-User',
-  'Google-Extended',
-  'CCBot',
-  'anthropic-ai',
-  'Claude-Web',
-  'ClaudeBot',
-  'Omgilibot',
-  'FacebookBot',
-];
-
+// Estate standard (2026-05-23): allow all crawlers, including AI bots.
+// Only genuinely private routes (auth, dashboard) are disallowed.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -22,10 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/auth/', '/dashboard/'],
       },
-      ...AI_BOTS.map((userAgent) => ({
-        userAgent,
-        disallow: '/',
-      })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

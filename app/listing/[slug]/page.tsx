@@ -129,6 +129,104 @@ export default async function ListingPage({ params }: Props) {
   const categorySlug = (listing.category?.slug ?? '') + (listing.category?.slug_path ?? '');
   const isJobListing = JOB_SLUG_KEYWORDS.some((kw) => categorySlug.toLowerCase().includes(kw));
 
+  const listingUrl = `https://lleva-lleva.com/listing/${listing.slug}`;
+  const primaryImage =
+    (listing.images?.[0]?.url ?? null) ||
+    'https://lleva-lleva.com/og-image.png';
+  const allImages = (listing.images ?? [])
+    .map((img) => img?.url)
+    .filter((u): u is string => typeof u === 'string' && u.length > 0);
+
+  // BreadcrumbList — applies to every listing
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: 'https://lleva-lleva.com',
+      },
+      ...(listing.category
+        ? [
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: listing.category.name_es,
+              item: `https://lleva-lleva.com/categorias/${listing.category.slug}`,
+            },
+          ]
+        : []),
+      {
+        '@type': 'ListItem',
+        position: listing.category ? 3 : 2,
+        name: listing.title,
+        item: listingUrl,
+      },
+    ],
+  };
+
+  // Product / Offer schema for non-job listings with a real price
+  const SCHEMA_CONDITION: Record<string, string> = {
+    new: 'https://schema.org/NewCondition',
+    like_new: 'https://schema.org/UsedCondition',
+    good: 'https://schema.org/UsedCondition',
+    fair: 'https://schema.org/UsedCondition',
+    for_parts: 'https://schema.org/DamagedCondition',
+  };
+
+  const productSchema =
+    !isJobListing && listing.price != null && listing.price_type !== 'contact'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: listing.title,
+          description: listing.description?.slice(0, 5000) ?? listing.title,
+          image: allImages.length > 0 ? allImages : [primaryImage],
+          ...(listing.category ? { category: listing.category.name_es } : {}),
+          ...(listing.condition
+            ? { itemCondition: SCHEMA_CONDITION[listing.condition] ?? 'https://schema.org/UsedCondition' }
+            : {}),
+          ...(listing.seller?.business_name || listing.seller?.display_name
+            ? {
+                brand: {
+                  '@type': 'Brand',
+                  name: listing.seller.business_name ?? listing.seller.display_name,
+                },
+              }
+            : {}),
+          offers: {
+            '@type': 'Offer',
+            url: listingUrl,
+            priceCurrency: listing.currency ?? 'COP',
+            price: listing.price_type === 'free' ? 0 : listing.price,
+            availability:
+              listing.status === 'active'
+                ? 'https://schema.org/InStock'
+                : 'https://schema.org/SoldOut',
+            ...(listing.seller?.business_name || listing.seller?.display_name
+              ? {
+                  seller: {
+                    '@type':
+                      listing.seller.user_type === 'business' ? 'Organization' : 'Person',
+                    name:
+                      listing.seller.business_name ?? listing.seller.display_name,
+                  },
+                }
+              : {}),
+            ...(listing.location && !listing.is_nationwide
+              ? {
+                  areaServed: {
+                    '@type': 'City',
+                    name: listing.location.city,
+                  },
+                }
+              : { areaServed: { '@type': 'Country', name: 'Colombia' } }),
+          },
+        }
+      : null;
+
   const jobPostingSchema = isJobListing
     ? {
         '@context': 'https://schema.org',
@@ -182,6 +280,20 @@ export default async function ListingPage({ params }: Props) {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
+      {/* BreadcrumbList structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Product/Offer structured data for non-job listings */}
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      )}
+
       {/* JobPosting structured data for Google Jobs */}
       {jobPostingSchema && (
         <script

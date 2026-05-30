@@ -277,41 +277,41 @@ BEGIN
   -- JUNO HOUSE STUDIOS (21–23)
   -- ==============================================================
 
-  -- 21. Modelo de Contenido Digital — Trabajo desde Casa
+  -- 21. Programa de Talento para Creadores de Contenido
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images, is_nationwide)
   VALUES (v_sel_juno, v_cat_freelance, NULL,
-    'Modelo de Contenido Digital — Trabaja desde Casa | Juno House Studios',
+    'Programa de Talento para Creadores de Contenido | Juno House Studios',
     'modelo-contenido-digital-juno-house-21',
-    E'Juno House Studios invita a mujeres mayores de 18 años a unirse a nuestra red de creadores de contenido digital para adultos.\n\nTrabaja desde tu casa a tu propio ritmo. Nosotros gestionamos la plataforma, los pagos y el soporte técnico — tú te concentras en crear.\n\nBeneficios: 70% de los ingresos directamente para ti, privacidad garantizada, soporte personalizado en todo el proceso de onboarding, sin experiencia previa necesaria.\n\nAplicaciones solo por WhatsApp: +19034598763 (mayores de 18 años, foto de cédula requerida)',
+    E'Juno House Studios es una compañía de management de creadores con estudio de producción propio en Santa Marta. Buscamos talentos emergentes de redes sociales (Instagram, TikTok, YouTube) que quieran crecer con un plan real y un equipo detrás.\n\nQué ofrecemos:\n✓ Un plan de contenido y de carrera estructurado\n✓ Equipo de producción que graba y edita contigo\n✓ Manejo profesional de tus redes y tus marcas\n✓ Formalización legal y contable a través de las firmas del grupo Maia\n\nTrabajas desde donde estés, a tu ritmo, con acompañamiento real.\n\nPostulaciones por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
-    ARRAY['empleo','juno-house','modelo','contenido-digital','freelance','desde-casa'],
+    ARRAY['empleo','juno-house','creador-contenido','redes-sociales','talento','produccion'],
     '[{"url":"/images/juno-studios.jpg","alt":"Juno House Studios","order":0}]',
     TRUE
   );
 
-  -- 22. Coordinadora de Soporte a Modelos
+  -- 22. Coordinador/a de Talento y Creadores
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_juno, v_cat_empleo, v_loc_smt,
-    'Coordinadora de Soporte a Modelos | Juno House Studios',
+    'Coordinador/a de Talento y Creadores | Juno House Studios',
     'coordinadora-soporte-modelos-juno-house-22',
-    E'Juno House Studios busca Coordinadora de Soporte para acompañar a nuestros creadores de contenido en su proceso de onboarding y operación diaria.\n\nFunciones: onboarding de nuevos talentos, soporte en dudas de plataforma, seguimiento de desempeño, comunicación directa con modelos.\n\nRequisitos: empatía, discreción absoluta, manejo de WhatsApp Business, conocimiento básico de plataformas de contenido digital. Se valora experiencia en atención al cliente.\n\nTrabajo parcial, principalmente remoto. WhatsApp: +19034598763',
+    E'Juno House Studios busca Coordinador/a de Talento para acompañar a nuestros creadores en su proceso de incorporación y en su día a día.\n\nFunciones: onboarding de nuevos talentos, seguimiento de su plan de contenido y de crecimiento, comunicación directa con los creadores, coordinación con el equipo de producción.\n\nRequisitos: empatía, organización, excelente comunicación, manejo de WhatsApp Business y conocimiento de redes sociales (Instagram, TikTok, YouTube). Se valora experiencia en atención al cliente o manejo de comunidades.\n\nTrabajo parcial, principalmente remoto. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
-    ARRAY['empleo','juno-house','coordinadora','soporte','santa-marta','parcial'],
+    ARRAY['empleo','juno-house','coordinador','talento','redes-sociales','santa-marta','parcial'],
     '[{"url":"/images/juno-studios.jpg","alt":"Juno House Studios","order":0}]'
   );
 
-  -- 23. Operador/a de Plataformas Digitales
+  -- 23. Coordinador/a de Producción y Redes Sociales
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_juno, v_cat_empleo, v_loc_smt,
-    'Operador/a de Plataformas Digitales | Juno House Studios',
+    'Coordinador/a de Producción y Redes Sociales | Juno House Studios',
     'operador-plataformas-digitales-juno-house-23',
-    E'Buscamos Operador/a para gestión de cuentas en plataformas de contenido digital: publicaciones, análisis de métricas, optimización de perfiles y atención a suscriptores.\n\nRequisitos: comodidad trabajando con plataformas digitales para adultos, discreción total, organización, capacidad de manejar múltiples cuentas simultáneamente.\n\nConocimientos valorados: análisis de datos básico, copywriting en inglés y español, manejo de Canva o herramientas de edición simple.\n\nTrabajo parcial con posibilidad de tiempo completo. WhatsApp: +19034598763',
+    E'Juno House Studios busca Coordinador/a de Producción y Redes para la gestión de los canales de nuestros creadores: programación de publicaciones, análisis de métricas, optimización de perfiles y coordinación de las sesiones de grabación.\n\nRequisitos: organización, manejo de varias cuentas de redes sociales a la vez, análisis de datos básico, copywriting en español e inglés, manejo de Canva o herramientas de edición simple.\n\nTrabajo parcial con posibilidad de tiempo completo. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
-    ARRAY['empleo','juno-house','operador','plataformas','digital','santa-marta'],
-    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Plataformas","order":0}]'
+    ARRAY['empleo','juno-house','produccion','redes-sociales','contenido','santa-marta'],
+    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Producción","order":0}]'
   );
 
   -- ==============================================================

@@ -142,7 +142,7 @@ INSERT INTO profiles (
     'bot_juno_house',
     'Juno House Studios',
     'bot',
-    'Agencia de contenido digital. Apoyamos a creadores independientes con gestión de plataformas, soporte técnico y estrategia de monetización.',
+    'Compañía de management de creadores con estudio de producción propio en Santa Marta. Acompañamos a talentos emergentes con un plan de carrera, producción de contenido y formalización legal y contable a través de las firmas del grupo Maia.',
     'Juno House Studios',
     NULL,
     'Santa Marta', 'Magdalena',

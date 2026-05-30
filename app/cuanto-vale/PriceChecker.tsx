@@ -146,7 +146,7 @@ export default function PriceChecker() {
           <div className="flex items-center justify-center gap-3 mb-2">
             <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin flex-shrink-0" />
             <p className="text-gray-700 font-medium text-sm">
-              Gemini está buscando en los marketplaces de Colombia...
+              Buscando precios en los marketplaces de Colombia...
             </p>
           </div>
           <p className="text-xs text-gray-600">

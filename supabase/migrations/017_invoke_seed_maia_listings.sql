@@ -10,7 +10,7 @@
 -- We guard by checking for the first listing's slug — if present,
 -- the seed has already run and we skip.
 --
--- Admin UUID: Maia Management Group bot (a1b2c3d4-…006), the
+-- Admin UUID: Maia Management S.A.S. bot (a1b2c3d4-…006), the
 -- umbrella ecosystem entity. All 15 listings end up owned by
 -- this single profile (Maia Realty real-estate, Mapaná Marine
 -- equipment, etc., all show as Maia Management). That is a

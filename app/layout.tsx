@@ -22,8 +22,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lleva-lleva.com",
     languages: {
-      "es": "https://lleva-lleva.com",
-      "en": "https://lleva-lleva.com",
+      "es-CO": "https://lleva-lleva.com",
       "x-default": "https://lleva-lleva.com",
     },
   },
@@ -91,7 +90,7 @@ const organizationJsonLd = {
       email: "hola@lleva-lleva.com",
       telephone: "+19034598763",
       areaServed: "CO",
-      availableLanguage: ["Spanish", "English"],
+      availableLanguage: ["Spanish"],
     },
   ],
   areaServed: { "@type": "Country", name: "Colombia" },

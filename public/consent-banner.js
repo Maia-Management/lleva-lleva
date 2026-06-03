@@ -23,7 +23,7 @@
  * NOTES:
  * - Legal entity : MAIA MANAGEMENT S.A.S.
  * - NIT          : 901.862.977-7
- * - Rep. legal   : Andrew John Sidney Gallie, CE 8129525
+ * - Rep. legal   : Andrew Gallie
  * - Address      : Calle 24 #3-99, Edificio Banco de Bogota,
  *                  Suite 1102, Nivel 11, Santa Marta,
  *                  Magdalena, Colombia

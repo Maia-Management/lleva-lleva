@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Contacto',
-  description: 'Contáctate con el equipo de Lleva Lleva.',
+  description:
+    'Contacta al equipo de Lleva Lleva para soporte, alianzas, anuncios, preguntas de seguridad y ayuda con tu cuenta.',
   alternates: { canonical: 'https://lleva-lleva.com/contacto' },
 };
 
@@ -14,7 +15,8 @@ const contactPageJsonLd = {
   url: 'https://lleva-lleva.com/contacto',
   inLanguage: 'es-CO',
   name: 'Contacto — Lleva Lleva',
-  description: 'Contáctate con el equipo de Lleva Lleva.',
+  description:
+    'Contacta al equipo de Lleva Lleva para soporte, alianzas, anuncios, preguntas de seguridad y ayuda con tu cuenta.',
   isPartOf: { '@id': 'https://lleva-lleva.com/#website' },
   about: {
     '@type': 'Organization',

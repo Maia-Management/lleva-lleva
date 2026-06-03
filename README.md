@@ -18,6 +18,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Environment Variables
+
+Copy `.env.example` to `.env.local` and fill in the values for local development. For production, set the same variables in the Netlify UI (Site settings -> Environment variables).
+
+Key variables:
+
+- `NEXT_PUBLIC_SITE_URL` -- canonical site origin, used by sitemap / OG / JSON-LD.
+- `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` -- Supabase auth + database.
+- **`GEMINI_API_KEY`** -- **required** for the `/cuanto-vale` price-check tool. Without it, `app/api/price-check/route.ts` (and the legacy `netlify/functions/price-check.mjs`) return HTTP 500 and the UI shows the opaque "Error de conexion" message. Obtain a key from <https://aistudio.google.com/app/apikey>. The default model is `gemini-2.5-flash`; override with `GEMINI_MODEL` if needed.
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` -- Google Analytics 4 measurement id (`G-XXXXXXXXXX`).
+- `NEXT_PUBLIC_ADSENSE_SLOT_*` -- per-surface AdSense slot ids.
+- `TWILIO_*` -- WhatsApp lead-alert credentials (server-side only).
+
+See `.env.example` for the full list and inline notes.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More

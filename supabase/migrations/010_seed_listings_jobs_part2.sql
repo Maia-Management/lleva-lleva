@@ -91,18 +91,18 @@ BEGIN
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
-  -- JUNO HOUSE STUDIOS — Studio Manager (#61)
+  -- JUNO HOUSE PRODUCTIONS — Studio Coordinator (#61)
   -- ============================================================
 
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_juno, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Estudio | Juno House Studios — Santa Marta',
+    'Coordinador/a de Estudio | Juno House Productions — Santa Marta',
     'coordinador-estudio-juno-house-61',
-    E'Juno House Studios busca Coordinador/a de Estudio para gestionar la operación diaria de la agencia.\n\nFunciones: planificación de agenda de producción, coordinación entre equipos de contenido, atención a clientes, seguimiento de entregas y métricas, gestión de proveedores.\n\nRequisitos: experiencia en coordinación de proyectos o producción de contenido, discreción absoluta, habilidades organizativas sólidas, manejo de herramientas de gestión (Notion, Trello o similar).\n\nSalario: $1.800.000 – $2.500.000 COP/mes. Trabajo presencial en Santa Marta.\n\nWhatsApp: +19034598763',
+    E'Juno House Productions busca Coordinador/a de Estudio para gestionar la operación diaria de proyectos audiovisuales y contenido de marca.\n\nFunciones: planificación de agenda de producción, coordinación entre equipos creativos, atención a clientes, seguimiento de entregas y métricas, gestión de proveedores y control de archivos.\n\nRequisitos: experiencia en coordinación de proyectos, producción audiovisual o contenido digital, discreción profesional, habilidades organizativas sólidas y manejo de herramientas de gestión (Notion, Trello o similar).\n\nSalario: $1.800.000 – $2.500.000 COP/mes. Trabajo presencial en Santa Marta.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','juno-house','coordinador','estudio','produccion','santa-marta'],
-    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Studios","order":0}]'
+    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Productions","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   -- ============================================================
@@ -127,9 +127,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Reclutamiento | Maia Management Group',
+    'Coordinador/a de Reclutamiento | Maia Management',
     'coordinador-reclutamiento-maia-management-63',
-    E'Maia Management Group busca Coordinador/a de Reclutamiento para gestionar los procesos de selección del grupo empresarial y sus empresas aliadas.\n\nFunciones: publicación de vacantes, filtro de hojas de vida, coordinación de entrevistas, verificación de referencias, onboarding de nuevos colaboradores.\n\nRequisitos: tecnólogo o profesional en psicología, administración o gestión humana; experiencia mínima 1 año en selección de personal; manejo de LinkedIn Recruiter y WhatsApp Business.\n\nSalario: $1.800.000 – $2.300.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Coordinador/a de Reclutamiento para gestionar los procesos de selección del grupo empresarial y sus empresas aliadas.\n\nFunciones: publicación de vacantes, filtro de hojas de vida, coordinación de entrevistas, verificación de referencias, onboarding de nuevos colaboradores.\n\nRequisitos: tecnólogo o profesional en psicología, administración o gestión humana; experiencia mínima 1 año en selección de personal; manejo de LinkedIn Recruiter y WhatsApp Business.\n\nSalario: $1.800.000 – $2.300.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','reclutamiento','rrhh','seleccion','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management RRHH","order":0}]'
@@ -142,9 +142,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Office Manager | Maia Management Group — Santa Marta',
+    'Office Manager | Maia Management — Santa Marta',
     'office-manager-maia-management-64',
-    E'Maia Management Group busca Office Manager para coordinar el funcionamiento de nuestras oficinas centrales en Santa Marta.\n\nFunciones: gestión de proveedores de servicios de oficina, control de suministros, coordinación de mantenimiento, apoyo logístico a la gerencia, organización de reuniones y viajes corporativos.\n\nRequisitos: mínimo 2 años en cargo similar, inglés intermedio, manejo avanzado de Google Workspace, capacidad de tomar decisiones con autonomía.\n\nSalario: $2.000.000 – $2.800.000 COP/mes + prestaciones completas.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Office Manager para coordinar el funcionamiento de nuestras oficinas centrales en Santa Marta.\n\nFunciones: gestión de proveedores de servicios de oficina, control de suministros, coordinación de mantenimiento, apoyo logístico a la gerencia, organización de reuniones y viajes corporativos.\n\nRequisitos: mínimo 2 años en cargo similar, inglés intermedio, manejo avanzado de Google Workspace, capacidad de tomar decisiones con autonomía.\n\nSalario: $2.000.000 – $2.800.000 COP/mes + prestaciones completas.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','office-manager','administracion','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Oficina","order":0}]'
@@ -157,9 +157,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Asesor/a Bilingüe de Servicio al Cliente | Maia Management Group',
+    'Asesor/a Bilingüe de Servicio al Cliente | Maia Management',
     'asesor-bilingue-servicio-cliente-maia-65',
-    E'Maia Management Group busca Asesor/a de Servicio al Cliente bilingüe español-inglés para atender a nuestra clientela nacional e internacional.\n\nFunciones: atención por WhatsApp, correo y presencial; resolución de consultas y quejas; direccionamiento a las áreas correctas del grupo (legal, realty, academia).\n\nRequisitos: inglés fluido (escrito y hablado — se evalúa), excelente comunicación, paciencia y orientación al servicio, experiencia mínima 1 año en atención al cliente.\n\nSalario: $1.800.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Asesor/a de Servicio al Cliente bilingüe español-inglés para atender a nuestra clientela nacional e internacional.\n\nFunciones: atención por WhatsApp, correo y presencial; resolución de consultas y quejas; direccionamiento a las áreas correctas del grupo (legal, realty, academia).\n\nRequisitos: inglés fluido (escrito y hablado — se evalúa), excelente comunicación, paciencia y orientación al servicio, experiencia mínima 1 año en atención al cliente.\n\nSalario: $1.800.000 – $2.500.000 COP/mes + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','bilingue','servicio-cliente','ingles','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Atención","order":0}]'
@@ -277,9 +277,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images, is_nationwide)
   VALUES (v_sel_mgmt, v_cat_freelance, NULL,
-    'Diseñador/a Gráfico/a — Grupo Maia | Freelance o Parcial',
+    'Diseñador/a Gráfico/a — Maia Management | Freelance o Parcial',
     'disenador-grafico-grupo-maia-73',
-    E'Maia Management Group busca Diseñador/a Gráfico/a para apoyar las marcas del grupo: El Sanatorio, Be Vida, Maia Masters Academy, Trivium Magnum y LlevaLleva.\n\nTrabajos frecuentes: diseño de piezas para redes sociales, flyers de eventos, menús, identidad visual y material impreso.\n\nRequisitos: dominio de Adobe Illustrator y Photoshop (o Affinity equivalente), portafolio variado, entrega puntual, disposición para trabajar con briefings creativos específicos por marca.\n\nModalidad: freelance por proyecto o parcial (10–20 hrs/semana). Pago en COP por entregable.\n\nPortafolio + tarifa por WhatsApp: +19034598763',
+    E'Maia Management busca Diseñador/a Gráfico/a para apoyar las marcas del grupo: El Sanatorio, Be Vida, Maia Masters Academy, Trivium Magnum y LlevaLleva.\n\nTrabajos frecuentes: diseño de piezas para redes sociales, flyers de eventos, menús, identidad visual y material impreso.\n\nRequisitos: dominio de Adobe Illustrator y Photoshop (o Affinity equivalente), portafolio variado, entrega puntual, disposición para trabajar con briefings creativos específicos por marca.\n\nModalidad: freelance por proyecto o parcial (10–20 hrs/semana). Pago en COP por entregable.\n\nPortafolio + tarifa por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','diseno','grafico','freelance','marcas','remoto','maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Diseño Gráfico Maia","order":0}]',
@@ -293,9 +293,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images, is_nationwide)
   VALUES (v_sel_mgmt, v_cat_freelance, NULL,
-    'Community Manager / Social Media Manager — Grupo Maia',
+    'Community Manager / Social Media Manager — Maia Management',
     'community-manager-grupo-maia-74',
-    E'Maia Management Group busca Community Manager para gestionar las redes sociales de las marcas del grupo en Instagram y TikTok principalmente.\n\nFunciones: publicación de contenido (en coordinación con diseñador y fotógrafo), respuesta a comentarios y mensajes, reportes mensuales de métricas, propuestas de contenido.\n\nRequisitos: experiencia comprobable manejando cuentas de negocio, conocimiento de Meta Business Suite, creatividad para adaptar el tono por marca (horror/gourmet para El Sanatorio, tropical para Be Vida, académico para Masters).\n\nModalidad: remoto. Salario: $1.500.000 – $2.200.000 COP/mes según experiencia.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Community Manager para gestionar las redes sociales de las marcas del grupo en Instagram y TikTok principalmente.\n\nFunciones: publicación de contenido (en coordinación con diseñador y fotógrafo), respuesta a comentarios y mensajes, reportes mensuales de métricas, propuestas de contenido.\n\nRequisitos: experiencia comprobable manejando cuentas de negocio, conocimiento de Meta Business Suite, creatividad para adaptar el tono por marca (horror/gourmet para El Sanatorio, tropical para Be Vida, académico para Masters).\n\nModalidad: remoto. Salario: $1.500.000 – $2.200.000 COP/mes según experiencia.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','community-manager','redes-sociales','instagram','tiktok','remoto','maia'],
     '[{"url":"/images/maia-management.jpg","alt":"Social Media Maia","order":0}]',
@@ -311,7 +311,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_freelance, v_loc_smt,
     'Fotógrafo/a y Videoasta — Marcas Maia | Santa Marta (Freelance)',
     'fotografo-videoasta-grupo-maia-75',
-    E'Maia Management Group busca Fotógrafo/a y Videoasta freelance basado/a en Santa Marta para cubrir los proyectos visuales del grupo.\n\nProyectos: fotografía gastronómica para El Sanatorio, videos de producto para Be Vida, contenido de campus para Trivium Magnum, fotografia de inmuebles para Maia Realty.\n\nRequisitos: equipo propio (cámara mirrorless o DSLR, iluminación básica), edición en Lightroom y Premiere/CapCut, portafolio variado, disponibilidad para sesiones en sitio.\n\nPago por sesión según tipo de proyecto. Tarifas a convenir.\n\nPortafolio por WhatsApp: +19034598763',
+    E'Maia Management busca Fotógrafo/a y Videoasta freelance basado/a en Santa Marta para cubrir los proyectos visuales del grupo.\n\nProyectos: fotografía gastronómica para El Sanatorio, videos de producto para Be Vida, contenido de campus para Trivium Magnum, fotografia de inmuebles para Maia Realty.\n\nRequisitos: equipo propio (cámara mirrorless o DSLR, iluminación básica), edición en Lightroom y Premiere/CapCut, portafolio variado, disponibilidad para sesiones en sitio.\n\nPago por sesión según tipo de proyecto. Tarifas a convenir.\n\nPortafolio por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','fotografo','video','freelance','gastronomia','inmobiliaria','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Fotografía Maia","order":0}]'
@@ -324,9 +324,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Técnico/a de Soporte IT | Maia Management Group — Santa Marta',
+    'Técnico/a de Soporte IT | Maia Management — Santa Marta',
     'tecnico-soporte-it-maia-management-76',
-    E'Maia Management Group busca Técnico de Soporte IT para dar soporte tecnológico a las oficinas y negocios del grupo en Santa Marta.\n\nFunciones: mantenimiento de computadores y periféricos, soporte de red Wi-Fi y cableado estructurado, configuración de sistemas POS, soporte a usuarios en herramientas Google Workspace y CRM.\n\nRequisitos: técnico o tecnólogo en sistemas, mínimo 1 año de experiencia en soporte técnico, capacidad de diagnóstico rápido, buena disposición con usuarios no técnicos.\n\nSalario: $1.600.000 – $2.200.000 COP/mes. Presencial Santa Marta con visitas a distintos locales del grupo.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Técnico de Soporte IT para dar soporte tecnológico a las oficinas y negocios del grupo en Santa Marta.\n\nFunciones: mantenimiento de computadores y periféricos, soporte de red Wi-Fi y cableado estructurado, configuración de sistemas POS, soporte a usuarios en herramientas Google Workspace y CRM.\n\nRequisitos: técnico o tecnólogo en sistemas, mínimo 1 año de experiencia en soporte técnico, capacidad de diagnóstico rápido, buena disposición con usuarios no técnicos.\n\nSalario: $1.600.000 – $2.200.000 COP/mes. Presencial Santa Marta con visitas a distintos locales del grupo.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','it','soporte','tecnologia','sistemas','santa-marta','tiempo-completo'],
     '[{"url":"/images/maia-management.jpg","alt":"IT Soporte Maia","order":0}]'
@@ -339,9 +339,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Conductor/a Mensajero/a — Diligencias y Apoyo Logístico | Grupo Maia',
+    'Conductor/a Mensajero/a — Diligencias y Apoyo Logístico | Maia Management',
     'conductor-mensajero-grupo-maia-77',
-    E'Maia Management Group busca Conductor/Mensajero para apoyo logístico y diligencias del grupo empresarial en Santa Marta.\n\nFunciones: diligencias bancarias y ante entidades, entrega de documentos, apoyo en transporte de insumos y equipos entre los diferentes negocios del grupo, transporte ocasional de personal directivo.\n\nRequisitos: licencia de conducción B1 vigente, conocimiento de las vías de Santa Marta y municipios cercanos, puntualidad y confianza absoluta, vehículo propio deseable (se reconoce rodamiento).\n\nSalario: $1.423.500 – $1.700.000 COP/mes + auxilio de transporte + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Conductor/Mensajero para apoyo logístico y diligencias del grupo empresarial en Santa Marta.\n\nFunciones: diligencias bancarias y ante entidades, entrega de documentos, apoyo en transporte de insumos y equipos entre los diferentes negocios del grupo, transporte ocasional de personal directivo.\n\nRequisitos: licencia de conducción B1 vigente, conocimiento de las vías de Santa Marta y municipios cercanos, puntualidad y confianza absoluta, vehículo propio deseable (se reconoce rodamiento).\n\nSalario: $1.423.500 – $1.700.000 COP/mes + auxilio de transporte + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','conductor','mensajero','logistica','santa-marta','tiempo-completo'],
     '[{"url":"/images/maia-management.jpg","alt":"Conductor Maia","order":0}]'
@@ -354,12 +354,12 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Maestro/a de Obra / Ayudante Múltiple — Obras Grupo Maia | Santa Marta',
+    'Maestro/a de Obra / Ayudante Múltiple — Obras Maia Management | Santa Marta',
     'maestro-obra-ayudante-grupo-maia-78',
-    E'Grupo Maia busca Maestro/a de Obra o Ayudante General para apoyar trabajos de adecuación y mantenimiento en los distintos locales del grupo en Santa Marta.\n\nTrabajos frecuentes: pañete y resane, enchape, instalación de drywall, pintura general, mantenimiento preventivo de locales, apoyo en obras de adecuación.\n\nRequisitos: experiencia mínima 3 años en construcción o acabados, herramienta propia básica, disponibilidad inmediata, referencias de trabajo anteriores.\n\nContrato por obra o término indefinido según desempeño. Pago: desde $1.423.500 + prestaciones.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca Maestro/a de Obra o Ayudante General para apoyar trabajos de adecuación y mantenimiento en los distintos locales del grupo en Santa Marta.\n\nTrabajos frecuentes: pañete y resane, enchape, instalación de drywall, pintura general, mantenimiento preventivo de locales, apoyo en obras de adecuación.\n\nRequisitos: experiencia mínima 3 años en construcción o acabados, herramienta propia básica, disponibilidad inmediata, referencias de trabajo anteriores.\n\nContrato por obra o término indefinido según desempeño. Pago: desde $1.423.500 + prestaciones.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','obra','construccion','maestro','ayudante','santa-marta','contrato'],
-    '[{"url":"/images/sanatorio-interior.jpg","alt":"Obras Grupo Maia","order":0}]'
+    '[{"url":"/images/sanatorio-interior.jpg","alt":"Obras Maia Management","order":0}]'
   ) ON CONFLICT (slug) DO NOTHING;
 
   RAISE NOTICE 'Migration 010 complete: Mapaná Marine profile + job listings #60–78';

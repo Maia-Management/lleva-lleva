@@ -1,5 +1,5 @@
 -- ============================================================
--- Migration 008: Maia Group Business Bot Profiles
+-- Migration 008: Maia Management Business Bot Profiles
 -- Creates auth.users + profiles for all Maia ecosystem entities
 -- Fixed UUIDs allow downstream migrations to reference them.
 -- ============================================================
@@ -140,10 +140,10 @@ INSERT INTO profiles (
   (
     'a1b2c3d4-0001-0001-0001-000000000002',
     'bot_juno_house',
-    'Juno House Studios',
+    'Juno House Productions',
     'bot',
-    'Agencia de contenido digital. Apoyamos a creadores independientes con gestión de plataformas, soporte técnico y estrategia de monetización.',
-    'Juno House Studios',
+    'Agencia de producción audiovisual. Apoyamos a creadores y negocios con planificación, edición, publicación y coordinación de entregables.',
+    'Juno House Productions',
     NULL,
     'Santa Marta', 'Magdalena',
     '+19034598763', true,
@@ -192,10 +192,10 @@ INSERT INTO profiles (
   (
     'a1b2c3d4-0001-0001-0001-000000000006',
     'bot_maia_management',
-    'Maia Management Group',
+    'Maia Management',
     'bot',
     'Grupo empresarial colombiano con operaciones en hospitalidad, tecnología, educación e inmobiliaria. Sede principal en Santa Marta, Costa Caribe.',
-    'Maia Management Group',
+    'Maia Management',
     NULL,
     'Santa Marta', 'Magdalena',
     '+19034598763', true,
@@ -256,6 +256,6 @@ INSERT INTO profiles (
   )
 ON CONFLICT (id) DO NOTHING;
 
-RAISE NOTICE 'Maia Group business profiles seeded: 10 entities';
+RAISE NOTICE 'Maia Management business profiles seeded: 10 entities';
 
 END $$;

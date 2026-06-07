@@ -71,7 +71,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_construccion, v_loc_smt,
     'SE BUSCA: Electricista para Locales Comerciales — Santa Marta',
     'se-busca-electricista-locales-comerciales-109',
-    E'Maia Management Group busca electricista con experiencia en instalaciones comerciales para mantenimiento y obras en los diferentes locales del grupo en Santa Marta.\n\nTrabajos requeridos: revisión y certificación de instalaciones eléctricas, instalación de tomacorrientes y circuitos adicionales, reparaciones de emergencia.\n\nRequisitos: matrícula CONTE vigente, experiencia demostrable en locales comerciales. Trabajo recurrente para el electricista adecuado.\n\nContacto: WhatsApp +19034598763 con tarifas.',
+    E'Maia Management busca electricista con experiencia en instalaciones comerciales para mantenimiento y obras en los diferentes locales del grupo en Santa Marta.\n\nTrabajos requeridos: revisión y certificación de instalaciones eléctricas, instalación de tomacorrientes y circuitos adicionales, reparaciones de emergencia.\n\nRequisitos: matrícula CONTE vigente, experiencia demostrable en locales comerciales. Trabajo recurrente para el electricista adecuado.\n\nContacto: WhatsApp +19034598763 con tarifas.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','electricista','locales-comerciales','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Electricista","order":0}]'
@@ -83,7 +83,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_construccion, v_loc_smt,
     'SE BUSCA: Plomero para Locales Comerciales — Santa Marta',
     'se-busca-plomero-locales-comerciales-110',
-    E'Maia Management Group busca plomero con experiencia en instalaciones comerciales para mantenimiento recurrente y obras de adecuación.\n\nTrabajos: instalación de puntos hidráulicos en cocinas y baños, mantenimiento de redes de agua fría/caliente, instalación de sistemas de gas.\n\nRequisitos: experiencia mínima 3 años en plomería comercial, disponibilidad para Santa Marta Centro y otras zonas del Distrito. Trabajo recurrente garantizado.\n\nWhatsApp: +19034598763 con tarifas.',
+    E'Maia Management busca plomero con experiencia en instalaciones comerciales para mantenimiento recurrente y obras de adecuación.\n\nTrabajos: instalación de puntos hidráulicos en cocinas y baños, mantenimiento de redes de agua fría/caliente, instalación de sistemas de gas.\n\nRequisitos: experiencia mínima 3 años en plomería comercial, disponibilidad para Santa Marta Centro y otras zonas del Distrito. Trabajo recurrente garantizado.\n\nWhatsApp: +19034598763 con tarifas.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','plomero','fontanero','locales','comercial','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Plomero","order":0}]'
@@ -131,7 +131,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_construccion, v_loc_smt,
     'SE BUSCA: Técnico de Aire Acondicionado / HVAC — Santa Marta',
     'se-busca-tecnico-hvac-aire-acondicionado-114',
-    E'Maia Management Group busca técnico de aires acondicionados para instalación y mantenimiento preventivo y correctivo en los locales del grupo en Santa Marta.\n\nTrabajos: instalación de unidades Split en oficinas y el restaurante, mantenimiento trimestral programado, reparaciones de emergencia.\n\nRequisitos: técnico certificado, disponibilidad en Santa Marta Centro, experiencia en equipos comerciales. Contrato de mantenimiento mensual disponible para el técnico adecuado.\n\nWhatsApp: +19034598763 con tarifas.',
+    E'Maia Management busca técnico de aires acondicionados para instalación y mantenimiento preventivo y correctivo en los locales del grupo en Santa Marta.\n\nTrabajos: instalación de unidades Split en oficinas y el restaurante, mantenimiento trimestral programado, reparaciones de emergencia.\n\nRequisitos: técnico certificado, disponibilidad en Santa Marta Centro, experiencia en equipos comerciales. Contrato de mantenimiento mensual disponible para el técnico adecuado.\n\nWhatsApp: +19034598763 con tarifas.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','hvac','aire-acondicionado','tecnico','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Aire Acondicionado","order":0}]'
@@ -215,7 +215,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_diseno, v_loc_smt,
     'SE BUSCA: Litografía / Empresa de Impresos — Santa Marta o Regional',
     'se-busca-litografia-impresos-regional-121',
-    E'Maia Management Group busca empresa de impresión para cubrir las necesidades gráficas del grupo empresarial.\n\nQué necesitamos:\n• Tarjetas de presentación (varias marcas del grupo)\n• Flyers y volantes para eventos\n• Menús impresos y laminados para El Sanatorio\n• Pendones y banners\n• Etiquetas y material POP\n\nBuscamos litografía con buena calidad digital e impresión offset, que pueda manejar urgencias. Puede ser en Santa Marta o con servicio de envío.\n\nMuestras y cotizaciones por WhatsApp: +19034598763',
+    E'Maia Management busca empresa de impresión para cubrir las necesidades gráficas del grupo empresarial.\n\nQué necesitamos:\n• Tarjetas de presentación (varias marcas del grupo)\n• Flyers y volantes para eventos\n• Menús impresos y laminados para El Sanatorio\n• Pendones y banners\n• Etiquetas y material POP\n\nBuscamos litografía con buena calidad digital e impresión offset, que pueda manejar urgencias. Puede ser en Santa Marta o con servicio de envío.\n\nMuestras y cotizaciones por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','litografia','impresos','impresion','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Impresos","order":0}]'
@@ -227,7 +227,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_otros_serv, v_loc_smt,
     'SE BUSCA: Empresa de Aseo / Limpieza para Locales Comerciales — Santa Marta',
     'se-busca-empresa-aseo-limpieza-comercial-122',
-    E'Maia Management Group busca empresa de aseo o personal de limpieza para contrato mensual en los locales del grupo.\n\nServicios requeridos:\n• Limpieza profunda diaria de restaurante (El Sanatorio)\n• Aseo de oficinas (3 veces por semana)\n• Desinfección periódica de cocina y zonas de manipulación de alimentos\n• Manejo de desechos\n\nSe busca empresa formal o cooperativa con afiliación de personal a seguridad social. Contrato mensual con posibilidad de ampliar a más locales.\n\nCotización por WhatsApp: +19034598763',
+    E'Maia Management busca empresa de aseo o personal de limpieza para contrato mensual en los locales del grupo.\n\nServicios requeridos:\n• Limpieza profunda diaria de restaurante (El Sanatorio)\n• Aseo de oficinas (3 veces por semana)\n• Desinfección periódica de cocina y zonas de manipulación de alimentos\n• Manejo de desechos\n\nSe busca empresa formal o cooperativa con afiliación de personal a seguridad social. Contrato mensual con posibilidad de ampliar a más locales.\n\nCotización por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','aseo','limpieza','empresa','locales','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Empresa Aseo","order":0}]'
@@ -239,7 +239,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_otros_serv, v_loc_smt,
     'SE BUSCA: Empresa de Vigilancia / Seguridad Privada — Santa Marta',
     'se-busca-empresa-vigilancia-seguridad-privada-123',
-    E'Maia Management Group busca empresa de vigilancia y seguridad privada para brindar protección a los locales del grupo en Santa Marta.\n\nRequisitos:\n• Vigilantes certificados con tarjeta de miembro activo SuperVigilancia\n• Cobertura nocturna y de fin de semana para El Sanatorio\n• Protección de oficinas (turno diurno)\n• Capacidad de respuesta ante emergencias\n\nSe prefieren empresas con supervisión activa de personal y monitoreo en tiempo real.\n\nCotizaciones por WhatsApp: +19034598763',
+    E'Maia Management busca empresa de vigilancia y seguridad privada para brindar protección a los locales del grupo en Santa Marta.\n\nRequisitos:\n• Vigilantes certificados con tarjeta de miembro activo SuperVigilancia\n• Cobertura nocturna y de fin de semana para El Sanatorio\n• Protección de oficinas (turno diurno)\n• Capacidad de respuesta ante emergencias\n\nSe prefieren empresas con supervisión activa de personal y monitoreo en tiempo real.\n\nCotizaciones por WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','seguridad','vigilancia','empresa','locales','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Seguridad Privada","order":0}]'
@@ -291,7 +291,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Paquetes de Contabilidad Mensual para Empresas — desde $1.400.000/mes | Maia Management',
     'paquetes-contabilidad-mensual-empresas-maia-management-127',
-    E'Maia Management Group ofrece paquetes de contabilidad mensual para pequeñas y medianas empresas en Colombia.\n\nQué incluye el servicio:\n✓ Causación de facturas de compra y venta\n✓ Conciliaciones bancarias\n✓ Liquidación de impuestos bimestrales (IVA, ICA)\n✓ Retención en la fuente\n✓ Estados financieros mensuales (PyG, Balance)\n✓ Informe de gestión a gerencia\n\nPaquetes desde $1.400.000 COP/mes según volumen de transacciones.\n\nEspecialistas en restaurantes, agencias y empresas de servicios. Trabajo 100% remoto con reunión virtual mensual.\n\nConsulta gratis: WhatsApp +19034598763',
+    E'Maia Management ofrece paquetes de contabilidad mensual para pequeñas y medianas empresas en Colombia.\n\nQué incluye el servicio:\n✓ Causación de facturas de compra y venta\n✓ Conciliaciones bancarias\n✓ Liquidación de impuestos bimestrales (IVA, ICA)\n✓ Retención en la fuente\n✓ Estados financieros mensuales (PyG, Balance)\n✓ Informe de gestión a gerencia\n\nPaquetes desde $1.400.000 COP/mes según volumen de transacciones.\n\nEspecialistas en restaurantes, agencias y empresas de servicios. Trabajo 100% remoto con reunión virtual mensual.\n\nConsulta gratis: WhatsApp +19034598763',
     1400000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','contabilidad','mensual','empresa','pyme','maia-management'],
     '[{"url":"/images/maia-management.jpg","alt":"Contabilidad Mensual","order":0}]'
@@ -303,7 +303,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Facturación Electrónica — Habilitación DIAN y Acompañamiento | Maia Management',
     'facturacion-electronica-dian-habilitacion-128',
-    E'Maia Management Group te ayuda a implementar la facturación electrónica en tu empresa colombiana, desde el trámite ante la DIAN hasta la activación del software.\n\nServicio incluye:\n✓ Registro como facturador electrónico ante DIAN\n✓ Selección y configuración del proveedor tecnológico (Siigo, Alegra, Factus, etc.)\n✓ Capacitación al equipo en el uso del sistema\n✓ Soporte en los primeros 30 días de operación\n✓ Revisión de primeros documentos electrónicos\n\nTarifa: desde $800.000 COP (pago único). Mantenimiento mensual disponible.\n\nWhatsApp: +19034598763',
+    E'Maia Management te ayuda a implementar la facturación electrónica en tu empresa colombiana, desde el trámite ante la DIAN hasta la activación del software.\n\nServicio incluye:\n✓ Registro como facturador electrónico ante DIAN\n✓ Selección y configuración del proveedor tecnológico (Siigo, Alegra, Factus, etc.)\n✓ Capacitación al equipo en el uso del sistema\n✓ Soporte en los primeros 30 días de operación\n✓ Revisión de primeros documentos electrónicos\n\nTarifa: desde $800.000 COP (pago único). Mantenimiento mensual disponible.\n\nWhatsApp: +19034598763',
     800000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','facturacion','electronica','dian','colombia','pyme'],
     '[{"url":"/images/maia-management.jpg","alt":"Facturación Electrónica","order":0}]'
@@ -315,7 +315,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Consultoría DIAN y Cumplimiento Fiscal — Colombia | Maia Management',
     'consultoria-dian-cumplimiento-fiscal-129',
-    E'Maia Management Group ofrece asesoría en cumplimiento fiscal y gestión ante la DIAN para empresas y personas naturales en Colombia.\n\nServicios:\n• Revisión de obligaciones tributarias\n• Respuesta a requerimientos de la DIAN\n• Gestión de devoluciones de IVA\n• Planeación tributaria\n• Asesoría a extranjeros con actividad económica en Colombia\n\nAtendemos empresas de todos los tamaños. Honorarios desde $500.000 COP según complejidad del caso.\n\nConsulta inicial sin costo: WhatsApp +19034598763',
+    E'Maia Management ofrece asesoría en cumplimiento fiscal y gestión ante la DIAN para empresas y personas naturales en Colombia.\n\nServicios:\n• Revisión de obligaciones tributarias\n• Respuesta a requerimientos de la DIAN\n• Gestión de devoluciones de IVA\n• Planeación tributaria\n• Asesoría a extranjeros con actividad económica en Colombia\n\nAtendemos empresas de todos los tamaños. Honorarios desde $500.000 COP según complejidad del caso.\n\nConsulta inicial sin costo: WhatsApp +19034598763',
     500000.00, 'negotiable', 'COP', 'active', now(),
     ARRAY['servicio','dian','fiscal','tributario','colombia','maia-management'],
     '[{"url":"/images/maia-management.jpg","alt":"Consultoría DIAN","order":0}]'
@@ -327,7 +327,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_otros_serv, v_loc_smt,
     'Reclutamiento y Colocación de Personal — Costa Caribe | Maia Management',
     'reclutamiento-colocacion-personal-costa-caribe-130',
-    E'Maia Management Group ofrece servicio de reclutamiento, selección y colocación de personal para empresas en Santa Marta y la Costa Caribe colombiana.\n\nQué ofrecemos:\n✓ Publicación de vacantes en múltiples canales\n✓ Filtro de hojas de vida y preselección\n✓ Entrevistas y pruebas psicotécnicas básicas\n✓ Verificación de referencias\n✓ Presentación de terna finalista\n✓ Apoyo en contratación y onboarding\n\nEspecialidad: hospitalidad, gastronomía, servicio al cliente, administrativo y técnico.\n\nTarifa: equivalente a 1 salario mensual bruto del cargo por candidato exitoso.\n\nWhatsApp: +19034598763',
+    E'Maia Management ofrece servicio de reclutamiento, selección y colocación de personal para empresas en Santa Marta y la Costa Caribe colombiana.\n\nQué ofrecemos:\n✓ Publicación de vacantes en múltiples canales\n✓ Filtro de hojas de vida y preselección\n✓ Entrevistas y pruebas psicotécnicas básicas\n✓ Verificación de referencias\n✓ Presentación de terna finalista\n✓ Apoyo en contratación y onboarding\n\nEspecialidad: hospitalidad, gastronomía, servicio al cliente, administrativo y técnico.\n\nTarifa: equivalente a 1 salario mensual bruto del cargo por candidato exitoso.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['servicio','reclutamiento','seleccion','personal','rrhh','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Reclutamiento RRHH","order":0}]'
@@ -351,7 +351,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_financiero, v_loc_smt,
     'Liquidación de Nómina — Outsourcing Nómina Colombia | Maia Management',
     'liquidacion-nomina-outsourcing-colombia-132',
-    E'Maia Management Group ofrece servicio de outsourcing de nómina para empresas colombianas.\n\nServicio incluye:\n✓ Liquidación mensual de salarios\n✓ Cálculo de horas extras, recargos nocturnos y dominicales\n✓ Prestaciones sociales (cesantías, prima, vacaciones)\n✓ Planilla PILA (seguridad social)\n✓ Certificados laborales\n✓ Liquidaciones y paz y salvos\n\nDesde $600.000 COP/mes para empresas hasta 5 empleados. Precio escala según número de trabajadores.\n\nAtendemos empresas en toda Colombia de forma remota.\n\nWhatsApp: +19034598763',
+    E'Maia Management ofrece servicio de outsourcing de nómina para empresas colombianas.\n\nServicio incluye:\n✓ Liquidación mensual de salarios\n✓ Cálculo de horas extras, recargos nocturnos y dominicales\n✓ Prestaciones sociales (cesantías, prima, vacaciones)\n✓ Planilla PILA (seguridad social)\n✓ Certificados laborales\n✓ Liquidaciones y paz y salvos\n\nDesde $600.000 COP/mes para empresas hasta 5 empleados. Precio escala según número de trabajadores.\n\nAtendemos empresas en toda Colombia de forma remota.\n\nWhatsApp: +19034598763',
     600000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','nomina','payroll','outsourcing','colombia','maia-management'],
     '[{"url":"/images/maia-management.jpg","alt":"Nómina Outsourcing","order":0}]'
@@ -387,20 +387,20 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_diseno, NULL,
     'Consultoría Marca y Marketing | Maia Management',
     'consultoria-marca-marketing-negocios-maia-management-135',
-    E'Maia Management Group ofrece consultoría estratégica de marca y marketing para negocios en Colombia y la región.\n\nQué incluye:\n• Diagnóstico de marca actual\n• Definición de propuesta de valor y posicionamiento\n• Estrategia de contenido para redes sociales\n• Plan de marketing digital (Meta Ads, Google Ads, SEO básico)\n• Diseño o rediseño de identidad visual\n• Acompañamiento mensual\n\nAtendemos restaurantes, hoteles, clínicas, academias y negocios de servicios.\n\nHonorarios desde $2.500.000 COP por proyecto o desde $1.500.000 COP/mes de acompañamiento.\n\nAgenda tu consulta inicial gratuita: WhatsApp +19034598763',
+    E'Maia Management ofrece consultoría estratégica de marca y marketing para negocios en Colombia y la región.\n\nQué incluye:\n• Diagnóstico de marca actual\n• Definición de propuesta de valor y posicionamiento\n• Estrategia de contenido para redes sociales\n• Plan de marketing digital (Meta Ads, Google Ads, SEO básico)\n• Diseño o rediseño de identidad visual\n• Acompañamiento mensual\n\nAtendemos restaurantes, hoteles, clínicas, academias y negocios de servicios.\n\nHonorarios desde $2.500.000 COP por proyecto o desde $1.500.000 COP/mes de acompañamiento.\n\nAgenda tu consulta inicial gratuita: WhatsApp +19034598763',
     2500000.00, 'negotiable', 'COP', 'active', now(),
     ARRAY['servicio','marca','marketing','estrategia','branding','colombia'],
     '[{"url":"/images/maia-management.jpg","alt":"Consultoría Marca","order":0}]',
     TRUE
   ) ON CONFLICT (slug) DO NOTHING;
 
-  -- #136 — Desarrollo web (Nicole / Maia)
+  -- #136 — Desarrollo web (Maia Management)
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images, is_nationwide)
   VALUES (v_sel_mgmt, v_cat_diseno, NULL,
-    'Desarrollo de Páginas Web para Negocios — Colombia | Maia Group',
+    'Desarrollo de Páginas Web para Negocios — Colombia | Maia Management',
     'desarrollo-paginas-web-negocios-colombia-136',
-    E'Maia Group ofrece desarrollo de páginas web profesionales para negocios colombianos y de la región.\n\nQué hacemos:\n✓ Landing pages de alto impacto\n✓ Sitios web corporativos (5–10 páginas)\n✓ Tiendas en línea / e-commerce\n✓ Integración de WhatsApp Business y Google Analytics\n✓ SEO básico y velocidad optimizada\n✓ Dominio y hosting incluidos en planes anuales\n\nTecnologías: Next.js, WordPress, Webflow según proyecto.\nEntrega en 2–4 semanas.\nDesde $3.500.000 COP. Mantenimiento mensual desde $400.000 COP/mes.\n\nContacto y portafolio: WhatsApp +19034598763',
+    E'Maia Management ofrece desarrollo de páginas web profesionales para negocios colombianos y de la región.\n\nQué hacemos:\n✓ Landing pages de alto impacto\n✓ Sitios web corporativos (5–10 páginas)\n✓ Tiendas en línea / e-commerce\n✓ Integración de WhatsApp Business y Google Analytics\n✓ SEO básico y velocidad optimizada\n✓ Dominio y hosting incluidos en planes anuales\n\nTecnologías: Next.js, WordPress, Webflow según proyecto.\nEntrega en 2–4 semanas.\nDesde $3.500.000 COP. Mantenimiento mensual desde $400.000 COP/mes.\n\nContacto y portafolio: WhatsApp +19034598763',
     3500000.00, 'fixed', 'COP', 'active', now(),
     ARRAY['servicio','web','desarrollo','pagina-web','negocio','colombia','nextjs'],
     '[{"url":"/images/maia-management.jpg","alt":"Desarrollo Web","order":0}]',

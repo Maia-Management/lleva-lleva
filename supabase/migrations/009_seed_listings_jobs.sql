@@ -1,5 +1,5 @@
 -- ============================================================
--- Migration 009: Maia Group — Job Listings (1–59)
+-- Migration 009: Maia Management — Job Listings (1–59)
 -- Depends on: 008_seed_business_profiles.sql
 -- ============================================================
 
@@ -274,44 +274,44 @@ BEGIN
   );
 
   -- ==============================================================
-  -- JUNO HOUSE STUDIOS (21–23)
+  -- JUNO HOUSE PRODUCTIONS (21–23)
   -- ==============================================================
 
-  -- 21. Modelo de Contenido Digital — Trabajo desde Casa
+  -- 21. Asistente de Producción Audiovisual — Trabajo Remoto
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images, is_nationwide)
   VALUES (v_sel_juno, v_cat_freelance, NULL,
-    'Modelo de Contenido Digital — Trabaja desde Casa | Juno House Studios',
-    'modelo-contenido-digital-juno-house-21',
-    E'Juno House Studios invita a mujeres mayores de 18 años a unirse a nuestra red de creadores de contenido digital para adultos.\n\nTrabaja desde tu casa a tu propio ritmo. Nosotros gestionamos la plataforma, los pagos y el soporte técnico — tú te concentras en crear.\n\nBeneficios: 70% de los ingresos directamente para ti, privacidad garantizada, soporte personalizado en todo el proceso de onboarding, sin experiencia previa necesaria.\n\nAplicaciones solo por WhatsApp: +19034598763 (mayores de 18 años, foto de cédula requerida)',
+    'Asistente de Producción Audiovisual — Trabajo Remoto | Juno House Productions',
+    'asistente-produccion-audiovisual-juno-house-21',
+    E'Juno House Productions busca Asistente de Producción Audiovisual para apoyar proyectos remotos de video, fotografía y contenido de marca.\n\nFunciones: organizar calendarios de producción, preparar listas de tomas, coordinar archivos, revisar subtítulos, dar seguimiento a entregas y apoyar la comunicación con creadores y clientes.\n\nRequisitos: orden, buena comunicación escrita, manejo básico de herramientas de edición o gestión de archivos, criterio visual y disponibilidad para reuniones por WhatsApp o videollamada.\n\nTrabajo freelance/remoto por proyecto. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
-    ARRAY['empleo','juno-house','modelo','contenido-digital','freelance','desde-casa'],
-    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Studios","order":0}]',
+    ARRAY['empleo','juno-house','produccion','audiovisual','freelance','remoto'],
+    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Productions","order":0}]',
     TRUE
   );
 
-  -- 22. Coordinadora de Soporte a Modelos
+  -- 22. Coordinador/a de Producción
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_juno, v_cat_empleo, v_loc_smt,
-    'Coordinadora de Soporte a Modelos | Juno House Studios',
-    'coordinadora-soporte-modelos-juno-house-22',
-    E'Juno House Studios busca Coordinadora de Soporte para acompañar a nuestros creadores de contenido en su proceso de onboarding y operación diaria.\n\nFunciones: onboarding de nuevos talentos, soporte en dudas de plataforma, seguimiento de desempeño, comunicación directa con modelos.\n\nRequisitos: empatía, discreción absoluta, manejo de WhatsApp Business, conocimiento básico de plataformas de contenido digital. Se valora experiencia en atención al cliente.\n\nTrabajo parcial, principalmente remoto. WhatsApp: +19034598763',
+    'Coordinador/a de Producción | Juno House Productions',
+    'coordinadora-produccion-juno-house-22',
+    E'Juno House Productions busca Coordinador/a de Producción para acompañar proyectos creativos desde briefing hasta entrega final.\n\nFunciones: onboarding de creadores y proveedores, coordinación de agendas, seguimiento de entregables, control de listas de pendientes, comunicación con clientes y revisión básica de materiales.\n\nRequisitos: empatía, discreción profesional, manejo de WhatsApp Business, organización sólida y experiencia en atención al cliente, producción o coordinación de proyectos.\n\nTrabajo parcial, principalmente remoto. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
-    ARRAY['empleo','juno-house','coordinadora','soporte','santa-marta','parcial'],
-    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Studios","order":0}]'
+    ARRAY['empleo','juno-house','coordinadora','produccion','santa-marta','parcial'],
+    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Productions","order":0}]'
   );
 
-  -- 23. Operador/a de Plataformas Digitales
+  -- 23. Operador/a de Postproducción
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_juno, v_cat_empleo, v_loc_smt,
-    'Operador/a de Plataformas Digitales | Juno House Studios',
-    'operador-plataformas-digitales-juno-house-23',
-    E'Buscamos Operador/a para gestión de cuentas en plataformas de contenido digital: publicaciones, análisis de métricas, optimización de perfiles y atención a suscriptores.\n\nRequisitos: comodidad trabajando con plataformas digitales para adultos, discreción total, organización, capacidad de manejar múltiples cuentas simultáneamente.\n\nConocimientos valorados: análisis de datos básico, copywriting en inglés y español, manejo de Canva o herramientas de edición simple.\n\nTrabajo parcial con posibilidad de tiempo completo. WhatsApp: +19034598763',
+    'Operador/a de Postproducción | Juno House Productions',
+    'operador-postproduccion-juno-house-23',
+    E'Buscamos Operador/a de Postproducción para apoyar flujos de edición, publicación y control de calidad de materiales audiovisuales.\n\nFunciones: organizar archivos, revisar cortes, preparar miniaturas, cargar piezas aprobadas, verificar subtítulos y registrar métricas básicas de publicación.\n\nConocimientos valorados: análisis de datos básico, copywriting en inglés y español, manejo de Canva, CapCut, Premiere, DaVinci Resolve o herramientas de edición simple.\n\nTrabajo parcial con posibilidad de tiempo completo. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
-    ARRAY['empleo','juno-house','operador','plataformas','digital','santa-marta'],
-    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Plataformas","order":0}]'
+    ARRAY['empleo','juno-house','postproduccion','digital','santa-marta'],
+    '[{"url":"/images/juno-studios.jpg","alt":"Juno House Productions","order":0}]'
   );
 
   -- ==============================================================
@@ -467,7 +467,7 @@ BEGIN
   );
 
   -- ==============================================================
-  -- MAIA LEGAL / MAIA MANAGEMENT GROUP (36–39)
+  -- MAIA LEGAL / MAIA MANAGEMENT (36–39)
   -- ==============================================================
 
   -- 36. Asistente Jurídico / Paralegal
@@ -486,9 +486,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Asistente Contable | Maia Management Group — Santa Marta',
+    'Asistente Contable | Maia Management — Santa Marta',
     'asistente-contable-maia-management-37',
-    E'Maia Management Group busca Asistente Contable para apoyar la operación financiera del grupo empresarial.\n\nFunciones: causación de facturas, conciliaciones bancarias, preparación de informes de gastos, apoyo en declaraciones de renta y retención.\n\nRequisitos: tecnólogo o profesional en contaduría, manejo de software contable (Siigo o Helio), orden, precisión y confidencialidad.\n\nContrato a término indefinido, prestaciones completas. WhatsApp: +19034598763',
+    E'Maia Management busca Asistente Contable para apoyar la operación financiera del grupo empresarial.\n\nFunciones: causación de facturas, conciliaciones bancarias, preparación de informes de gastos, apoyo en declaraciones de renta y retención.\n\nRequisitos: tecnólogo o profesional en contaduría, manejo de software contable (Siigo o Helio), orden, precisión y confidencialidad.\n\nContrato a término indefinido, prestaciones completas. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','contable','finanzas','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management","order":0}]'
@@ -498,9 +498,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Recepcionista / Asistente Administrativo | Maia Management Group',
+    'Recepcionista / Asistente Administrativo | Maia Management',
     'recepcionista-admin-maia-management-38',
-    E'Maia Management Group busca Recepcionista y Asistente Administrativo para nuestra oficina en Santa Marta.\n\nFunciones: atención de clientes y visitantes, gestión de agenda, manejo de correspondencia, soporte a diferentes áreas del grupo.\n\nRequisitos: excelente presentación personal, inglés conversacional (indispensable — atendemos clientes internacionales), manejo de Office, actitud positiva.\n\nContrato a término indefinido. WhatsApp: +19034598763',
+    E'Maia Management busca Recepcionista y Asistente Administrativo para nuestra oficina en Santa Marta.\n\nFunciones: atención de clientes y visitantes, gestión de agenda, manejo de correspondencia, soporte a diferentes áreas del grupo.\n\nRequisitos: excelente presentación personal, inglés conversacional (indispensable — atendemos clientes internacionales), manejo de Office, actitud positiva.\n\nContrato a término indefinido. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','recepcionista','administrativo','ingles','santa-marta'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Oficina","order":0}]'
@@ -510,9 +510,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_empleo, v_loc_smt,
-    'Coordinador/a de Nómina | Maia Management Group',
+    'Coordinador/a de Nómina | Maia Management',
     'coordinador-nomina-maia-management-39',
-    E'Maia Management Group busca Coordinador/a de Nómina para administrar la nómina de las diferentes empresas del grupo (restaurante, academia, inmobiliaria y más).\n\nFunciones: liquidación de nómina, cálculo de prestaciones, gestión de seguridad social, novedades de personal, informes a gerencia.\n\nRequisitos: tecnólogo o profesional en contaduría o gestión humana, manejo de software de nómina, conocimiento de legislación laboral colombiana.\n\nCargo parcial. WhatsApp: +19034598763',
+    E'Maia Management busca Coordinador/a de Nómina para administrar la nómina de las diferentes empresas del grupo (restaurante, academia, inmobiliaria y más).\n\nFunciones: liquidación de nómina, cálculo de prestaciones, gestión de seguridad social, novedades de personal, informes a gerencia.\n\nRequisitos: tecnólogo o profesional en contaduría o gestión humana, manejo de software de nómina, conocimiento de legislación laboral colombiana.\n\nCargo parcial. WhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['empleo','maia-management','nomina','rrhh','contabilidad','santa-marta','parcial'],
     '[{"url":"/images/maia-management.jpg","alt":"Maia Management Nómina","order":0}]'
@@ -695,7 +695,7 @@ BEGIN
 
   -- ==============================================================
   -- HOGAR — Servicio Doméstico (53–54)
-  -- Posted by Maia Management Group as HR service
+  -- Posted by Maia Management as HR service
   -- ==============================================================
 
   -- 53. Chef / Cocinero/a para el Hogar

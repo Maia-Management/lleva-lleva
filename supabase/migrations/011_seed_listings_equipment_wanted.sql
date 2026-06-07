@@ -1,6 +1,6 @@
 -- ============================================================
 -- Migration 011: Equipment Wanted Listings (#79–107)
--- All posted by El Sanatorio or Maia Management Group
+-- All posted by El Sanatorio or Maia Management
 -- Depends on: 008_seed_business_profiles.sql
 -- ============================================================
 
@@ -360,7 +360,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_ofic, v_loc_smt,
     'SE COMPRA: Escritorios y Sillas de Oficina — Maia Management Santa Marta',
     'se-compra-escritorios-sillas-oficina-102',
-    E'Maia Management Group busca escritorios y sillas ergonómicas de oficina para equipar nuestras instalaciones en Santa Marta.\n\nQué necesitamos:\n• Escritorios modulares o individuales — 6 a 10 puestos\n• Sillas ergonómicas de escritorio con ajuste lumbar\n• Mesa de reuniones para 8–10 personas\n• Armarios o cajoneras de archivo\n\nNuevo o usado en buen estado. Entrega en Santa Marta Centro.\n\nWhatsApp: +19034598763 con fotos y precio.',
+    E'Maia Management busca escritorios y sillas ergonómicas de oficina para equipar nuestras instalaciones en Santa Marta.\n\nQué necesitamos:\n• Escritorios modulares o individuales — 6 a 10 puestos\n• Sillas ergonómicas de escritorio con ajuste lumbar\n• Mesa de reuniones para 8–10 personas\n• Armarios o cajoneras de archivo\n\nNuevo o usado en buen estado. Entrega en Santa Marta Centro.\n\nWhatsApp: +19034598763 con fotos y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','escritorios','sillas','oficina','mobiliario','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Oficina Mobiliario","order":0}]'
@@ -374,7 +374,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_tv_audio, v_loc_smt,
     'SE COMPRA: Proyector y Pantalla de Proyección — Sala de Reuniones / Aula',
     'se-compra-proyector-pantalla-proyeccion-103',
-    E'Maia Management Group busca proyector y pantalla para sala de reuniones y aula de Maia Masters Academy.\n\nEspecificaciones:\n• Proyector: mínimo 3.000 lúmenes, resolución 1080p, HDMI y Wi-Fi\n• Pantalla: 100"–120" retráctil o fija\n• Marcas: Epson, BenQ, ViewSonic, LG, Optoma\n\nNuevo o reacondicionado con garantía. También se evalúan TV 85" como alternativa.\n\nWhatsApp: +19034598763',
+    E'Maia Management busca proyector y pantalla para sala de reuniones y aula de Maia Masters Academy.\n\nEspecificaciones:\n• Proyector: mínimo 3.000 lúmenes, resolución 1080p, HDMI y Wi-Fi\n• Pantalla: 100"–120" retráctil o fija\n• Marcas: Epson, BenQ, ViewSonic, LG, Optoma\n\nNuevo o reacondicionado con garantía. También se evalúan TV 85" como alternativa.\n\nWhatsApp: +19034598763',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','proyector','pantalla','presentaciones','aula','oficina','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Proyector Pantalla","order":0}]'
@@ -388,7 +388,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_ofic, v_loc_smt,
     'SE COMPRA: Computadores y Laptops — Oficina y Academia | Santa Marta',
     'se-compra-computadores-laptops-oficina-104',
-    E'Maia Management Group busca computadores de escritorio y laptops para equipar las oficinas y el aula de Maia Masters Academy.\n\nQué buscamos:\n• Laptops: Core i5 o Ryzen 5 de 11ª generación o superior, 8 GB RAM, 256 GB SSD mínimo — 5 a 10 unidades\n• PCs de escritorio: configuración similar — 3 a 5 unidades\n• Monitores adicionales — varios\n\nNuevos, reacondicionados o segunda mano en buen estado funcional.\n\nWhatsApp: +19034598763 con especificaciones y precio.',
+    E'Maia Management busca computadores de escritorio y laptops para equipar las oficinas y el aula de Maia Masters Academy.\n\nQué buscamos:\n• Laptops: Core i5 o Ryzen 5 de 11ª generación o superior, 8 GB RAM, 256 GB SSD mínimo — 5 a 10 unidades\n• PCs de escritorio: configuración similar — 3 a 5 unidades\n• Monitores adicionales — varios\n\nNuevos, reacondicionados o segunda mano en buen estado funcional.\n\nWhatsApp: +19034598763 con especificaciones y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','computador','laptop','pc','oficina','academia','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Laptops Oficina","order":0}]'
@@ -414,9 +414,9 @@ BEGIN
   INSERT INTO listings (seller_id, category_id, location_id, title, slug, description,
     price, price_type, currency, status, published_at, tags, images)
   VALUES (v_sel_mgmt, v_cat_carros, v_loc_smt,
-    'SE BUSCA: Camioneta o Furgoneta para Distribución — Grupo Maia Santa Marta',
+    'SE BUSCA: Camioneta o Furgoneta para Distribución — Maia Management Santa Marta',
     'se-busca-camioneta-furgoneta-distribucion-106',
-    E'Maia Management Group busca camioneta o furgoneta para apoyo logístico y distribución de Be Vida Botánicas en Santa Marta y la región.\n\nQué buscamos:\n• Camioneta doble cabina o furgoneta de carga liviana\n• Diesel o gasolina, modelo 2015 o más reciente\n• Buen estado mecánico, traspaso limpio\n• Carga útil mínima 800 kg\n\nPago de contado o financiación según oferta.\n\nWhatsApp: +19034598763 con fotos, km y precio.',
+    E'Maia Management busca camioneta o furgoneta para apoyo logístico y distribución de Be Vida Botánicas en Santa Marta y la región.\n\nQué buscamos:\n• Camioneta doble cabina o furgoneta de carga liviana\n• Diesel o gasolina, modelo 2015 o más reciente\n• Buen estado mecánico, traspaso limpio\n• Carga útil mínima 800 kg\n\nPago de contado o financiación según oferta.\n\nWhatsApp: +19034598763 con fotos, km y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','camioneta','furgoneta','transporte','logistica','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Camioneta","order":0}]'
@@ -430,7 +430,7 @@ BEGIN
   VALUES (v_sel_mgmt, v_cat_motos, v_loc_smt,
     'SE BUSCA: Motocicleta para Mensajería y Diligencias — Santa Marta',
     'se-busca-motocicleta-mensajeria-107',
-    E'Grupo Maia busca motocicleta para mensajería, diligencias y entregas locales en Santa Marta.\n\nQué buscamos:\n• Moto 125–200 cc, modelo 2016 o más reciente\n• Papeles al día, buen estado mecánico\n• Marca: Honda, Yamaha, Bajaj, AKT u otras\n• Con cajón de carga o adaptable\n\nPago de contado. Se evalúan motos con y sin baúl.\n\nWhatsApp: +19034598763 con fotos, km y precio.',
+    E'Maia Management busca motocicleta para mensajería, diligencias y entregas locales en Santa Marta.\n\nQué buscamos:\n• Moto 125–200 cc, modelo 2016 o más reciente\n• Papeles al día, buen estado mecánico\n• Marca: Honda, Yamaha, Bajaj, AKT u otras\n• Con cajón de carga o adaptable\n\nPago de contado. Se evalúan motos con y sin baúl.\n\nWhatsApp: +19034598763 con fotos, km y precio.',
     NULL, 'contact', 'COP', 'active', now(),
     ARRAY['se-busca','moto','mensajeria','125cc','logistica','santa-marta'],
     '[{"url":"/images/placeholder.jpg","alt":"Motocicleta","order":0}]'

@@ -43,5 +43,6 @@ next-env.d.ts
 
 # Claude local agent worktrees
 .claude/worktrees/
+.netlify/
 rls_migration_fixed.sql
 *.bak

@@ -53,6 +53,8 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-10 pt-6 text-xs text-white/75 text-center">
           <p className="mb-2">
             Parte del ecosistema{' '}
+            <a href="https://the-maia-group.com" target="_blank" rel="noopener noreferrer" className="text-brand-yellow hover:text-brand-yellow-600 transition-colors font-medium">The Maia Group</a>
+            {' · '}
             <a href="https://maia-management.com" target="_blank" rel="noopener noreferrer" className="text-brand-yellow hover:text-brand-yellow-600 transition-colors font-medium">Maia Management</a>
             {' · '}
             <a href="https://maia-legal.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Legal</a>
@@ -60,6 +62,10 @@ export default function Footer() {
             <a href="https://maia-realty.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Realty</a>
             {' · '}
             <a href="https://maia-masters.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Masters</a>
+            {' · '}
+            <a href="https://maia-botanicas.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Bot&aacute;nicas</a>
+            {' · '}
+            <a href="https://be-vida.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Be Vida</a>
           </p>
           <p className="mb-4">
             Trabaja con nosotros →{' '}

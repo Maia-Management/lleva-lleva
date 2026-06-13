@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import ListingGrid from "@/components/listings/ListingGrid";
@@ -186,7 +186,7 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         <Link
           href="/cuanto-vale"
-          className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-gradient-to-br from-emerald-50 to-blue-50 border border-emerald-200 hover:border-emerald-400 rounded-2xl p-5 sm:p-6 transition-all hover:shadow-md"
+          className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-gradient-to-br from-brand-blue-50 to-brand-yellow/10 border border-brand-blue/20 hover:border-brand-blue/40 rounded-2xl p-5 sm:p-6 transition-all hover:shadow-md"
         >
           <div
             className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
@@ -196,7 +196,7 @@ export default async function HomePage() {
             💰
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">
+            <p className="text-xs font-bold text-brand-blue uppercase tracking-wider mb-1">
               Herramienta gratuita
             </p>
             <h2 className="text-base sm:text-lg font-black text-gray-900 leading-tight mb-1">
@@ -206,7 +206,7 @@ export default async function HomePage() {
               Consulta precios reales de Mercado Libre, OLX y Facebook Marketplace Colombia en segundos.
             </p>
           </div>
-          <span className="hidden sm:inline-flex items-center gap-1 text-emerald-700 font-semibold text-sm flex-shrink-0 group-hover:gap-2 transition-all">
+          <span className="hidden sm:inline-flex items-center gap-1 text-brand-blue font-semibold text-sm flex-shrink-0 group-hover:gap-2 transition-all">
             Consultar precios <span aria-hidden="true">→</span>
           </span>
         </Link>
@@ -234,6 +234,18 @@ export default async function HomePage() {
               </Link>
             ))}
           </div>
+          {/* Calculadora tool CTA */}
+          <Link
+            href="/herramientas/calculadora"
+            className="mt-3 flex items-center gap-3 bg-bg rounded-xl border border-line p-4 hover:bg-brand-blue-50/60 hover:border-brand-blue/30 transition-all group"
+          >
+            <span className="text-2xl" aria-hidden="true">🧮</span>
+            <span className="flex-1 min-w-0">
+              <span className="block font-semibold text-sm text-ink">Calculadora SMMLV y UVT 2026</span>
+              <span className="block text-xs text-ink-2 mt-0.5">Convierte pesos a salarios mínimos o UVT al instante.</span>
+            </span>
+            <span className="text-brand-blue group-hover:translate-x-0.5 transition-transform flex-shrink-0" aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 

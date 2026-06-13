@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -32,6 +32,8 @@ export default function Footer() {
             <p className="text-white font-semibold text-sm mb-3">LlevaLleva</p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/publicar" className="hover:text-brand-yellow transition-colors">Publicar gratis</Link></li>
+              <li><Link href="/herramientas/calculadora" className="hover:text-brand-yellow transition-colors">Calculadora SMMLV/UVT</Link></li>
+              <li><Link href="/info/info-publica/precios-referencia" className="hover:text-brand-yellow transition-colors">Informaci&oacute;n p&uacute;blica</Link></li>
               <li><Link href="/como-funciona" className="hover:text-brand-yellow transition-colors">¿Cómo funciona?</Link></li>
               <li><Link href="/seguridad" className="hover:text-brand-yellow transition-colors">Consejos de seguridad</Link></li>
               <li><Link href="/terminos" className="hover:text-brand-yellow transition-colors">Términos y condiciones</Link></li>

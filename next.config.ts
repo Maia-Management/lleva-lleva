@@ -17,7 +17,9 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://adservice.google.com https://tpc.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
+      // HARDENED 2026-06-21 (feat/os-security-2026-06-21): dropped 'unsafe-eval'
+      // — Next 15 prod bundles do not need it. AdSense scripts work without it.
+      "script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://adservice.google.com https://tpc.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://tweuhyqajcnzsqelbtwt.supabase.co https://lh3.googleusercontent.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.co https://tpc.googlesyndication.com",
       "font-src 'self'",

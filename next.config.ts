@@ -29,6 +29,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Strip the X-Powered-By: Next.js header (info leak, low-value fingerprint).
+  poweredByHeader: false,
   // Keep metadata in <head> for crawlers and SEO audit tools.
   htmlLimitedBots: /.*/,
   async headers() {

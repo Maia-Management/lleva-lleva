@@ -8,3 +8,11 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Strip X-Powered-By: Next.js at the platform layer. next.config.ts
+# poweredByHeader:false handles the Node response itself but the Netlify
+# Next.js adapter re-injects it; this overrides at the edge (2026-06-27).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Powered-By = ""

@@ -3,7 +3,9 @@ import Link from 'next/link';
 import PriceChecker from './PriceChecker';
 
 export const metadata: Metadata = {
-  title: 'Calculadora de precios para vender en Colombia | LlevaLleva',
+  // The root layout's metadata.title.template appends " | Lleva Lleva", so don't
+  // repeat the brand suffix here — would render as "… | LlevaLleva | Lleva Lleva".
+  title: 'Calculadora de precios para vender en Colombia',
   description:
     '¿Cuánto vale tu artículo? Consulta precios reales de Mercado Libre Colombia, OLX, Facebook Marketplace y más. Gratis, en segundos.',
   keywords: [

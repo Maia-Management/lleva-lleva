@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     canonical: "https://lleva-lleva.com",
     languages: {
       "es": "https://lleva-lleva.com",
-      "en": "https://lleva-lleva.com",
       "x-default": "https://lleva-lleva.com",
     },
   },
@@ -103,8 +102,8 @@ const websiteJsonLd = {
   name: "Lleva Lleva",
   url: "https://lleva-lleva.com",
   description:
-    "Clasificados generales en Colombia y Venezuela — compra, vende y encuentra lo que necesitas",
-  inLanguage: ["es-CO", "es-VE"],
+    "Clasificados generales en Colombia — compra, vende y encuentra lo que necesitas",
+  inLanguage: ["es-CO"],
   potentialAction: {
     "@type": "SearchAction",
     target: "https://lleva-lleva.com/buscar?q={search_term_string}",

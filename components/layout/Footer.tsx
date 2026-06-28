@@ -33,7 +33,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/publicar" className="hover:text-brand-yellow transition-colors">Publicar gratis</Link></li>
               <li><Link href="/herramientas/calculadora" className="hover:text-brand-yellow transition-colors">Calculadora SMMLV/UVT</Link></li>
-              <li><Link href="/info/info-publica/precios-referencia" className="hover:text-brand-yellow transition-colors">Informaci&oacute;n p&uacute;blica</Link></li>
+              <li><Link href="/info/info-publica/precios-referencia" className="hover:text-brand-yellow transition-colors">Información pública</Link></li>
               <li><Link href="/como-funciona" className="hover:text-brand-yellow transition-colors">¿Cómo funciona?</Link></li>
               <li><Link href="/seguridad" className="hover:text-brand-yellow transition-colors">Consejos de seguridad</Link></li>
               <li><Link href="/terminos" className="hover:text-brand-yellow transition-colors">Términos y condiciones</Link></li>
@@ -65,7 +65,7 @@ export default function Footer() {
             {' · '}
             <a href="https://maia-masters.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Masters</a>
             {' · '}
-            <a href="https://maia-botanicas.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Bot&aacute;nicas</a>
+            <a href="https://maia-botanicas.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maia Botánicas</a>
             {' · '}
             <a href="https://be-vida.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Be Vida</a>
           </p>
